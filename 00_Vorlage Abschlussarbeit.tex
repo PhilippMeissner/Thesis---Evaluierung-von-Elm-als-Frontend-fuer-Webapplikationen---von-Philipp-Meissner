@@ -1,0 +1,115 @@
+%Dokumentklasse
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[left=4cm,right=3cm, bottom=3cm, top=3cm]{geometry}
+%\usepackage[onehalfspacing]{setspace}
+% ============= Packages =============
+
+% Dokumentinformationen
+\usepackage[
+	pdftitle={Evaluierung von Elm als Frontend für Webapplikationen},
+	pdfsubject={},
+	pdfauthor={Philipp Meißner},
+	pdfkeywords={},	
+	%Links nicht einrahmen
+	hidelinks
+]{hyperref}
+
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{nameref}
+\usepackage{graphicx, subfig}
+\graphicspath{{img/}}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{enumitem}
+% For inline code
+\usepackage{xcolor,listings}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+%Abkürzungsverzeichnis
+%\usepackage[printonlyused,withpage]{acronym}
+\usepackage{acronym}
+
+%nicht einrücken nach Absatz
+%\setlength{\parindent}{0pt}
+
+% LsListing
+% JS:
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\lhead{}
+\chead{}
+\rhead{\slshape \leftmark}
+%%
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+%Besondere Trennungen
+\hyphenation{A-ppli-ka-tion Ja-va-Script}
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+\pagestyle{empty}
+
+\include{01_titel}
+\pagenumbering{roman}
+\include{03_abstract}
+\pagenumbering{arabic}
+% Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
+\cleardoubleoddpage
+\pagestyle{fancy}
+
+%Inhaltsverzeichnis
+\tableofcontents
+
+\include{00_abkuerzungsverzeichnis}
+%Verzeichnis aller Bilder
+\listoffigures
+
+%Verzeichnis aller Tabellen
+\listoftables
+
+% pagestyle für gesamtes Dokument aktivieren
+\pagestyle{plain}
+
+\include{04_einleitung}
+
+\include{05_theoretische_grundlagen}
+
+\include{06_evaluierung}
+
+\include{07_fazit}
+
+\include{10_statement}
+
+%Literaturverzeichnis
+\bibliographystyle{unsrtdin}
+\bibliography{Literatur}
+TODO: Literatur hinzufügen + Referenzen + importieren
+
+\end{document}

@@ -1,0 +1,48 @@
+\select@language {ngerman}
+\contentsline {section}{\nonumberline Abstract}{i}{section*.1}
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Was ist eine funktionale Programmiersprache?}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Was ist Elm?}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Geschichte}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Konzept}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Umsetzung}{9}{subsection.2.2.3}
+\contentsline {subsubsection}{\nonumberline Keine Seiteneffekte}{9}{section*.14}
+\contentsline {subsubsection}{\nonumberline Elm-Compiler}{10}{section*.15}
+\contentsline {subsubsection}{\nonumberline Statische Typisierung}{11}{section*.16}
+\contentsline {subsubsection}{\nonumberline Modularit\IeC {\"a}t}{11}{section*.18}
+\contentsline {subsubsection}{\nonumberline Performanz}{12}{section*.19}
+\contentsline {subsubsection}{\nonumberline Interoperabilit\IeC {\"a}t}{12}{section*.21}
+\contentsline {subsubsection}{\nonumberline Debugger}{13}{section*.22}
+\contentsline {subsubsection}{\nonumberline Praktische Anwendungsgebiete}{13}{section*.23}
+\contentsline {chapter}{\numberline {3}Evaluierung der Programmiersprache Elm}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Bewertungsmuster}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Bewertungskriterien}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Entwicklungsgeschwindigkeit}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Wartbarkeit}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Zuverl\IeC {\"a}ssigkeit}{17}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Portabilit\IeC {\"a}t}{17}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Effizienz}{17}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Erlernbarkeit}{17}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Wiederverwendbarkeit}{17}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Lesbarkeit}{18}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}Modularit\IeC {\"a}t}{18}{subsection.3.2.9}
+\contentsline {section}{\numberline {3.3}Anspr\IeC {\"u}che an eine Webapplikation}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t \IeC {\textendash } Portabilit\IeC {\"a}t}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{19}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Asynchrones Laden}{20}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{20}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Empirische Analyse}{20}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Versuchsaufbau}{20}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Hypothesen und Vermutungen}{21}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Versuchsdurchf\IeC {\"u}hrung}{21}{subsection.3.4.3}
+\contentsline {subsubsection}{\nonumberline Installation}{21}{section*.26}
+\contentsline {subsubsection}{\nonumberline Grundaufbau}{22}{section*.27}
+\contentsline {subsubsection}{\nonumberline Konstruktion des Views}{24}{section*.32}
+\contentsline {subsubsection}{\nonumberline \IeC {\"U}berf\IeC {\"u}hrung des Views}{26}{section*.33}
+\contentsline {subsubsection}{\nonumberline Modularisierung}{26}{section*.34}
+\contentsline {subsubsection}{\nonumberline Asynchrones Laden}{27}{section*.35}
+\contentsline {subsection}{\numberline {3.4.4}Beobachtungen}{28}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Auswertung}{30}{subsection.3.4.5}
+\contentsline {chapter}{\numberline {4}Fazit}{33}{chapter.4}
+\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{34}{chapter.5}
