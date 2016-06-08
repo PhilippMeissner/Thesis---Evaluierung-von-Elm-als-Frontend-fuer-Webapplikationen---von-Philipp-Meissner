@@ -1,16 +1,19 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{7}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{7}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Das Model-View-Update Konzept von Elm\relax }}{9}{figure.caption.12}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel der dynamischen Typisierung\relax }}{11}{figure.caption.17}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite {elm-performance}\relax }}{12}{figure.caption.20}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{6}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Das Model-View-Update Konzept von Elm\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel der dynamischen Typisierung\relax }}{11}{figure.caption.19}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite {elm-performance}\relax }}{12}{figure.caption.22}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Eine Funktion in Elm\relax }}{15}{figure.caption.30}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces M\IeC {\"o}gliche Deklarationen eines Elm-Moduls\relax }}{16}{figure.caption.33}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Die Online-\ac {IDE} von Elm\relax }}{16}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016\relax }}{19}{figure.caption.25}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundger\IeC {\"u}st eines HTML-Dokumentes, um die Elm Applikation zu laden\relax }}{22}{figure.caption.28}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Der gestartete Elm-Webserver\relax }}{23}{figure.caption.29}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit \IeC {\"u}bergebenen Werten\relax }}{24}{figure.caption.31}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016\relax }}{22}{figure.caption.37}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundger\IeC {\"u}st eines HTML-Dokumentes, um die Elm Applikation zu laden\relax }}{37}{figure.caption.41}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Der gestartete Elm-Webserver\relax }}{37}{figure.caption.42}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit \IeC {\"u}bergebenen Werten\relax }}{37}{figure.caption.44}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

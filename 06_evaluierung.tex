@@ -4,9 +4,9 @@
 
 \section{Bewertungsmuster}
 \label{sec:Bewertungsmuster}
-Der folgende Teil dieser wissenschaftlichen Arbeit befasst sich mit der Entwicklung eines Modells, um die Programmiersprache Elm und ihre Nutzung als Frontend für Webapplikationen bewerten zu können. Dabei soll ein bereits fertiges Template von den ursprünglichen Programmiersprachen HTML, CSS und JavaScript in die Programmiersprache Elm portiert werden. Während der Entwicklung/Portierung wird dann die Programmiersprache Elm gegenüber mehreren Gesichtspunkten verglichen und ausgewertet.
-Das fertige Template ist eine Single-Page-Applikation mit Elementen, wie sie typischerweise auf einer solchen Webseite vertreten sind. Eine Single-Page-Applikation ist, wie der Name bereits suggeriert, eine Webseite effektiv nur einer aktiven Seite und ohne Unterseiten (ausgenommen Impressum, AGB und Datenschutz). Die SPA wird genutzt um ein Produkt oder Konzept schnell und einfach zu präsentieren, ohne den Nutzer mit Informationen zu überfluten und Unübersichtlichkeit in Form von tief verlinkten Unterseiten zu erzeugen. Oftmals wird eine SPA auch als Startseite benutzt und bietet nur eine geringe Anzahl an Funktionen.
-Die fertige SPA soll unter anderem die folgenden, typischen Elemente enthalten:
+Der folgende Teil dieser wissenschaftlichen Arbeit befasst sich mit der Entwicklung eines Modells, um die Programmiersprache Elm und ihre Nutzung als Frontend für Webapplikationen bewerten zu können. Dabei soll ein bereits fertiges Template von den ursprünglichen Programmiersprachen \ac{HTML}, \ac{CSS} und \ac{JS} in die Programmiersprache Elm portiert werden. Während der Entwicklung/Portierung wird die Programmiersprache Elm gegenüber mehreren Gesichtspunkten verglichen und ausgewertet.
+Das fertige Template ist eine \ac{SPA} mit Elementen, wie sie typischerweise auf einer solchen Webseite vertreten sind. Eine \ac{SPA} ist, wie der Name bereits suggeriert, eine Webseite effektiv nur einer aktiven Seite und ohne Unterseiten (ausgenommen Impressum, AGB und Datenschutz). Die \ac{SPA} wird genutzt um ein Produkt oder Konzept schnell und einfach zu präsentieren, ohne den Nutzer mit Informationen zu überfluten und Unübersichtlichkeit in Form von tief verlinkten Unterseiten zu erzeugen. Oftmals wird eine SPA auch als Startseite benutzt und bietet nur eine geringe Anzahl an Funktionen.
+Die fertige \ac{SPA} soll unter anderem die folgenden, typischen Elemente enthalten:
 \begin{itemize}
 \item Navigation mit Anchor-Elementen
 \subitem{-} Verkleinern der Navigation nach $x$ Pixeln
@@ -34,7 +34,7 @@ Dabei werden die Kriterien unterteilt in zwei Gruppen. Die erste Gruppe stellt e
 
 \subsection{Entwicklungsgeschwindigkeit}
 \label{sec:Entwicklungsgeschwindigkeit}
-Gerade für Startups ist es wichtig, ein erstes Produkt so schnell wie möglich bereitzustellen. Die Entwickler müssen also mit wenigen Mitteln ein fertiges (Software-)Produkt ausliefern können, selbst wenn sie noch kein oder wenig Vorwissen zu einer Programmiersprache haben.
+Gerade für Startups ist es wichtig, ein erstes Produkt so schnell wie möglich bereitzustellen. Die Entwickler müssen entsprechend mit wenigen Mitteln ein fertiges (Software-)Produkt ausliefern können, selbst wenn sie noch kein oder wenig Vorwissen zu einer Programmiersprache haben.
 Dementsprechend sollte eine Programmiersprache nur eine geringe Anzahl an primitiven Konzepten aufweisen, die sich leicht erweitern lassen. Beispielsweise hat die Programmiersprache C standardmäßig keine Anreihung von Buchstaben, auch bekannt als $String$. Jedoch gibt es den Datentyp $char$, der einen einzelnen Buchstabe repräsentiert. Durch die Verknüpfung mehrerer $char$'s, kann letztendlich der Datentyp $String$ umgesetzt werden.
 
 
@@ -82,7 +82,7 @@ Mit der Zeit wächst ein Projekt. Zumeist steigt simultan auch die Zahl der Mens
 
 
 \section{Ansprüche an eine Webapplikation}
-\label{Ansprüche an eine Webapplikation}
+\label{sec:ansprueche-webapp}
 Diese Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
 Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die  \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-application-RIA.html). Diese Art der Webapplikation besitzt im wesentlichen mehr Programmlogik, die der Client ausführen kann. Ein weiteres Merkmal sind oftmals auch die Anzahl der vorhandenen Unterseiten, wodurch wiederum mehr Logik erforderlich wird.
@@ -118,9 +118,7 @@ Nicht immer ist es sinnvoll, sämtliche Daten die auf einer Webseite angezeigt w
 
 \subsection{Dateigröße}
 \label{sec:Dateigroesse}
-Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datei groß, müssen entsprechend viele Informationen vom Server auf den Client des Nutzers übertragen werden, um die Webseite ansprechend darzustellen. Die Dateigröße kann mit einfachen Mitteln verringert werden. Beispielsweise können alle nicht unbeding notwendigen Zeichen aus der Datei entfernt werden. Dazu gehören Zeichen wie „Leerzeichen“ (Whitespaces) oder Zeilenumbrüche. Doch auch die Verkürzung von Variablen ist denkbar. Anstelle von „EinZiemlichLangesWort“ reicht beispielsweise „a“ komplett aus, muss dann natürlich an jeder anderen Stelle auch ersetzt werden. Hierzu bedarf es Algorithmen, welche die Nutzung von Variablen genau untersuchen und Fehler durch Ersetzungen vermeiden.
-
-
+Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datei groß, müssen entsprechend viele Informationen vom Server auf den Client des Nutzers übertragen werden, um die Webseite ansprechend darzustellen. Die Dateigröße kann mit einfachen Mitteln verringert werden. Beispielsweise können alle nicht unbedingt notwendigen Zeichen aus der Datei entfernt werden. Dazu gehören Zeichen wie „Leerzeichen“ (Whitespaces) oder Zeilenumbrüche. Doch auch die Verkürzung von Variablen ist denkbar. Anstelle von „EinZiemlichLangesWort“ reicht beispielsweise „a“ komplett aus. Offensichtlich muss die Variable im gesamten Code entsprechend umbenannt werden. Hierzu bedarf es Algorithmen, welche die Nutzung von Variablen genau untersuchen und Fehler durch Ersetzungen vermeiden.
 
 \section{Empirische Analyse}
 \label{sec:Empirische Analyse}
@@ -129,14 +127,48 @@ Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist 
 Abbildung XY: Zeigt die Kommunikation zwischen Client und Webserver
 Die Abbildung XY zeigt die geplante Kommunikation zwischen dem Client, also dem Nutzer und dem Webserver.
 In Schritt 1 fordert der Nutzer die Webseite an, erzeugt also einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver dann eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen HTML, CSS und JavaScript Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer nun eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion führt zu einer Reaktion durch Javascript, oder erzeugt einen neuen Request an den Server, womit wieder bei Schritt 1 begonnen wird. Das Einbinden von CSS und JS aus externen Quellen wird durch Schritt 6 verbildlicht.
-Die gesamte Applikation wird von einem fertigen Template, programmiert in HTML, CSS und JavaScript in die Programmiersprache Elm überführt, insofern möglich. Der daraus entstehende Elm-Quellcode wird dann mit dem Elm-Compiler kompiliert zu JavaScript.
+Die gesamte Applikation wird von einem fertigen Template, programmiert in HTML, CSS und JavaScript in die Programmiersprache Elm überführt, insofern möglich. Der daraus entstehende Elm-Quellcode wird daraufhin mit dem Elm-Compiler kompiliert zu \ac{JS}.
 Um ein generelles Verständnis der Programmiersprache Elm zu bekommen, dient die Dokumentation auf http://elm-lang.org/docs als Hilfestellung. Dort besteht die Möglichkeit sich mit den grundlegenden Konzepten vertiefend auseinanderzusetzen und diese zu erlernen.
 Die zugrunde liegende Elm-Version ist 0.17 und wird unter Ubuntu 14.04 64bit installiert. Als Editor wird Atom mit mehreren Elm-Plugins verwendet, so dass der geschriebene Code automatisch beim Speichern formatiert und durch den Compiler auf Fehler überprüft wird.
-Lauffähig wird die geschrieben Applikation mit dem Elm-Compiler $elm-make$ gemacht und dann mit Google Chrome Version 50 getestet.
-
+Lauffähig wird die geschrieben Applikation mit dem Elm-Compiler $elm-make$ gemacht und mit Google Chrome Version 50 getestet.
 \subsection{Hypothesen und Vermutungen}
 \label{sec:Hypothesen und Vermutungen}
-TODO: Aufzählung importieren
+Sämtliche Hypothesen wurden in der Tabelle~\ref{tab:Hypothesentabelle} zusammengefasst. Dabei beziehen sich die einzelnen Vermutungen jeweils auf eines der zuvor erläuterten Kriterien in den Kapiteln \nameref{sec:Bewertungskriterien} (\ref{sec:Bewertungskriterien}) und \nameref{sec:ansprueche-webapp} (\ref{sec:ansprueche-webapp}). Die Nummerierungen der Hypothesentabelle~\ref{tab:Hypothesentabelle} sind gleich der Auswertungstabelle~\ref{tab:Auswertungstabelle}, so dass ein Vergleich möglich ist.
+\begin{table}[p]
+\begin{tabular}{ | l | p{7.6cm} | }
+	\hline
+	\textbf{Kriterium} &\textbf{Hypothese}\\
+	\hline
+	1. Entwicklungsgeschwindigkeit & 1.1 Elm hat leicht erlernbare Grundkonzepte, die adaptiert und erweiterbar sind, um Produktivität für die Entwickler zu gewährleisten\\
+	\hline
+	2. Wartbarkeit & 2.1 Elm Code kann mindestens kommentiert werden, wenn nicht sogar eine Funktion zur automatischen Generierung von Signaturen einer Funktion existiert\\
+	\hline
+	3. Zuverlässigkeit & 3.1 Die Erweiterungen des Editors oder der Compiler warnt spätestens bei der Kompilierung, wenn nicht bereits während der Entwicklung vor syntaktischen Fehlern\\
+	& 3.2  Gibt es keine Fehlermeldungen, wird die Applikation ohne Laufzeitfehler funktionieren\\
+	& 3.3  Fehlermeldungen werden sehr spezifisch auf das eigentliche Problem hinweisen\\
+	\hline
+	4. Portabilität &  4.1 Die \ac{SPA} wird auf allen gängigen Browsern fehlerfrei dargestellt\\
+	\hline
+	5. Effizienz & 5.1 Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem \ac{HTML}, \ac{CSS} und \ac{JS}\\
+	&  5.2 Die erzeugte Elm-Applikation ist deutlich schneller während der Laufzeit\\
+	\hline
+	6. Wiederverwendbarkeit & 6.1 Codeteilen lassen sich problemlos auslagern und wiederverwenden\\
+	\hline
+	7. Modularität & 7.1 Ausgelagerte Codeteile sind isoliert voneinander und als einzelnes Modul nutzbar\\
+	& 7.2 Module können Funktionen nach außen verbergen\\
+	\hline
+	8. Lesbarkeit &  8.1 Die automatische Formatierung des Elm-Codes macht diesen lesbarer und spart Zeit\\	
+	\hline
+	9. Dateigröße &  9.1 Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen\\
+	\hline
+	10. Interoperabilität &  10.1 Bestehende \ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei\\
+	& 10.2 Bestehender \ac{CSS}-Code kann nativ in Elm eingebunden werden\\
+	\hline
+	11. Asynchrones Laden &  11.1 Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen\\
+	\hline
+\end{tabular}
+\caption{Aufstellung der Hypothesen}\label{tab:Hypothesentabelle}
+\end{table}
 
 \subsection{Versuchsdurchführung}
 \label{sec:Versuchsdurchführung}
@@ -268,7 +300,7 @@ TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einf�
 
 \subsection{Beobachtungen}
 \label{sec:Beobachtungen}
-Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problemen, sowie teilweisen Erkentnissen. Diese Beobachtungen werden im folgenden stichpunktartig zusammengefasst und anschließend erläutert.
+Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problemen, sowie teilweisen Erkenntnissen. Diese Beobachtungen werden im folgenden stichpunktartig zusammengefasst und anschließend erläutert.
 \begin{enumerate}[label*=\arabic*.]
 
 \item Externes \ac{CSS} kann nicht nativ über Elm geladen werden
@@ -277,11 +309,11 @@ Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problem
 		\item Keine Schachtelung möglich
 		\item Browser kann inline-\ac{CSS} nicht zwischenspeichern
 	\end{enumerate}
-\item HTML-Code ist in Elm kürzer
+\item Ein HTML-Element benötigt in Elm weniger Zeichen
 	\begin{enumerate}[label*=\arabic*.]
 		\item \ac{HTML}-Code benötigt in Elm keine schließenden Klammern. Anders als \ac{HTML} arbeitet Elm mit Einrückungen. Die gleichnamigen Funktionen um ein \ac{HTML}-Element zu erzeugen benötigen dementsprechend lediglich den Funktionsaufruf, gefolgt von den zwei Argumenten. Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.
 	\end{enumerate}
-\item Vertikale und horizentrale Zentrierung eines Elementes
+\item Vertikale und horizontale Zentrierung eines Elementes ist umfangreicher als vorerst erwartet
 	\begin{enumerate}[label*=\arabic*.]
 		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem Javascript. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
 		

@@ -2,7 +2,7 @@
 \label{sec:grundlagen}
 \pagestyle{plain}
 
-\section{Was ist eine funktionale Programmiersprache?}
+\section{Funktionale Programmiersprachen}
 \label{sec:funktionaleProgrammiersprache}
 %\begin{figure}[htb]
 %  \centering  
@@ -10,14 +10,8 @@
 %  \caption{Star Wars Logo}
 %  \label{fig:starwars}
 %\end{figure}
-In der Programmierung gibt es zwei Programmierparadigmen, die zur Kategorisierung von Programmiersprachen dienen und sich im Laufe der Zeit entwickelt haben. %„https://de.wikipedia.org/wiki/Programmiersprache#Programmierparadigmen“)
-Dabei beschreiben die Paradigmen verschiedene Prinzipien der Programmierung.
-Die zugrunde liegenden Kategorien werden häufig als imperative und deklarative Programmierung bezeichnet, in welchen sich jede Programmiersprache einordnen lässt. Jede Kategorie birgt weitere Unterkategorien und dient der Verfeinerung der Prinzipien.
-Häufig gehören funktionale Programmiersprachen dem deklarativen Programmierparadigma an. Es ist jedoch nicht ausgeschlossen, dass eine Programmiersprache mehreren Kategorien zugehörig ist und dadurch die Merkmale von mehr als einem Paradigma unterstützt. Zur Gruppe der deklarativen Programmiersprachen zählt man unter anderem Abfragesprachen wie SQL, sowie funktionale Programmiersprachen wie Lisp oder Scheme.
-Programmiersprachen der deklarativen Programmierung haben ihren Ursprung in der Mathematik. Programme werden hier als mathematische Funktionen formuliert, die nicht länger beschreiben, was getan werden soll, sondern lediglich vorgeben, welches Ergebnis am Ende erwartet wird.
-Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält und unveränderlich bleibt. Es ist dementsprechend stets nachzuvollziehen, welchen Wert ein Ausdruck besitzt, wodurch insbesondere akademische Anforderungen an ein Programm, wie etwa die Beweisführung, erfüllt werden können. Zusätzlich können auch unendliche Datenstrukturen behandelt werden.
-Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist. Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen.
 \begin{figure}[ht]
+\centering
 \begin{lstlisting}[language=JavaScript]
 iterative_function(n) {
   sum = 0;
@@ -29,28 +23,35 @@ console.log(iterative_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine iterative Funktion}\label{fig:iterative-function}
 \end{figure}
-\\Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
-\begin{figure}[ht]
+In der Programmierung gibt es zwei Programmierparadigmen, die zur Kategorisierung von Programmiersprachen dienen und sich im Laufe der Zeit entwickelt haben. %„https://de.wikipedia.org/wiki/Programmiersprache#Programmierparadigmen“)
+Dabei beschreiben die Paradigmen verschiedene Prinzipien der Programmierung.
+Die zugrunde liegenden Kategorien werden häufig als imperative und deklarative Programmierung bezeichnet, in welchen sich jede Programmiersprache einordnen lässt. Jede Kategorie birgt weitere Unterkategorien und dient der Verfeinerung der Prinzipien.
+Häufig gehören funktionale Programmiersprachen dem deklarativen Programmierparadigma an. Es ist jedoch nicht ausgeschlossen, dass eine Programmiersprache mehreren Kategorien zugehörig ist und dadurch die Merkmale von mehr als einem Paradigma unterstützt. Zur Gruppe der deklarativen Programmiersprachen zählt man unter anderem Abfragesprachen wie SQL, sowie funktionale Programmiersprachen wie Lisp oder Scheme.
+Programmiersprachen der deklarativen Programmierung haben ihren Ursprung in der Mathematik. Programme werden hier als mathematische Funktionen formuliert, die nicht länger beschreiben, was getan werden soll, sondern lediglich vorgeben, welches Ergebnis am Ende erwartet wird.
+Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält und unveränderlich bleibt. Es ist dementsprechend stets nachzuvollziehen, welchen Wert ein Ausdruck besitzt, wodurch insbesondere akademische Anforderungen an ein Programm, wie etwa die Beweisführung, erfüllt werden können. Zusätzlich können auch unendliche Datenstrukturen behandelt werden.
+Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist. Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen.
+
+Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
+\begin{figure}[hb]
 \begin{lstlisting}[language=JavaScript]
 recursive_function(n) {
-  if (n < 1) then 0
-  else recursive_function(n-1) + n;
+  if (n < 1) return 0
+  else return n + recursive_function(n-1);
 }
 console.log(recursive_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine rekursive Funktion}\label{fig:recursive-function}
 \end{figure}
-\\In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $resursive\_function$
+
+In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $resursive\_function$
 mit einem neuen Wert aufgerufen, ohne jemals die ursprüngliche Variable verändert zu haben.
 Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda-Funktion$ oder $anonyme Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur durch einen Verweis aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
 \begin{equation} \label{eq:solve}
 (\backslash x \rightarrow x * 2)\ [ 2, 3, 4 ] \Longrightarrow [4, 6, 8]
 \end{equation}
-Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildungsgesetz formuliert. Das mathematische Gegenstück zu dieser Funktion ist
-$x \rightarrow x * 2$
-und beschreibt eine Funktion, die einen Eingabgeparameter $x$ auf $x*2$ abbildet. Auch Elm gehört dem deklarativen Programmierparadigma an und vereinheitlicht dessen Konzepte.
+Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildungsgesetz formuliert. Das mathematische Gegenstück zu Funktion~\ref{eq:solve} ist $x \rightarrow x * 2$ und beschreibt eine Funktion, die einen Eingabeparameter $x$ auf $x*2$ abbildet. Auch Elm gehört dem deklarativen Programmierparadigma an und vereinheitlicht dessen Konzepte.
 
-\section{Was ist Elm?}
+\section{Grundlagen der Programmiersprache Elm}
 \label{sec:Was ist Elm?}
 
 \subsection{Geschichte}
@@ -59,6 +60,7 @@ Elm ist eine funktionale Programmiersprache. Sie wurde im Rahmen der Bachelorarb
  (http://Elm-lang.org/papers/concurrent-frp.pdf)
 von Evan Czaplicki entwickelt und im April 2012 offiziell veröffentlicht.
 Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren. Es gab keine für ihn annehmbare, leichte Lösung für dieses Problem, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage „What would web programming look like if we could restart?“ („Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?“) machte er sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
+
 \subsection{Konzept}
 \label{sec:Konzept}
 \begin{figure}[h]
@@ -66,11 +68,12 @@ Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein
 	\includegraphics[scale=0.5]{img/counter.png}
 	\caption{Ein simpler Zähler auf einer Webseite}\label{fig:counter}
 \end{figure}
-\noindent Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigma. Hier wird es \ac{MVU} genannt. Anhand der Abbildung~\ref{fig:counter} lässt sich das Muster in drei grundlegende Stationen unterteilen und erklären.
-Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird dazwischen angezeigt und kann sowohl negative, wie auch positive Werte annehmen.
-Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Betätigt ein Nutzer nun einen der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte Update-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$, sprich den Zählerwert übergeben.
-Die Update-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Das bedeutet in diesem konkreten Fall, dass das $Model$ erhöht oder reduziert wird. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten wird zurückgegeben. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden kopiert.
-Das Ergebnis der Update-Funktion wird weitergereicht an die View-Funktion. Diese Funktion beschreibt das Aussehen der Website, soll heißen wie das $Model$ dargestellt wird. Elm nutzt ein virtuelles \ac{DOM}, wodurch nur tatsächliche Änderungen im Browser angezeigt werden, anstatt dauerhaft das komplette \ac{DOM} stetig zu aktualisieren. Das \ac{DOM} beschreibt die Schnittstelle zum Datenzugriff auf das Objektmodell eines \ac{HTML}-Dokumentes.
+\noindent Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigmas. Hier wird es \ac{MVU} genannt. Anhand des Beispiels in Abbildung~\ref{fig:counter} lässt sich das Muster in drei grundlegende Stationen unterteilen und erklären.
+
+Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird zwischen den Knöpfen angezeigt und kann sowohl negative, als auch positive Werte annehmen.
+Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Interagiert ein Nutzer nun mit einem der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte $Update$-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$, sprich den momentanen Zählerwert übergeben.
+Die $Update$-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Das bedeutet in diesem konkreten Fall, dass das $Model$ erhöht oder reduziert wird. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten wird zurückgegeben, da sonst ein Seiteneffekt die Folge wäre. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden übernommen.
+Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Website, soll heißen wie das $Model$ dargestellt wird. Elm nutzt ein virtuelles \ac{DOM}, wodurch nur tatsächliche Änderungen im Browser angezeigt werden, anstatt dauerhaft das komplette \ac{DOM} stetig zu aktualisieren. Das \ac{DOM} beschreibt die Schnittstelle zum Datenzugriff auf das Objektmodell eines \ac{HTML}-Dokumentes.
 Der Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-update-concept} visualisiert.
 \begin{figure}[h]
   \centering  
@@ -78,10 +81,9 @@ Der Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-upda
   \caption{Das Model-View-Update Konzept von Elm}\label{fig:elm-model-view-update-concept}
 \end{figure}
 
-
 \subsection{Umsetzung}
 \label{sec:Umsetzung}
-Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu JavaScript, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives JavaScript, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von JavaScript zu umgehen und auszumerzen.
+Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu \ac{JS}, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives \ac{JS}, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von \ac{JS} zu umgehen und auszumerzen.
 Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler (http://elm-lang.org/) erzeugt. Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm mehrere Konzepte des deklarativen Programmierparadigmas.
 
 \subsubsection{Keine Seiteneffekte}
@@ -106,12 +108,12 @@ Des Weiteren basieren Funktionen in Elm auf dem Konzept von reinen Funktionen($p
 
 \subsubsection{Elm-Compiler}
 \label{sec:Elm-Compiler}
-Laufzeitfehler sollen mit Elm in Vergessenheit geraten. Dafür soll der integrierte Compiler sorgen. Die Fehlermeldungen des Compilers sind sehr strikt und deuten exakt auf die Programmzeile die für den jeweiligen Fehler verantwortlich ist. Bei der herkömmlichen Entwicklung eines Frontends mit JavaScript trifft man häufig auf den Wert $undefined$. Dieser Wert beschreibt, dass die dazugehörige Variable noch nicht initialisiert wurde und somit keine nutzbaren Daten enthält. Trifft man nun auf diesen Wert und versucht eine andere Funktion darauf auszuführen, so kann das geschriebene Programm entsprechend abstürzen. Der Elm Compiler überprüft den Programmcode nach exakt diesen Situation beziehungsweise analysiert, ob Variablen und Funktionen vorab initialisiert wurden, welche Parameter die einzelnen Funktionen erwarten und ob die Rückgabeparameter dem Typen entsprechen, den die anderen Funktionen erwarten. Befolgt man die Anweisungen des Compilers, soll das in einem stark strukturierten, lesbaren und funktionieren Code münden.
-Dem Programmierer werden weniger Möglichkeiten gegeben, bestimmte Ziele zu erreichen, doch dadurch soll auf lange Sicht einheitlicher, lesbarer und besser zu wartender Code erzeugt werden. Passend dazu gibt es bereits viele Erweiterungen für gängige Editoren wie Sublime Text und Atom, welche beim Speichern des Projektes den Code entsprechend des Style Guides strukturieren und formatieren. So kann einerseits die Lesbarkeit des Codes vereinheitlich, andererseits die Fehlerquellen in Form von Einrückungsfehlern oder vergessenen Kommas o.ä. verringert werden.
+Laufzeitfehler sollen mit Elm in Vergessenheit geraten. Dafür soll der integrierte Compiler sorgen. Die Fehlermeldungen des Compilers sind sehr strikt und deuten exakt auf die Programmzeile die für den jeweiligen Fehler verantwortlich ist. Bei der herkömmlichen Entwicklung eines Frontends mit \ac{JS} trifft man häufig auf den Wert $undefined$. Dieser Wert beschreibt, dass die dazugehörige Variable noch nicht initialisiert wurde und somit keine nutzbaren Daten enthält. Trifft man nun auf diesen Wert und versucht eine andere Funktion darauf auszuführen, so kann das geschriebene Programm entsprechend abstürzen. Der Elm Compiler überprüft den Programmcode nach exakt diesen Situation beziehungsweise analysiert, ob Variablen und Funktionen vorab initialisiert wurden, welche Parameter die einzelnen Funktionen erwarten und ob die Rückgabeparameter dem Typen entsprechen, den die anderen Funktionen erwarten. Befolgt man die Anweisungen des Compilers, soll das in einem stark strukturierten, lesbaren und funktionieren Code münden.
+Dem Programmierer werden weniger Möglichkeiten gegeben, bestimmte Ziele zu erreichen, doch dadurch soll auf lange Sicht einheitlicher, lesbarer und besser zu wartender Code erzeugt werden. Passend dazu gibt es bereits viele Erweiterungen für gängige Editoren wie Sublime Text und Atom, welche beim Speichern des Projektes den Code entsprechend des Style Guides strukturieren und formatieren. So kann einerseits die Lesbarkeit des Codes vereinheitlicht, andererseits die Fehlerquellen in Form von Einrückungsfehlern oder vergessenen Kommas o.ä. verringert werden.
 
 \subsubsection{Statische Typisierung}
 \label{sec:Statische Typisierung}
-Anders als bei nativem JavaScript, gibt es in Elm keine dynamische Typisierung. Das bedeutet, dass sowohl die Typen einer Variable, als auch die Rückgabewerte von Funktionen bereits bei der Kompilierung bekannt sein müssen. Natives JavaScript erlaubt es, dass die Typen von Variablen erst zur Laufzeit überprüft werden und sich zusätzlich während der Laufzeit ändern können. So ist der Quellcode in Abbildung~\ref{fig:dynamische-typisierung} konform in JavaScript.
+Anders als bei nativem \ac{JS}, gibt es in Elm keine dynamische Typisierung. Das bedeutet, dass sowohl die Typen einer Variable, als auch die Rückgabewerte von Funktionen bereits bei der Kompilierung bekannt sein müssen. Natives \ac{JS} erlaubt es, dass die Typen von Variablen erst zur Laufzeit überprüft werden und sich zusätzlich in dieser Zeit ändern können. So ist der Quellcode in Abbildung~\ref{fig:dynamische-typisierung} konform in \ac{JS}.
 \begin{figure}[ht]
 	\centering
 		\begin{lstlisting}[language=JavaScript]
@@ -120,7 +122,7 @@ Anders als bei nativem JavaScript, gibt es in Elm keine dynamische Typisierung. 
 		\end{lstlisting}
 \caption{Beispiel der dynamischen Typisierung}\label{fig:dynamische-typisierung}
 \end{figure}
-Der Typ der Variable $i$ wurde in der Abbildung~\ref{fig:dynamische-typisierung} während der Laufzeit von $number$ zu $string$ geändert. Da Elm stark typisiert ist, gibt es keine Möglichkeit, dass eine Funktion verschiedene Datentypen zurück gibt. Die Limitierung ist auch einer der Gründe, weshalb der Elm-Compiler immens viele Fehler bereits beim Kompiliervorgang aufdeckt. Dies ist das Ziel und der Vorteil des statischen Typensystems.
+Der Typ der Variable $i$ wurde in der Abbildung~\ref{fig:dynamische-typisierung} während der Laufzeit von $number$ zu $string$ geändert. Da Elm stark typisiert ist, gibt es keine Möglichkeit, dass eine Funktion verschiedene Datentypen zurück gibt oder eine Variable mehrere Typen während der Laufzeit annimmt.
 
 \subsubsection{Modularität}
 \label{sec:Modularität}
@@ -129,7 +131,7 @@ Um geschriebenen Code auch in Zukunft wartbarer zu machen, ist Elm modular aufge
 
 \subsubsection{Performanz}
 \label{sec:Performanz}
-\begin{figure}
+\begin{figure}[hb]
   \centering  
   \includegraphics[scale=0.6]{img/virtual-dom.png}
   \caption{Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite{elm-performance}}\label{fig:performance}
@@ -154,4 +156,75 @@ Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwic
 Es existiert jedoch bereits eine Vielzahl an Projekten die mit Elm verwirklicht wurden. Dabei sind viele dieser Projekte kleinere Retro-Spiele, die über den Browser gespielt werden können \footnote{\cite[vgl.]{builtwithelm}}. Dazu gehört unter anderem Tetris, Pong und Space Invaders. Weiterhin bietet Elm sehr einfache Möglichkeiten Formen wie Kreise, Vierecke, Hexagone und vieles mehr zu erzeugen, ohne großartig in die Mathematik einzusteigen.\\
 Dieser Einblick zeigt bereits, dass Elm in vielerlei Hinsicht Besserung für die Entwicklung von Webapplikationen verspricht. Doch wie praktikabel sind diese Versprechungen? Ist die Programmiersprache effizient und intuitiv, oder durch ihr noch frühes Entwicklungsstadium unausgereift?
 „The best functional programming in your browser“ - Diese Aussage wird anhand verschiedener Bewertungskriterien überprüft.
-Im Zuge dessen wird eine Webseite mit kleineren Modulen in Elm erzeugt. Die fertige Webseite respektive der erzeugte Quellcode wird dann anhand der zuvor erstellten Bewertungskriterien ausgewertet. Auch die Beobachtungen während der Entwicklung, wie etwa unvorhergesehene Probleme, gehen mit in die Wertung ein.
+Im Zuge dessen wird eine Webseite mit kleineren Modulen in Elm erzeugt. Die fertige Webseite respektive der erzeugte Quellcode wird anhand der zuvor erstellten Bewertungskriterien ausgewertet. Auch die Beobachtungen während der Entwicklung, wie etwa unvorhergesehene Probleme, gehen mit in die Wertung ein.
+
+\subsection{Einführung in die Elm-Architektur}
+\label{sec:elm-architektur}
+TODO: Evtl. Absatz \nameref{sec:Praktische Anwendungsgebiete} hier rein mergen und abändern?
+... Um eine Programmiersprache jedoch anzuwenden, ist es notwendig zuvor die Architektur kennenzulernen. Dieses Kapitel soll eine Einführung in die Programmiersprache Elm darstellen und die grundlegenden Funktionen näher bringen.
+
+\subsubsection{Basisdatentypen}
+\label{sec:Basisdatentypen}
+Elm hat nur eine geringe Anzahl an Basisdatentypen, mithilfe derer sämtliche weiterführende Konstrukte abgeleitet werden können:
+\begin{itemize}
+	\item 42 : Number
+	\item True : Bool
+	\item 'a' : Char
+	\item {[1, 2, 3] : List}
+\end{itemize}
+Durch die Kombination dieser Basisdatentypen können andere Datentypen wie $Strings$, $Integer$ oder $Floats$ erzeugt werden.
+
+\subsubsection{Union Types}
+\label{sec:Union-Types}
+
+\subsubsection{Objekte}
+\label{sec:Objekte}
+Auch in Elm ist es notwendig Informationen während der Laufzeit zwischen zu speichern und nicht direkt zu verlieren. In anderen Programmiersprachen gibt es dafür sogenannte $Objekte$ oder $Variablen$.
+
+\subsubsection{Funktionen}
+\label{sec:Funktionen}
+\begin{figure}[h]
+\begin{lstlisting}[language=JavaScript]
+add : Int -> Int -> Int
+add a b =
+  a + b
+
+add 3 4   -> 7
+\end{lstlisting}
+\caption{Eine Funktion in Elm}\label{fig:elm-function}
+\end{figure}
+Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, benötigt der Entwickler auch in Elm eine Funktionen. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und dem Gleichheitszeichen realisiert.
+
+Abbildung~\ref{fig:elm-function} zeigt, wie eine simple Addition zweier Integer-Werte umgesetzt wird. Die Buchstaben $a$ und $b$ deuten an, dass die Funktion $add$ zwei Parameter erwartet. Der gesamte Inhalt nach dem Gleichheitszeichen ist der sogenannte Rumpf einer Funktion und beschreibt den anzuwendenden Algorithmus. Der Funktionsaufruf ist in Zeile 5 sichtbar. Auffällig ist, dass eine Funktion nie explizit einen Wert zurück gibt, wie es in anderen Programmiersprachen wie \ac{JS} oder C++ meist durch den Befehl $return$ geschieht. Elm gibt implizit die letzte ausführbare Zeile als Rückgabewert zurück. Der beispielhafte Aufruf der Funktion $add$ in Zeile 5 hätte dementsprechend $7$ als Ergebnis. Des Weiteren ist erkennbar, dass Elm ohne die Nutzung von Kommata oder Klammern auskommt. Klammern werden erst notwendig, wenn mehrere Funktionen geschachtelt ablaufen sollen und eine Auswertung der Befehle von links nach rechts nicht ausreicht.
+
+\subsubsection{Signaturen}
+\label{sec:Signaturen}
+Zeile 1 in Abbildung~\ref{fig:elm-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : Number -> Number -> Number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $Number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
+
+\subsubsection{Module}
+\label{sec:Module}
+\begin{figure}[h]
+\begin{lstlisting}[language=JavaScript]
+module MyModule exposing(..)
+module MyModule exposing (add, anotherMethod)
+\end{lstlisting}
+\caption{Mögliche Deklarationen eines Elm-Moduls}\label{fig:elm-module}
+\end{figure}
+Oftmals ist es sinnvoll Quellcode der sich nur auf eine Problemlösung bezieht zu gruppieren. Auch in Elm ist es möglich Code auszulagern in sogenannte $Module$. Sie beschreiben eine Art Container, in dem der Code isoliert von den anderen Projektteilen betrachtet werden kann. Um ein $Modul$ in Elm zu erstellen, muss eine neue Datei vom Typ $elm$ erzeugt werden. Abbildung~\ref{fig:elm-module} zeigt zwei Beispiele, wie eine Quelldatei als Modul deklariert werden kann. Zeile $1$ gibt dabei sämtliche Funktionen die im Modul beinhaltet sind nach außen weiter, sobald das Modul importiert wird. Dies sollte nur gemacht werden, wenn das Modul sich um eine Art Bibliothek handelt, in der sämtliche Funktionen verfügbar gemacht werden sollen. In Zeile $2$ hingegen wird ersichtlich, wie nur ausgewählte Funktionen nach außen sichtbar gemacht werden. In diesem Falle sind die Funktionen $add$ und $anotherMethod$ nutzbar.
+
+- Quellcode wird unübersichtlich
+- Funktionen haben nichts mehr miteinander zu tun (Gruppierung sinnlos...)
+- Funktionen können in Module ausgelagert werden, die sich gezielt mit einem Problem auseinander setzen / eine Problemlösung anstreben.
+- Module können importiert werden.
+- Module können bestimmen, welche Informationen an die 'Außenwelt' freigegeben werden.
+
+
+\subsubsection{Online-IDE}
+\label{sec:Online-IDE}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/elm-try.png}
+	\caption{Die Online-\ac{IDE} von Elm}\label{fig:elm-try}
+\end{figure}
+Möchte man beginnen mit Elm zu programmieren, so ist es nicht notwendig sämtliche Tools auf dem lokalen Gerät zu installieren. Vielmehr haben die Entwickler von Elm eine Online-\ac{IDE} erstellt, mit der sofort entwickelt werden kann. Abbildung~\ref{fig:elm-try} zeigt diese \ac{IDE} mit einem typischen $Hello-World$ Beispiel. Auf der linken Seite ist eigentliche \ac{IDE} erkennbar, während die rechte Seite das Ergebnis nach dem Kompiliervorgang ausgibt. Sollte es einen Fehler während des kompilierens geben, wird die entsprechende Fehlermeldung des $elm-compiler$ dort ausgegeben. Mit Hilfe der Schaltfläche $Lights$ können zum Einen die Farben der \ac{IDE} invertiert werden, während der Knopf $Compile$ den geschriebenen Quellcode kompiliert und ausführt. Kleinere Projekte kön	nen entsprechend bequem mit diesem Tool realisiert werden. Die \ac{IDE} bietet einen schnellen Einstieg in die Programmiersprache.
+
