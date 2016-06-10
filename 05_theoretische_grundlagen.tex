@@ -104,7 +104,7 @@ Die eigentliche Bedeutung des Ausdrucks~\ref{eq:imperative_equation} ist mathema
 x_1:= x_0 + 1
 \end{equation}
 Es ist klar erkennbar, dass $x_1$ und $x_0$ nicht dieselbe Variable sind wodurch die Aussage nun als wahr eingestuft werden kann. Das beschriebene Konzept wird referentielle Transparenz genannt und beschreibt die Kontinuität des Wertes einer Variable.
-Des Weiteren basieren Funktionen in Elm auf dem Konzept von reinen Funktionen($pure functions$). Das bedeutet, dass eine Funktion stets das gleiche Ergebnisse liefert, insofern auch die Eingabeparameter gleich bleiben, unabhängig vom Zeitpunkt der Ausführung. Beispiele für eine reine Funktion sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen (semi-)zufälligen Wert zurückliefert und somit als eine unreine Funktion gilt. Doch auch diese Funktion kann zu einer reinen Funktion gemacht werden, wenn man sie einen Wert abhängig von einem Übergabeparameter berechnen lässt wie beispielsweise $random(seed)$.
+Des Weiteren basieren Funktionen in Elm auf dem Konzept von reinen Funktionen($pure\,functions$). Das bedeutet, dass eine Funktion stets das gleiche Ergebnisse liefert, insofern auch die Eingabeparameter gleich bleiben, unabhängig vom Zeitpunkt der Ausführung. Beispiele für eine reine Funktion sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen (semi-)zufälligen Wert zurückliefert und somit als eine unreine Funktion gilt. Doch auch diese Funktion kann zu einer reinen Funktion gemacht werden, wenn man sie einen Wert abhängig von einem Übergabeparameter berechnen lässt wie beispielsweise $random(seed)$.
 
 \subsubsection{Elm-Compiler}
 \label{sec:Elm-Compiler}
@@ -115,11 +115,10 @@ Dem Programmierer werden weniger Möglichkeiten gegeben, bestimmte Ziele zu erre
 \label{sec:Statische Typisierung}
 Anders als bei nativem \ac{JS}, gibt es in Elm keine dynamische Typisierung. Das bedeutet, dass sowohl die Typen einer Variable, als auch die Rückgabewerte von Funktionen bereits bei der Kompilierung bekannt sein müssen. Natives \ac{JS} erlaubt es, dass die Typen von Variablen erst zur Laufzeit überprüft werden und sich zusätzlich in dieser Zeit ändern können. So ist der Quellcode in Abbildung~\ref{fig:dynamische-typisierung} konform in \ac{JS}.
 \begin{figure}[ht]
-	\centering
-		\begin{lstlisting}[language=JavaScript]
-		var i = 1;
-		i = "Test";
-		\end{lstlisting}
+\begin{lstlisting}[language=JavaScript]
+var i = 1;
+i = "Test";
+\end{lstlisting}
 \caption{Beispiel der dynamischen Typisierung}\label{fig:dynamische-typisierung}
 \end{figure}
 Der Typ der Variable $i$ wurde in der Abbildung~\ref{fig:dynamische-typisierung} während der Laufzeit von $number$ zu $string$ geändert. Da Elm stark typisiert ist, gibt es keine Möglichkeit, dass eine Funktion verschiedene Datentypen zurück gibt oder eine Variable mehrere Typen während der Laufzeit annimmt.
@@ -163,6 +162,14 @@ Im Zuge dessen wird eine Webseite mit kleineren Modulen in Elm erzeugt. Die fert
 TODO: Evtl. Absatz \nameref{sec:Praktische Anwendungsgebiete} hier rein mergen und abändern?
 ... Um eine Programmiersprache jedoch anzuwenden, ist es notwendig zuvor die Architektur kennenzulernen. Dieses Kapitel soll eine Einführung in die Programmiersprache Elm darstellen und die grundlegenden Funktionen näher bringen.
 
+\subsubsection{Elm-REPL}
+\label{sec:elm-repl}
+- Einstieg in die Elm-Programmierung
+- Read-evaluate-print-loop
+- Gibt Compiler-Fehler aus
+- 
+
+
 \subsubsection{Basisdatentypen}
 \label{sec:Basisdatentypen}
 Elm hat nur eine geringe Anzahl an Basisdatentypen, mithilfe derer sämtliche weiterführende Konstrukte abgeleitet werden können:
@@ -172,52 +179,155 @@ Elm hat nur eine geringe Anzahl an Basisdatentypen, mithilfe derer sämtliche we
 	\item 'a' : Char
 	\item {[1, 2, 3] : List}
 \end{itemize}
-Durch die Kombination dieser Basisdatentypen können andere Datentypen wie $Strings$, $Integer$ oder $Floats$ erzeugt werden.
+Durch die Kombination dieser Basisdatentypen können weitere komplexere Datentypen wie $Strings$, $Integer$ oder $Floats$ erzeugt werden.
 
 \subsubsection{Union Types}
 \label{sec:Union-Types}
+In vielen Applikationen können Datentypen unterschiedliche Zustände annehmen. So kann beispielsweise ein $Tag$ die Zustände $Montag$ bis $Sonntag$ annehmen. Die in anderen Programmiersprachen als $algebraische Datentyp$ bekannte Aufzählung von Zuständen wird in Elm $Union\,Type$ genannt und beschreibt auch hier eine Aufzählung von endlich vielen Zuständen eines Datentypen. Die Einführung eines solchen $Union\,Type$s erlaubt es dem Compiler den Quellcode auf fehlende Zustände zu überprüfen. Ist es zum Beispiel das Ziel, eine Meldung abhängig vom aktuellen Wochentag auszugeben, müssen alle Zustände und ihre Folge dafür deklariert werden. Fehlt eine Deklaration, kann der $Elm-Compiler$ dies anhand des $Union\,Type$s erkennen.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+type Day = Monday | Tuesday | .. | Sunday
+storeStatus : Day -> String
+storeStatus day =
+  case day of
+    Monday ->
+      "Opened"
+    Sunday ->
+      "Closed"
+\end{lstlisting}
+\caption{Ein Union-Type in Elm}\label{fig:elm-union-type}
+\end{figure}
+Betrachtet man die Abbildung~\ref{fig:elm-union-type} ist klar erkennbar, dass die Funktion $storeStatus$ nicht alle Fälle, die der Typ $Day$ annehmen kann, behandelt werden. Aufgrund der vorherigen Deklaration eines $Union\,Type$ kann der $Elm-Compiler$ einsehen, welche möglichen Zustände der Typ $Day$ annehmen kann. Dadurch wird ein Fehler geworfen, insofern die fehlenden Typen nicht ergänzt werden. Dieses Konzept der algebraischen Datentypen erscheint zunächst sehr ähnlich den $Enumerationen$ in beispielsweise $C++$ oder anderen Programmiersprachen. Tatsächlich gibt es diese Form der Datenabstraktion in einer Vielzahl von funktionalen Programmiersprachen, mit dem wohl bekanntesten Vertreter der funktionalen Programmiersprache $Haskell$. Der Vorteil eines $Union\,Type$s in Elm gegenüber $Enumerationen$ in C++ oder Java ist, dass jeder Zustand der Aufzählung optionale Parameter übergeben bekommen kann. Damit bietet sich die Möglichkeit viel detailliertere Konstrukte zu erzeugen, ohne die Typensicherheit die sich durch die $Union\,Type$s ergibt zu verlieren. Das Beispiel der Abbildung~\ref{fig:elm-union-type} könnte entsprechend erweitert werden, so dass die Tage $Montag$ bis $Freitag$ zusätzlich noch eine Öffnungszeit besitzen.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+type Day = Monday Int Int | .. | Sunday
+storeStatus : Day -> String
+storeStatus day =
+  case day of
+    Monday start end->
+      "Opened!From:"
+      	++ start "until"
+      	++ end
+    Sunday ->
+      "Closed"
+\end{lstlisting}
+\caption{Ein erweiterter Union-Type in Elm}\label{fig:elm-union-type-advanced}
+\end{figure}
+Wie in Abbildung~\ref{fig:elm-union-type-advanced} zu sehen ist, wurden die einzelnen Tage in der Deklaration um die Parameter $Int$ erweitert. In diesem Fall sollen die $Integer$ vereinfacht die Start- und Endzeit der Öffnungszeit widerspiegeln. Auffällig ist, dass die Signatur der Funktion $storeStatus$ im Vergleich zur vorherigen Abbildung~\ref{fig:elm-union-type} nicht verändert wurde. Der übergebene Datentyp ist noch immer ein $Day$, mit dem Zusatz, dass die Wochentage zwei weitere Parameter $start$ und $end$ besitzen. Auf diese Weise können komplexe Konstrukte definiert werden, während die Typensicherheit gewährt bleibt.
 
-\subsubsection{Objekte}
-\label{sec:Objekte}
-Auch in Elm ist es notwendig Informationen während der Laufzeit zwischen zu speichern und nicht direkt zu verlieren. In anderen Programmiersprachen gibt es dafür sogenannte $Objekte$ oder $Variablen$.
+\subsubsection{Records}
+\label{sec:Records}
+Eine weitere Datenstruktur in Elm sind die sogenannten $Records$. Ein $Record$ ist vergleichbar mit einem $Objekt$ in \ac{JS} und verfolgt eine sehr ähnliche Syntax. Es ist möglich, eigene Felder in einem $Record$ zu definieren, mit allen Datentypen die bisher erzeugt wurden. Dazu gehören nicht nur die Basis-Datentypen, sondern auch alle daraus konstruierten. Auch können verschiedene Datentypen in einem $Record$ kombiniert werden.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+university = { typ = "Fachhochschule"
+             , gruendungsdatum = 1969
+             , ort = "Kiel" }
+university.typ  --> "Fachhochschule"
+.ort university --> "Kiel"
+
+{university | ort = "Flensburg" }
+\end{lstlisting}
+\caption{Ein Record in Elm}\label{fig:elm-record}
+\end{figure}
+In Zeile $1$ der Abbildung~\ref{fig:elm-record} ist erkennbar, wie ein $Record$ mit initialen Werten erstellt wird. Lediglich das Gleichheitszeichen für die Zuweisung unterscheidet sich hierbei von herkömmlichen erstellen eines $Records$ in \ac{JS}. Um ein Feld in einem $Record$ direkt anzusprechen, kann die übliche Schreibweise aus Zeile $4$ gewählt werden. Zeile $5$ hingegen führt zum gleichen Ergebnis, nutzt intern jedoch eine $anonyme\,Funktion$. Der Unterschied eines $Records$ im Gegensatz zu einem $Objekt$ in \ac{JS} liegt darin, dass Felder nicht dynamisch hinzugefügt oder gelöscht werden können. Sobald ein Feld definiert wurde, ist es für die gesamte Laufzeit vorhanden. Die einzige Möglichkeit einen $Record$ zu verändern liegt darin, den Inhalt der Felder zu manipulieren. Zeile $7$ der Abbildung~\ref{fig:elm-record} zeigt, wie das Feld $Ort$ des $Records$ mit einem neuen Wert versehen wird. Dabei ist zu beachten, dass aufgrund der Unveränderlichkeit einer Datenstruktur in Elm nicht der $Record$ selbst verändert wird. Viel mehr wird ein neuer $Record$ erstellt, der die Änderung, sowie gleichbleibenden Felder des alten $Record$ annimmt.
+
+\subsubsection{Variablen}
+\label{sec:Variablen}
+Die Lebenszeit eines $Records$ ist die gesamte Laufzeit des Programmes. Eine $Variable$ in Elm hingegen bleibt nur für die Dauer der Funktion in der sie definiert wurde erhalten und ist auch nur in diesem Namensraum gültig. Außerhalb der Funktion ist die Variable nicht mehr bekannt. In Elm wird eine Variable innerhalb eines $let..in$-Konstrukts erzeugt. $Let$ bezeichnet dabei den Abschnitt, in welchem sämtliche Variablen erstellt werden und einen Wert zugewiesen bekommen. Die Variablen innerhalb dieses Blockes können dabei aufeinander zugreifen, unabhängig von ihrer Reihenfolge. Mit Hilfe des $let..in$-Blockes kann die Logik einer Funktion noch weiter ausgelagert werden, ohne eine explizit neue Funktion zu definieren.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+meaningOfLife =
+  let
+    fourtyTwo = oneHundred - 58
+    oneHundred = 100
+  in
+    fourtyTwo
+
+meaningOfLife --> 42
+\end{lstlisting}
+\caption{Eine Variablendeklaration in Elm}\label{fig:elm-variables}
+\end{figure}
+Abbildung~\ref{fig:elm-variables} zeigt beispielhaft die Deklaration einer Funktion $meaningOfLife$, die innerhalb des $let..in$-Blockes die Variablen $fourtyTwo$ und $oneHundred$ deklariert und ihnen einen Wert zuweist. Die Inhalte eines $let..in$-Blockes müssen eingerückt werden, während hingegen eine übliche Funktion auch in einer Zeile verfasst werden kann. Des Weiteren ist erkennbar, dass die Variable $oneHundred$ erst nach der Deklaration von $fourtyTwo$ deklariert wird, jedoch bereits vorher nutzbar ist. Der $elm-compiler$ optimiert diese Programmstelle während des Kompiliervorganges entsprechend. Die beiden deklarierten Variablen sind lediglich in dem definierten $let..in$-Block verfügbar. Eine Verwendung außerhalb des Blockes hätte einen Compilerfehler zur Folge.
 
 \subsubsection{Funktionen}
 \label{sec:Funktionen}
 \begin{figure}[h]
-\begin{lstlisting}[language=JavaScript]
+\begin{lstlisting}[language=Elm]
 add : Int -> Int -> Int
 add a b =
   a + b
 
-add 3 4   -> 7
+add 3 4  --> 7
 \end{lstlisting}
 \caption{Eine Funktion in Elm}\label{fig:elm-function}
 \end{figure}
 Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, benötigt der Entwickler auch in Elm eine Funktionen. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und dem Gleichheitszeichen realisiert.
 
 Abbildung~\ref{fig:elm-function} zeigt, wie eine simple Addition zweier Integer-Werte umgesetzt wird. Die Buchstaben $a$ und $b$ deuten an, dass die Funktion $add$ zwei Parameter erwartet. Der gesamte Inhalt nach dem Gleichheitszeichen ist der sogenannte Rumpf einer Funktion und beschreibt den anzuwendenden Algorithmus. Der Funktionsaufruf ist in Zeile 5 sichtbar. Auffällig ist, dass eine Funktion nie explizit einen Wert zurück gibt, wie es in anderen Programmiersprachen wie \ac{JS} oder C++ meist durch den Befehl $return$ geschieht. Elm gibt implizit die letzte ausführbare Zeile als Rückgabewert zurück. Der beispielhafte Aufruf der Funktion $add$ in Zeile 5 hätte dementsprechend $7$ als Ergebnis. Des Weiteren ist erkennbar, dass Elm ohne die Nutzung von Kommata oder Klammern auskommt. Klammern werden erst notwendig, wenn mehrere Funktionen geschachtelt ablaufen sollen und eine Auswertung der Befehle von links nach rechts nicht ausreicht.
-
+Zusätzlich zu einer explizit benannten Funktion, gibt es die $anonyme$ Funktion. Sie kommt ohne einen Funktionstitel aus und wird an Funktionen höherer Ordnung weitergereicht.
+$List.filter$ ist eine solche Funktion und erwartet eine anonyme Funktion als Parameter, auf Basis derer eine Liste gefiltert wird. Aus der Abbildung~\ref{fig:elm-anonym-function} wird ersichtlich, dass die übergebene Liste, bestehend aus $4$ Einträgen, auf die Präsenz des Buchstabens $a$ hin überprüft wird. Dabei wird jeweils ein Wert an die anonyme Funktion weitergereicht, die in Form der Variable $str$ repräsentiert und mit dem String $a$ auf Gleichheit überprüft wird. Einträge die diesem Vergleich entsprechen, werden einer neuen Liste hinzugefügt. Wird das Ende der zu überprüfenden Liste erreicht, wird die Ergebnisliste als Rückgabewert ausgegeben.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+List.filter : (a -> Bool) -> List a -> List a
+List.filter (\str -> str == "a") ["a", "b", "c", "a"]
+-> ["a", "a"]
+\end{lstlisting}
+\caption{Anwendung einer anonymen Funktion in Elm}\label{fig:elm-anonym-function}
+\end{figure}
 \subsubsection{Signaturen}
 \label{sec:Signaturen}
-Zeile 1 in Abbildung~\ref{fig:elm-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : Number -> Number -> Number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $Number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
+Die jeweils erste Zeile der Abbildung~\ref{fig:elm-function} und \ref{fig:elm-anonym-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : Number -> Number -> Number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $Number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
+
+\subsubsection{Typen Alias}
+\label{sec:typ-alias}
+Je komplexer ein Record wird, desto länger und unübersichtlicher wird auch die dazugehörige $Signatur$. Dementsprechend bietet sich eine Abkürzung der Signatur an, die in Elm als $type\,alias$ bezeichnet wird. Dabei handelt es sich um eine Repräsentation einer komplexen Datenstruktur in einer kurzen Schreibweise.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+isOldEnough : { name : String
+	      , profile : String
+	      , age : Int 
+	      } -> Bool
+isOldEnough user =
+	...
+\end{lstlisting}
+\caption{Definition einer Funktion ohne Typen Alias}\label{fig:no-type-alias}
+\end{figure}
+In Abbildung~\ref{fig:no-type-alias} wird eine Funktion mit einem komplexen $Record$ als Übergabeparameter beschrieben. An dieser Stelle hat der $Record$ lediglich drei Felder, führt allerdings schon zu einem recht unübersichtlichen Quellcode. Mit Hilfe des $type\,alias$ kann die Signatur gekürzt werden, indem die Repräsentation des $Records$ ausgelagert wird. In Abbildung~\ref{fig:no-type-alias} können die Auswirkung davon betrachtet werden. Nachdem der $type\,alias$ erstellt wurde, kann das Konstrukt mit dem entsprechenden $alias$ angesprochen werden. Zeile $5$ verdeutlicht, wie der $alias$ genutzt wird. Der Algorithmus der Funktion bleibt völlig unberührt, wodurch diese Änderung eher kosmetischer Natur ist.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+type alias User = { name : String
+	          , profile : String
+	          , age : Int
+	          }
+oldEnough : User -> Bool
+\end{lstlisting}
+\caption{Definition einer Funktion mit Typen Alias}\label{fig:type-alias}
+\end{figure}
 
 \subsubsection{Module}
 \label{sec:Module}
 \begin{figure}[h]
-\begin{lstlisting}[language=JavaScript]
+\begin{lstlisting}[language=Elm]
 module MyModule exposing(..)
 module MyModule exposing (add, anotherMethod)
 \end{lstlisting}
 \caption{Mögliche Deklarationen eines Elm-Moduls}\label{fig:elm-module}
 \end{figure}
-Oftmals ist es sinnvoll Quellcode der sich nur auf eine Problemlösung bezieht zu gruppieren. Auch in Elm ist es möglich Code auszulagern in sogenannte $Module$. Sie beschreiben eine Art Container, in dem der Code isoliert von den anderen Projektteilen betrachtet werden kann. Um ein $Modul$ in Elm zu erstellen, muss eine neue Datei vom Typ $elm$ erzeugt werden. Abbildung~\ref{fig:elm-module} zeigt zwei Beispiele, wie eine Quelldatei als Modul deklariert werden kann. Zeile $1$ gibt dabei sämtliche Funktionen die im Modul beinhaltet sind nach außen weiter, sobald das Modul importiert wird. Dies sollte nur gemacht werden, wenn das Modul sich um eine Art Bibliothek handelt, in der sämtliche Funktionen verfügbar gemacht werden sollen. In Zeile $2$ hingegen wird ersichtlich, wie nur ausgewählte Funktionen nach außen sichtbar gemacht werden. In diesem Falle sind die Funktionen $add$ und $anotherMethod$ nutzbar.
+Oftmals ist es sinnvoll Quellcode der sich nur auf eine Problemlösung bezieht zu gruppieren. Auch in Elm ist es möglich Code auszulagern in sogenannte $Module$. Sie beschreiben eine Art Container, in dem der Code isoliert von den anderen Projektteilen betrachtet werden kann. Um ein $Modul$ in Elm zu erstellen, muss eine neue Datei vom Typ $elm$ erzeugt werden. Abbildung~\ref{fig:elm-module} zeigt zwei Beispiele, wie eine Quelldatei als Modul deklariert werden kann. Zeile $1$ gibt dabei sämtliche Funktionen die im Modul beinhaltet sind nach außen weiter, sobald das Modul importiert wird. Dies sollte nur gemacht werden, wenn das Modul sich um eine Art Bibliothek handelt, in der sämtliche Funktionen verfügbar gemacht werden sollen. In Zeile $2$ hingegen wird ersichtlich, wie nur ausgewählte Funktionen nach außen sichtbar gemacht werden. Auf der anderen Seite hingegen würde der Entwickler das Modul $MyModule$ importieren und daraufhin die Funktionen $add$ und $anotherMethod$ nutzen können.
 
-- Quellcode wird unübersichtlich
-- Funktionen haben nichts mehr miteinander zu tun (Gruppierung sinnlos...)
-- Funktionen können in Module ausgelagert werden, die sich gezielt mit einem Problem auseinander setzen / eine Problemlösung anstreben.
-- Module können importiert werden.
-- Module können bestimmen, welche Informationen an die 'Außenwelt' freigegeben werden.
-
+\subsubsection{Importierung}
+\label{sec:Importierung}
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+import MyModule
+import MyModule exposing(..)
+import MyModule exposing (add, anotherMethod)
+import MyModule as MyVeryOwnModuleName
+\end{lstlisting}
+\caption{Mögliche Formen der Importierung eines Elm-Moduls}\label{fig:elm-import-module}
+\end{figure}
+Jeder Entwickler hat ferner die Möglichkeit die zuvor erstellten Module an einer anderen Stelle zu importieren. Dabei wird das gesamte Modul in den aktuellen Namensraum geladen und nutzbar gemacht. In welcher Ausprägung die Funktionen des importierten Moduls eingebunden werden, hängt von der Spezifikation des Imports ab. In Abbildung~\ref{fig:elm-import-module} zeigt vier mögliche Arten das Modul $MyModule$ zu importieren. Zunächst einmal werden alle Funktionen, die das Modul selbst über das Stichwort $exposing$ freigibt geladen. Das Einbinden wie in Zeile $1$ hat zur Folge, dass sämtliche Funktionen mit dem expliziten Modulnamen voran angesprochen werden müssen. Die Funktion $add$ wird beispielsweise mit $MyModule.add$ aufgerufen. Zeile $2$ wiederum hat zur Folge, dass die Funktionen $add$ und $anotherMethod$ in den Namensraum des aktuellen Moduls geladen werden. Logischerweise ist an dieser Stelle für den Aufruf der $add$-Funktion nichts weiter notwendig, außer wenn das aktuelle Modul eine gleichnamige Funktion besitzt. In diesem Fall ist die Nutzung analog der Anwendung aus dem vorherigen Beispiel. Die Einbindung in Zeile $3$ wirkt sich reduzierender auf den aktuellen Namensraum aus. Damit ist gemeint, dass nur die explizit genannten Funktionen nach dem Stichwort $exposing$ in den Namensraum geladen werden, alle anderen Funktionen müssen mit dem entsprechenden Modulnamen vorweg angesprochen werden. Schlussendlich kann der Namensraum des eingebundenen Moduls durch den Zusatz des $as$ Stichwortes, gefolgt vom gewünschten Namensraum verändert werden. Die Nutzung der Funktionen ist analog zu den vorherigen Beispielen und kann beliebig kombiniert werden.
 
 \subsubsection{Online-IDE}
 \label{sec:Online-IDE}

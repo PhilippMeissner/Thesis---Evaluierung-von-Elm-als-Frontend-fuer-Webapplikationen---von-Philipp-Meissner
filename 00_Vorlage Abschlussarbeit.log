@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  8 JUN 2016 16:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  10 JUN 2016 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,21 +746,21 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 (./10_statement.aux))
 \openout1 = `"00_Vorlage Abschlussarbeit.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 90.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -799,10 +799,10 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 82.
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
+Package hyperref Info: Link coloring OFF on input line 90.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
 (./00_Vorlage Abschlussarbeit.out) (./00_Vorlage Abschlussarbeit.out)
 \@outlinefile=\write4
 \openout4 = `"00_Vorlage Abschlussarbeit.out"'.
@@ -913,8 +913,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 \include{00_abkuerzungsverzeichnis}
-                                         [1
+l.105 \include{00_abkuerzungsverzeichnis}
+                                          [1
 
 
 
@@ -922,13 +922,21 @@ l.97 \include{00_abkuerzungsverzeichnis}
 ]
 \openout2 = `00_abkuerzungsverzeichnis.aux'.
 
- (./00_abkuerzungsverzeichnis.tex)
-[2
+ (./00_abkuerzungsverzeichnis.tex) [2
 
 
 ] (./00_Vorlage Abschlussarbeit.lof
 Package acronym Info: Label `acro:IDE' newly defined as it shall be overridden
-although it is yet undefined on input line 12.
+although it is yet undefined on input line 20.
+Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
+
+although it is yet undefined on input line 23.
+
+Overfull \hbox (36.04327pt too wide) in paragraph at lines 23--23
+ [][] [][]\T1/lmr/m/n/12 Grundgerüst ei-nes[][][] Hy-per-Text Mar-kup Lan-gua-g
+e ([])[]-Dokumentes, 
+ []
+
 )
 \tf@lof=\write6
 \openout6 = `"00_Vorlage Abschlussarbeit.lof"'.
@@ -940,8 +948,7 @@ although it is yet undefined on input line 12.
 \tf@lot=\write7
 \openout7 = `"00_Vorlage Abschlussarbeit.lot"'.
 
-
-[4
+ [4
 
 ]
 \openout2 = `04_einleitung.aux'.
@@ -975,7 +982,7 @@ Kapitel 2.
 
 
 
-] [7] <img/counter.png, id=295, 289.08pt x 345.29pt>
+] [7] <img/counter.png, id=314, 289.08pt x 345.29pt>
 File: img/counter.png Graphic file (type png)
  <use img/counter.png>
 Package pdftex.def Info: img/counter.png used on input line 68.
@@ -984,11 +991,8 @@ Package acronym Info: Label `acro:MVU' newly defined as it shall be overridden
 although it is yet undefined on input line 71.
 Package acronym Info: Label `acro:DOM' newly defined as it shall be overridden
 although it is yet undefined on input line 76.
-Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 
-although it is yet undefined on input line 76.
-
-<img/elm-model-view-update-concept.png, id=304, 361.35pt x 271.0125pt>
+<img/elm-model-view-update-concept.png, id=323, 361.35pt x 271.0125pt>
 File: img/elm-model-view-update-concept.png Graphic file (type png)
 
 <use img/elm-model-view-update-concept.png>
@@ -1001,149 +1005,189 @@ although it is yet undefined on input line 86.
 Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
 although it is yet undefined on input line 86.
  [9 <./img/elm-model-view-update-concept.png>] [10] [11]
-<img/virtual-dom.png, id=354, 501.875pt x 393.47pt>
+<img/virtual-dom.png, id=371, 501.875pt x 393.47pt>
 File: img/virtual-dom.png Graphic file (type png)
  <use img/virtual-dom.png>
-Package pdftex.def Info: img/virtual-dom.png used on input line 136.
+Package pdftex.def Info: img/virtual-dom.png used on input line 135.
 (pdftex.def)             Requested size: 301.12732pt x 236.0838pt.
 
-Underfull \hbox (badness 6110) in paragraph at lines 137--137
+Underfull \hbox (badness 6110) in paragraph at lines 136--136
 [][][]|\T1/lmr/m/n/12 Per-for-manz von Elm im Ver-gleich zu an-de-ren Web-
  []
 
 
-Overfull \hbox (7.94229pt too wide) in paragraph at lines 145--147
+Overfull \hbox (7.94229pt too wide) in paragraph at lines 144--146
 \T1/lmr/m/n/12 Es wä-re sehr auf-wen-dig die gän-gigs-ten JavaScript-Bibliothek
 en und -Frameworks
  []
 
 [12 <./img/virtual-dom.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 156.
+(Font)              <10> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 156.
+(Font)              <7> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 156.
+(Font)              <5> on input line 155.
  [13]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 170.
+Overfull \hbox (15.98775pt too wide) in paragraph at lines 167--171
+\T1/lmr/m/n/12 - Ein-stieg in die Elm-Programmierung - Read-evaluate-print-loop
+ - Gibt Compiler-
+ []
 
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 177.
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 170.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 177.
+ [14]
 
-[14] [15] <img/elm-try.png, id=409, 871.255pt x 305.14pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] [16]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17] [18]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19] [20] <img/elm-try.png, id=531, 871.255pt x 305.14pt>
 File: img/elm-try.png Graphic file (type png)
 
 <use img/elm-try.png>
-Package pdftex.def Info: img/elm-try.png used on input line 226.
+Package pdftex.def Info: img/elm-try.png used on input line 336.
 (pdftex.def)             Requested size: 348.49583pt x 122.05382pt.
- [16 <./img/elm-try.png>]) [17]
+) [21 <./img/elm-try.png>]
 \openout2 = `06_evaluierung.aux'.
 
  (./06_evaluierung.tex
 Kapitel 3.
 Package acronym Info: Label `acro:SPA' newly defined as it shall be overridden
 although it is yet undefined on input line 8.
-[18
+[22
 
 
 
-] [19] [20]
-Overfull \hbox (49.89993pt too wide) in paragraph at lines 86--92
+] [23]
+
+LaTeX Warning: Citation `https://github.com/evancz/todomvc-perf-comparison/' on
+ page 24 undefined on input line 58.
+
+[24] [25]
+Overfull \hbox (49.89993pt too wide) in paragraph at lines 87--93
 \T1/lmr/m/n/12 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-
 application-RIA.html).
  []
 
-[21] <img/browser_2016.png, id=460, 1173.38374pt x 369.38pt>
+[26] <img/browser_2016.png, id=589, 1173.38374pt x 369.38pt>
 File: img/browser_2016.png Graphic file (type png)
 
 <use img/browser_2016.png>
-Package pdftex.def Info: img/browser_2016.png used on input line 105.
+Package pdftex.def Info: img/browser_2016.png used on input line 106.
 (pdftex.def)             Requested size: 352.01784pt x 110.81485pt.
- [22 <./img/browser_2016.png>] [23]
-Underfull \hbox (badness 2310) in paragraph at lines 160--161
+ [27 <./img/browser_2016.png>]
+Underfull \hbox (badness 2310) in paragraph at lines 161--162
 \T1/lmr/m/n/12 Elm-Codes macht die-sen les-ba-rer und
  []
 
 
-Overfull \hbox (2.77797pt too wide) in paragraph at lines 138--170
+Overfull \hbox (2.77797pt too wide) in paragraph at lines 139--171
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 22.36932pt on input line 171.
+LaTeX Warning: Float too large for page by 22.36932pt on input line 172.
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[28] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
-) [24] [25]
-<img/elm-make_include_in_index.png, id=503, 748.7975pt x 424.58624pt>
+)
+<img/elm-make_include_in_index.png, id=628, 748.7975pt x 424.58624pt>
 File: img/elm-make_include_in_index.png Graphic file (type png)
 
 <use img/elm-make_include_in_index.png>
 Package pdftex.def Info: img/elm-make_include_in_index.png used on input line 2
-06.
+07.
 (pdftex.def)             Requested size: 299.51369pt x 169.83148pt.
 
-<img/elm-reactor.png, id=504, 548.0475pt x 128.48pt>
+<img/elm-reactor.png, id=631, 548.0475pt x 128.48pt>
 File: img/elm-reactor.png Graphic file (type png)
  <use img/elm-reactor.png>
-Package pdftex.def Info: img/elm-reactor.png used on input line 211.
+Package pdftex.def Info: img/elm-reactor.png used on input line 212.
 (pdftex.def)             Requested size: 219.2151pt x 51.39108pt.
 
-[26]
+[29] [30] [31 <./img/elm-make_include_in_index.png>]
 Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
 
-although it is yet undefined on input line 224.
- <img/programWithFlags_pass_data.png, id=520, 661.47125pt x 195.73125pt>
+although it is yet undefined on input line 225.
+
+<img/programWithFlags_pass_data.png, id=678, 661.47125pt x 195.73125pt>
 File: img/programWithFlags_pass_data.png Graphic file (type png)
 
 <use img/programWithFlags_pass_data.png>
 Package pdftex.def Info: img/programWithFlags_pass_data.png used on input line 
-228.
+229.
 (pdftex.def)             Requested size: 396.8858pt x 117.43964pt.
 
-Underfull \hbox (badness 1019) in paragraph at lines 229--229
+Underfull \hbox (badness 1019) in paragraph at lines 230--230
 [][][]|\T1/lmr/m/n/12 Ei-ne bei-spiel-haf-te In-itia-li-sie-rung der Elm-Applik
 ation mit
  []
 
-[27] [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 282--291
+[32 <./img/elm-reactor.png>] [33 <./img/programWithFlags_pass_data.png>]
+[34]
+Overfull \hbox (11.21123pt too wide) in paragraph at lines 276--280
+\T1/lmr/m/n/12 (http://mbylstra.github.io/html-to-elm/). Die-ses Online-Tool er
+-laubt es[][]5-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--291
+Underfull \hbox (badness 10000) in paragraph at lines 283--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--291
+Underfull \hbox (badness 10000) in paragraph at lines 283--292
 
  []
 
-[30] [31] [32]
+[35] [36] [37]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33]
-Overfull \hbox (3.88933pt too wide) in paragraph at lines 426--428
+[38] [39]
+Overfull \hbox (22.8202pt too wide) in paragraph at lines 427--429
 \T1/lmr/m/n/12 Zeit in An-spruch neh-men, als die her-kömm-li-che Ent-wick-lung
- mit rei-nem HTML,
+ mit reinem[][],[][]
  []
 
-[34]) [35] [36] [37 <./img/elm-make_include_in_index.png> <./img/elm-reactor.pn
-g> <./img/programWithFlags_pass_data.png>]
+
+Overfull \hbox (9.05206pt too wide) in paragraph at lines 447--449
+\T1/lmr/m/n/12 oder funk-tio-nie-ren be-reits ein-wand-frei --> Die In-te-gra-t
+i-on vorhandener[][]-Skripte
+ []
+
+
+Overfull \hbox (2.75946pt too wide) in paragraph at lines 447--449
+\T1/lmr/m/n/12 ver-lief pro-blem-los. Be-nö-tigt ein ex-ter-nes Skript Da-ten v
+on der Elm-Applikation,
+ []
+
+[40]) [41]
 \openout2 = `07_fazit.aux'.
 
  (./07_fazit.tex
 Kapitel 4.
-) [38
+) [42
 
 
 
@@ -1152,7 +1196,7 @@ Kapitel 4.
 
  (./10_statement.tex
 Kapitel 5.
-) [39
+) [43
 
 
 
@@ -1162,29 +1206,33 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 19.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
- [40
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
+ [44
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
 
 (./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./03_abstract.aux)
 (./00_abkuerzungsverzeichnis.aux) (./04_einleitung.aux)
 (./05_theoretische_grundlagen.aux) (./06_evaluierung.aux) (./07_fazit.aux)
 (./10_statement.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `"00_Vorlage Abschlussarbeit".out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 97620D9FE1B24791E9D8516B0B2F633F;2330.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 130.
  ) 
 Here is how much of TeX's memory you used:
- 13518 strings out of 494976
- 201115 string characters out of 6179137
- 368717 words of memory out of 5000000
- 16255 multiletter control sequences out of 15000+600000
+ 13668 strings out of 494976
+ 203238 string characters out of 6179137
+ 373439 words of memory out of 5000000
+ 16330 multiletter control sequences out of 15000+600000
  85978 words of font info for 67 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  50i,14n,54p,1966b,1308s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1200,10 +1248,10 @@ blic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (42 pages, 517576 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (46 pages, 540296 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
- 642 compressed objects within 7 object streams
- 201 named destinations out of 1000 (max. 500000)
+ 924 PDF objects out of 1000 (max. 8388607)
+ 839 compressed objects within 9 object streams
+ 276 named destinations out of 1000 (max. 500000)
  318 words of extra memory for PDF output out of 10000 (max. 10000000)
 

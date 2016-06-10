@@ -13,7 +13,7 @@ Die fertige \ac{SPA} soll unter anderem die folgenden, typischen Elemente enthal
 \subitem{-} ScrollSpy zur Darstellung der aktuellen Position
 \item Titelbild mit einem vertikal und horizontal zentriertem Text
 \item Service-Sektion
-\item Twitter-Bootstrap CSS + Funktionen
+\item Twitter-Bootstrap\ac{CSS} + Funktionen
 \subitem{-} Vorgefertiges, responsive Design
 \subitem{-} Hamburger Menü
 \item Portfolio mit Bildern, wobei ein Klick einen asynchronen Request ausführt und Daten nach lädt
@@ -40,21 +40,22 @@ Dementsprechend sollte eine Programmiersprache nur eine geringe Anzahl an primit
 
 \subsection{Wartbarkeit}
 \label{sec:Wartbarkeit}
-Geschriebener Quellcode muss wartbar sein. Das bedeutet, dass auch Entwickler auch nach einiger Zeit an der nicht daran gearbeitet wurde den Programmcode verstehen und entsprechend verändern kann. Dazu gehört, dass der Quellcode gut dokumentiert ist, respektive erläuternde Kommentare hinzugefügt wurden, oder der Code selbsterklärend ist. Auch sollten Funktionen sinnvoll und markant benannt werden, so dass dies bereits Aufschlüsse darüber gibt, was das Ziel der Methode ist. Ein weiterer Schritt um die Wartbarkeit von Quellcode zu gewährleisten sind Tests, durch die eine Methode und ihre eigentliche Funktion getestet und auf Fehler überprüft werden kann.
+Geschriebener Quellcode muss wartbar sein. Das bedeutet, dass Entwickler auch nach einem zeitlichen Abstand in der Entwicklung den Programmcode verstehen und entsprechend verändern kann. Dazu gehört, dass der Quellcode gut dokumentiert ist, respektive erläuternde Kommentare hinzugefügt wurden, oder der Code selbsterklärend ist. Auch sollten Funktionen sinnvoll und markant benannt werden, so dass dies bereits Aufschlüsse darüber gibt, was das Ziel der Methode ist. Ein weiterer Schritt um die Wartbarkeit von Quellcode zu gewährleisten sind Tests, durch die eine Methode und ihre eigentliche Funktion getestet und auf Fehler überprüft werden kann. Damit dieses Kriterium als erfüllt angesehen wird, muss der Quellcode mit Kommentaren in beliebiger Form versehen werden können. Besser wäre es, wenn eine Option zur automatischen Generierung von Informationen über beispielsweise den Aufbau einer Funktion oder des Moduls existiert.
 
 \subsection{Zuverlässigkeit}
 \label{sec:Zuverlässigkeit}
-Für einen Entwickler von Software, egal wofür und mit welcher Programmiersprache gearbeitet wird, ist es wichtig, dass das erzeugte Programm letzten Endes fehlerfrei funktioniert. Dazu gehört, dass das Programm nicht unvorhergesehen abstürzt, andere Systeme beeinträchtigt oder dem späteren Nutzer der Software anderweitig Probleme beschert. In den meisten Fällen helfen die Editoren mit denen der Quellcode geschrieben wird bereits, indem syntaktische Fehler durch unterstreichen sichtbar, oder Vorschläge zur Vervollständigung des angefangenen Codes gemacht werden. Wichtig ist entsprechend, dass die Programmiersprache auf offensichtliche Fehler, entweder durch Plugins für den Editor oder durch den Compiler selbst, aufmerksam macht und sie somit verhindert und nicht erst im Produktionssystem den Fehler zulässt.
+Für einen Entwickler von Software, egal wofür und mit welcher Programmiersprache gearbeitet wird, ist es wichtig, dass das ausgelieferte Programm letzten Endes fehlerfrei funktioniert. Dazu gehört, dass das Programm nicht unvorhergesehen abstürzt, andere Systeme beeinträchtigt oder dem späteren Nutzer der Software anderweitig Probleme beschert. In den meisten Fällen helfen die Editoren mit denen der Quellcode geschrieben wird bereits, indem syntaktische Fehler durch unterstreichen sichtbar, oder Vorschläge zur Vervollständigung des angefangenen Codes gemacht werden. Wichtig ist entsprechend, dass die Programmiersprache auf offensichtliche Fehler, entweder durch Plugins für den Editor oder durch den Compiler selbst, aufmerksam macht und sie somit verhindert und nicht erst im Produktionssystem den Fehler zulässt. Als Testfall wird Quellcode bewusst mit Fehlern versehen, die zu einem Absturz des Programmes während der Laufzeit führen würden. Erkennt der $elm-compiler$ diese Fehler oder umgeht den Absturz, gilt das Kriterium als erfüllt.
 
 
 \subsection{Portabilität}
 \label{sec:Portabilität}
-Nicht alle Programmiersprachen und die damit erzeugten Programme funktionieren auf allen Endgeräten. Es kommt dabei sehr stark auf die Hardwarekomponenten und das Betriebssystem des Zielsystems an. Es ist  wünschenswert, dass Quellcode nur einmal geschrieben und auf das Zielsystem übertragen werden kann, ohne großartige Änderungen am Quellcode vornehmen zu müssen.
+Nicht alle Programmiersprachen und die damit erzeugten Programme funktionieren auf allen Endgeräten. Es kommt dabei sehr stark auf die Hardwarekomponenten und das Betriebssystem des Zielsystems an. Es ist wünschenswert, dass Quellcode nur einmal geschrieben und auf das Zielsystem übertragen werden kann, ohne großartige Änderungen am Quellcode vornehmen zu müssen. Letzten Endes wird versucht den Quellcode auf mehreren Zielsystemen zu kompilieren. Elm liefert Installationsanweisungen für die Betriebssysteme $Mac$, $Windows$ und allen Betriebssystemen, die $nodejs$ unterstützen. Gibt es keinerlei Differenz in Form von Fehlern oder Warnungen während des Kompilierens, gilt die Portabilität als erfüllt.
 
 
 \subsection{Effizienz}
 \label{sec:Effizienz}
-„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist.
+„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist. Damit eine Aussage über die notwendige Zeit für das kompilieren des Quellcodes getroffen werden kann, wird der Code zehn mal kompiliert und die benötigte Zeit gemessen. Anschließend wird der höchste und niedrigste Wert verworfen. Im Anschluss wird das arithmetische Mittel der verbleibenden acht Werte ermittelt. TODO.
+Die Performance der Programmiersprache wird nicht anhand des hier entwickelten Projektes, sondern der externen Applikation \cite{https://github.com/evancz/todomvc-perf-comparison/} TodoMVC Performance Comparison. Dieses Tool ermöglicht es, eine Beispiel-Applikation "TodoMVC", die in mehreren Programmiersprachen realisiert wurde, zu testen. Dabei werden automatisch gewisse Aktionen in der jeweiligen Sprache durchgeführt, die benötigte Zeit gemessen und am Ende gegenübergestellt. Mit Hilfe des Tools werden 20 Messungen durchgeführt und das Endergebnis betrachtet. Ist Elm signifikant schneller als die anderen getesteten Programmiersprachen, gilt das Kriterium als erfüllt. Die anderen Umgebungen der Applikation sind ebenso in nativem \ac{JS} oder einer zu \ac{JS} kompilierenden Programmiersprache geschrieben. Dadurch kann eine Aussage über die tatsächliche Effizienz der Applikation im Vergleich gemacht werden.
 
 
 
@@ -72,7 +73,7 @@ Erzeugter Quellcode sollte nicht für jedes Projekt oder gar Modul innerhalb ein
 
 \subsection{Lesbarkeit}
 \label{sec:Lesbarkeit}
-Quellcode muss lesbar sein. Damit ist gemeint, dass Befehle stets einen prägnanten, einfachen und möglichst kurzen Namen haben sollten. Des Weiteren ist es notwendig, dass der geschriebene Quellcode gelesen werden kann, ergo der Sinn dahinter schnell verständlich wird. Jede Programmiersprache verfolgt dabei einen anderen Ansatz. Ist die Lesbarkeit gegeben, so kann Quellcode auch von Neulingen gelesen werden. Es ist für diese Neulinge nicht unbedingt notwendig die Syntax oder gar genaueres über einzelnen Befehle zu wissen, es reicht vollkommen aus, wenn das angestrebte Ziel des Quellcodes klar wird und adaptiert werden kann.
+Quellcode muss lesbar sein. Gemeint ist damit, dass Befehle stets einen prägnanten, einfachen und möglichst kurzen Namen haben sollten. Des Weiteren ist es notwendig, dass der Sinn des geschriebenen Quellcodes beim ersten lesen verständlich wird. Jede Programmiersprache verfolgt dabei einen anderen Ansatz. Ist die Lesbarkeit gegeben, so kann Quellcode auch von Neulingen gelesen werden. Es ist für diese Neulinge nicht unbedingt notwendig die Syntax oder gar genaueres über einzelnen Befehle zu wissen, es reicht vollkommen aus, wenn das angestrebte Ziel des Quellcodes klar wird und adaptiert werden kann.
 
 
 
@@ -87,13 +88,13 @@ Diese Kriterien ermöglichen es, die Programmiersprache als solches anhand der e
 Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die  \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-application-RIA.html). Diese Art der Webapplikation besitzt im wesentlichen mehr Programmlogik, die der Client ausführen kann. Ein weiteres Merkmal sind oftmals auch die Anzahl der vorhandenen Unterseiten, wodurch wiederum mehr Logik erforderlich wird.
 Bei der Erstellung einer \ac{SPA} muss generell weniger Aufwand betrieben werden, um eine fertige Präsentation zu erstellen.
-Jede Webapplikation lebt von einem Frontend, sowie einem Backend. Typischerweise bezeichnet das Frontend dabei alle Komponenten, die an den Benutzeroberfläche des Nutzers gesendet werden. Dazu gehören unter anderem die Komponenten HTML, CSS und JavaScript. Der Nutzer interagiert mit dieser Darstellung der Oberfläche.
+Jede Webapplikation lebt von einem Frontend, sowie einem Backend. Typischerweise bezeichnet das Frontend dabei alle Komponenten, die an den Benutzeroberfläche des Nutzers gesendet werden. Dazu gehören unter anderem die Komponenten\ac{HTML},\ac{CSS} und\ac{JS}. Der Nutzer interagiert mit dieser Darstellung der Oberfläche.
 Das Gegenstück zum Frontend stellt das sogenannte Backend dar. Dabei handelt es sich um Komponenten, die dem Webserver zugehörig sind. Unter anderem ist das zum Beispiel eine Datenbank, die eigentliche Webapplikation und natürlich der Webserver selbst. Der Nutzer agiert mit dem Backend nur über zuvor im Frontend eingerichtete Schnittstellen mit dem Backend.
 
 
 \subsection{Browser Kompatibilität – Portabilität}
 \label{sec:Browser Kompatibilität Portabilität}
-Ein weiterer wichtiger Aspekt ist die Kompatibilität der Browser mit den genutzten Programmiersprachen. Da der Browser die Darstellung des HTML und CSS Quellcodes übernimmt, sowie die Manipulationen des DOM durch Javascript, ist es wichtig, dass der Browser den vorhandenen Quellcode lesen und ausführen kann. Sämtliche Sprachen wie HTML, CSS und Javascript befinden sich im konstanten Wandel und werden stets weiter entwickelt.
+Ein weiterer wichtiger Aspekt ist die Kompatibilität der Browser mit den genutzten Programmiersprachen. Da der Browser die Darstellung des\ac{HTML} und\ac{CSS} Quellcodes übernimmt, sowie die Manipulationen des DOM durch \ac{JS}, ist es wichtig, dass der Browser den vorhandenen Quellcode lesen und ausführen kann. Sämtliche Sprachen wie\ac{HTML},\ac{CSS} und \ac{JS} befinden sich im konstanten Wandel und werden stets weiter entwickelt.
 Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Natürlich muss die Applikation letzten Endes auch auf den gängigen Browsern fehlerfrei funktionieren, insbesondere die fünf meistgenutzten Browser Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}).
 \iffalse
 www.w3counter.com/trends\\+
@@ -108,7 +109,7 @@ https://www.w3counter.com/globalstats.php?year=2016&month=5
 
 \subsection{Interoperabilität}
 \label{sec:Interoperabilität_Analyse}
-Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Dementsprechend müssen externe JavaScript und CSS Bibliotheken ohne große Probleme eingebettet werden können. Dies kann bequem über die vorhandenen HTML-Tags und ihre Attribute gemacht werden.
+Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Dementsprechend müssen externe\ac{JS} und\ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können. Dies kann bequem über die vorhandenen\ac{HTML}-Tags und ihre Attribute gemacht werden.
 
 
 \subsection{Asynchrones Laden}
@@ -126,8 +127,8 @@ Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist 
 \label{sec:Versuchsaufbau}
 Abbildung XY: Zeigt die Kommunikation zwischen Client und Webserver
 Die Abbildung XY zeigt die geplante Kommunikation zwischen dem Client, also dem Nutzer und dem Webserver.
-In Schritt 1 fordert der Nutzer die Webseite an, erzeugt also einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver dann eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen HTML, CSS und JavaScript Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer nun eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion führt zu einer Reaktion durch Javascript, oder erzeugt einen neuen Request an den Server, womit wieder bei Schritt 1 begonnen wird. Das Einbinden von CSS und JS aus externen Quellen wird durch Schritt 6 verbildlicht.
-Die gesamte Applikation wird von einem fertigen Template, programmiert in HTML, CSS und JavaScript in die Programmiersprache Elm überführt, insofern möglich. Der daraus entstehende Elm-Quellcode wird daraufhin mit dem Elm-Compiler kompiliert zu \ac{JS}.
+In Schritt 1 fordert der Nutzer die Webseite an, erzeugt also einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver dann eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen\ac{HTML},\ac{CSS} und\ac{JS} Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer nun eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion führt zu einer Reaktion durch \ac{JS}, oder erzeugt einen neuen Request an den Server, womit wieder bei Schritt 1 begonnen wird. Das Einbinden von\ac{CSS} und\ac{JS} aus externen Quellen wird durch Schritt 6 verbildlicht.
+Die gesamte Applikation wird von einem fertigen Template, programmiert in\ac{HTML},\ac{CSS} und\ac{JS} in die Programmiersprache Elm überführt, insofern möglich. Der daraus entstehende Elm-Quellcode wird daraufhin mit dem Elm-Compiler kompiliert zu \ac{JS}.
 Um ein generelles Verständnis der Programmiersprache Elm zu bekommen, dient die Dokumentation auf http://elm-lang.org/docs als Hilfestellung. Dort besteht die Möglichkeit sich mit den grundlegenden Konzepten vertiefend auseinanderzusetzen und diese zu erlernen.
 Die zugrunde liegende Elm-Version ist 0.17 und wird unter Ubuntu 14.04 64bit installiert. Als Editor wird Atom mit mehreren Elm-Plugins verwendet, so dass der geschriebene Code automatisch beim Speichern formatiert und durch den Compiler auf Fehler überprüft wird.
 Lauffähig wird die geschrieben Applikation mit dem Elm-Compiler $elm-make$ gemacht und mit Google Chrome Version 50 getestet.
@@ -194,35 +195,35 @@ $ node -v && npm -v
 liefert den Output, wie er in Abbildung XY zu sehen ist. Elm kann nun über die Paketverwaltung NPM mit dem Kommando 
 $npm\,install\,-g\,elm$ installiert werden. Das $-g$ -Flag installiert die neueste Elm-Version global für alle Projekte auf dem System. Entfernt man es, wird die Zielversion nur für den aktuellen Ordner zugänglich gemacht. Um die hier behandelte Version 0.17 zu installieren, ist der Zusatz $@0.17$ direkt hinter dem globalen Flag notwendig.\\
 Elm ist nun vollständig installiert und kann genutzt werden. Die Entwicklung in Atom wird unterstützt durch die Pakete $elm-format$\\ (https://github.com/triforkse/atom-elm-format), $language-elm$\\ (https://atom.io/packages/language-elm) und {$linter-elm-make$}\\ (https://atom.io/packages/linter-elm-make). Mit Hilfe dieser Pakete wird der Code automatisch beim speichern dem Style-Guide entsprechend formatiert, eventuelle Fehler bei der Kompilierung direkt im Editor sichtbar gemacht und der Code syntaktisch gefärbt, sowie Vorschläge zur Vervollständigung des geschriebenen Quellcodes gemacht. Da die Pakete ständig aktualisiert und verändert werden, wird an dieser Stelle von einer detaillierten Beschreibung zur Installation abgesehen und auf die Dokumentationen der einzelnen Pakete verwiesen (elm-lang.org).
-Damit die geschriebene Applikation letztendlich im Browser aufrufen zu können, muss die Elm-Applikation zunächst in der HTML-Datei aufgerufen und initialisiert werden. Dabei gibt es mehrere Möglichkeiten. Es ist sinnvoll hierbei zwischen vollautomatischem, sowie manuellem Grundaufbau zu unterschieden.
+Damit die geschriebene Applikation letztendlich im Browser aufrufen zu können, muss die Elm-Applikation zunächst in der\ac{HTML}-Datei aufgerufen und initialisiert werden. Dabei gibt es mehrere Möglichkeiten. Es ist sinnvoll hierbei zwischen vollautomatischem, sowie manuellem Grundaufbau zu unterschieden.
 \subsubsection{Grundaufbau}
 \label{sec:Grundaufbau}
 
 1) Vollautomatisch – Elm-reactor\\
 Mit Hilfe des $elm-reactor$, einem mitgelieferten Tools um den erzeugten Elm-Code lauffähig zu machen und die Applikation debuggen zu können, kann der gesamte Prozess der Kompilierung und Konfiguration eines Webservers automatisiert werden. Dafür muss lediglich der Ordner in dem die Elm-Applikation abgelegt wurde geöffnet und der $elm-reactor$ gestartet werden. 
-Der Code kann automatisch kompiliert und zusätzlich eine $elm.html$ Datei erzeugt werden. Diese Datei wird dann mit dem gesamten kompilierten Elm-Code bestückt. Außerdem wird automatisch Code erzeugt, der den kompilierten JavaScript-Code ausführt. Für den Entwickler bedeutet dies, dass nur noch die erzeugten Dateien weitergegeben werden müssen. Die gesamte geschriebene Applikation ist darin enthalten und kann mit jedem Browser über die URL $http://localhost:8000/$ geöffnet werden, ohne die Notwendigkeit eines zusätzlichen Webservers. Die Abbildung ~\ref{fig:elm-reactor}) zeigt den laufenden Webserver.
+Der Code kann automatisch kompiliert und zusätzlich eine $elm.html$ Datei erzeugt werden. Diese Datei wird dann mit dem gesamten kompilierten Elm-Code bestückt. Außerdem wird automatisch Code erzeugt, der den kompilierten\ac{JS}-Code ausführt. Für den Entwickler bedeutet dies, dass nur noch die erzeugten Dateien weitergegeben werden müssen. Die gesamte geschriebene Applikation ist darin enthalten und kann mit jedem Browser über die URL $http://localhost:8000/$ geöffnet werden, ohne die Notwendigkeit eines zusätzlichen Webservers. Die Abbildung ~\ref{fig:elm-reactor}) zeigt den laufenden Webserver.
 \begin{figure}[hb]
 \centering
 \includegraphics[scale=0.4]{img/elm-make_include_in_index.png}
-\caption{Grundgerüst eines HTML-Dokumentes, um die Elm Applikation zu laden}\label{fig:html-boilerplate}
+\caption{Grundgerüst eines\ac{HTML}-Dokumentes, um die Elm Applikation zu laden}\label{fig:html-boilerplate}
 \end{figure}
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.4]{img/elm-reactor.png}
 \caption{Der gestartete Elm-Webserver}\label{fig:elm-reactor}
 \end{figure}
-Überlässt man dem Compiler das Einbinden der erzeugten JavaScript-Datei, so ist die gesamte Elm-Applikation im Vordergrund. Das ist nicht immer wünschenswert oder gar praktikabel. Einerseits, da externe Quellen für CSS und JavaScript über natives Elm nicht reibungslos geladen werden können, andererseits weil nicht immer der gesamte darzustellende HTML-Code nur in Elm geschrieben wurde. Dementsprechend gibt es auch die Möglichkeit, eine HTML-Datei als Gerüst zu erzeugen, in die gezielt der JavaScript-Code der Elm-Applikation injiziert wird. Das Gerüst ist vollständig wie eine klassische HTML-Datei aufgebaut. Abbildung~\ref{fig:html-boilerplate} zeigt das Grundgerüst des HTML-Dokumentes. Codezeile $4$ bindet die kompilierte Elm-Datei. Der \ac{DOM}-Knoten in welchen die Applikation injiziert wird, ist in Zeile $8$ definiert. Das injizieren der Applikation geschieht in den Zeilen $13$ bis $14$ und erhält als Parameter den zuvor erwähnten \ac{DOM}-Knoten. Um die Elm-Applikation einfügen zu können, muss die Elm-Datei vorher in der Kommandozeile kompiliert werden mit dem Kommando \colorbox{lightgray}{\lstinline{elm-make Datei.elm --output=elm.js}}.
+Überlässt man dem Compiler das Einbinden der erzeugten\ac{JS}-Datei, so ist die gesamte Elm-Applikation im Vordergrund. Das ist nicht immer wünschenswert oder gar praktikabel. Einerseits, da externe Quellen für\ac{CSS} und\ac{JS} über natives Elm nicht reibungslos geladen werden können, andererseits weil nicht immer der gesamte darzustellende\ac{HTML}-Code nur in Elm geschrieben wurde. Dementsprechend gibt es auch die Möglichkeit, eine\ac{HTML}-Datei als Gerüst zu erzeugen, in die gezielt der\ac{JS}-Code der Elm-Applikation injiziert wird. Das Gerüst ist vollständig wie eine klassische\ac{HTML}-Datei aufgebaut. Abbildung~\ref{fig:html-boilerplate} zeigt das Grundgerüst des\ac{HTML}-Dokumentes. Codezeile $4$ bindet die kompilierte Elm-Datei. Der \ac{DOM}-Knoten in welchen die Applikation injiziert wird, ist in Zeile $8$ definiert. Das injizieren der Applikation geschieht in den Zeilen $13$ bis $14$ und erhält als Parameter den zuvor erwähnten \ac{DOM}-Knoten. Um die Elm-Applikation einfügen zu können, muss die Elm-Datei vorher in der Kommandozeile kompiliert werden mit dem Kommando \colorbox{lightgray}{\lstinline{elm-make Datei.elm --output=elm.js}}.
 Bei dieser Art der Initialisierung kann nun noch zwischen drei weiteren Darstellungen unterschieden werden:
 \begin{enumerate}
-\item$fullscreen$: Der erzeugte Code der Applikation wird in den Body-Tag einer HTML-Datei geladen und überschreibt den sonstigen HTML-Code.
+\item$fullscreen$: Der erzeugte Code der Applikation wird in den Body-Tag einer\ac{HTML}-Datei geladen und überschreibt den sonstigen\ac{HTML}-Code.
 
 \item$embed$: Der erzeugte Code der Applikation wird in den übergebenen DOM-Knoten geladen.
 
 \item$worker$: Initialisiert die Applikation ohne grafische Benutzeroberfläche.
 \end{enumerate}
-Der Vorteil bei Version 2, so wie es auch in der Abbildung~\ref{fig:html-boilerplate} realisiert wurde, ist, dass auch nur kleine Teile der gesamten Applikation in Elm implementiert werden können. Überlegt man ein bestehendes, möglicherweise komplexes Projekt zu portieren, genügt es kleinere Teile Stück für Stück zu portieren. Es muss nicht befürchtet werden, große Teile der bestehenden Applikation während der Portierung nutzlos zu machen. Ein weiterer Vorteil ist, dass externes CSS und JavaScript in dem \ac{HTML}-Dokument über die \ac{HTML}-eigenen $<script>$-Tags geladen werden kann.
+Der Vorteil bei Version 2, so wie es auch in der Abbildung~\ref{fig:html-boilerplate} realisiert wurde, ist, dass auch nur kleine Teile der gesamten Applikation in Elm implementiert werden können. Überlegt man ein bestehendes, möglicherweise komplexes Projekt zu portieren, genügt es kleinere Teile Stück für Stück zu portieren. Es muss nicht befürchtet werden, große Teile der bestehenden Applikation während der Portierung nutzlos zu machen. Ein weiterer Vorteil ist, dass externes\ac{CSS} und\ac{JS} in dem \ac{HTML}-Dokument über die \ac{HTML}-eigenen $<script>$-Tags geladen werden kann.
 Zusätzlich zum Grundgerüst der $elm.html$ muss nun noch das Grundgerüst der eigentlichen Elm-App erstellt werden. Wie im Kapitel \nameref{sec:grundlagen} beschrieben, ist Elm nach einem \ac{MVU}-Konzept aufgebaut. Entsprechend sind das die unbedingt notwendigen Funktionen, die es zu realisieren gilt. Das standardmäßig mitgelieferte Paket $elm-lang/html$ liefert die sogenannten $Html.App$-Funktionen. Diese kümmern sich um die Bereitstellung und Auslieferung der Applikation, so dass sich Entwickler ganz auf die eigentliche Programmierung konzentrieren können. Dabei variieren stets die Übergabeparameter, wodurch die Applikation leicht erweitert und komplexer werden kann, ohne Neulinge direkt abzuschrecken. So verlangt die Funktion $Html.App.beginnerProgram$ nur die bekannten Funktionen $model$, $view$ und $update$. Hierbei können jedoch keine asynchronen Funktionen wie \ac{HTTP}-Requests genutzt werden.
-Dafür gibt es die erweiterte Funktion $Html.App.program$, die als vierten Übergabeparameter sogenannte $subscriptions$ erwartet. $Subscriptions$ werden für die Kommunikation zwischen Elm und Javascript, sowie die Verbindung zu Websockets genutzt.
+Dafür gibt es die erweiterte Funktion $Html.App.program$, die als vierten Übergabeparameter sogenannte $subscriptions$ erwartet. $Subscriptions$ werden für die Kommunikation zwischen Elm und \ac{JS}, sowie die Verbindung zu Websockets genutzt.
 Die dritte und letzte Möglichkeit ist die Funktion $Html.App.programWithFlags$. Hierbei wird die Übergabe eines initialen $Models$ an die Elm-Applikation ermöglicht, um den Zustand der Applikation dynamisch setzen zu können.
 \begin{figure}[ht]
 \centering\includegraphics[scale=0.6]{img/programWithFlags_pass_data.png}
@@ -235,15 +236,15 @@ Abbildung~\ref{fig:programWithFlags} zeigt das Grundgerüst einer Elm-Applikatio
 TODO: Rewrite:
 \begin{enumerate}
 	\item Konstruktion des Views
-	\subitem{-} Import der HTML-Bibliothek
-	\subitem{-} Aufruf der HTML-Funktion
-	\subitem{-} Signatur der HTML-Funktion
+	\subitem{-} Import der\ac{HTML}-Bibliothek
+	\subitem{-} Aufruf der\ac{HTML}-Funktion
+	\subitem{-} Signatur der\ac{HTML}-Funktion
 	\subitem{-} Verschachtelung verschiedener Aufrufe
-	\subitem{-} Unterschied HTML vs. Elm
-		\subsubitem{-} HTML: Öffnende + schließende Tags (Fehleranfällig, unübersichtlich, schachtelbar in einer Zeile)
+	\subitem{-} Unterschied\ac{HTML} vs. Elm
+		\subsubitem{-}\ac{HTML}: Öffnende + schließende Tags (Fehleranfällig, unübersichtlich, schachtelbar in einer Zeile)
 		\subsubitem{-} Elm: Einrückung (indention sensitive)
-	\subitem{-} Mathematisch ausdrücken, dass Elm-Code im Gegensatz zu HTML 'kürzer' ist
-	\subitem{-} Fehleranfälligkeit von HTML klarstellen
+	\subitem{-} Mathematisch ausdrücken, dass Elm-Code im Gegensatz zu\ac{HTML} 'kürzer' ist
+	\subitem{-} Fehleranfälligkeit von\ac{HTML} klarstellen
 \end{enumerate}
 
 
@@ -263,18 +264,18 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 
 \iffalse
 Das erste sichtbare Modul der fertigen SPA ist die Navigationsleiste. Sie soll dem Nutzer die Möglichkeit bieten schnell und einfach einen Überblick über die vorhandenen Themen auf der Webseite zu erhalten und direkt mit einem Klick auf den Reiter zu einem Thema zu springen. Damit die Navigation während des gesamten Besuches möglich ist, soll die Navigationsleiste `fixed` sein, also am oberen Bildschirmrand fest verankert bleiben und mit scrollen.
-Jedes Modul der dargestellten Seite besteht aus HTML-Code. Folglich müssen HTML-Tags mit Elm generiert werden. Seit dem neuesten Release von Elm (Version 0.17) wurden einige Pakete die sich für die Webentwicklung nutzen lassen zusammengeführt in das Paket `elm-lang/html`. Es erlaubt die Erzeugung von HTML und CSS mit nativem Elm-Code. In Elm können HTML-Tags mit bereitgestellten Funktionen aus diesem Paket erzeugt werden. Ein HTML `div`-Tag wird mit der gleichnamigen Funktion `div` erzeugt. Die Funktion erwartet zusätzlich zwei Argumente. Einerseits eine Liste von HTML-Attributen wie `class`, `id` oder `href`, andererseits eine Liste von weiteren HTML-Tags, insofern Code geschachtelt wird. Die Signatur für diese Funktion lautet wie folgt:
+Jedes Modul der dargestellten Seite besteht aus\ac{HTML}-Code. Folglich müssen\ac{HTML}-Tags mit Elm generiert werden. Seit dem neuesten Release von Elm (Version 0.17) wurden einige Pakete die sich für die Webentwicklung nutzen lassen zusammengeführt in das Paket `elm-lang/html`. Es erlaubt die Erzeugung von\ac{HTML} und\ac{CSS} mit nativem Elm-Code. In Elm können\ac{HTML}-Tags mit bereitgestellten Funktionen aus diesem Paket erzeugt werden. Ein\ac{HTML} `div`-Tag wird mit der gleichnamigen Funktion `div` erzeugt. Die Funktion erwartet zusätzlich zwei Argumente. Einerseits eine Liste von\ac{HTML}-Attributen wie `class`, `id` oder `href`, andererseits eine Liste von weiteren\ac{HTML}-Tags, insofern Code geschachtelt wird. Die Signatur für diese Funktion lautet wie folgt:
 `div (List Html.Attribute msg) (List Html.Html msg)`
-Entsprechend dieser Signatur wird in Abbildung XY gezeigt, wie die `div`-Funktion in Elm nach der Kompilierung in HTML dargestellt wird.
-Nicht nur die Erstellung eines HTML-Tags, sondern auch die Zuweisung von Attributen ist in Elm eine Funktion. So sieht man in Abbildung XY ebenso, wie eine Klasse (`class`) und ID einem Element hinzugefügt wird. Da in Elm sämtliche Funktionen „pure functions“, also reine Funktionen sind, hat der Entwickler die Sicherheit, dass das Resultat der Funktion immer gleich bleibt.
-Des Weiteren ist es möglich die HTML-Elemente nativ in Elm mit CSS-Styling zu versehen. Dafür wird die gleichnamige Funktion `style` aus dem Paket genutzt. Auch diese Funktion erwartet eine Liste von Argumenten, jeweils mit einem Schlüssel (hier: CSS-Eigenschaft) und dem dazugehörigen Wert. Zur Zeit ist es nicht problemlos möchlich nativ in Elm eine externe CSS-Datei zu integrieren. Corey Trampe (https://gist.github.com/coreytrampe/a120fac4959db7852c0f) hat eine Möglichkeit gefunden, jedoch wird bei dieser Lösung die Seite zunächst ohne jegliches Styling dargestellt, während ein asynchroner Request die externe CSS-Datei lädt. Sobald dieser Vorgang abgeschlossen ist, wird das heruntergeladene Styling angewandt. Der zeitliche Abstand zwischen initialem Laden und der Anwendung des Styles hat ein sichtbares „flackern“ zur Folge, wodurch eine Nutzung in einem fertigen System entfällt. Alternativ werden alle zu ladenden CSS-Dateien im HTML-Grundgerüst über den HTML-Tag `link` eingebunden.
+Entsprechend dieser Signatur wird in Abbildung XY gezeigt, wie die `div`-Funktion in Elm nach der Kompilierung in\ac{HTML} dargestellt wird.
+Nicht nur die Erstellung eines\ac{HTML}-Tags, sondern auch die Zuweisung von Attributen ist in Elm eine Funktion. So sieht man in Abbildung XY ebenso, wie eine Klasse (`class`) und ID einem Element hinzugefügt wird. Da in Elm sämtliche Funktionen „pure functions“, also reine Funktionen sind, hat der Entwickler die Sicherheit, dass das Resultat der Funktion immer gleich bleibt.
+Des Weiteren ist es möglich die\ac{HTML}-Elemente nativ in Elm mit\ac{CSS}-Styling zu versehen. Dafür wird die gleichnamige Funktion `style` aus dem Paket genutzt. Auch diese Funktion erwartet eine Liste von Argumenten, jeweils mit einem Schlüssel (hier:\ac{CSS}-Eigenschaft) und dem dazugehörigen Wert. Zur Zeit ist es nicht problemlos möchlich nativ in Elm eine externe\ac{CSS}-Datei zu integrieren. Corey Trampe (https://gist.github.com/coreytrampe/a120fac4959db7852c0f) hat eine Möglichkeit gefunden, jedoch wird bei dieser Lösung die Seite zunächst ohne jegliches Styling dargestellt, während ein asynchroner Request die externe\ac{CSS}-Datei lädt. Sobald dieser Vorgang abgeschlossen ist, wird das heruntergeladene Styling angewandt. Der zeitliche Abstand zwischen initialem Laden und der Anwendung des Styles hat ein sichtbares „flackern“ zur Folge, wodurch eine Nutzung in einem fertigen System entfällt. Alternativ werden alle zu ladenden\ac{CSS}-Dateien im\ac{HTML}-Grundgerüst über den\ac{HTML}-Tag `link` eingebunden.
 \fi
 
 \subsubsection{Überführung des Views}
 \label{sec:Überführung des Views}
 Für die Darstellung einer SPA wird ein fertiges und kostenloses Theme von `startbootstrap.com` verwendet. Im Zuge dessen werden alle verfügbaren Dateien heruntergeladen und die zuvor erstellten Dateien `elm.html` und `Main.elm` in denselben Ordner verschoben.
-Das Grundgerüst der `elm.html` muss nun in die `index.html` überführt werden, so dass die Elm-Applikation weiterhin in den vorhandenen HTML-Code injiziert wird.
-Zunächst einmal muss der HTML-Code des Themes in ausführbaren Elm-Code umgeschrieben werden, damit Elm Zugriff auf den kompletten `view` bekommt. Nur so kann Elm die Interaktion des Benutzers mit den HTML-Elementen abfangen und entsprechend darauf reagieren. Um nicht den kompletten HTML-Code der `index.html` per Hand in Elm-Code überführen zu müssen, wird das Tool `html-to-elm` genutzt (http://mbylstra.github.io/html-to-elm/). Dieses Online-Tool erlaubt es HTML5-konformen Code in lauffähigen Elm-Code zu überführen. Der erzeugte Elm-Code wird dann in der `Main.elm`-Datei von der `view`-Funktion zurückgegeben., muss also entsprechend dort eingefügt werden.
+Das Grundgerüst der `elm.html` muss nun in die `index.html` überführt werden, so dass die Elm-Applikation weiterhin in den vorhandenen\ac{HTML}-Code injiziert wird.
+Zunächst einmal muss der\ac{HTML}-Code des Themes in ausführbaren Elm-Code umgeschrieben werden, damit Elm Zugriff auf den kompletten `view` bekommt. Nur so kann Elm die Interaktion des Benutzers mit den\ac{HTML}-Elementen abfangen und entsprechend darauf reagieren. Um nicht den kompletten\ac{HTML}-Code der `index.html` per Hand in Elm-Code überführen zu müssen, wird das Tool `html-to-elm` genutzt (http://mbylstra.github.io/html-to-elm/). Dieses Online-Tool erlaubt es\ac{HTML}5-konformen Code in lauffähigen Elm-Code zu überführen. Der erzeugte Elm-Code wird dann in der `Main.elm`-Datei von der `view`-Funktion zurückgegeben., muss also entsprechend dort eingefügt werden.
 Um Modularität zu gewährleisten, wird jede Sektion der SPA, wie zum Beispiel die Navigation, die Team-Sektion oder der Footer im ersten Schritt in eine eigene Funktion ausgelagert. Jede dieser Funktionen wird dann in der `view`-Funktion aufgerufen und ergibt am Ende die gesamte Webseite. Auf diese Weise können die einzelnen Teile der SPA unabhängig voneinander modifiziert und auf Korrektheit überprüft werden. Im nächsten Schritt wird der gesamte View-Code modularisiert.
 
 \subsubsection{Modularisierung}
@@ -309,13 +310,13 @@ Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problem
 		\item Keine Schachtelung möglich
 		\item Browser kann inline-\ac{CSS} nicht zwischenspeichern
 	\end{enumerate}
-\item Ein HTML-Element benötigt in Elm weniger Zeichen
+\item Ein\ac{HTML}-Element benötigt in Elm weniger Zeichen
 	\begin{enumerate}[label*=\arabic*.]
 		\item \ac{HTML}-Code benötigt in Elm keine schließenden Klammern. Anders als \ac{HTML} arbeitet Elm mit Einrückungen. Die gleichnamigen Funktionen um ein \ac{HTML}-Element zu erzeugen benötigen dementsprechend lediglich den Funktionsaufruf, gefolgt von den zwei Argumenten. Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.
 	\end{enumerate}
 \item Vertikale und horizontale Zentrierung eines Elementes ist umfangreicher als vorerst erwartet
 	\begin{enumerate}[label*=\arabic*.]
-		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem Javascript. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
+		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem \ac{JS}. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
 		
 		\item Das Paket `elm-lang/window` stellt eine Funktion `resize` zur Verfügung, die bei jeder Veränderung der Fensterdimensionen über eine sogenannte `subscription` in Elm einen Aufruf der `update` Funktion auslöst, an jene die neuen Fensterdimensionen (X, Y) weitergereicht werden.
 	\end{enumerate}
@@ -324,7 +325,7 @@ Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problem
 	\begin{enumerate}[label*=\arabic*.]
 		\item Kompiliert abhängig von der Tiefe der Elemente
 		\begin{enumerate}[label*=\arabic*.]
-			\item Entwickler muss lesbaren Code erzeugen, da Elm sensitiv auf Tabs reagiert (vs HTML: $<div><span></span></div>$ wo unendliches verschachteln auch in einer Zeile möglich ist)
+			\item Entwickler muss lesbaren Code erzeugen, da Elm sensitiv auf Tabs reagiert (vs\ac{HTML}: $<div><span></span></div>$ wo unendliches verschachteln auch in einer Zeile möglich ist)
 		\end{enumerate}
 	\end{enumerate}
 
@@ -423,8 +424,8 @@ TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungst
  4.1  1. Die SPA wird auf allen gängigen Browsern fehlerfrei dargestellt
  --> AUSSTEHEND
  
- 5.1. Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem HTML, CSS und JS
- --> Bei der herkömmlichen Entwicklung ist kein expliziter Kompiliervorgang notwendig, stattdessen übernimmt der Browser die Darstellung des übergebenen HTML, CSS und JS Quellcodes. Der Kompiliervorgang der Elm-Applikation dauert wie in Abbildung XY  zu sehen ist im Durchschnitt XY Sekunden. Es wurde 10x gemessen, der höchste und niedrigste Wert gestrichen und dann das arithmetische Mittel der verbleibenden 8 Messungen ermittelt.
+ 5.1. Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem\ac{HTML},\ac{CSS} und\ac{JS}
+ --> Bei der herkömmlichen Entwicklung ist kein expliziter Kompiliervorgang notwendig, stattdessen übernimmt der Browser die Darstellung des übergebenen\ac{HTML},\ac{CSS} und\ac{JS} Quellcodes. Der Kompiliervorgang der Elm-Applikation dauert wie in Abbildung XY  zu sehen ist im Durchschnitt XY Sekunden. Es wurde 10x gemessen, der höchste und niedrigste Wert gestrichen und dann das arithmetische Mittel der verbleibenden 8 Messungen ermittelt.
  
  5.2  2. Die erzeugte Elm-Applikation ist deutlich schneller während der Laufzeit
  --> AUSSTEHEND (Abbildung - Performance - Evtl. neu?)
@@ -443,11 +444,11 @@ TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungst
  9.1. Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen
  --> Die kompilierte Elm-Applikation hat eine Größe von etwa 300kb. Allerdings kann diese Größe um etwa 60Prozent verringert werden, wenn der Code `minified` wird.
   
-  10.1. Bestehende JS-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
-  --> Die Integration vorhandener JS-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
+  10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
+  --> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
   
-  10.2. Bestehender CSS-Code kann nativ in Elm eingebunden werden
-  --> Das Einbinden von CSS Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet. CSS-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes CSS muss jedoch über das Grundgerüst der HTML-Datei eingebunden werden.
+  10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
+  --> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
   
   11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
   --> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
@@ -464,11 +465,11 @@ TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungst
   1. Paralleles arbeiten möglich
   2. Entwickler bekommen nur die notwendigen Informationen für das Interface
   3. Tools
-  1. HTML2ELM sehr hilfreich
+  1.\ac{HTML}2ELM sehr hilfreich
   1. Kleinere Fehler
   1. ' verursacht Fehler (Weiterfolgende Divs wurden vernachlässigt)
   2. required --> required '' (wants Bool, got String); novalidate same
   2. Elm-Compiler
-  1. Fehler von HTML2ELM (2. Punkt) wurden sofort erkannt
-  2. Fehlende Funktionen für HTML und CSS Attribute wurden in den Fehlermeldungen vorgeschlagen („Did you mean Html.Attributes.required?“ für „required true“)
+  1. Fehler von\ac{HTML}2ELM (2. Punkt) wurden sofort erkannt
+  2. Fehlende Funktionen für\ac{HTML} und\ac{CSS} Attribute wurden in den Fehlermeldungen vorgeschlagen („Did you mean Html.Attributes.required?“ für „required true“)
   4. Erklärungen der Elm-Struktur in den Guides sehr gut

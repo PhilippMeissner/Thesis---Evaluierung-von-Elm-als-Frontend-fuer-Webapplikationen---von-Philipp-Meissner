@@ -1,19 +1,27 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{6}{figure.caption.7}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{7}{figure.caption.8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{8}{figure.caption.10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Das Model-View-Update Konzept von Elm\relax }}{9}{figure.caption.13}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel der dynamischen Typisierung\relax }}{11}{figure.caption.19}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite {elm-performance}\relax }}{12}{figure.caption.22}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Eine Funktion in Elm\relax }}{15}{figure.caption.30}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces M\IeC {\"o}gliche Deklarationen eines Elm-Moduls\relax }}{16}{figure.caption.33}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Die Online-\ac {IDE} von Elm\relax }}{16}{figure.caption.35}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ein Union-Type in Elm\relax }}{15}{figure.caption.29}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ein erweiterter Union-Type in Elm\relax }}{16}{figure.caption.30}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ein Record in Elm\relax }}{16}{figure.caption.32}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Eine Variablendeklaration in Elm\relax }}{17}{figure.caption.34}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Eine Funktion in Elm\relax }}{18}{figure.caption.36}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Anwendung einer anonymen Funktion in Elm\relax }}{18}{figure.caption.37}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Definition einer Funktion ohne Typen Alias\relax }}{19}{figure.caption.40}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Definition einer Funktion mit Typen Alias\relax }}{19}{figure.caption.41}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces M\IeC {\"o}gliche Deklarationen eines Elm-Moduls\relax }}{20}{figure.caption.43}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces M\IeC {\"o}gliche Formen der Importierung eines Elm-Moduls\relax }}{20}{figure.caption.45}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Die Online-\ac {IDE} von Elm\relax }}{21}{figure.caption.47}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016\relax }}{22}{figure.caption.37}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundger\IeC {\"u}st eines HTML-Dokumentes, um die Elm Applikation zu laden\relax }}{37}{figure.caption.41}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Der gestartete Elm-Webserver\relax }}{37}{figure.caption.42}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit \IeC {\"u}bergebenen Werten\relax }}{37}{figure.caption.44}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016\relax }}{27}{figure.caption.49}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundger\IeC {\"u}st eines\ac {HTML}-Dokumentes, um die Elm Applikation zu laden\relax }}{31}{figure.caption.53}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Der gestartete Elm-Webserver\relax }}{32}{figure.caption.54}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit \IeC {\"u}bergebenen Werten\relax }}{33}{figure.caption.56}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
