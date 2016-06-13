@@ -4,14 +4,10 @@
 
 \section{Funktionale Programmiersprachen}
 \label{sec:funktionaleProgrammiersprache}
-%\begin{figure}[htb]
-%  \centering  
-%  \includegraphics[scale=0.5]{img/starwars.jpg}
-%  \caption{Star Wars Logo}
-%  \label{fig:starwars}
-%\end{figure}
-\begin{figure}[ht]
-\centering
+In der Programmierung gibt es zwei Programmierparadigmen, die zur Kategorisierung von Programmiersprachen dienen und sich im Laufe der Zeit entwickelt haben. %„https://de.wikipedia.org/wiki/Programmiersprache#Programmierparadigmen“)
+Dabei beschreiben die Paradigmen verschiedene Prinzipien der Programmierung.
+Die zugrunde liegenden Kategorien werden häufig als imperative und deklarative Programmierung bezeichnet, in welchen sich jede Programmiersprache einordnen lässt. Jede Kategorie birgt weitere Unterkategorien und dient der Verfeinerung der Prinzipien.
+\begin{figure}[h]
 \begin{lstlisting}[language=JavaScript]
 iterative_function(n) {
   sum = 0;
@@ -23,15 +19,10 @@ console.log(iterative_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine iterative Funktion}\label{fig:iterative-function}
 \end{figure}
-In der Programmierung gibt es zwei Programmierparadigmen, die zur Kategorisierung von Programmiersprachen dienen und sich im Laufe der Zeit entwickelt haben. %„https://de.wikipedia.org/wiki/Programmiersprache#Programmierparadigmen“)
-Dabei beschreiben die Paradigmen verschiedene Prinzipien der Programmierung.
-Die zugrunde liegenden Kategorien werden häufig als imperative und deklarative Programmierung bezeichnet, in welchen sich jede Programmiersprache einordnen lässt. Jede Kategorie birgt weitere Unterkategorien und dient der Verfeinerung der Prinzipien.
 Häufig gehören funktionale Programmiersprachen dem deklarativen Programmierparadigma an. Es ist jedoch nicht ausgeschlossen, dass eine Programmiersprache mehreren Kategorien zugehörig ist und dadurch die Merkmale von mehr als einem Paradigma unterstützt. Zur Gruppe der deklarativen Programmiersprachen zählt man unter anderem Abfragesprachen wie SQL, sowie funktionale Programmiersprachen wie Lisp oder Scheme.
 Programmiersprachen der deklarativen Programmierung haben ihren Ursprung in der Mathematik. Programme werden hier als mathematische Funktionen formuliert, die nicht länger beschreiben, was getan werden soll, sondern lediglich vorgeben, welches Ergebnis am Ende erwartet wird.
 Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält und unveränderlich bleibt. Es ist dementsprechend stets nachzuvollziehen, welchen Wert ein Ausdruck besitzt, wodurch insbesondere akademische Anforderungen an ein Programm, wie etwa die Beweisführung, erfüllt werden können. Zusätzlich können auch unendliche Datenstrukturen behandelt werden.
-Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist. Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen.
-
-Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
+Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist. Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen. Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
 \begin{figure}[hb]
 \begin{lstlisting}[language=JavaScript]
 recursive_function(n) {
@@ -42,7 +33,6 @@ console.log(recursive_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine rekursive Funktion}\label{fig:recursive-function}
 \end{figure}
-
 In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $resursive\_function$
 mit einem neuen Wert aufgerufen, ohne jemals die ursprüngliche Variable verändert zu haben.
 Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda-Funktion$ oder $anonyme Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur durch einen Verweis aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
@@ -164,11 +154,13 @@ TODO: Evtl. Absatz \nameref{sec:Praktische Anwendungsgebiete} hier rein mergen u
 
 \subsubsection{Elm-REPL}
 \label{sec:elm-repl}
-- Einstieg in die Elm-Programmierung
-- Read-evaluate-print-loop
-- Gibt Compiler-Fehler aus
-- 
-
+Ein nützliches Tool um mit Werten in Elm zu interagieren und kleinere Algorithmen zu testen, ist die $elm-repl$. \ac{REPL} bezeichnet dabei die Iteration, welche ein Algorithmus durchlebt. Zunächst wird der Quellcode gelesen (read), danach ausgewertet (evaluate) und das Ergebnis ausgegeben (print). Dieser Vorgang wiederholt sich (loop), bis die Entwicklung fertig ist. $Elm-repl$ wird über die Kommandozeile aufgerufen und gestartet. In Abbildung~\ref{fig:elm-repl} ist das Tool abgebildet und zeigt beispielhafte Eingaben und Evaluierungen.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{img/elm-repl.png}
+\caption{Das Tool elm-repl in der Kommandozeile}\label{fig:elm-repl}
+\end{figure}
+Wie aus der Abbildung~\ref{fig:elm-repl} ersichtlich wird, werden auch Fehler ausgegeben. In diesem Beispiel wurde versucht auf die Bibliothek $String$, genauer die Funktion $length$ zuzugreifen. Diese Bibliothek wurde allerdings noch nicht eingebunden, wodurch es zu dem Fehler kam. Nachdem die Bibliothek über das Kommando $import String$ importiert wurde, war der Fehler behoben. Die $elm-repl$ erlaubt es, alle Bibliotheken die das Paket $core$ mitliefert, zu importieren.
 
 \subsubsection{Basisdatentypen}
 \label{sec:Basisdatentypen}
@@ -179,7 +171,11 @@ Elm hat nur eine geringe Anzahl an Basisdatentypen, mithilfe derer sämtliche we
 	\item 'a' : Char
 	\item {[1, 2, 3] : List}
 \end{itemize}
-Durch die Kombination dieser Basisdatentypen können weitere komplexere Datentypen wie $Strings$, $Integer$ oder $Floats$ erzeugt werden.
+Durch die Kombination dieser Basisdatentypen können weitere komplexere Datentypen wie $Strings$, $Integer$ oder $Floats$, wie es in Abbildung~\ref{fig:elm-repl} zu sehen ist, erzeugt werden.
+
+\subsubsection{Basisfunktionen}
+\label{sec:Basisfunktionen}
+Elm kommt mit einer Vielzahl an grundlegenden Funktionen, um notwendige arithmetische Operationen zu ermöglichen. Dazu gehören Funktionen zur Addition ($+$), Subtraktion ($-$), Multiplikation ($*$) und Division ($/$). Um Vergleiche zu vollziehen gibt es die Funktionen zur Prüfung der Gleichheit ($==$) und Ungleichheit($/=$). Wie in Abbildung~\ref{fig:elm-repl} zu sehen ist, können zwei $String$s zu einem verbunden werden, indem die Funktion $++$ angewendet wird.
 
 \subsubsection{Union Types}
 \label{sec:Union-Types}
@@ -205,7 +201,7 @@ storeStatus : Day -> String
 storeStatus day =
   case day of
     Monday start end->
-      "Opened!From:"
+      "Opened from:"
       	++ start "until"
       	++ end
     Sunday ->
@@ -230,7 +226,28 @@ university.typ  --> "Fachhochschule"
 \end{lstlisting}
 \caption{Ein Record in Elm}\label{fig:elm-record}
 \end{figure}
-In Zeile $1$ der Abbildung~\ref{fig:elm-record} ist erkennbar, wie ein $Record$ mit initialen Werten erstellt wird. Lediglich das Gleichheitszeichen für die Zuweisung unterscheidet sich hierbei von herkömmlichen erstellen eines $Records$ in \ac{JS}. Um ein Feld in einem $Record$ direkt anzusprechen, kann die übliche Schreibweise aus Zeile $4$ gewählt werden. Zeile $5$ hingegen führt zum gleichen Ergebnis, nutzt intern jedoch eine $anonyme\,Funktion$. Der Unterschied eines $Records$ im Gegensatz zu einem $Objekt$ in \ac{JS} liegt darin, dass Felder nicht dynamisch hinzugefügt oder gelöscht werden können. Sobald ein Feld definiert wurde, ist es für die gesamte Laufzeit vorhanden. Die einzige Möglichkeit einen $Record$ zu verändern liegt darin, den Inhalt der Felder zu manipulieren. Zeile $7$ der Abbildung~\ref{fig:elm-record} zeigt, wie das Feld $Ort$ des $Records$ mit einem neuen Wert versehen wird. Dabei ist zu beachten, dass aufgrund der Unveränderlichkeit einer Datenstruktur in Elm nicht der $Record$ selbst verändert wird. Viel mehr wird ein neuer $Record$ erstellt, der die Änderung, sowie gleichbleibenden Felder des alten $Record$ annimmt.
+In Zeile $1$ der Abbildung~\ref{fig:elm-record} ist erkennbar, wie ein $Record$ mit initialen Werten erstellt wird. Lediglich das Gleichheitszeichen für die Zuweisung unterscheidet sich hierbei von herkömmlichen erstellen eines $Records$ in \ac{JS}. Um ein Feld in einem $Record$ direkt anzusprechen, kann die übliche Schreibweise aus Zeile $4$ gewählt werden. Zeile $5$ hingegen führt zum gleichen Ergebnis, nutzt intern jedoch eine $anonyme\,Funktion$. Der Unterschied eines $Records$ im Gegensatz zu einem $Objekt$ in \ac{JS} liegt darin, dass Felder nicht dynamisch hinzugefügt oder gelöscht werden können. Sobald ein Feld definiert wurde, ist es für die gesamte Laufzeit vorhanden. Die einzige Möglichkeit einen $Record$ zu verändern liegt darin, den Inhalt der Felder zu manipulieren. Zeile $7$ der Abbildung~\ref{fig:elm-record} zeigt, wie das Feld $Ort$ des $Records$ mit einem neuen Wert versehen wird. Dabei ist zu beachten, dass aufgrund der Unveränderlichkeit einer Datenstruktur in Elm nicht der $Record$ selbst verändert wird. Viel mehr wird ein neuer $Record$ erstellt, der die Änderung, sowie gleichbleibenden Felder des alten $Record$ annimmt. Ein weiterer Unterschied gegenüber \ac{JS} ist, dass ein Feld nie den Wert $undefined$ oder $null$ annehmen kann, da eingeführte Felder stets initialisiert werden müssen. Des Weiteren ist es nicht möglich rekursive Felder zu erzeugen.
+
+\subsubsection{Tupel}
+\label{sec:Tupel}
+Sollte es notwendig sein, mehr als einen Wert als Rückgabewert zu haben, so bietet sich die Nutzung von $Tupel$n an. Ein $Tupel$ ist eine weitere Datenstruktur in Elm und kann eine beliebig feste Anzahl an Werten beinhalten. Jeder Wert ist unabhängig von den anderen und kann einen geeigneten Datentyp annehmen. Die folgende Abbildung~\ref{fig:elm-tupel} zeigt, wie ein solches Tupel von einer Funktion zurückgegeben werden kann.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+type Food = { name: String, sort: String }
+
+isCookie : Food -> (Bool, String)
+isCookie food =
+  if food.sort == "cookie" then
+    (True, food.name)
+  else
+    (False, "No cookie.")
+
+isCookie { name = "Oreo", sort = "cookie" }
+--> (True, "Oreo")
+\end{lstlisting}
+\caption{Ein Tupel in Elm}\label{fig:elm-tupel}
+\end{figure}
+Der Rückgabewert des beispielhaften Aufrufes in Zeile $10$ ist ein Tupel, bestehend aus einem $Bool$ und einem $String$, wie es in der Signatur in Zeile $3$ definiert wurde. Soll das Tupel noch weiter verwendet werden, liefert die Bibliothek $Basics$ aus dem Paket $elm-lang/core$ die Funktionen $fst$ und $snd$, die entsprechend den ersten oder zweiten Wert eines Tupels zurückliefern. Auf diese Weise kann ein einzelner Wert des Tupels extrahiert werden. Aufgrund der fehlenden Wege Tupel mit mehr als zwei Werten auszuwerten, sollte nur bedingt auf Tupel zurückgegriffen und stattdessen ein $Record$ verwendet werden.
 
 \subsubsection{Variablen}
 \label{sec:Variablen}
@@ -248,10 +265,42 @@ meaningOfLife --> 42
 \end{lstlisting}
 \caption{Eine Variablendeklaration in Elm}\label{fig:elm-variables}
 \end{figure}
-Abbildung~\ref{fig:elm-variables} zeigt beispielhaft die Deklaration einer Funktion $meaningOfLife$, die innerhalb des $let..in$-Blockes die Variablen $fourtyTwo$ und $oneHundred$ deklariert und ihnen einen Wert zuweist. Die Inhalte eines $let..in$-Blockes müssen eingerückt werden, während hingegen eine übliche Funktion auch in einer Zeile verfasst werden kann. Des Weiteren ist erkennbar, dass die Variable $oneHundred$ erst nach der Deklaration von $fourtyTwo$ deklariert wird, jedoch bereits vorher nutzbar ist. Der $elm-compiler$ optimiert diese Programmstelle während des Kompiliervorganges entsprechend. Die beiden deklarierten Variablen sind lediglich in dem definierten $let..in$-Block verfügbar. Eine Verwendung außerhalb des Blockes hätte einen Compilerfehler zur Folge.
+Abbildung~\ref{fig:elm-variables} zeigt beispielhaft die Deklaration einer Funktion $meaningOfLife$, die innerhalb des $let..in$-Blockes die Variablen $fourtyTwo$ und $oneHundred$ deklariert und ihnen einen Wert zuweist. Die Inhalte eines $let..in$-Blockes müssen eingerückt werden, während hingegen eine übliche Funktion auch in einer Zeile verfasst werden kann. Des Weiteren ist erkennbar, dass die Variable $oneHundred$ erst nach der Deklaration von $fourtyTwo$ deklariert wird, jedoch bereits vorher nutzbar ist. Der $elm-compiler$ optimiert diese Programmstelle während des Kompiliervorganges entsprechend. Die beiden deklarierten Variablen sind lediglich in dem definierten $let..in$-Block verfügbar. Eine Verwendung außerhalb des Blockes hätte einen Compilerfehler zur Folge. Es besteht ferne die Möglichkeit ganze Funktionen innerhalb des Blockes zu definieren und zu nutzen.
+
+\subsubsection{Kontrollstrukturen}
+\label{sec:Kontrollstrukturen}
+Elm bietet die Möglichkeit verschiedene Kontrollstrukturen anzuwenden. Dabei wird ein Record auf mögliche Werte hin überprüft und abhängig vom Wert ein anderer logischer Pfad gewählt.
+\begin{figure}[h]
+\begin{lstlisting}[language=Elm]
+isItACookie food =
+  if food == "cookie" then
+  	True
+  else if food == "grapefruit" then
+    False
+  else
+    False
+\end{lstlisting}
+\caption{Eine Konstrollstruktur in Elm}\label{fig:elm-conditional}
+\end{figure}
+In Abbildung~\ref{fig:elm-conditional} ist eine herkömmliche $if$-Abfrage zu sehen. In Elm sind die Schlüsselwörter $if$, $then$ und $else$ notwendig und unterteilen die Bedingung von der angewandten Folge, die nach dem Schlüsselwort $then$ folgt. Insofern keine $if$-Bedingung zutrifft, wird der $else$-Fall angewandt.
+Elm verfolgt auch hier die statische Typisierung und fordert, dass jede mögliche Verzweigung denselben Typen zurückliefert. Eine Bedingung muss in Elm immer $True$ oder $False$ liefern und somit einen $Bool$ liefern. In anderen Programmiersprachen wie beispielsweise $C++$ evaluiert eine Bedingung zu $True$, wenn sie nicht $0$ oder $false$ ist. Am Beispiel in Abbildung~\ref{fig:cpp-conditional} sieht man, dass $0$ zu $false$ auswertet. In Elm hingegen meldet der $elm-compiler$ einen Fehler, sobald eine Bedingung zu einem anderen Typen als $Bool$ auswertet.
+Abbildung~\ref{fig:elm-union-type} zeigt, wie $Union\,Type$s überprüft werden können. Die Kontrollstruktur ähnelt dabei dem $switch$-$case$-Konstrukt von anderen Programmiersprachen wie \ac{JS} oder C++.
+\begin{figure}[h]
+\begin{lstlisting}[language=c++]
+string whatIsZero() {
+  if (0) return "0 equals to TRUE";
+  else return "0 equals to FALSE";
+}
+cout << whatIsZero() << endl;
+//=> 0 equals to FALSE
+
+\end{lstlisting}
+\caption{Konstrollstruktur in C++}\label{fig:cpp-conditional}
+\end{figure}
 
 \subsubsection{Funktionen}
 \label{sec:Funktionen}
+Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, benötigt der Entwickler auch in Elm eine Funktionen. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und dem Gleichheitszeichen realisiert.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 add : Int -> Int -> Int
@@ -262,11 +311,13 @@ add 3 4  --> 7
 \end{lstlisting}
 \caption{Eine Funktion in Elm}\label{fig:elm-function}
 \end{figure}
-Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, benötigt der Entwickler auch in Elm eine Funktionen. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und dem Gleichheitszeichen realisiert.
-
 Abbildung~\ref{fig:elm-function} zeigt, wie eine simple Addition zweier Integer-Werte umgesetzt wird. Die Buchstaben $a$ und $b$ deuten an, dass die Funktion $add$ zwei Parameter erwartet. Der gesamte Inhalt nach dem Gleichheitszeichen ist der sogenannte Rumpf einer Funktion und beschreibt den anzuwendenden Algorithmus. Der Funktionsaufruf ist in Zeile 5 sichtbar. Auffällig ist, dass eine Funktion nie explizit einen Wert zurück gibt, wie es in anderen Programmiersprachen wie \ac{JS} oder C++ meist durch den Befehl $return$ geschieht. Elm gibt implizit die letzte ausführbare Zeile als Rückgabewert zurück. Der beispielhafte Aufruf der Funktion $add$ in Zeile 5 hätte dementsprechend $7$ als Ergebnis. Des Weiteren ist erkennbar, dass Elm ohne die Nutzung von Kommata oder Klammern auskommt. Klammern werden erst notwendig, wenn mehrere Funktionen geschachtelt ablaufen sollen und eine Auswertung der Befehle von links nach rechts nicht ausreicht.
 Zusätzlich zu einer explizit benannten Funktion, gibt es die $anonyme$ Funktion. Sie kommt ohne einen Funktionstitel aus und wird an Funktionen höherer Ordnung weitergereicht.
 $List.filter$ ist eine solche Funktion und erwartet eine anonyme Funktion als Parameter, auf Basis derer eine Liste gefiltert wird. Aus der Abbildung~\ref{fig:elm-anonym-function} wird ersichtlich, dass die übergebene Liste, bestehend aus $4$ Einträgen, auf die Präsenz des Buchstabens $a$ hin überprüft wird. Dabei wird jeweils ein Wert an die anonyme Funktion weitergereicht, die in Form der Variable $str$ repräsentiert und mit dem String $a$ auf Gleichheit überprüft wird. Einträge die diesem Vergleich entsprechen, werden einer neuen Liste hinzugefügt. Wird das Ende der zu überprüfenden Liste erreicht, wird die Ergebnisliste als Rückgabewert ausgegeben.
+
+\subsubsection{Signaturen}
+\label{sec:Signaturen}
+Die jeweils erste Zeile der Abbildung~\ref{fig:elm-function} und \ref{fig:elm-anonym-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 List.filter : (a -> Bool) -> List a -> List a
@@ -275,9 +326,7 @@ List.filter (\str -> str == "a") ["a", "b", "c", "a"]
 \end{lstlisting}
 \caption{Anwendung einer anonymen Funktion in Elm}\label{fig:elm-anonym-function}
 \end{figure}
-\subsubsection{Signaturen}
-\label{sec:Signaturen}
-Die jeweils erste Zeile der Abbildung~\ref{fig:elm-function} und \ref{fig:elm-anonym-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : Number -> Number -> Number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $Number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
+Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : Number -> Number -> Number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $Number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
 
 \subsubsection{Typen Alias}
 \label{sec:typ-alias}
@@ -331,10 +380,10 @@ Jeder Entwickler hat ferner die Möglichkeit die zuvor erstellten Module an eine
 
 \subsubsection{Online-IDE}
 \label{sec:Online-IDE}
+Damit begonnen werden kann mit Elm zu programmieren, ist es nicht notwendig sämtliche Tools auf dem lokalen Gerät zu installieren. Vielmehr haben die Entwickler von Elm eine Online-\ac{IDE} erstellt, mit der sofort online entwickelt werden kann. Die Abbildung~\ref{fig:elm-try} zeigt diese \ac{IDE} mit einem typischen $Hello-World$ Beispiel. Auf der linken Seite ist eigentliche \ac{IDE} erkennbar, während die rechte Seite das Ergebnis nach dem Kompiliervorgang ausgibt. Sollte es einen Fehler während des kompilierens geben, wird die entsprechende Fehlermeldung des $elm-compiler$ dort ausgegeben. Mit Hilfe der Schaltfläche $Lights$ können zum Einen die Farben der \ac{IDE} invertiert werden, während der Knopf $Compile$ den geschriebenen Quellcode kompiliert und ausführt. Kleinere Projekte kön	nen entsprechend bequem mit diesem Tool realisiert werden. Die \ac{IDE} bietet einen schnellen Einstieg in die Programmiersprache.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{img/elm-try.png}
 	\caption{Die Online-\ac{IDE} von Elm}\label{fig:elm-try}
 \end{figure}
-Möchte man beginnen mit Elm zu programmieren, so ist es nicht notwendig sämtliche Tools auf dem lokalen Gerät zu installieren. Vielmehr haben die Entwickler von Elm eine Online-\ac{IDE} erstellt, mit der sofort entwickelt werden kann. Abbildung~\ref{fig:elm-try} zeigt diese \ac{IDE} mit einem typischen $Hello-World$ Beispiel. Auf der linken Seite ist eigentliche \ac{IDE} erkennbar, während die rechte Seite das Ergebnis nach dem Kompiliervorgang ausgibt. Sollte es einen Fehler während des kompilierens geben, wird die entsprechende Fehlermeldung des $elm-compiler$ dort ausgegeben. Mit Hilfe der Schaltfläche $Lights$ können zum Einen die Farben der \ac{IDE} invertiert werden, während der Knopf $Compile$ den geschriebenen Quellcode kompiliert und ausführt. Kleinere Projekte kön	nen entsprechend bequem mit diesem Tool realisiert werden. Die \ac{IDE} bietet einen schnellen Einstieg in die Programmiersprache.
 
