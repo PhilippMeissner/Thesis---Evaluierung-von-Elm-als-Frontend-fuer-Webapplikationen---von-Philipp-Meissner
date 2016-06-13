@@ -173,29 +173,8 @@ Sämtliche Hypothesen wurden in der Tabelle~\ref{tab:Hypothesentabelle} zusammen
 
 \subsection{Versuchsdurchführung}
 \label{sec:Versuchsdurchführung}
-\subsubsection{Installation}
-\label{sec:Installation}
-Zunächst einmal ist es notwendig, Elm und die dazugehörigen Komponenten zu installieren. Im folgenden wird die Installation unter Ubuntu 14.04 64bit erklärt.
-Elm wird über den NPM verbreitet. Um diesen zu installieren, sind folgende Kommandos auf der Kommandozeile auszuführen:
-
-\begin{lstlisting}[language=bash]
-$ sudo apt-get update
-$ sudo apt-get install nodejs
-$ sudo apt-get install npm
-\end{lstlisting}
-
-Dadurch wird das NodeJs-Paket installiert und ausführbar gemacht. Aufgrund der Tatsache, dass viele Pakete nicht $nodejs$, sondern $node$ als ausführbare Datei erwarten, wird noch sicherheitshalber ein Symlink erstellt.
-
-\begin{lstlisting}[language=bash]
-$ sudo ln -s /usr/bin/nodejs /usr/bin/node
-\end{lstlisting}
-Anschließend sollte überprüft werden, ob die Installation erfolgreich war und sowohl NodeJS, wie auch NPM verfügbar sind. Das Kommando \begin{lstlisting}[language=bash]
-$ node -v && npm -v
-\end{lstlisting}
-liefert den Output, wie er in Abbildung XY zu sehen ist. Elm kann nun über die Paketverwaltung NPM mit dem Kommando 
-$npm\,install\,-g\,elm$ installiert werden. Das $-g$ -Flag installiert die neueste Elm-Version global für alle Projekte auf dem System. Entfernt man es, wird die Zielversion nur für den aktuellen Ordner zugänglich gemacht. Um die hier behandelte Version 0.17 zu installieren, ist der Zusatz $@0.17$ direkt hinter dem globalen Flag notwendig.\\
-Elm ist nun vollständig installiert und kann genutzt werden. Die Entwicklung in Atom wird unterstützt durch die Pakete $elm-format$\\ (https://github.com/triforkse/atom-elm-format), $language-elm$\\ (https://atom.io/packages/language-elm) und {$linter-elm-make$}\\ (https://atom.io/packages/linter-elm-make). Mit Hilfe dieser Pakete wird der Code automatisch beim speichern dem Style-Guide entsprechend formatiert, eventuelle Fehler bei der Kompilierung direkt im Editor sichtbar gemacht und der Code syntaktisch gefärbt, sowie Vorschläge zur Vervollständigung des geschriebenen Quellcodes gemacht. Da die Pakete ständig aktualisiert und verändert werden, wird an dieser Stelle von einer detaillierten Beschreibung zur Installation abgesehen und auf die Dokumentationen der einzelnen Pakete verwiesen (elm-lang.org).
-Damit die geschriebene Applikation letztendlich im Browser aufrufen zu können, muss die Elm-Applikation zunächst in der\ac{HTML}-Datei aufgerufen und initialisiert werden. Dabei gibt es mehrere Möglichkeiten. Es ist sinnvoll hierbei zwischen vollautomatischem, sowie manuellem Grundaufbau zu unterschieden.
+Die Entwicklung in Atom wird unterstützt durch die Pakete $elm-format$\\ (https://github.com/triforkse/atom-elm-format), $language-elm$\\ (https://atom.io/packages/language-elm) und {$linter-elm-make$}\\ (https://atom.io/packages/linter-elm-make). Mit Hilfe dieser Pakete wird der Code automatisch beim speichern dem Style-Guide entsprechend formatiert, eventuelle Fehler bei der Kompilierung direkt im Editor sichtbar gemacht und der Code syntaktisch gefärbt, sowie Vorschläge zur Vervollständigung des geschriebenen Quellcodes gemacht. Da die Pakete ständig aktualisiert und verändert werden, wird an dieser Stelle von einer detaillierten Beschreibung zur Installation abgesehen und auf die Dokumentationen der einzelnen Pakete verwiesen (elm-lang.org).
+Damit die geschriebene Applikation letztendlich im Browser aufrufen zu können, muss die Elm-Applikation zunächst in der \ac{HTML}-Datei aufgerufen und initialisiert werden. Dabei gibt es mehrere Möglichkeiten. Es ist sinnvoll hierbei zwischen vollautomatischem, sowie manuellem Grundaufbau zu unterschieden.
 \subsubsection{Grundaufbau}
 \label{sec:Grundaufbau}
 
