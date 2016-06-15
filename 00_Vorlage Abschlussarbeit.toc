@@ -37,29 +37,26 @@
 \contentsline {section}{\numberline {3.1}Bewertungsmuster}{27}{section.3.1}
 \contentsline {section}{\numberline {3.2}Bewertungskriterien}{28}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Entwicklungsgeschwindigkeit}{28}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Wartbarkeit}{28}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Wartbarkeit und Lesbarkeit}{28}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Zuverl\IeC {\"a}ssigkeit}{29}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Portabilit\IeC {\"a}t}{29}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Effizienz}{29}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Erlernbarkeit}{30}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Wiederverwendbarkeit}{30}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Lesbarkeit}{30}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}Modularit\IeC {\"a}t}{31}{subsection.3.2.9}
-\contentsline {section}{\numberline {3.3}Anspr\IeC {\"u}che an eine Webapplikation}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.6}Wiederverwendbarkeit}{30}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Anspr\IeC {\"u}che an eine Webapplikation}{30}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t \IeC {\textendash } Portabilit\IeC {\"a}t}{31}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{32}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{31}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Asynchrones Laden}{32}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{32}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Empirische Analyse}{33}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Versuchsaufbau}{33}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Hypothesen und Vermutungen}{33}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Versuchsdurchf\IeC {\"u}hrung}{34}{subsection.3.4.3}
-\contentsline {subsubsection}{\nonumberline Grundaufbau}{34}{section*.68}
-\contentsline {subsubsection}{\nonumberline Konstruktion des Views}{37}{section*.73}
-\contentsline {subsubsection}{\nonumberline \IeC {\"U}berf\IeC {\"u}hrung des Views}{38}{section*.74}
-\contentsline {subsubsection}{\nonumberline Modularisierung}{39}{section*.75}
-\contentsline {subsubsection}{\nonumberline Asynchrones Laden}{40}{section*.76}
-\contentsline {subsection}{\numberline {3.4.4}Beobachtungen}{41}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Auswertung}{42}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Fazit}{47}{chapter.4}
-\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{48}{chapter.5}
+\contentsline {section}{\numberline {3.4}Empirische Analyse}{32}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Programmablauf}{32}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Entwicklungsumgebung}{33}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Hypothesen und Vermutungen}{33}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Versuchsdurchf\IeC {\"u}hrung}{33}{subsection.3.4.4}
+\contentsline {subsubsection}{\nonumberline Grundger\IeC {\"u}st der Applikation}{35}{section*.68}
+\contentsline {subsubsection}{\nonumberline Konstruktion und \IeC {\"U}berf\IeC {\"u}hrung des Views}{37}{section*.73}
+\contentsline {subsubsection}{\nonumberline Modularisierung}{38}{section*.76}
+\contentsline {subsubsection}{\nonumberline Asynchrones Laden}{39}{section*.77}
+\contentsline {subsection}{\numberline {3.4.5}Beobachtungen}{40}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Auswertung}{41}{subsection.3.4.6}
+\contentsline {chapter}{\numberline {4}Fazit}{45}{chapter.4}
+\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{46}{chapter.5}
