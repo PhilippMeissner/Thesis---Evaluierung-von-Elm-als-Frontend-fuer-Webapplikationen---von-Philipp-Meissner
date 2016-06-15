@@ -1,10 +1,9 @@
 \chapter{Evaluierung der Programmiersprache Elm}
 \label{sec:Evaluierung der Programmiersprache Elm}
-\pagestyle{plain}
+Die Programmiersprache Elm wird mit Hilfe einer empirischen Analyse in Form der Entwicklung eines praktischen Beispieles evaluiert. Dabei wird ein fertiges Template einer \ac{SPA}, welches in \ac{HTML}, \ac{CSS} und \ac{JS} programmiert wurde, in nativen Elm-Code überführt, insofern möglich. Ausschließlich die vorhandenen \ac{JS} und \ac{CSS}-Dateien sollen bestehen bleiben. Zur aussagekräftigen Evaluierung der Programmiersprache Elm hinsichtlich einer Nutzung im Bereich der Webentwicklung bedarf es zunächst einiger Bewertungskriterien, anhand derer eine Aussage möglich ist. Nachdem ein Bewertungsmuster erstellt und erläutert wurde, befasst sich der darauf folgende Teil der wissenschaftlichen Arbeit mit der Überführung des Templates in nativen Elm-Code. Zuletzt werden Beobachtungen die während der Entwicklung auftraten erläutert und die zuvor erörterten Kriterien ausgewertet.
 
 \section{Bewertungsmuster}
 \label{sec:Bewertungsmuster}
-Der folgende Teil dieser wissenschaftlichen Arbeit befasst sich mit der Entwicklung eines Modells, um die Programmiersprache Elm und ihre Nutzung als Frontend für Webapplikationen bewerten zu können. Dabei soll ein bereits fertiges Template von den ursprünglichen Programmiersprachen \ac{HTML}, \ac{CSS} und \ac{JS} in die Programmiersprache Elm portiert werden. Während der Entwicklung/Portierung wird die Programmiersprache Elm gegenüber mehreren Gesichtspunkten verglichen und ausgewertet.
 Das fertige Template ist eine \ac{SPA} mit Elementen, wie sie typischerweise auf einer solchen Webseite vertreten sind. Eine \ac{SPA} ist, wie der Name bereits suggeriert, eine Webseite mit effektiv nur einer aktiven Seite und ohne Unterseiten (ausgenommen Impressum, AGB und Datenschutz). Die \ac{SPA} wird genutzt um ein Produkt oder Konzept schnell und einfach zu präsentieren, ohne den Nutzer mit Informationen zu überfluten und Unübersichtlichkeit in Form von tief verlinkten Unterseiten zu erzeugen. Oftmals wird eine SPA auch als Startseite benutzt und bietet nur eine geringe Anzahl an Funktionen.
 Die fertige \ac{SPA} soll unter anderem die folgenden, typischen Elemente enthalten:
 \begin{itemize}
@@ -13,24 +12,21 @@ Die fertige \ac{SPA} soll unter anderem die folgenden, typischen Elemente enthal
 	\subitem{-} ScrollSpy zur Darstellung der aktuellen Position
 	\item Titelbild mit einem vertikal und horizontal zentriertem Text
 	\item Service-Sektion
-	\item Twitter-Bootstrap-\ac{CSS} + Funktionen
+	\item Twitter-Bootstrap-\ac{CSS} mitsamt allen Funktionen
 	\subitem{-} Vorgefertiges, responsive Design
-	\subitem{-} Hamburger Menü
+	\subitem{-} Aufklappbares Menü
 	\item Portfolio mit Bildern, wobei ein Klick einen asynchronen Request ausführt und Daten nach lädt
-	\item Formular zur Kontaktaufnahme mit Validierung der Korrektheit der eingegebenen Daten
+	\item Formular zur Kontaktaufnahme mit Validierung der eingegebenen Daten
 \end{itemize}
-Mit diesen Elementen kann eine typische SPA verwirklicht werden. Die Navigation bietet dabei die Möglichkeit für den Nutzer schnell zwischen einzelnen Sektionen der Seite zu wechseln. Das initiale Titelbild mit einem zentrierten Text gibt den Kontext der Präsentation an und soll das Interesse des Nutzers anregen. Die folgende Service-Sektion wird dazu genutzt, allgemeine Informationen über das beworbene Produkt anzuzeigen. In der darauf folgenden Portfolio-Sektion werden dem Nutzer mehrere Bilder des Produktes angezeigt, wobei ein Klick auf eines der Bilder dazu führt, dass ein Popup erzeugt wird in welches mit Hilfe eines AJAX-Requests Informationen asynchron vom Server angefordert und im Nachhinein geladen werden. Zuletzt kann sich der Nutzer für einen Newsletter anmelden. Die Eingaben des Nutzers sollen auf Richtigkeit überprüft werden.
+Mit diesen Elementen kann eine typische SPA verwirklicht werden. Die Navigation bietet dabei die Möglichkeit für den Nutzer schnell zwischen einzelnen Sektionen der Seite zu wechseln. Das initiale Titelbild mit einem zentrierten Text gibt den Kontext der Präsentation an und soll das Interesse des Nutzers anregen. Die folgende Service-Sektion wird dazu genutzt, allgemeine Informationen über das beworbene Produkt anzuzeigen. In der darauf folgenden Portfolio-Sektion werden dem Nutzer mehrere Bilder des Produktes angezeigt, wobei ein Klick auf eines der Bilder dazu führt, dass ein Popup erzeugt wird, in welches mit Hilfe eines AJAX-Requests Informationen asynchron vom Server angefordert und im Nachhinein geladen werden. Zuletzt kann sich der Nutzer ein Kontaktformular ausfüllen, das auf Korrektheit hin überprüft wird.
 
 
 \section{Bewertungskriterien}
 \label{sec:Bewertungskriterien}
-Während der Bearbeitung, respektive Überführung des Templates soll der erzeugte Code, sowie der Weg dahin analysiert werden. Hierbei sind Aspekte wie Wiederverwendbarkeit und Effizienz von großer Bedeutung. Aber auch die Produktivität während der Arbeit mit dem Code soll betrachtet werden. Die Bewertungskriterien setzen sich zum Großteil aus den zugrunde liegenden Kriterien aus dem Dokument XY der Washington University zusammen. Im Folgenden soll die Notwendigkeit der Kriterien und ihre eigentliche Bedeutung verständlich gemacht werden.
-\iffalse
-Dabei werden die Kriterien unterteilt in zwei Gruppen. Die erste Gruppe stellt externe Abhängigkeiten dar, also die Ansprüche eines Entwicklers an die Programmiersprache. Die zweite Gruppe zeigt interne Abhängigkeiten auf und setzt sich über die stark subjektiven Ansprüche und Einflüsse eines Entwicklers hinweg und versucht die Programmiersprache objektiv einzuordnen.
+Während der Überführung des Templates soll der erzeugte Code, sowie der Weg dahin analysiert werden. Hierbei sind Aspekte wie Wiederverwendbarkeit und Effizienz von großer Bedeutung. Aber auch die Produktivität während der Arbeit mit dem Code soll betrachtet werden. Die Bewertungskriterien setzen sich zum Großteil aus den zugrunde liegenden Kriterien aus dem Dokument XY der Washington University zusammen. Im Folgenden soll die Notwendigkeit der Kriterien und ihre eigentliche Bedeutung verständlich gemacht werden.
 
-(http://www.cs.gordon.edu/courses/cs323/lectures-2009/LanguageEvaluationCriteria.pdf + http://courses.cs.washington.edu/courses/cse341/02sp/concepts/evaluating-languages.html)
-\fi
-
+TODO: http://www.cs.gordon.edu/courses/cs323/lectures-2009/LanguageEvaluationCriteria.pdf\\
+http://courses.cs.washington.edu/courses/cse341/02sp/concepts/evaluating-languages.html
 
 \subsection{Entwicklungsgeschwindigkeit}
 \label{sec:Entwicklungsgeschwindigkeit}
@@ -45,7 +41,7 @@ Es ist unabdingbar, dass verfasster Quellcode wartbar ist. Dazu gehört einersei
 
 \subsection{Zuverlässigkeit}
 \label{sec:Zuverlässigkeit}
-Für einen Entwickler von Software, egal wofür und mit welcher Programmiersprache gearbeitet wird, ist es wichtig, dass das ausgelieferte Programm letzten Endes fehlerfrei funktioniert. Dazu gehört, dass das Programm nicht unvorhergesehen abstürzt, andere Systeme beeinträchtigt oder dem späteren Nutzer der Software anderweitig Probleme beschert. In den meisten Fällen helfen die Editoren mit denen der Quellcode geschrieben wird bereits, indem syntaktische Fehler durch unterstreichen sichtbar, oder Vorschläge zur Vervollständigung des angefangenen Codes gemacht werden. Wichtig ist entsprechend, dass die Programmiersprache auf offensichtliche Fehler, entweder durch Plugins für den Editor oder durch den Compiler selbst, aufmerksam macht und sie somit verhindert und nicht erst im Produktionssystem den Fehler zulässt. Als Testfall wird Quellcode bewusst mit Fehlern versehen, die zu einem Absturz des Programmes während der Laufzeit führen würden. Erkennt der $elm-compiler$ diese Fehler oder umgeht den Absturz, gilt das Kriterium als erfüllt.
+Für einen Entwickler von Software ist es wichtig, dass das ausgelieferte Programm letzten Endes fehlerfrei funktioniert. Dazu gehört, dass das Programm nicht unvorhergesehen abstürzt, andere Systeme beeinträchtigt, oder dem späteren Nutzer der Software anderweitig Probleme beschert. In den meisten Fällen helfen die Editoren mit denen der Quellcode geschrieben wird bereits, indem syntaktische Fehler durch Markierungen sichtbar, oder Vorschläge zur Vervollständigung des angefangenen Codes gemacht werden. Wichtig ist entsprechend, dass die Programmiersprache auf offensichtliche Fehler, entweder durch Plugins für den Editor oder durch den Compiler selbst, aufmerksam macht und sie somit verhindert und nicht erst im Produktionssystem den Fehler zulässt. Als Testfall wird Quellcode bewusst mit Fehlern versehen, die zu einem Absturz des Programmes während der Laufzeit führen würden. Erkennt der $elm-compiler$ diese Fehler oder umgeht den Absturz, gilt das Kriterium als erfüllt.
 
 
 \subsection{Portabilität}
@@ -55,36 +51,29 @@ Nicht alle Programmiersprachen und die damit erzeugten Programme funktionieren a
 
 \subsection{Effizienz}
 \label{sec:Effizienz}
-„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist. Damit eine Aussage über die notwendige Zeit für das kompilieren des Quellcodes getroffen werden kann, wird der Code zehn mal kompiliert und die benötigte Zeit gemessen. Anschließend wird der höchste und niedrigste Wert verworfen. Im Anschluss wird das arithmetische Mittel der verbleibenden acht Werte ermittelt. TODO.
-Die Performance der Programmiersprache wird nicht anhand des hier entwickelten Projektes, sondern der externen Applikation \cite{https://github.com/evancz/todomvc-perf-comparison/} TodoMVC Performance Comparison ermittelt. Dieses Tool ermöglicht es, anhand der Beispiel-Applikation "TodoMVC", die in mehreren Programmiersprachen realisiert wurde, zu testen. Dabei werden automatisch gewisse Aktionen in der jeweiligen Sprache durchgeführt, die benötigte Zeit gemessen und am Ende gegenübergestellt. Mit Hilfe des Tools werden 20 Messungen durchgeführt und das Endergebnis betrachtet. Ist Elm signifikant schneller als der Großteil der anderen getesteten Programmiersprachen, gilt das Kriterium als erfüllt. Die anderen Umgebungen der Applikation sind ebenso in nativem \ac{JS} oder einer zu \ac{JS} kompilierenden Programmiersprache geschrieben. Dadurch kann eine Aussage über die tatsächliche Effizienz der Applikation im Vergleich gemacht werden.
-
-
-
-%\subsection{Erlernbarkeit}
-%\label{sec:Erlernbarkeit}
-%Wie im vorherigen Punkt, ist es wirtschaftlich, wichtig schnell zu arbeiten und Ergebnisse zu erbringen. Demzufolge sollte auch der Lernprozess schnell vonstatten gehen und die Programmiersprache eine gewisse Einfachheit in ihren Grundkonzepten verwirklichen, um dem Entwickler ein einfacheres Erlernen zu ermöglichen.
-
+„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist. Damit eine Aussage über die notwendige Zeit für das kompilieren des Quellcodes getroffen werden kann, wird der Code zehn mal kompiliert und die benötigte Zeit gemessen. Anschließend wird der höchste und niedrigste Wert verworfen. Um ein Caching durch den Compiler zu verhindern, wird vor jedem Kompiliervorgang die zuvor erzeugten Programmdateien gelöscht. Im Anschluss wird das arithmetische Mittel der verbleibenden acht Werte ermittelt. TODO.
+Die Performance der Programmiersprache wird nicht anhand des hier entwickelten Projektes, sondern der externen Applikation \cite{https://github.com/evancz/todomvc-perf-comparison/} TodoMVC Performance Comparison ermittelt. Dieses Tool ermöglicht es, anhand der Beispiel-Applikation "TodoMVC", die in mehreren Programmiersprachen realisiert wurde, die Performance des Programmes in den einzelnen Programmiersprachen zu testen. Dabei werden automatisch gewisse Aktionen in der jeweiligen Sprache durchgeführt, die benötigte Zeit gemessen und die Ergebnisse am Ende gegenübergestellt. Mit Hilfe des Tools werden 20 Messungen durchgeführt und das Endergebnis betrachtet. Ist Elm signifikant schneller als der Großteil der anderen getesteten Programmiersprachen, gilt das Kriterium als erfüllt. Die anderen Umgebungen der Applikation sind ebenso in nativem \ac{JS} oder einer zu \ac{JS} kompilierenden Programmiersprache geschrieben. Dadurch kann eine Aussage über die tatsächliche Effizienz der Applikation im Vergleich gemacht werden.
 
 
 \subsection{Wiederverwendbarkeit}
 \label{sec:Wiederverwendbarkeit}
-Es ist sehr ineffizient vorhandene Codestücke neu zu verfassen, oder händisch kopieren zu müssen. Besser ist es, wenn Funktionen mehrfach genutzt werden können. Auf diese Weise müssen Änderungen auch nicht mehrmals vorgenommen werden und die Fehleranfälligkeit sinkt. Ferner sollten Funktionen nicht nur wiederverwendbar, sondern isoliert in einem eigenen Modul definiert werden können. Besteht die Möglichkeit Module zu erstellen und diese an unterschiedlichen Stellen beliebig anzuwenden, gilt das Kriterium als erfüllt. Erweitert wird das Kriterium durch einen zusätzlichen Zugriffsschutz von außen, das bedeutet, dass innerhalb eines Moduls definiert werden kann, welche Funktionen nach außen hin sichtbar sind.
+Vorhandene Codeteile neu zu verfassen oder händisch kopieren zu müssen ist sehr ineffizient. Besser ist es, wenn Funktionen mehrfach genutzt werden können. Auf diese Weise müssen Änderungen nicht mehrmals vorgenommen werden und die Fehleranfälligkeit sinkt. Ferner sollten Funktionen nicht nur wiederverwendbar, sondern isoliert in einem eigenen Modul definiert werden können. Besteht die Möglichkeit Module zu erstellen und diese an unterschiedlichen Stellen beliebig anzuwenden, gilt das Kriterium als erfüllt. Erweitert wird das Kriterium durch einen zusätzlichen Zugriffsschutz von außen, das bedeutet, dass innerhalb eines Moduls definiert werden kann, welche Funktionen nach außen hin sichtbar sind.
 
 
 \section{Ansprüche an eine Webapplikation}
 \label{sec:ansprueche-webapp}
-Diese Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
-Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die  \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
+Die bisherigen Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
+Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-application-RIA.html). Diese Art der Webapplikation besitzt im wesentlichen mehr Programmlogik, die der Client ausführen kann. Ein weiteres Merkmal sind oftmals auch die Anzahl der vorhandenen Unterseiten, wodurch wiederum mehr Logik erforderlich wird.
 Bei der Erstellung einer \ac{SPA} muss generell weniger Aufwand betrieben werden, um eine fertige Präsentation zu erstellen.
 Jede Webapplikation lebt von einem Frontend, sowie einem Backend. Typischerweise bezeichnet das Frontend dabei alle Komponenten, die an den Benutzeroberfläche des Nutzers gesendet werden. Dazu gehören unter anderem die Komponenten \ac{HTML}, \ac{CSS} und \ac{JS}. Der Nutzer interagiert mit dieser Darstellung der Oberfläche.
 Das Gegenstück zum Frontend stellt das sogenannte Backend dar. Dabei handelt es sich um Komponenten, die dem Webserver zugehörig sind. Unter anderem ist das zum Beispiel eine Datenbank, die eigentliche Webapplikation und natürlich der Webserver selbst. Der Nutzer agiert mit dem Backend nur über zuvor im Frontend eingerichtete Schnittstellen.
 
 
-\subsection{Browser Kompatibilität – Portabilität}
-\label{sec:Browser Kompatibilität Portabilität}
+\subsection{Browser Kompatibilität}
+\label{sec:Browser Kompatibilität}
 Ein weiterer wichtiger Aspekt ist die Kompatibilität der Browser mit den genutzten Programmiersprachen. Da der Browser die Darstellung des \ac{HTML} und \ac{CSS} Quellcodes übernimmt, sowie die Manipulationen des DOM durch \ac{JS}, ist es wichtig, dass der Browser den vorhandenen Quellcode lesen und ausführen kann. Sämtliche Sprachen wie \ac{HTML}, \ac{CSS} und \ac{JS} befinden sich im konstanten Wandel und werden stets weiter entwickelt.
-Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Natürlich muss die Applikation letzten Endes auch auf den gängigen Browsern fehlerfrei funktionieren, insbesondere die fünf meistgenutzten Browser Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}).
+Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Dementsprechend ist es wichtig, dass die Applikation auf den gängigen Browsern fehlerfrei funktioniert, insbesondere die fünf meistgenutzten Browser Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}).
 \iffalse
 www.w3counter.com/trends\\+
 https://www.w3counter.com/globalstats.php?year=2016&month=5
@@ -93,37 +82,112 @@ https://www.w3counter.com/globalstats.php?year=2016&month=5
 \begin{figure}[hb]
   \centering  
   \includegraphics[scale=0.3]{img/browser_2016.png}
-  \caption{Die fünf meistgenutzten Browser im Mai 2016}\label{fig:browser-may-2016}
+  \caption{Die fünf meistgenutzten Browser im Mai 2016 \cite{top-five-browser-statistics}}\label{fig:browser-may-2016}
 \end{figure}
 
 \subsection{Interoperabilität}
 \label{sec:Interoperabilität_Analyse}
-Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Dementsprechend müssen externe \ac{JS} und \ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können. Dies kann bequem über die vorhandenen \ac{HTML}-Tags und ihre Attribute gemacht werden.
+Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Folglich müssen externe \ac{JS} und \ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können, ohne den Quellcode zu verändern.
 
 
-\subsection{Asynchrones Laden}
-\label{sec:Asynchrones Laden}
-Nicht immer ist es sinnvoll, sämtliche Daten die auf einer Webseite angezeigt werden auch direkt an den Nutzer zu schicken. Sind beispielsweise große Datenmengen erst nach mehrmaligem Scrollen durch den Nutzer sichtbar, kann es ausreichen die Daten asynchron nachzuladen, sobald der Viewport, sprich der für den Nutzer sichtbare Bereich, sich diesem Inhalt nähert. Auf diese Weise kann der Server entlastet und die Ladezeit für den Nutzer verringert werden. Dieses Verhalten wird „Lazy Load“ genannt (XY). Besonders wenn davon auszugehen ist, dass der Nutzer nur einen sehr eingeschränkten Viewport oder eine schlechte Internetverbindung hat, bietet sich das asynchrone nachladen von Daten an.
+\subsection{Asynchrone Verarbeitung}
+\label{sec:Asynchrone Verarbeitung}
+Große Datenmengen deren Übertragung einige Sekunden in Anspruch nimmt, oder Aufgaben die langwierig sind, sollten nicht synchron ausgeführt werden. Stattdessen bietet es sich an, asynchrone Aufgabenblöcke zu definieren, wie beispielsweise das nachladen von Daten, sollten sie tatsächlich angefordert werden. Am Beispiel der hier geplanten \ac{SPA} bedeutet dies, dass Informationen von einem Webserver erst angefordert und sichtbar gemacht werden, sobald der Nutzer diese durch einen Klick auf ein Element anfordert. Da initial gewisse Daten noch nicht vorhanden sind, verringert sich die Datenmenge der zu übertragenen Informationen. Dadurch kann der Webserver entlastet und die initiale Ladezeit der Webseite verringert werden. Um das Kriterium der asynchronen Verarbeitung zu erfüllen, sollte Elm die Möglichkeit liefern, asynchrone Requests an einen Server zu schicken, Daten anzufordern und die Antwort darzustellen. Die Applikation darf dabei nicht in einen undefinierten Zustand kommen, sprich durch beispielsweise eine langsame Übertragungsrate Fehler bei der Darstellung erzeugen oder die Ausführung von nachfolgenden Operationen verzögern.
 
 
 \subsection{Dateigröße}
 \label{sec:Dateigroesse}
-Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datei groß, müssen entsprechend viele Informationen vom Server auf den Client des Nutzers übertragen werden, um die Webseite ansprechend darzustellen. Die Dateigröße kann mit einfachen Mitteln verringert werden. Beispielsweise können alle nicht unbedingt notwendigen Zeichen aus der Datei entfernt werden. Dazu gehören Zeichen wie „Leerzeichen“ (Whitespaces) oder Zeilenumbrüche. Doch auch die Verkürzung von Variablen ist denkbar. Anstelle von „EinZiemlichLangesWort“ reicht beispielsweise „a“ komplett aus. Offensichtlich muss die Variable im gesamten Code entsprechend umbenannt werden. Hierzu bedarf es Algorithmen, welche die Nutzung von Variablen genau untersuchen und Fehler durch Ersetzungen vermeiden.
+Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datenmenge groß, steigt entsprechend auch die Dateigröße an. Eine schlechte Übertragungsrate kann somit zu erheblichen Verzögerungen der fertigen Darstellung führen. Um die Dateigröße von üblichen \ac{JS}-Dateien zu verringern, werden oftmals externe Tools zur Entfernung von Leerzeichen oder der Verkürzung von Funktions- und Variablennamen genutzt. Für die anschließende Bewertung dieses Kriteriums, sollte der Compiler die Möglichkeit zur automatischen Verkleinerung der Dateigröße mit einer Effizienz von mindestens 50\% bieten. Zusätzlich sollte die Dateigröße eines Elm-Programmes mit den eingebundenen Standard-Bibliotheken $elm-lang/core$ und $elm-lang/html$ 150 Kilobyte nicht übersteigen.
 
 
 \section{Empirische Analyse}
 \label{sec:Empirische Analyse}
+Die folgende Sektion unterstützt und erläutert die praktische Ausarbeitung der \ac{SPA}. Dabei wird zunächst der typische Programmablauf der Applikation erörtert. Ferner wird die Entwicklungsumgebung unter der die Applikation ausgearbeitet wurde vorgestellt. Die schrittweise Entwicklung der Applikation wird durch die einzelnen Sektionen separiert und einzeln erläutert.
+
 \subsection{Programmablauf}
 \label{sec:Programmablauf}
 Abbildung XY: Zeigt die Kommunikation zwischen Client und Webserver
 Die Abbildung XY zeigt die geplante Kommunikation zwischen dem Client und dem Webserver.
-In Schritt 1 fordert der Nutzer die Webseite an und erzeugt dadurch einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen \ac{HTML}, \ac{CSS} und \ac{JS} Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer nun eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion führt zu einer Reaktion durch \ac{JS}, oder erzeugt einen neuen Request an den Server, womit erneut bei Schritt 1 begonnen wird. Das Einbinden von \ac{CSS} und \ac{JS} aus externen Quellen wird durch Schritt 6 verbildlicht.
-Die gesamte Applikation wird von einem fertigen Template, programmiert in \ac{HTML}, \ac{CSS} und \ac{JS} in die Programmiersprache Elm überführt, insofern möglich. Der daraus entstehende Elm-Quellcode wird daraufhin mit dem Elm-Compiler kompiliert zu \ac{JS}.
-Um ein generelles Verständnis der Programmiersprache Elm zu bekommen, dient die Dokumentation auf http://elm-lang.org/docs als Hilfestellung. Dort besteht die Möglichkeit sich mit den grundlegenden Konzepten vertiefend auseinanderzusetzen und diese zu erlernen.
+In Schritt 1 fordert der Nutzer die Webseite an und erzeugt dadurch einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen \ac{HTML}, \ac{CSS} und \ac{JS} Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion wird durch \ac{JS} erkannt und erzeugt eine Reaktion. Unter Umständen ist dies ein Request an den Server, womit bei Schritt 1 begonnen wird.
+
+
 \subsection{Entwicklungsumgebung}
 \label{sec:Entwicklungsumgebung}
-Die zugrunde liegende Elm-Version ist 0.17 und wird unter Ubuntu 14.04 64bit installiert. Als Editor wird Atom mit mehreren Elm-Plugins verwendet, so dass der geschriebene Code automatisch beim Speichern formatiert und durch den Compiler auf Fehler überprüft wird.
-Lauffähig wird die geschrieben Applikation mit dem Elm-Compiler $elm-make$ gemacht und mit Google Chrome Version 50 getestet.
+Die zugrunde liegende Elm-Version ist 0.17 und wird unter Ubuntu 14.04 64bit installiert. Als Editor wird Atom mit den Elm-spezifischen Plugins $language-elm$, $linter-elm-make$ und $elm-format$ verwendet. Diese Plugins unterstützen die Entwicklung von Elm-Programmen, indem der Quellcode beim speichern automatisch dem Style-Guide entsprechend formatiert, eventuelle Fehler bei der Kompilierung direkt im Editor sichtbar gemacht und der Code syntaktisch gefärbt, sowie Vorschläge zur Vervollständigung des geschriebenen Quellcodes gemacht werden. Da die Pakete ständig aktualisiert und verändert werden, wird an dieser Stelle von einer detaillierten Beschreibung zur Installation und Verwendung abgesehen und auf die Dokumentationen der einzelnen Pakete verwiesen.
+Der angefertigte Quellcode wird durch den Compiler $elm-make$ kompiliert.
+Anschließend wird die fertige \ac{SPA} mit den Browsern Google Chrome (Version 51), Internet Explorer (Version XY), Mozilla Firefox (Version 47) und Opera (Version 38). In Bezug auf die Abbildung~\ref{fig:browser-may-2016} fällt auf, dass Safari als einziger der fünf meistgenutzten Browser nicht getestet wird. Zum Zeitpunkt dieser wissenschaftlichen Arbeit stand kein entsprechendes Testgerät zur Verfügung. Die in der Abbildung genannten Browser decken 94,9\% aller genutzten Browser ab. Abzüglich des Browsers Safari, werden entsprechend die verbleibenden 82,2\% aller Browser überprüft.
+
+
+TODO: (https://github.com/triforkse/atom-elm-format)\\
+(https://github.com/triforkse/atom-elm-format)\\
+(https://atom.io/packages/language-elm\\
+
+\subsection{Grundaufbau}
+\label{sec:Grundaufbau}
+Damit der Nutzer letzten Endes eine Webseite besuchen kann, muss zunächst ein auslieferbares Dokument erzeugt werden. Hierfür wird zunächst die $index.html$-Datei aus dem Template $Agency$ übernommen und entsprechend angepasst. Die Datei dient dabei als Grundgerüst für die Elm-Applikation und lädt externe \ac{CSS} und \ac{JS}-Dateien.
+Zunächst wird sämtlicher Code Code der für die Darstellung des Templates innerhalb des $body$-Elementes definiert wurde entfernt. Lediglich die $script$-Tags bleiben innerhalb des $body$s bestehen, so dass sämtliche vordefinierte \ac{JS}-Dateien weiterhin geladen werden.
+\begin{figure}[p]
+\centering
+\includegraphics[scale=0.32]{img/index-grundaufbau-1.png}
+\includegraphics[scale=0.32]{img/index-grundaufbau-2.png}
+\caption{Grundaufbau der $index.html$, um die Elm-Applikation zu injizieren}\label{fig:index-grundaufbau}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=0.5]{img/elm-grundaufbau-start.png}
+\caption{Grundgerüst der Elm-Applikation}\label{fig:elm-grundaufbau-start}
+\end{figure}
+Damit in das Grundgerüst die Elm-Applikation geladen werden kann, ist ein weiterer $script$-Tag notwendig, der die kompilierte Elm-Applikationsdatei $elm.js$ einbindet. Des Weiteren muss die Elm-Applikation explizit aufgerufen und gestartet werden. Die Abbildung~\ref{fig:index-grundaufbau} zeigt die $index.html$ mit den notwendigen Änderungen in Zeile $22$, in welcher die kompilierte Elm-Applikation eingebunden wird, sowie den Zeilen $43$ bis $46$, in denen die Applikation gestartet wird und ein Ziel-\ac{HTML}-Element übergeben bekommt. Damit die Datei $elm.js$ eingebunden werden kann, muss sie zunächst erstellt werden. Dafür wird der Elm-Compiler $elm-make$ mit dem Zusatz $Main.elm\,--output\,elm.js$ genutzt. Hierbei wird die Datei $Main.elm$ kompiliert und das Ergebnis in die Datei $elm.js$ gespeichert.
+Es bestehen insgesamt drei Möglichkeiten die Elm-Applikation innerhalb der $index.html$ aufzurufen:
+\begin{enumerate}
+\item{$fullscreen$}: Der erzeugte Code der Applikation wird in den $body$-Tag einer \ac{HTML}-Datei geladen und überschreibt den sonstigen \ac{HTML}-Code
+
+\item{$embed$}: Der erzeugte Code der Applikation wird in den übergebenen DOM-Knoten geladen
+
+\item{$worker$}: Initialisiert die Applikation ohne grafische Benutzeroberfläche
+\end{enumerate}
+Die Abbildung~\ref{fig:index-grundaufbau} zeigt, dass für dieses praktische Beispiel Version $2$ genutzt wird. Diese Version bietet den Vorteil, dass eine Elm-Applikation gezielt in einen vordefinierten Bereich einer gesamten Webseite platziert werden kann. Auf diese Weise kann eine Elm-Applikation problemlos in eine bestehende Webseite eingebaut und erweitert werden. Ferner erlaubt diese Art der Injizierung zusätzliche externe \ac{JS}- und \ac{CSS}-Dateien hinzuzufügen.
+Nutzt man beispielsweise Version $1$, so ist die Elm-Applikation im absoluten Vordergrund und lässt die Interaktion mit anderen Elementen die zuvor auf der Webseite definiert wurden nicht mehr zu. Version $3$ wiederum erzeugt keine grafische Benutzeroberfläche, wodurch ebenso keine Interaktion möglich ist.
+Wahlweise besteht die Möglichkeit über den mitgelieferten Elm-Webserver $elm-reactor$ die Applikation manuell zu starten. Jedoch wird die Elm-Applikation dabei als $fullscreen$-Applikation gestartet und ist für die Zwecke dieser Arbeit nicht geeignet, weswegen auf die manuell Kompilierung zurückgegriffen werden muss.
+
+Zusätzlich zum Grundgerüst der $index.html$ muss nun noch das Grundgerüst der eigentlichen Elm-Applikation erstellt werden. Wie im Kapitel \nameref{sec:Konzept} beschrieben, ist Elm nach einem Model-View-Update-Konzept aufgebaut. Entsprechend sind das die drei notwendigen Funktionen, die es zu realisieren gilt, damit die Elm-Applikation lauffähig ist. Um \ac{HTML}-Code zu erzeugen gibt es das Elm-Paket $elm-lang/html$. Es liefert einerseits die Funktionen um \ac{HTML}-Elemente zu erzeugen, andererseits drei Funktionen $beginnerProgram$, $program$ und $programWithFlags$. Diese kümmern sich um die Bereitstellung und Auslieferung der Applikation, so dass sich Entwickler ganz auf die eigentliche Programmierung konzentrieren können. Dabei variieren stets die Übergabeparameter, wodurch die Applikation leicht erweitert und komplexer werden kann. So verlangt die Funktion $beginnerProgram$ nur die bekannten Funktionen $model$, $view$ und $update$ als Übergabeparameter. Hierbei können jedoch keine asynchronen Funktionen wie \ac{HTTP}-Requests genutzt werden.
+Dafür gibt es wiederum die erweiterte Funktion $program$, die als vierten Übergabeparameter sogenannte $subscriptions$ erwartet. Sie werden für die Kommunikation zwischen Elm und \ac{JS}, sowie Verbindungen zu Websockets genutzt.
+Die dritte und letzte Möglichkeit der Initialisierung ist die Funktion $programWithFlags$. Hierbei wird die Übergabe eines initialen $Model$s an die Elm-Applikation ermöglicht, um den Zustand der Applikation dynamisch setzen zu können.
+\begin{figure}[ht]
+\centering\includegraphics[scale=0.6]{img/programWithFlags_pass_data.png}
+\caption{Eine beispielhafte Initialisierung der Elm-Applikation mit initialen, dynamischen Werten}\label{fig:programWithFlags}
+\end{figure}
+Die Abbildung~\ref{fig:programWithFlags} zeigt beispielhaft die Implementierung der $Html.App.programWithFlags$-Funktion. Der zweite Übergabeparameter an die $Elm.Main.embed$-Funktion ist dabei ein $Record$ mit den gewünschten initialen Werten.
+Für die Umsetzung dieses praktischen Beispiels ist der Grundaufbau wie in Abbildung~\ref{fig:elm-grundaufbau-start} notwendig. Dies sind die minimal notwendigen Funktionen, um in den weiteren Schritten die einzelnen Sektionen des Views von \ac{HTML} nach Elm zu portieren, in einzelne Funktionen auszulagern und letzten Endes der Versuch, die gesamte Applikation zu modularisieren.
+Aus der Abbildung~\ref{fig:elm-grundaufbau-start} wird ersichtlich, dass zunächst das gesamte Paket $elm-lang/html$ importiert wird. Die vorherige Installation des Pakets ist analog zu der in der Abbildung~\ref{fig:elm-install-package} beschriebene Vorgehensweise. Des Weiteren wird der Grundaufbau der Elm-Applikation ersichtlich.
+Innerhalb der $main$-Funktion werden dabei alle notwendigen Funktionen an die $HTML$-Bibliothek weitergereicht. Dazu gehören die $init$, $view$, $update$ und $subscriptions$-Funktionen. Wie der Name bereits suggeriert initiiert die $init$-Funktion ein $Model$. Dabei wird dieses entweder anhand der dynamisch übergebenen Werte, oder durch ein Ausweich-Model ($initialModel$) erstellt, falls keine Daten übergeben wurden.
+Die Funktion $view$ erzeugt in der Abbildung~\ref{fig:elm-grundaufbau-start} zunächst ein $div$-Element, während die $update$-Funktion auf jede eingehende Interaktion ein Tupel mit einem unveränderten $model$, sowie keinem $Effekt$ zurück gibt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+
 \subsection{Hypothesen und Vermutungen}
 \label{sec:Hypothesen und Vermutungen}
 Sämtliche Hypothesen wurden in der Tabelle~\ref{tab:Hypothesentabelle} zusammengefasst. Dabei beziehen sich die einzelnen Vermutungen jeweils auf eines der zuvor erläuterten Kriterien in den Kapiteln \nameref{sec:Bewertungskriterien} (\ref{sec:Bewertungskriterien}) und \nameref{sec:ansprueche-webapp} (\ref{sec:ansprueche-webapp}). Die Nummerierungen der Hypothesentabelle~\ref{tab:Hypothesentabelle} sind gleich der Auswertungstabelle~\ref{tab:Auswertungstabelle}, so dass ein Vergleich möglich ist.
@@ -163,10 +227,7 @@ Sämtliche Hypothesen wurden in der Tabelle~\ref{tab:Hypothesentabelle} zusammen
 \caption{Aufstellung der Hypothesen}\label{tab:Hypothesentabelle}
 \end{table}
 
-\subsection{Versuchsdurchführung}
-\label{sec:Versuchsdurchführung}
-Zur Entwicklung der \ac{SPA} auf die in dieser wissenschaftlichen Arbeit Bezug genommen wird, wurden eine Vielzahl von externen Werkzeugen zur Hilfe  genommen. Zur Bearbeitung und Erstellung von Quellcode wurde der kostenfreie Editor $Atom$\cite{atom.io} genutzt und mit mehreren Plugins versehen. Dazu gehören die Pakete Pakete $elm-format$\\ (https://github.com/triforkse/atom-elm-format), $language-elm$\\ (https://atom.io/packages/language-elm) und {$linter-elm-make$}\\ (https://atom.io/packages/linter-elm-make). Mit Hilfe dieser Plugins wird der Code automatisch beim speichern dem Style-Guide entsprechend formatiert, eventuelle Fehler bei der Kompilierung direkt im Editor sichtbar gemacht und der Code syntaktisch gefärbt, sowie Vorschläge zur Vervollständigung des geschriebenen Quellcodes gemacht. Da die Pakete ständig aktualisiert und verändert werden, wird an dieser Stelle von einer detaillierten Beschreibung zur Installation abgesehen und auf die Dokumentationen der einzelnen Pakete verwiesen.
-Damit die geschriebene Applikation letztendlich im Browser aufrufbar ist, muss die Elm-Applikation zunächst in der \ac{HTML}-Datei aufgerufen und initialisiert werden. Dabei gibt es mehrere Möglichkeiten. Es ist sinnvoll hierbei zwischen vollautomatischem, sowie manuellem Grundaufbau zu unterschieden.
+
 \subsubsection{Grundgerüst der Applikation}
 \label{sec:Grundaufbau}
 
@@ -205,11 +266,10 @@ Die dritte und letzte Möglichkeit ist die Funktion $Html.App.programWithFlags$.
 \caption{Eine beispielhafte Initialisierung der Elm-Applikation mit übergebenen Werten}\label{fig:programWithFlags}
 \end{figure}
 Abbildung~\ref{fig:programWithFlags} zeigt das Grundgerüst einer Elm-Applikation mit der Implementierung der Funktion $Html.App.programWithFlags$. Die $main$ Funktion erstellt dabei die eigentliche Applikation, während die Funktionen $model$, $view$ und $update$ jeweils den Zustand und die gewünschte Darstellung der Applikation beschreiben, sowie vorgeben, wie mit der Interaktion durch den Benutzer umgegangen wird. Die Funktion $subscription$ gibt in diesem Stand noch keinerlei Daten weiter und stellt eine Dummy-Funktion dar. $initialModel$ erzeugt beim Aufruf ein Model mit initialen Werten, die dem Modeltypen ($type\,alias\,Model$) entsprechen müssen. Durch das Grundgerüst der $elm.html$ und $Main.elm$-Datei kann die Applikation nun schrittweise erweitert und Funktionen hinzugefügt werden. Zuletzt wird der erzeugte Code modularisiert.
-
+\fi
 \subsubsection{Konstruktion und Überführung des Views}
 \label{sec:Konstruktion des Views}
-Das gesamte Template $Agency$ soll weitestgehend nativ in Elm programmiert werden. Ausschließlich die vorhandenen \ac{JS}-Dateien sollen, wenn möglich, bestehen bleiben. Den Großteil des zu überführenden Codes macht dabei der \ac{HTML}-Code aus. Sämtliche Sektionen des Templates werden zunächst in einzelne Funktionen überführt und anschließend gesammelt von einem zentralen Punkt im Code aus aufgerufen.
-Damit \ac{HTML}-Code erzeugt werden kann, werden die entsprechenden Funktionen aus der Bibliothek $elm-lang/html$ genutzt werden. Im Zuge dessen wird die Bibliothek installiert und in die $*.elm$-Datei importiert. Mit Hilfe des Keywords $exposing$ wird eine Liste der Funktionen erzeugt, die in den aktuellen Namensraum der Applikation geladen werden sollen. Diese Liste wird mit den verwendeten Funktionsnamen zur Erstellung der \ac{HTML}-Elemente gefüllt, so dass die \ac{HTML}-Elemente ohne die Definition des ursprünglichen Namensraum $Html$ genutzt werden können.
+Damit \ac{HTML}-Elemente erzeugt werden können, werden die gleichnamigen Funktionen aus der Bibliothek $elm-lang/html$ genutzt werden. Im Zuge dessen wird die Bibliothek installiert und in die $*.elm$-Datei importiert. Mit Hilfe des Keywords $exposing$ wird eine Liste der Funktionen erzeugt, die in den aktuellen Namensraum der Applikation geladen werden sollen. Diese Liste wird mit den verwendeten Funktionsnamen zur Erstellung der \ac{HTML}-Elemente gefüllt, so dass die \ac{HTML}-Elemente ohne die Definition des ursprünglichen Namensraum $Html$ genutzt werden können.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.3]{img/div_elm_to_html.png}

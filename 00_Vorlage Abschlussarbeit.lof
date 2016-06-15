@@ -27,11 +27,11 @@
 \contentsline {figure}{\numberline {2.24}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung der erfolgreichen Installation von NodeJs und dem \ac {NPM}\relax }}{25}{figure.caption.60}
 \contentsline {figure}{\numberline {2.25}{\ignorespaces Installation eines externen Paketes \IeC {\"u}ber den Elm-Paketmanager\relax }}{26}{figure.caption.63}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016\relax }}{31}{figure.caption.66}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundger\IeC {\"u}st eines\ac {HTML}-Dokumentes, um die Elm Applikation zu laden\relax }}{35}{figure.caption.69}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Der gestartete Elm-Webserver\relax }}{35}{figure.caption.70}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit \IeC {\"u}bergebenen Werten\relax }}{37}{figure.caption.72}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Resultat des Elm-Codes in \ac {HTML}\relax }}{37}{figure.caption.74}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Deklaration einer Sektion des Views in Elm\relax }}{38}{figure.caption.75}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016 \cite {top-five-browser-statistics}\relax }}{32}{figure.caption.66}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundaufbau der $index.html$, um die Elm-Applikation zu injizieren\relax }}{35}{figure.caption.67}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Grundger\IeC {\"u}st der Elm-Applikation\relax }}{36}{figure.caption.68}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit initialen, dynamischen Werten\relax }}{37}{figure.caption.70}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Resultat des Elm-Codes in \ac {HTML}\relax }}{38}{figure.caption.72}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Deklaration einer Sektion des Views in Elm\relax }}{39}{figure.caption.73}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
