@@ -23,9 +23,10 @@ I was expecting a `,' or a `}'---line 75 of file Literatur.bib
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "https://github.com/elm-lang/elm-package"
 Warning--I didn't find a database entry for "https://github.com/evancz/todomvc-perf-comparison/"
+Warning--I didn't find a database entry for "stein1980alternative"
 You've used 3 entries,
             4011 wiz_defined-function locations,
-            800 strings with 6004 characters,
+            801 strings with 6024 characters,
 and the built_in function-call counts, 819 in all, are:
 = -- 76
 > -- 12

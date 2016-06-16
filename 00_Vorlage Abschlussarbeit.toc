@@ -1,60 +1,65 @@
 \select@language {ngerman}
 \contentsline {section}{\nonumberline Abstract}{i}{section*.1}
-\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}
-\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Funktionale Programmiersprachen}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}Grundlagen der Programmiersprache Elm}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Geschichte}{7}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Konzept}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Umsetzung}{9}{subsection.2.2.3}
-\contentsline {subsubsection}{\nonumberline Keine Seiteneffekte}{9}{section*.17}
-\contentsline {subsubsection}{\nonumberline Elm-Compiler}{11}{section*.18}
-\contentsline {subsubsection}{\nonumberline Statische Typisierung}{11}{section*.19}
-\contentsline {subsubsection}{\nonumberline Modularit\IeC {\"a}t}{11}{section*.21}
-\contentsline {subsubsection}{\nonumberline Performanz}{12}{section*.22}
-\contentsline {subsubsection}{\nonumberline Interoperabilit\IeC {\"a}t}{12}{section*.24}
-\contentsline {subsubsection}{\nonumberline Debugger}{13}{section*.25}
-\contentsline {subsubsection}{\nonumberline Praktische Anwendungsgebiete}{13}{section*.26}
-\contentsline {subsection}{\numberline {2.2.4}Einf\IeC {\"u}hrung in die Elm-Architektur}{14}{subsection.2.2.4}
-\contentsline {subsubsection}{\nonumberline Elm-REPL}{14}{section*.27}
-\contentsline {subsubsection}{\nonumberline Basisdatentypen}{15}{section*.30}
-\contentsline {subsubsection}{\nonumberline Basisfunktionen}{15}{section*.31}
-\contentsline {subsubsection}{\nonumberline Union Types}{15}{section*.32}
-\contentsline {subsubsection}{\nonumberline Records}{17}{section*.35}
-\contentsline {subsubsection}{\nonumberline Tupel}{18}{section*.37}
-\contentsline {subsubsection}{\nonumberline Variablen}{18}{section*.39}
-\contentsline {subsubsection}{\nonumberline Kontrollstrukturen}{19}{section*.41}
-\contentsline {subsubsection}{\nonumberline Funktionen}{20}{section*.44}
-\contentsline {subsubsection}{\nonumberline Signaturen}{21}{section*.46}
-\contentsline {subsubsection}{\nonumberline Typen Alias}{21}{section*.48}
-\contentsline {subsubsection}{\nonumberline Module}{22}{section*.51}
-\contentsline {subsubsection}{\nonumberline Importierung}{23}{section*.53}
-\contentsline {subsubsection}{\nonumberline Online-IDE}{23}{section*.55}
-\contentsline {subsubsection}{\nonumberline Installation}{24}{section*.57}
-\contentsline {subsubsection}{\nonumberline Start eines Projektes}{25}{section*.61}
-\contentsline {subsubsection}{\nonumberline Fertigstellung}{26}{section*.64}
-\contentsline {chapter}{\numberline {3}Evaluierung der Programmiersprache Elm}{27}{chapter.3}
-\contentsline {section}{\numberline {3.1}Bewertungsmuster}{27}{section.3.1}
-\contentsline {section}{\numberline {3.2}Bewertungskriterien}{28}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Entwicklungsgeschwindigkeit}{28}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Wartbarkeit und Lesbarkeit}{29}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Zuverl\IeC {\"a}ssigkeit}{29}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Portabilit\IeC {\"a}t}{29}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Effizienz}{30}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Wiederverwendbarkeit}{30}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Anspr\IeC {\"u}che an eine Webapplikation}{30}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t}{31}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{31}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{32}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{32}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Empirische Analyse}{33}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Programmablauf}{33}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Entwicklungsumgebung}{33}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Grundaufbau}{34}{subsection.3.4.3}
-\contentsline {subsubsection}{\nonumberline Konstruktion und \IeC {\"U}berf\IeC {\"u}hrung des Views}{38}{section*.71}
-\contentsline {subsubsection}{\nonumberline Modularisierung}{39}{section*.74}
-\contentsline {subsubsection}{\nonumberline Asynchrones Laden}{40}{section*.75}
-\contentsline {subsection}{\numberline {3.4.4}Beobachtungen}{41}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Auswertung}{42}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Fazit}{46}{chapter.4}
-\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{47}{chapter.5}
+\contentsline {chapter}{\numberline {1}Einleitung}{6}{chapter.1}
+\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Funktionale Programmiersprachen}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Grundlagen der Programmiersprache Elm}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Geschichte}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Konzept}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Umsetzung}{10}{subsection.2.2.3}
+\contentsline {subsubsection}{\nonumberline Keine Seiteneffekte}{10}{section*.17}
+\contentsline {subsubsection}{\nonumberline Elm-Compiler}{12}{section*.18}
+\contentsline {subsubsection}{\nonumberline Statische Typisierung}{12}{section*.19}
+\contentsline {subsubsection}{\nonumberline Modularit\IeC {\"a}t}{12}{section*.21}
+\contentsline {subsubsection}{\nonumberline Performanz}{13}{section*.22}
+\contentsline {subsubsection}{\nonumberline Interoperabilit\IeC {\"a}t}{13}{section*.24}
+\contentsline {subsubsection}{\nonumberline Debugger}{14}{section*.25}
+\contentsline {subsubsection}{\nonumberline Praktische Anwendungsgebiete}{14}{section*.26}
+\contentsline {subsection}{\numberline {2.2.4}Einf\IeC {\"u}hrung in die Elm-Architektur}{15}{subsection.2.2.4}
+\contentsline {subsubsection}{\nonumberline Elm-REPL}{15}{section*.27}
+\contentsline {subsubsection}{\nonumberline Basisdatentypen}{16}{section*.30}
+\contentsline {subsubsection}{\nonumberline Basisfunktionen}{16}{section*.31}
+\contentsline {subsubsection}{\nonumberline Union Types}{16}{section*.32}
+\contentsline {subsubsection}{\nonumberline Records}{18}{section*.35}
+\contentsline {subsubsection}{\nonumberline Tupel}{19}{section*.37}
+\contentsline {subsubsection}{\nonumberline Variablen}{19}{section*.39}
+\contentsline {subsubsection}{\nonumberline Kontrollstrukturen}{20}{section*.41}
+\contentsline {subsubsection}{\nonumberline Funktionen}{21}{section*.44}
+\contentsline {subsubsection}{\nonumberline Signaturen}{22}{section*.46}
+\contentsline {subsubsection}{\nonumberline Typen Alias}{22}{section*.48}
+\contentsline {subsubsection}{\nonumberline Module}{23}{section*.51}
+\contentsline {subsubsection}{\nonumberline Importierung}{24}{section*.53}
+\contentsline {subsubsection}{\nonumberline Online-IDE}{24}{section*.55}
+\contentsline {subsubsection}{\nonumberline Installation}{25}{section*.57}
+\contentsline {subsubsection}{\nonumberline Start eines Projektes}{26}{section*.61}
+\contentsline {subsubsection}{\nonumberline Fertigstellung}{27}{section*.64}
+\contentsline {chapter}{\numberline {3}Evaluierung der Programmiersprache Elm}{28}{chapter.3}
+\contentsline {section}{\numberline {3.1}Bewertungsmuster}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}Bewertungskriterien}{29}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Entwicklungsgeschwindigkeit}{29}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Wartbarkeit und Lesbarkeit}{30}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Zuverl\IeC {\"a}ssigkeit}{30}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Portabilit\IeC {\"a}t}{30}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Effizienz}{31}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Wiederverwendbarkeit}{31}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Anspr\IeC {\"u}che an eine Webapplikation}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t}{32}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{32}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{33}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{33}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Empirische Analyse}{34}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Programmablauf}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Entwicklungsumgebung}{34}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Grundaufbau}{35}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}\IeC {\"U}berf\IeC {\"u}hrung des Views}{39}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Auslagern des Views}{40}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Erweiterung der Update-Funktion}{40}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Modularisierung der Applikation}{41}{subsection.3.4.7}
+\contentsline {subsubsection}{\nonumberline View}{42}{section*.75}
+\contentsline {subsubsection}{\nonumberline Update}{42}{section*.78}
+\contentsline {subsubsection}{\nonumberline Model}{43}{section*.79}
+\contentsline {subsubsection}{\nonumberline Asynchrones Laden}{43}{section*.80}
+\contentsline {subsection}{\numberline {3.4.8}Beobachtungen}{44}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}Auswertung}{46}{subsection.3.4.9}
+\contentsline {chapter}{\numberline {4}Fazit}{49}{chapter.4}
+\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{50}{chapter.5}
