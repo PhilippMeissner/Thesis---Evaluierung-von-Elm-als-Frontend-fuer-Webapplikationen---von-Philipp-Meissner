@@ -169,45 +169,82 @@ Die Funktion $view$ erzeugt in der Abbildung~\ref{fig:elm-grundaufbau-start} zun
 \subsection{Überführung des Views}
 \label{sec:ueberfuehrung-view}
 Nachdem der Grundaufbau der Elm-Applikation beidseitig ausgeführt wurde, können nun die einzelnen Sektionen der originalen $index.html$ aus dem $Agency$-Template nativ in Elm überführt werden. Dafür wird das Online-Tool $html-to-elm$ auf der Webseite \url{http://mbylstra.github.io/html-to-elm/} zur Hilfe genommen. Der gesamte zuvor im $body$-Tag befindliche \ac{HTML}-Code wird kopiert und zur Konvertierung in das entsprechende Textfeld des Tools eingefügt. Der konvertierte Elm-Code sollte daraufhin auf der gegenüberliegenden Seite zu sehen sein. Durch einen Klick auf $copy$ wird der erstellte Elm-Code in die Zwischenablage kopiert, so dass der Inhalt in die $view$-Funktion der $Main.elm$-Datei eingefügt werden kann. Der kopierte Text fungiert dabei als kompletter Rückgabewert der $view$-Funktion.
-\begin{figure}[hb]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{img/elm-naming-error.png}
 \caption{Elm-Compilerfehler bei fehlenden Funktionen im Namensraum}\label{fig:elm-naming-error}
 \end{figure}
-Das Tool $html-to-elm$ sollte den Code bereits nach den Regeln des Style-Guides formatiert haben, so dass der erste Schritt der Portierung abgeschlossen ist. Um Namenskonflikte im aktuellen Namensraum zwischen Funktionen zu verhindern, werden die Importierungen der $HTML$-Bibliothek die genutzten Funktionen zur Erstellung von \ac{HTML}-Code explizit genannt. Der Compiler sollte nach dem Entfernen der zwei Punkte im Kommando $exposing (..)$ eine Warnung ausgeben und auf die fehlenden Funktionen hinweisen, wie es in Abbildung~\ref{fig:elm-naming-error} gezeigt wird. Schlägt der Compiler dabei vor, die Funktion aus dem Namensraum $Html.Attributes$ aufzurufen, muss sie entsprechend in die Liste der zu ladenden Funktionen der $Attribute$ hinzugefügt werden, wie in Abbildung~\ref{fig:elm-grundaufbau-start} in Zeile 3. Die Funktionen zur Generierung von \ac{HTML}-Tags hingegen sollten in die Liste der $import\,Html$s stehen. Nachdem alle Funktionen korrekt in den aktuellen Namensraum aufgenommen wurden, sollten keinerlei Compilerfehler auftreten.
+Das Tool $html-to-elm$ sollte den Code bereits nach den Regeln des Style-Guides formatiert haben, so dass hiermit der erste Schritt der Portierung abgeschlossen ist. Um Namenskonflikte im aktuellen Namensraum zwischen Funktionen zu verhindern, werden innerhalb der importierten $HTML$-Bibliothek die genutzten Funktionen zur Erstellung von \ac{HTML}-Code explizit genannt. Der Compiler sollte nach dem Entfernen des Kommandos $exposing (..)$ eine Warnung ausgeben und auf die fehlenden Funktionen hinweisen, wie es in Abbildung~\ref{fig:elm-naming-error} gezeigt wird. Schlägt der Compiler dabei vor, die Funktion aus dem Namensraum $Html.Attributes$ aufzurufen, muss sie entsprechend in die Liste der zu ladenden Funktionen der $Attribute$ hinzugefügt werden, wie in Abbildung~\ref{fig:elm-grundaufbau-start} in Zeile 3. Die Funktionen zur Generierung von \ac{HTML}-Tags hingegen sollten in die Liste der $import\,Html$s stehen. Nachdem alle Funktionen korrekt in den aktuellen Namensraum aufgenommen wurden, sollten keinerlei Compilerfehler auftreten.
 
-
+\subsection{Beheben von JavaScript-Fehlern}
+\label{sec:javascript-errors}
+Das Öffnen der Seite mitsamt der Developer-Tools von Google-Chrome verrät, dass die bisher eingebundenen \ac{JS}-Dateien nicht fehlerfrei funktionieren. Nutzt man das Template wie vorgesehen, ist sämtliche Funktionalität vorhanden. Bei der Überführung des Templates in Elm gilt es allerdings zu beachten, dass die Elm-Applikation den $view$ ausliefert und diesen erst verzögert darstellt. Dem menschlichen Betrachter fällt dies zwar nicht auf, jedoch greifen die \ac{JS}-Skripte auf ein noch nicht geladenes Element zu. Es ist dementsprechend notwendig, die einzelnen Skripte anzupassen und mit Hilfe der $\$(document).ready()$-Funktion des Frameworks $jQuery$ (\url{https://learn.jquery.com/using-jquery-core/document-ready/}) erst nach dem kompletten Seitenaufbau zu laden.
+Innerhalb der Datei $agency.js$ muss nicht nur die Funktion $\$('a.page-scroll').bind(...)$, sondern auch die nachfolgenden Funktionen innerhalb des $\$(function(){..});$-Blocks liegen. Die \ac{JS}-Datei $cbpAnimatedHeader.js$ hingegen erzeugt einen Fehler, wie in Abbildung~\ref{fig:js-classie-error} zu sehen ist.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/error-javascript-classie.png}
+\caption{JavaScript-Fehler innerhalb der Developer-Tools}\label{fig:js-classie-error}
+\end{figure}
+Um diesen zu beheben, muss der gesamte Dateiinhalt in eine $\$(document).ready()$-Funktion geschachtelt werden. Zusätzlich dazu ist es notwendig, dass die Codezeile wie sie in Abbildung\ref{fig:code-to-add} zu sehen ist, als erstes in der Funktion $scrollPage()$ hinzugefügt wird.
+\begin{figure}[h]
+\centering
+header = document.querySelector( '.navbar-fixed-top' );
+\caption{Notwendiger Code, um JavaScript-Fehler zu beheben.}\label{fig:code-to-add}
+\end{figure}
+Der Code hat zur Folge, dass das Navigations-Element ausgewählt und an die $classie$-Funktion weitergegeben wird. Fehlt diese Zeile, erfolgt ein Aufruf der $classie$-Funktion mit einem undefinierten Wert, wodurch der Fehler in Abbildung~\ref{fig:js-classie-error} zustande kommt. Nachdem diese beiden Fehler behoben wurden, kann nun die $Scroll-Spy$-Funktionalität auf der Webseite betrachtet werden. Scrollt der Nutzer nun auf oder ab und befindet sich dabei in einer innerhalb der Navigation definierten Sektion, so wird das entsprechende Gegenstück in der Navigationsleiste farblich hinterlegt. Des Weiteren verkleinert sich die Navigationsleiste, wenn der Nutzer eine bestimmte Entfernung nach unten gescrollt hat.
 \subsection{Auslagern des Views}
 \label{sec:auslagern-des-views}
-Um die einzelnen Teile der Webseite voneinander zu trennen und im Code unterscheiden zu können werden die einzelnen Sektionen in eine jeweils eigene Funktion ausgelagert.
+Um die einzelnen Sektionen der Webseite im Quellcode klar voneinander zu trennen, werden die einzelnen Sektionen in eine jeweils eigene Funktion ausgelagert.
 Für jede Sektion wird hierfür eine gleichnamige Funktion angelegt, die dem Muster in Abbildung~\ref{fig:elm-view-section} folgt. Die $id$ eines \ac{HTML}-Elementes könnte entsprechend stets für den Funktionsnamen $nameDerSektion$ genutzt werden, da dieses Attribut ohnehin einzigartig in einem gesamten \ac{HTML}-Dokument vorkommt und eine klare Namensgebung liefert.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.53]{img/elm-html-sections.png}
 \caption{Deklaration einer Sektion des Views in Elm}\label{fig:elm-view-section}
 \end{figure}
-Am Beispiel der $portfolio$-Sektion des zu überführenden Templates sieht das teilweise Endergebnis der daraus resultierenden Funktion $portfolio$ aus wie in Abbildung~\ref{fig:elm-view-section-function}. Die einzelnen Klassen und ID`s wurden beibehalten und übernommen. Nachdem die einzelnen Sektionen in Funktionen ausgelagert wurden fällt auf, dass die Sektionen nun nicht mehr angezeigt werden. Dafür ist es notwendig die ursprüngliche $view$-Funktion mit den Funktionsaufrufen der Sektionen zu versehen. Dieses Vorgehen kann in der Abbildung ~\ref{fig:elm-view-sections-call} betrachtet werden.
+Am Beispiel der $portfolio$-Sektion des zu überführenden Templates sehen die daraus resultierende Funktion teilweise aus wie in Abbildung~\ref{fig:elm-view-section-function}. Die einzelnen Klassen und ID`s wurden beibehalten und übernommen. Nachdem die einzelnen Sektionen in Funktionen ausgelagert wurden fällt auf, dass die Sektionen nicht mehr angezeigt werden. Dafür ist es notwendig die ursprüngliche $view$-Funktion mit den Funktionsaufrufen der Sektionen zu versehen. Dieses Vorgehen kann in der Abbildung ~\ref{fig:elm-view-sections-call} betrachtet werden. Das Resultat der $view$-Funktion unverändert aus, ist jedoch nun im Code übersichtlicher.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.41]{img/elm-view-portfolio-section-function.png}
 \caption{Ausgelagerter View in eine eigene Funktion}\label{fig:elm-view-section-function}
 \end{figure}
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{img/elm-view-section-functions-calling.png}
 \caption{Aufruf der einzelnen Sektionen im View}\label{fig:elm-view-sections-call}
 \end{figure}
 
-\subsection{Erweiterung der Update-Funktion}
-\label{sec:erweiterung-update}
-\begin{enumerate}
-\item{Definition von Msgs}
-\item{Definition einer Funktion die bei einem Klick aufgerufen wird}
-\item{Port für die Kommunikation nach außen definieren}
-\item{JS muss scrollen ausführen}
-\item{Modul zu einem Port-Modul machen}
-\item{View erweitern mit onClick-Funktion}
-\end{enumerate}
+
+\subsection{Hinzufügen von Klick-Events}
+\label{sec:erweiterung-clicks}
+Der derzeitige Stand der überführten Applikation stellt bereits sämtliche Sektionen auf der Webseite dar und erlaubt das Öffnen eines Modals durch einen Klick auf eines der Portfolio-Elemente. Bei einem Klick auf ein Element in der Navigationsleiste springt der Viewport des Browsers jedoch ohne jegliche Verzögerung direkt auf die ausgewählte Sektion. Das ursprüngliche Template hingegen nutzt die Funktionalität $smooth-page-scrolling$, wodurch der Nutzer einen sichtbaren Scroll-Effekt erhält, während automatisch zur ausgewählten Sektion gescrollt wird. Innerhalb der Datei $agency.js$, in der vorab bereits die Funktion des $Scroll-Spy$s wiederhergestellt wurde, wird in den Zeilen $9$ bis $15$ die Funktionalität des automatischen scrollens bei einem Klick umgesetzt, wie in Abbildung~\ref{fig:non-functional-scrolling} zu sehen ist.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.37]{img/non-functional-scrolling}
+\caption{Funktion zum scrollen bei einem Klick}\label{fig:non-functional-scrolling}
+\end{figure}
+Dabei wird zunächst ein $Ereignisbehandler$ an die Link-Elemente mit der Klasse $page-scroll$ gebunden. Klickt der Nutzer eines dieser Elemente, so wird die darauf folgende Funktion ausgeführt. Diese Funktion wiederum ließt Informationen des angeklickten Elementes aus, insbesondere das $href$-Attribut, welches die Id zur angeklickten Sektion enthält. Mittels der $animate$-Funktion wird letztlich zur gewünschten Sektion gescrollt.
+Diese Funktionalität ist nicht verfügbar, da das externe \ac{JS} versucht auf \ac{HTML}-Elemente innerhalb der Elm-Applikation zuzugreifen. Um dieses Problem zu lösen, kann einerseits die Funktion innerhalb der Datei $agency.js$ umgeschrieben werden, so dass sämtliche Klicks innerhalb des $body$-Elementes abgefangen werden, da sich dieser nicht Teil der Elm-Applikation ist. Andererseits kann der Klick innerhalb der Elm-Applikation registiert und über sogenannte Ports nach außen getragen werden. In diesem Beispiel ist das die bevorzugte Methode, da so eine klare Trennung zwischen der Elm-Applikation und den externen \ac{JS}-Skripten herrscht.
+Die Elm-Bibliothek $Html.Events$ enthält die Methode $onWithOptions$, mit Hilfe derer ein Klick auf ein Element des $views$ in Elm eine $Msg$ erzeugt wird. Diese $Msg$ wird an die $update$-Funktion weitergeleitet und kann dort entsprechend ausgewertet werden.
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.3]{img/elm-port.png}
+\caption{Definition eines neuen Union Types, sowie eines Ports für die Kommunikation zwischen Elm und \ac{JS}}\label{fig:create-port}
+\end{figure}
+Bislang gibt es in der Elm-Applikation noch keine $Msg$-Typen, die die $update$-Funktion verarbeiten könnte. Dementsprechend wird zunächst ein neuer Union-Type $Msg$ mit dem Eintrag $ClickedElem\,String$ angelegt. Der Union-Type muss nun noch in der $update$-Funktion behandelt werden. Hierbei wird ein neuer $case$ angelegt, mit dem zuvor erstellten Eintrag $ClickedElem$ und dem Übergabeparameter $elem$ vom Typ $String$. Der vorherige Eintrag "$\_ ->$", welcher für alle Fälle gilt, kann entfernt werden. Der Rückgabewert des $ClickedElem$-Falles ist dabei ein Tupel, bestehend aus dem unveränderten $model$, sowie einem Effekt. In diesem Fall ist der Effekt das Senden der ausgewählten Elementes nach außen zu einem \ac{JS}-Skript, das die Daten verarbeitet. Der Effekt wird dabei über den Port $sendClickedElemToJs$ nach außen geschickt. Der Port muss definiert werden mit dem Kommando in Zeile $21$ aus der Abbildung~\ref{fig:create-port}. Das Kommando ist lediglich die Signatur der gewünschten Kommunikationsweise und wird durch den Elm-Compiler während des Kompiliervorgangs entsprechend verarbeitet.
+Beim Versuch den Code wie er in Abbildung~\ref{fig:create-port} zu sehen ist zu kompilieren, wird der Compiler mit der Fehlermeldung "You are declaring port $sendClickedElemToJs$ in a normal module" antworten. Die Fehlermeldung bedeutet, dass das Modul in dem ein Port definiert wird explizit als ein Port-Modul deklariert werden muss. Die erste Zeile des Hauptmoduls muss folglich noch mit dem Schlüsselwort $port$ versehen werden. Damit die Elm-Applikation die Funktion $ClickElem$ aufruft, bedarf es noch des Aufrufes der zuvor erwähnten $onWithOptions$-Methode. Diese wird in den $view$ an den entsprechenden Stellen eingesetzt. Die Links der Navigationsleiste befinden sich in der Funktion $navigation$ und müssen um den Zusatz der $onWithOptions$-Funktion, sowie den Übergabeparametern $ClickedElem$ und dem $href$-Wert erweitert werden. In Abbildung~\ref{fig:elm-view-onclick} kann beispielhaft die Erweiterung an einigen Stellen begutachtet werden. Die Funktion $onWithOptions$ bekommt dabei zunächst einmal das $Event$, auf das sie einen Ereignishandler setzen soll. In diesem Fall ist dies ein $click$. Darauf folgt ein optionaler $Record$ von Typ $Options$. Hier müssen die Werte $stopPropagation$ und $preventDefault$ auf $True$ gesetzt werden. Fehlt diese Einstellung, so wird das scrollen sofort ausgeführt und kann möglicherweise andere Ergebnisbehandler in denen der Link geschachtelt ist ausführen. Dies würde zu einem undefinierten Verhalten führen. Der letzte Parameter ist die die Decoder-Funktion $Json.succeed$. Sie führt dazu, dass die übergebene Funktion $ClickedElem$ direkt und ohne weitere Überprüfungen ausgeführt wird.
+\begin{figure}[hbt]
+\centering
+\includegraphics[scale=0.4]{img/elm-view-onclick.png}
+\caption{Erweiterung des Views um einen $onWithOptions$ Ereignisbehandler in Elm}\label{fig:elm-view-onclick}
+\end{figure}
+Seitens der Elm-Applikation ist die notwendige Erweiterung nun abgeschlossen. Jedoch muss noch die $index.html$ um eine sogenannte $subscription$ erweitert werden. Das bedeutet, dass innerhalb der $index$-Datei die Nachricht der Elm-Applikation des angeklickten Elements entgegengenommen und verarbeitet werden muss. Diesbezüglich wird in der $index.html$ nach der Codestelle die für die Initialisierung der Elm-Applikation zuständig ist die Funktion aus Abbildung~\ref{fig:scrollTop} hinzugefügt.
+\begin{figure}[hbt]
+\centering
+\includegraphics[scale=0.4]{img/scrollTop.png}
+\caption{Entgegennahme der Daten aus der Elm-Applikation und anschließendes scrollen}\label{fig:scrollTop}
+\end{figure}
+Durch das Kommando $app.ports.sendClickedElemToJs.subscribe$ werden sämtliche Daten die Elm über den Port $sendClickedElemToJs$ sendet entgegengenommen und die nachfolgende Funktion ausgeführt. Diese Funktion wurde in diesem Beispiel lediglich aus der Datei $agency.js$ kopiert. Sie ermittelt das \ac{HTML}-Element im Baum anhand der übergebenen Id und scrollt innerhalb von zwei Sekunden zur obersten Stelle des übergebenen Elements.
 
 \subsection{Modularisierung der Applikation}
 \label{sec:modularisierung-der-applikation}
@@ -237,6 +274,16 @@ Nicht nur die für die Darstellung verantwortlichen Funktionen sollten modularis
 \label{sec:auslagern-Model}
 Letztlich wird noch das $model$, das sämtliche Daten die den Status der Applikation beschreiben enthält, in ein eigenes Modul im Unterordner $Model$ überführt. Die Einbindung dieses Moduls funktioniert analog zur Modularisierung von $Update$ und $View$.
 Mit Hilfe dieser Modularisierung wird das angestrebte \ac{MVU}-Konzept von Elm besonders deutlich.
+
+
+\subsubsection{Asynchrones Laden von Daten}
+\label{sec:async-laden}
+Klickt man innerhalb der Portfolio-Sektion der Webseite auf ein Element, öffnet sich ein Modal in dem weitere Informationen dargestellt werden. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert, die anschließend in dem geöffneten Modal angezeigt werden.
+Zunächst muss das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungweise den Status der Applikation zu speichern. Das `model` bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
+Bei einem Klick auf eines der Portfoliobeiträge soll entsprechend das Modal geöffnet und ein Titel präsentiert werden. In diesem Beispiel wird über eine externe API ein zufälliger String angefordert, vom Server generiert und dann an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. In diesem Fall ist es jedoch nicht notwendig ein zusätzliches Backend zu konfigurieren.
+Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt (Failed, Success, ..?), ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle , also den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem nicht definierten Zustand befindet.
+Einen asynchronen Request in Elm auszuführen bedarf mindestens zweier zusätzlicher Funktionen und der Importierung der Bibliotheken $Http$, $Json.Decode$ und $Task$. Des Weiteren muss der Klick auf das Portfolio-Element abgefangen werden. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt die auszuführende Funktion als Parameter, sieht also wie folgt aus: `onClick Update.GetRandomString`. Die möglichen `Types` von eingehenden Nachrichten (`Msg`/Klicks) wird erweitert um `GetRandomString`, sowie auch die `update`-Funktion um diesen Typ erweitert werden muss. Der entsprechende `update`-Fall `GetRandomString` gibt dann das `model`, sowie einen Effekt `fetchAsync` zurück. Die Definition dieses Effektes ist der Grund, weshalb hier von einem `managed Effect` die Rede ist und der Seiteneffekt kontrolliert verläuft. `fetchAsync` ist hierbei erneut eine Funktion, die eine Nachricht (`Msg`) an die `update`-Funktion mit dem Ergebnis des Requests zurückgibt . Elm führt den Request in Form eines `Task` aus und erwartet eine Funktion für den Fall einer erfolgreichen Übertragung, sowie eine Funktion für jeglichen Fehlerfall. In beiden Fällen wird die entsprechende Funktion ausgeführt und an die `update`-Funktion zurückgegeben. Hier wird, insofern notwendig, ein neues `model` mit veränderten Werten erzeugt und letztlich das Ergebnis auf dem Bildschirm des Nutzers sichtbar gemacht.\\
+TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einfügen.
 
 
 
@@ -372,14 +419,14 @@ Mit Hilfe dieser Modularisierung wird das angestrebte \ac{MVU}-Konzept von Elm b
 %Letztlich wird noch das $model$, das sämtliche Daten die den Status der Applikation beschreiben enthält, in ein eigenes Modul im Unterordner $Model$ überführt. Die Einbindung dieses Moduls funktioniert analog zur Modularisierung von $Update$ und $View$.
 %Mit Hilfe dieser Modularisierung wird das angestrebte \ac{MVU}-Konzept von Elm besonders deutlich.
 
-\subsubsection{Asynchrones Laden}
-\label{sec:Asynchrones Laden - Analyse}
-Das fertige Template bietet die Möglichkeit auf einen Portfoliobeitrag zu klicken. Durch diesen Klick wird ein Modal geöffnet, in das weitere Informationen dargestellt werden. Üblicherweise werden diese zusätzlichen Informationen in einer \ac{SPA} nachgeladen, um das initiale Laden der Applikation zu verkürzen und nur wirklich notwendige Daten anzuzeigen. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert.
-Zunächst muss das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungweise den Status der Applikation zu speichern. Das `model` bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
-Bei einem Klick auf eines der Portfoliobeiträge soll entsprechend das Modal geöffnet und ein Titel präsentiert werden. In diesem Beispiel wird über eine externe API ein zufälliger String angefordert, vom Server generiert und dann an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. In diesem Fall ist es jedoch nicht notwendig ein zusätzliches Backend zu konfigurieren.
-Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt (Failed, Success, ..?), ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle , also den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem nicht definierten Zustand befindet.
-Einen asynchronen Request in Elm auszuführen bedarf mindestens zweier zusätzlicher Funktionen und der Importierung der Bibliotheken $Http$, $Json.Decode$ und $Task$. Des Weiteren muss der Klick auf das Portfolio-Element abgefangen werden. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt die auszuführende Funktion als Parameter, sieht also wie folgt aus: `onClick Update.GetRandomString`. Die möglichen `Types` von eingehenden Nachrichten (`Msg`/Klicks) wird erweitert um `GetRandomString`, sowie auch die `update`-Funktion um diesen Typ erweitert werden muss. Der entsprechende `update`-Fall `GetRandomString` gibt dann das `model`, sowie einen Effekt `fetchAsync` zurück. Die Definition dieses Effektes ist der Grund, weshalb hier von einem `managed Effect` die Rede ist und der Seiteneffekt kontrolliert verläuft. `fetchAsync` ist hierbei erneut eine Funktion, die eine Nachricht (`Msg`) an die `update`-Funktion mit dem Ergebnis des Requests zurückgibt . Elm führt den Request in Form eines `Task` aus und erwartet eine Funktion für den Fall einer erfolgreichen Übertragung, sowie eine Funktion für jeglichen Fehlerfall. In beiden Fällen wird die entsprechende Funktion ausgeführt und an die `update`-Funktion zurückgegeben. Hier wird, insofern notwendig, ein neues `model` mit veränderten Werten erzeugt und letztlich das Ergebnis auf dem Bildschirm des Nutzers sichtbar gemacht.\\
-TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einfügen.
+%\subsubsection{Asynchrones Laden}
+%\label{sec:Asynchrones Laden - Analyse}
+%Klickt man innerhalb der Portfolio-Sektion der Webseite auf ein Element, öffnet sich ein Modal in dem weitere Informationen dargestellt werden. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert, die anschließend in dem geöffneten Modal angezeigt werden.
+%Zunächst muss das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungweise den Status der Applikation zu speichern. Das `model` bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
+%Bei einem Klick auf eines der Portfoliobeiträge soll entsprechend das Modal geöffnet und ein Titel präsentiert werden. In diesem Beispiel wird über eine externe API ein zufälliger String angefordert, vom Server generiert und dann an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. In diesem Fall ist es jedoch nicht notwendig ein zusätzliches Backend zu konfigurieren.
+%Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt (Failed, Success, ..?), ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle , also den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem nicht definierten Zustand befindet.
+%Einen asynchronen Request in Elm auszuführen bedarf mindestens zweier zusätzlicher Funktionen und der Importierung der Bibliotheken $Http$, $Json.Decode$ und $Task$. Des Weiteren muss der Klick auf das Portfolio-Element abgefangen werden. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt die auszuführende Funktion als Parameter, sieht also wie folgt aus: `onClick Update.GetRandomString`. Die möglichen `Types` von eingehenden Nachrichten (`Msg`/Klicks) wird erweitert um `GetRandomString`, sowie auch die `update`-Funktion um diesen Typ erweitert werden muss. Der entsprechende `update`-Fall `GetRandomString` gibt dann das `model`, sowie einen Effekt `fetchAsync` zurück. Die Definition dieses Effektes ist der Grund, weshalb hier von einem `managed Effect` die Rede ist und der Seiteneffekt kontrolliert verläuft. `fetchAsync` ist hierbei erneut eine Funktion, die eine Nachricht (`Msg`) an die `update`-Funktion mit dem Ergebnis des Requests zurückgibt . Elm führt den Request in Form eines `Task` aus und erwartet eine Funktion für den Fall einer erfolgreichen Übertragung, sowie eine Funktion für jeglichen Fehlerfall. In beiden Fällen wird die entsprechende Funktion ausgeführt und an die `update`-Funktion zurückgegeben. Hier wird, insofern notwendig, ein neues `model` mit veränderten Werten erzeugt und letztlich das Ergebnis auf dem Bildschirm des Nutzers sichtbar gemacht.\\
+%TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einfügen.
 
 \subsection{Beobachtungen}
 \label{sec:Beobachtungen}

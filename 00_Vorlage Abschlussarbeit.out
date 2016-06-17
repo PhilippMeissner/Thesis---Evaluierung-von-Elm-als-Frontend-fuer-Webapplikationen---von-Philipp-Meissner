@@ -26,10 +26,11 @@
 \BOOKMARK [2][-]{subsection.3.4.2}{Entwicklungsumgebung}{section.3.4}% 26
 \BOOKMARK [2][-]{subsection.3.4.3}{Grundaufbau}{section.3.4}% 27
 \BOOKMARK [2][-]{subsection.3.4.4}{\334berf\374hrung des Views}{section.3.4}% 28
-\BOOKMARK [2][-]{subsection.3.4.5}{Auslagern des Views}{section.3.4}% 29
-\BOOKMARK [2][-]{subsection.3.4.6}{Erweiterung der Update-Funktion}{section.3.4}% 30
-\BOOKMARK [2][-]{subsection.3.4.7}{Modularisierung der Applikation}{section.3.4}% 31
-\BOOKMARK [2][-]{subsection.3.4.8}{Beobachtungen}{section.3.4}% 32
-\BOOKMARK [2][-]{subsection.3.4.9}{Auswertung}{section.3.4}% 33
-\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 34
-\BOOKMARK [0][-]{chapter.5}{Eidesstattliche Erkl\344rung}{}% 35
+\BOOKMARK [2][-]{subsection.3.4.5}{Beheben von JavaScript-Fehlern}{section.3.4}% 29
+\BOOKMARK [2][-]{subsection.3.4.6}{Auslagern des Views}{section.3.4}% 30
+\BOOKMARK [2][-]{subsection.3.4.7}{Hinzuf\374gen von Klick-Events}{section.3.4}% 31
+\BOOKMARK [2][-]{subsection.3.4.8}{Modularisierung der Applikation}{section.3.4}% 32
+\BOOKMARK [2][-]{subsection.3.4.9}{Beobachtungen}{section.3.4}% 33
+\BOOKMARK [2][-]{subsection.3.4.10}{Auswertung}{section.3.4}% 34
+\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 35
+\BOOKMARK [0][-]{chapter.5}{Eidesstattliche Erkl\344rung}{}% 36
