@@ -1,6 +1,6 @@
 \chapter{Evaluierung der Programmiersprache Elm}
 \label{sec:Evaluierung der Programmiersprache Elm}
-Die Programmiersprache Elm wird mit Hilfe einer empirischen Analyse in Form der Entwicklung eines praktischen Beispieles evaluiert. Dabei wird ein fertiges Template einer \ac{SPA}, welches in \ac{HTML}, \ac{CSS} und \ac{JS} programmiert wurde, in nativen Elm-Code überführt, insofern möglich. Ausschließlich die vorhandenen \ac{JS} und \ac{CSS}-Dateien sollen bestehen bleiben. Zur aussagekräftigen Evaluierung der Programmiersprache Elm hinsichtlich einer Nutzung im Bereich der Webentwicklung bedarf es zunächst einiger Bewertungskriterien, anhand derer eine Aussage möglich ist. Nachdem ein Bewertungsmuster erstellt und erläutert wurde, befasst sich der darauf folgende Teil der wissenschaftlichen Arbeit mit der Überführung des Templates in nativen Elm-Code. Zuletzt werden Beobachtungen die während der Entwicklung auftraten erläutert und die zuvor erörterten Kriterien ausgewertet.
+Die Programmiersprache Elm wird mit Hilfe einer empirischen Analyse in Form der Entwicklung eines praktischen Beispieles evaluiert. Dabei wird ein fertiges Template einer \ac{SPA}, welches in \ac{HTML}, \ac{CSS} und \ac{JS} programmiert wurde, in nativen Elm-Code überführt, insofern möglich. Ausschließlich die vorhandenen \ac{JS} und \ac{CSS}-Dateien sollen bestehen bleiben. Zur aussagekräftigen Evaluierung der Programmiersprache Elm hinsichtlich einer Nutzung im Bereich der Webentwicklung bedarf es zunächst einiger Bewertungskriterien, anhand derer eine Aussage möglich ist. Nachdem ein Bewertungsmuster erstellt und erläutert wurde, befasst sich der darauf folgende Teil der wissenschaftlichen Arbeit mit der Überführung des Templates in nativen Elm-Code. Zuletzt werden Beobachtungen, die während der Entwicklung auftraten, erläutert und die zuvor erörterten Kriterien ausgewertet. Das Kapitel mündet schließlich in einem Fazit, in dem sämtliche Beobachtungen, die Auswertung anhand der Bewertungskriterien abschließend wertend zusammengefasst werden.
 
 \section{Bewertungsmuster}
 \label{sec:Bewertungsmuster}
@@ -25,13 +25,14 @@ Mit diesen Elementen kann eine typische SPA verwirklicht werden. Die Navigation 
 \label{sec:Bewertungskriterien}
 Während der Überführung des Templates soll der erzeugte Code, sowie der Weg dahin analysiert werden. Hierbei sind Aspekte wie Wiederverwendbarkeit und Effizienz von großer Bedeutung. Aber auch die Produktivität während der Arbeit mit dem Code soll betrachtet werden. Die Bewertungskriterien setzen sich zum Großteil aus den zugrunde liegenden Kriterien aus dem Dokument XY der Washington University zusammen. Im Folgenden soll die Notwendigkeit der Kriterien und ihre eigentliche Bedeutung verständlich gemacht werden.
 
-TODO: http://www.cs.gordon.edu/courses/cs323/lectures-2009/LanguageEvaluationCriteria.pdf\\
-http://courses.cs.washington.edu/courses/cse341/02sp/concepts/evaluating-languages.html
+%TODO: http://www.cs.gordon.edu/courses/cs323/lectures-2009/LanguageEvaluationCriteria.pdf\\
+%http://courses.cs.washington.edu/courses/cse341/02sp/concepts/evaluating-languages.html
 
-\subsection{Entwicklungsgeschwindigkeit}
-\label{sec:Entwicklungsgeschwindigkeit}
-Gerade für Startups ist es wichtig, ein erstes Produkt so schnell wie möglich bereitzustellen. Die Entwickler müssen entsprechend mit wenigen Mitteln ein fertiges (Software-)Produkt ausliefern können, selbst wenn sie noch kein oder wenig Vorwissen zu einer Programmiersprache haben.
-Dementsprechend sollte eine Programmiersprache nur eine geringe Anzahl an primitiven Konzepten aufweisen, die sich leicht erweitern lassen. Beispielsweise hat die Programmiersprache C standardmäßig keine Anreihung von Buchstaben, auch bekannt als $String$. Jedoch gibt es den Datentyp $char$, der einen einzelnen Buchstaben repräsentiert. Durch die Verknüpfung mehrerer $char$'s, kann letztendlich der Datentyp $String$ umgesetzt werden. TODO: Weg, oder re-write. Bibliotheken erlauben üblicherweise schnelleres/leichteres programmieren, aufgrund der Sammlung von Algorithmen.
+%\subsection{Entwicklungsgeschwindigkeit}
+%\label{sec:Entwicklungsgeschwindigkeit}
+%Gerade für Startups ist es wichtig, ein erstes Produkt so schnell wie möglich bereitzustellen. Die Entwickler müssen entsprechend mit wenigen Mitteln ein fertiges (Software-)Produkt ausliefern können, selbst wenn sie noch kein oder wenig Vorwissen zu einer Programmiersprache haben.
+%Dementsprechend sollte eine Programmiersprache nur eine geringe Anzahl an primitiven Konzepten aufweisen, die sich leicht erweitern lassen. Beispielsweise hat die Programmiersprache $C$ standardmäßig keine Anreihung von Buchstaben, auch bekannt als $String$. Jedoch gibt es den Datentyp $char$, der einen einzelnen Buchstaben repräsentiert. Durch die Verknüpfung mehrerer $char$'s, kann letztendlich der Datentyp $String$ umgesetzt werden. 
+%TODO: Weg, oder re-write. Bibliotheken erlauben üblicherweise schnelleres/leichteres programmieren, aufgrund der Sammlung von Algorithmen.
 
 
 \subsection{Wartbarkeit und Lesbarkeit}
@@ -59,9 +60,10 @@ Die Performance der Programmiersprache wird nicht anhand des hier entwickelten P
 \label{sec:Wiederverwendbarkeit}
 Vorhandene Codeteile neu zu verfassen oder händisch kopieren zu müssen ist sehr ineffizient. Besser ist es, wenn Funktionen mehrfach genutzt werden können. Auf diese Weise müssen Änderungen nicht mehrmals vorgenommen werden und die Fehleranfälligkeit sinkt. Ferner sollten Funktionen nicht nur wiederverwendbar, sondern isoliert in einem eigenen Modul definiert werden können. Besteht die Möglichkeit Module zu erstellen und diese an unterschiedlichen Stellen beliebig anzuwenden, gilt das Kriterium als erfüllt. Erweitert wird das Kriterium durch einen zusätzlichen Zugriffsschutz von außen, das bedeutet, dass innerhalb eines Moduls definiert werden kann, welche Funktionen nach außen hin sichtbar sind.
 
-
-\section{Ansprüche an eine Webapplikation}
-\label{sec:ansprueche-webapp}
+%\section{Ansprüche an eine Webapplikation}
+%\label{sec:ansprueche-webapp}
+\section{Web-spezifische Bewertungskriterien}
+\label{sec:web-kriterien}
 Die bisherigen Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
 Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-application-RIA.html). Diese Art der Webapplikation besitzt im wesentlichen mehr Programmlogik, die der Client ausführen kann. Ein weiteres Merkmal sind oftmals auch die Anzahl der vorhandenen Unterseiten, wodurch wiederum mehr Logik erforderlich wird.
@@ -99,10 +101,10 @@ Große Datenmengen deren Übertragung einige Sekunden in Anspruch nimmt, oder Au
 \label{sec:Dateigroesse}
 Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datenmenge groß, steigt entsprechend auch die Dateigröße an. Eine schlechte Übertragungsrate kann somit zu erheblichen Verzögerungen der fertigen Darstellung führen. Um die Dateigröße von üblichen \ac{JS}-Dateien zu verringern, werden oftmals externe Tools zur Entfernung von Leerzeichen oder der Verkürzung von Funktions- und Variablennamen genutzt. Für die anschließende Bewertung dieses Kriteriums, sollte der Compiler die Möglichkeit zur automatischen Verkleinerung der Dateigröße mit einer Effizienz von mindestens 50\% bieten. Zusätzlich sollte die Dateigröße eines Elm-Programmes mit den eingebundenen Standard-Bibliotheken $elm-lang/core$ und $elm-lang/html$ 150 Kilobyte nicht übersteigen.
 
-
+\newpage
 \section{Empirische Analyse}
 \label{sec:Empirische Analyse}
-Die folgende Sektion unterstützt und erläutert die praktische Ausarbeitung der \ac{SPA}. Dabei wird zunächst der typische Programmablauf der Applikation erörtert. Ferner wird die Entwicklungsumgebung unter der die Applikation ausgearbeitet wurde vorgestellt. Die schrittweise Entwicklung der Applikation wird durch die einzelnen Sektionen separiert und einzeln erläutert.
+Die folgende Sektion unterstützt und erläutert die praktische Ausarbeitung der \ac{SPA}. Dabei wird zunächst der typische Programmablauf der Applikation erörtert. Ferner wird die Entwicklungsumgebung unter der die Applikation ausgearbeitet wurde vorgestellt. Die Entwicklung wird in einzelne Abschnitte unterteilt und einzeln erläutert.
 
 \subsection{Programmablauf}
 \label{sec:Programmablauf}
@@ -185,7 +187,7 @@ Innerhalb der Datei $agency.js$ muss nicht nur die Funktion $\$('a.page-scroll')
 \includegraphics[scale=0.4]{img/error-javascript-classie.png}
 \caption{JavaScript-Fehler innerhalb der Developer-Tools}\label{fig:js-classie-error}
 \end{figure}
-Um diesen zu beheben, muss der gesamte Dateiinhalt in eine $\$(document).ready()$-Funktion geschachtelt werden. Zusätzlich dazu ist es notwendig, dass die Codezeile wie sie in Abbildung\ref{fig:code-to-add} zu sehen ist, als erstes in der Funktion $scrollPage()$ hinzugefügt wird.
+Um diesen zu beheben, muss der gesamte Dateiinhalt in eine $\$(document).ready()$-Funktion geschachtelt werden. Zusätzlich dazu ist es notwendig, dass die Codezeile wie sie in Abbildung~\ref{fig:code-to-add} zu sehen ist, als erstes in der Funktion $scrollPage()$ hinzugefügt wird.
 \begin{figure}[h]
 \centering
 header = document.querySelector( '.navbar-fixed-top' );
@@ -195,7 +197,7 @@ Der Code hat zur Folge, dass das Navigations-Element ausgewählt und an die $cla
 \subsection{Auslagern des Views}
 \label{sec:auslagern-des-views}
 Um die einzelnen Sektionen der Webseite im Quellcode klar voneinander zu trennen, werden die einzelnen Sektionen in eine jeweils eigene Funktion ausgelagert.
-Für jede Sektion wird hierfür eine gleichnamige Funktion angelegt, die dem Muster in Abbildung~\ref{fig:elm-view-section} folgt. Die $id$ eines \ac{HTML}-Elementes könnte entsprechend stets für den Funktionsnamen $nameDerSektion$ genutzt werden, da dieses Attribut ohnehin einzigartig in einem gesamten \ac{HTML}-Dokument vorkommt und eine klare Namensgebung liefert.
+Für jede Sektion wird hierfür eine gleichnamige Funktion angelegt, die dem Muster in Abbildung~\ref{fig:elm-view-section} folgt. Die $id$ eines \ac{HTML}-Elementes könnte entsprechend für den Funktionsnamen $nameDerSektion$ genutzt werden, da dieses Attribut ohnehin einzigartig in einem gesamten \ac{HTML}-Dokument vorkommt und eine klare Namensgebung liefert.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.53]{img/elm-html-sections.png}
@@ -225,13 +227,13 @@ Der derzeitige Stand der überführten Applikation stellt bereits sämtliche Sek
 \end{figure}
 Dabei wird zunächst ein $Ereignisbehandler$ an die Link-Elemente mit der Klasse $page-scroll$ gebunden. Klickt der Nutzer eines dieser Elemente, so wird die darauf folgende Funktion ausgeführt. Diese Funktion wiederum ließt Informationen des angeklickten Elementes aus, insbesondere das $href$-Attribut, welches die Id zur angeklickten Sektion enthält. Mittels der $animate$-Funktion wird letztlich zur gewünschten Sektion gescrollt.
 Diese Funktionalität ist nicht verfügbar, da das externe \ac{JS} versucht auf \ac{HTML}-Elemente innerhalb der Elm-Applikation zuzugreifen. Um dieses Problem zu lösen, kann einerseits die Funktion innerhalb der Datei $agency.js$ umgeschrieben werden, so dass sämtliche Klicks innerhalb des $body$-Elementes abgefangen werden, da sich dieser nicht Teil der Elm-Applikation ist. Andererseits kann der Klick innerhalb der Elm-Applikation registiert und über sogenannte Ports nach außen getragen werden. In diesem Beispiel ist das die bevorzugte Methode, da so eine klare Trennung zwischen der Elm-Applikation und den externen \ac{JS}-Skripten herrscht.
-Die Elm-Bibliothek $Html.Events$ enthält die Methode $onWithOptions$, mit Hilfe derer ein Klick auf ein Element des $views$ in Elm eine $Msg$ erzeugt wird. Diese $Msg$ wird an die $update$-Funktion weitergeleitet und kann dort entsprechend ausgewertet werden.
+Die Elm-Bibliothek $Html.Events$ enthält die Methode $onWithOptions$, mit Hilfe derer ein Klick auf ein Element des $views$ in Elm eine $Msg$ erzeugt. Diese $Msg$ wird an die $update$-Funktion weitergeleitet und kann dort entsprechend ausgewertet werden.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.3]{img/elm-port.png}
 \caption{Definition eines neuen Union Types, sowie eines Ports für die Kommunikation zwischen Elm und \ac{JS}}\label{fig:create-port}
 \end{figure}
-Bislang gibt es in der Elm-Applikation noch keine $Msg$-Typen, die die $update$-Funktion verarbeiten könnte. Dementsprechend wird zunächst ein neuer Union-Type $Msg$ mit dem Eintrag $ClickedElem\,String$ angelegt. Der Union-Type muss nun noch in der $update$-Funktion behandelt werden. Hierbei wird ein neuer $case$ angelegt, mit dem zuvor erstellten Eintrag $ClickedElem$ und dem Übergabeparameter $elem$ vom Typ $String$. Der vorherige Eintrag "$\_ ->$", welcher für alle Fälle gilt, kann entfernt werden. Der Rückgabewert des $ClickedElem$-Falles ist dabei ein Tupel, bestehend aus dem unveränderten $model$, sowie einem Effekt. In diesem Fall ist der Effekt das Senden der ausgewählten Elementes nach außen zu einem \ac{JS}-Skript, das die Daten verarbeitet. Der Effekt wird dabei über den Port $sendClickedElemToJs$ nach außen geschickt. Der Port muss definiert werden mit dem Kommando in Zeile $21$ aus der Abbildung~\ref{fig:create-port}. Das Kommando ist lediglich die Signatur der gewünschten Kommunikationsweise und wird durch den Elm-Compiler während des Kompiliervorgangs entsprechend verarbeitet.
+Bislang gibt es in der Elm-Applikation noch keine $Msg$-Typen, welche die $update$-Funktion verarbeiten könnte. Dementsprechend wird zunächst ein neuer Union-Type $Msg$ mit dem Eintrag $ClickedElem\,String$ angelegt. Der Union-Type muss nun noch in der $update$-Funktion behandelt werden. Hierbei wird ein neuer $case$ angelegt, mit dem zuvor erstellten Eintrag $ClickedElem$ und dem Übergabeparameter $elem$ vom Typ $String$. Der vorherige Eintrag "$\_ ->$", welcher für alle Fälle gilt, kann entfernt werden. Der Rückgabewert des $ClickedElem$-Falles ist dabei ein Tupel, bestehend aus dem unveränderten $model$, sowie einem Effekt. In diesem Fall ist der Effekt das Senden der ausgewählten Elemente nach außen zu einem \ac{JS}-Skript, das die Daten verarbeitet. Der Effekt wird dabei über den Port $sendClickedElemToJs$ nach außen geschickt. Der Port muss definiert werden mit dem Kommando in Zeile $21$ aus der Abbildung~\ref{fig:create-port}. Das Kommando ist lediglich die Signatur der gewünschten Kommunikationsweise und wird durch den Elm-Compiler während des Kompiliervorgangs entsprechend verarbeitet.
 Beim Versuch den Code wie er in Abbildung~\ref{fig:create-port} zu sehen ist zu kompilieren, wird der Compiler mit der Fehlermeldung "You are declaring port $sendClickedElemToJs$ in a normal module" antworten. Die Fehlermeldung bedeutet, dass das Modul in dem ein Port definiert wird explizit als ein Port-Modul deklariert werden muss. Die erste Zeile des Hauptmoduls muss folglich noch mit dem Schlüsselwort $port$ versehen werden. Damit die Elm-Applikation die Funktion $ClickElem$ aufruft, bedarf es noch des Aufrufes der zuvor erwähnten $onWithOptions$-Methode. Diese wird in den $view$ an den entsprechenden Stellen eingesetzt. Die Links der Navigationsleiste befinden sich in der Funktion $navigation$ und müssen um den Zusatz der $onWithOptions$-Funktion, sowie den Übergabeparametern $ClickedElem$ und dem $href$-Wert erweitert werden. In Abbildung~\ref{fig:elm-view-onclick} kann beispielhaft die Erweiterung an einigen Stellen begutachtet werden. Die Funktion $onWithOptions$ bekommt dabei zunächst einmal das $Event$, auf das sie einen Ereignishandler setzen soll. In diesem Fall ist dies ein $click$. Darauf folgt ein optionaler $Record$ von Typ $Options$. Hier müssen die Werte $stopPropagation$ und $preventDefault$ auf $True$ gesetzt werden. Fehlt diese Einstellung, so wird das scrollen sofort ausgeführt und kann möglicherweise andere Ergebnisbehandler in denen der Link geschachtelt ist ausführen. Dies würde zu einem undefinierten Verhalten führen. Der letzte Parameter ist die die Decoder-Funktion $Json.succeed$. Sie führt dazu, dass die übergebene Funktion $ClickedElem$ direkt und ohne weitere Überprüfungen ausgeführt wird.
 \begin{figure}[hbt]
 \centering
@@ -252,7 +254,7 @@ Durch das Auslagern aller einzelnen Sektionen der darzustellenden \ac{HTML}-Elem
 
 \subsubsection{View}
 \label{sec:auslagern-view}
-Jede Funktion die bisher eine Sektion des Views erzeugt hat, wird in eine neu angelegte $.elm$-Datei verschoben und die Funktion umbenannt zu $view$. Die Datei bekommt dabei den Namen, den die Funktion vorher trug. Ferner wird ein Ordner $View$ erzeugt, in den all diese Dateien hin verschoben werden. Damit die neuen Dateien als Module eingebunden werden können, müssen sie als solches definiert werden. Das bedeutet, dass jede Datei mit dem Kommando $module View.NameDerDatei exposing (view)$ initialisiert werden muss. Der Zusatz $view$ nach dem Kommando $exposing$ gibt an, dass die Funktion $view$ nach außen hin sichtbar ist und vom importierenden Modul genutzt werden kann.
+Jede Funktion die bisher eine Sektion des Views erzeugt hat, wird in eine neu angelegte $.elm$-Datei verschoben und die Funktion umbenannt zu $view$. Die Datei bekommt dabei den Namen, den die Funktion vorher trug. Ferner wird ein Ordner $View$ erzeugt, in den all diese Dateien hin verschoben werden. Damit die neuen Dateien als Module eingebunden werden können, müssen sie als solches definiert werden. Das bedeutet, dass jede Datei mit dem Kommando $module\,View.NameDerDatei\,exposing\,(view)$ initialisiert werden muss. Der Zusatz $view$ nach dem Kommando $exposing$ gibt an, dass die Funktion $view$ nach außen hin sichtbar ist und vom importierenden Modul genutzt werden kann.
 \begin{figure}[hbt]
 \centering
 \includegraphics[scale=0.5]{img/imports-main.png}
@@ -278,13 +280,47 @@ Mit Hilfe dieser Modularisierung wird das angestrebte \ac{MVU}-Konzept von Elm b
 
 \subsubsection{Asynchrones Laden von Daten}
 \label{sec:async-laden}
-Klickt man innerhalb der Portfolio-Sektion der Webseite auf ein Element, öffnet sich ein Modal in dem weitere Informationen dargestellt werden. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert, die anschließend in dem geöffneten Modal angezeigt werden.
-Zunächst muss das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungweise den Status der Applikation zu speichern. Das `model` bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
-Bei einem Klick auf eines der Portfoliobeiträge soll entsprechend das Modal geöffnet und ein Titel präsentiert werden. In diesem Beispiel wird über eine externe API ein zufälliger String angefordert, vom Server generiert und dann an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. In diesem Fall ist es jedoch nicht notwendig ein zusätzliches Backend zu konfigurieren.
-Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt (Failed, Success, ..?), ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle , also den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem nicht definierten Zustand befindet.
-Einen asynchronen Request in Elm auszuführen bedarf mindestens zweier zusätzlicher Funktionen und der Importierung der Bibliotheken $Http$, $Json.Decode$ und $Task$. Des Weiteren muss der Klick auf das Portfolio-Element abgefangen werden. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt die auszuführende Funktion als Parameter, sieht also wie folgt aus: `onClick Update.GetRandomString`. Die möglichen `Types` von eingehenden Nachrichten (`Msg`/Klicks) wird erweitert um `GetRandomString`, sowie auch die `update`-Funktion um diesen Typ erweitert werden muss. Der entsprechende `update`-Fall `GetRandomString` gibt dann das `model`, sowie einen Effekt `fetchAsync` zurück. Die Definition dieses Effektes ist der Grund, weshalb hier von einem `managed Effect` die Rede ist und der Seiteneffekt kontrolliert verläuft. `fetchAsync` ist hierbei erneut eine Funktion, die eine Nachricht (`Msg`) an die `update`-Funktion mit dem Ergebnis des Requests zurückgibt . Elm führt den Request in Form eines `Task` aus und erwartet eine Funktion für den Fall einer erfolgreichen Übertragung, sowie eine Funktion für jeglichen Fehlerfall. In beiden Fällen wird die entsprechende Funktion ausgeführt und an die `update`-Funktion zurückgegeben. Hier wird, insofern notwendig, ein neues `model` mit veränderten Werten erzeugt und letztlich das Ergebnis auf dem Bildschirm des Nutzers sichtbar gemacht.\\
-TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einfügen.
-
+Klickt man innerhalb der Portfolio-Sektion der Webseite auf ein Element, öffnet sich ein Modal in dem weitere Informationen dargestellt werden. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert, die anschließend in dem geöffneten Modal angezeigt werden. Beispielhaft wird hier die \ac{API} von \ac{ICNDb} (\url{https://api.icndb.com}) genutzt. Sie liefert bei jeder Anfrage einen zufälligen Witz zurück.
+Für dieses Funktionalität muss zunächst das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungsweise den Status der Applikation zu speichern. Das $model$ bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
+Bei einem Klick auf einen der Portfoliobeiträge soll ein Modal geöffnet und ein zufälliger Witz präsentiert werden. Dafür wird über die externe \ac{API} ein zufälliger String angefordert, vom Server generiert und letztlich an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. Das asynchrone Anfordern von Daten basiert sowohl bei einem lokalen, wie auch externen Server auf dem gleichen Konzept, weswegen dieser Schritt entfällt und der vorhandene externe Service genutzt wird.
+Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt, ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle, sprich den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem undefinierten Zustand befindet. Es bedarf zusätzlich der Bibliotheken $Http$, $Json.Decode$ und $Task$, damit ein asynchroner Request ausgeführt werden kann. Die Bibliotheken müssen installiert und in die jeweiligen Module importiert werden. Des Weiteren gilt es den Klick auf den Portfoliobeitrag abzufangen, um den Request zu starten und das Ergebnis in den View einzuarbeiten. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt eine auszuführende Funktion aus dem $Update$-Modul als Parameter, in diesem Fall $GetRandomString$, wie es in Abbildung~\ref{fig:portfolio-async} zu sehen ist. Bei einem Klick auf das Element wird eine $Msg$ von diesem Typ erstellt und muss in der $update$-Funktion behandelt werden.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/portfolio-async.png}
+\caption{OnClick-Ereignisbehandler in Elm}\label{fig:portfolio-async}
+\end{figure}
+Wie zuvor bei der Definition einer $Msg$ um Daten durch Ports nach außen zu kommunizieren, muss auch die Nachricht $GetRandomString$ als $Msg$-Typ deklariert werden, um so in der $update$-Funktion behandelt werden zu können. Außerdem müssen die möglichen Statusfälle des Requests behandelt und als $Msg$ hinzugefügt werden. Abbildung~\ref{fig:msg-async} zeigt die hinzugefügten $Msg$-Typen.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{img/msg-async.png}
+\caption{$Msg$-Deklaration mit asynchronem Request}\label{fig:msg-async}
+\end{figure}
+Nachdem die neuen Interaktionsmöglichkeiten in der Elm-Applikation implementiert wurden, muss nun der eigentliche Request ausführbar gemacht werden. Die Funktion $GetRandomString$ soll dabei ein unverändertes Model, sowie eine asynchron auszuführende Funktion in Form eines Effektes als Tupel zurückliefern. Dabei ist die asynchrone Funktion der eigentliche \ac{HTTP}-Request, wie er in Abbildung~\ref{fig:fetchasync-async} erkennbar ist.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{img/fetchasync-async.png}
+\caption{Asynchroner \ac{HTTP}-Request in Elm}\label{fig:fetchasync-async}
+\end{figure}
+Dabei wird die Funktion $Http.get$ genutzt, um einen Request an die $url$ auszuführen. Die Antwort des Requests wird an die Funktion $decodeAnswer$ gereicht, welche das eingehende \ac{JSON}-Objekt dekodiert und die gewünschten Informationen herausfiltert. Die Dekodierfunktion kann in Abbildung~\ref{fig:decodeanswer-async} betrachtet werden. Sie filtert das geschachtelte \ac{JSON}-Objekt, so dass nur der gewünschte String übrig bleibt.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/decodeanswer-async.png}
+\caption{Dekodierung eines Json-Objektes in Elm}\label{fig:decodeanswer-async}
+\end{figure}
+Abhängig vom Status des Requests, wird der jeweilige Fall in der $update$-Funktion aufgerufen. Bei einer erfolgreichen Übertragung wird die Funktion $FetchSucceed$ ein neues Model mit dem asynchron abgerufenen String zurückliefern. Der String wird dabei in das Feld $async\_content$ des $model$ geschrieben. Bei einer fehlgeschlagenen Übertragung wird die Funktion $FetchFail$ das unveränderte $model$ zurückgeben. Alternativ kann auch eine mögliche Fehlermeldung in das $model$ eingearbeitet und im $view$ dargestellt werden.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/update-async.png}
+\caption{$Update$-Fälle für den asynchronen Request}\label{fig:update-async}
+\end{figure}
+Die fertige $update$-Funktion mit allen abgehandelten Fällen ist in Abbildung~\ref{fig:update-async} dargestellt. Der asynchrone Request wird dabei durch $GetRandomString$ initiiert. Die Manipulation des $model$ findet lediglich in der $FetchSucceed$-Funktion statt.
+Nachdem die Elm-Applikation an dieser Stelle fehlerfrei kompiliert wurde, kann der asynchrone Request auf der Webseite getestet werden. Mit Hilfe der Developer-Tools kann die ausgehende Anfrage an den \ac{ICNDb}-Server beobachtet und ausgewertet werden. Auch die Antwort des Servers kann unbehandelt in Abbildung~\ref{fig:request-async} begutachtet werden.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/request-async.png}
+\caption{Ausgehender HTTP-Request und eingehende Antwort}\label{fig:request-async}
+\end{figure}
+Die Abbildung zeigt ferner wie der zurückgelieferte Text des Requests fehlerfrei dekodiert und in das $model$ übertragen, sowie letztlich in der $view$-Funktion des $Popup$-Moduls mittels des Kommandos $text\,model.async\_content$ angezeigt wird.
 
 
 
@@ -406,7 +442,7 @@ TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einf�
 %Um Modularität zu gewährleisten, wird jede Sektion der SPA, wie zum Beispiel die Navigation, die Team-Sektion oder der Footer im ersten Schritt in eine eigene Funktion ausgelagert. Jede dieser Funktionen wird dann in der `view`-Funktion aufgerufen und ergibt am Ende die gesamte Webseite. Auf diese Weise können die einzelnen Teile der SPA unabhängig voneinander modifiziert und auf Korrektheit überprüft werden. Im nächsten Schritt wird der gesamte View-Code modularisiert.
 
 
-%
+
 %\subsubsection{Modularisierung}
 %\label{sec:Modularisierung}
 %Damit ein Entwickler den Überblick über den vorhandenen Quellcode behält ist es sinnvoll einzelne Teile der Applikation in mehrere Dateien und Ordner zu verschieben. Eine solche Strukturierung hilft dabei die womöglich fehlerbehafteten Teile der Applikation zu finden und beispielsweise die Programmlogik noch deutlicher von der Applikationsdarstellung zu trennen. Dabei werden die einzelnen Funktionen des Views, also die für die Darstellung verantwortlichen Programmteile, ausgelagert in eigene Module. Dasselbe wird für die `Update` und `Model` relevanten Funktionen durchgeführt. Die notwendigen Funktionen eines jeden Moduls werden dann im Gegenzug vom Hauptmodul importiert und an den entsprechenden Stellen aufgerufen.\\\\
@@ -443,7 +479,7 @@ Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problem
 	\begin{enumerate}[label*=\arabic*.]
 		\item \ac{HTML}-Code benötigt in Elm keine schließenden Klammern. Anders als \ac{HTML} arbeitet Elm mit Einrückungen. Die gleichnamigen Funktionen um ein \ac{HTML}-Element zu erzeugen benötigen dementsprechend lediglich den Funktionsaufruf, gefolgt von den zwei Argumenten. Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.
 	\end{enumerate}
-\item Vertikale und horizontale Zentrierung eines Elementes ist umfangreicher als vorerst erwartet
+\item Vertikale und horizontale Zentrie2rung eines Elementes ist umfangreicher als vorerst erwartet
 	\begin{enumerate}[label*=\arabic*.]
 		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem \ac{JS}. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
 		
@@ -517,7 +553,7 @@ Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problem
 \caption{Auswertung der Versuchskriterien}
 \label{tab:Auswertungstabelle}
 \end{table}
-TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungstabelle}
+%TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungstabelle}
 
  1.1. Elm hat leicht erlernbare Grundkonzepte, die adaptiert und erweiterbar sind, um Produktivität für die Entwickler zu gewährleisten.
  
@@ -572,33 +608,34 @@ TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungst
  
  9.1. Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen
  --> Die kompilierte Elm-Applikation hat eine Größe von etwa 300kb. Allerdings kann diese Größe um etwa 60Prozent verringert werden, wenn der Code `minified` wird.
+
+10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
+--> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
+
+10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
+--> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
+
+11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
+--> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
+
+\subsection{Fazit}
+\label{sec:Fazit}
+
   
-  10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
-  --> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
-  
-  10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
-  --> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
-  
-  11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
-  --> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
-  
-  
-  
-  
-  1. Installation sehr einfach
-  1. externe Abhängigkeiten werden automatisch installiert
-  2. Installation war schnell
-  3. Erklärung zur Installation war deutlich
-  2. Modularität möglich
-  1. Jedes View-Element als eigenes Modul
-  1. Paralleles arbeiten möglich
-  2. Entwickler bekommen nur die notwendigen Informationen für das Interface
-  3. Tools
-  1.\ac{HTML}2ELM sehr hilfreich
-  1. Kleinere Fehler
-  1. ' verursacht Fehler (Weiterfolgende Divs wurden vernachlässigt)
-  2. required --> required '' (wants Bool, got String); novalidate same
-  2. Elm-Compiler
-  1. Fehler von\ac{HTML}2ELM (2. Punkt) wurden sofort erkannt
-  2. Fehlende Funktionen für\ac{HTML} und\ac{CSS} Attribute wurden in den Fehlermeldungen vorgeschlagen („Did you mean Html.Attributes.required?“ für „required true“)
-  4. Erklärungen der Elm-Struktur in den Guides sehr gut
+1. Installation sehr einfach
+1. externe Abhängigkeiten werden automatisch installiert
+2. Installation war schnell
+3. Erklärung zur Installation war deutlich
+2. Modularität möglich
+1. Jedes View-Element als eigenes Modul
+1. Paralleles arbeiten möglich
+2. Entwickler bekommen nur die notwendigen Informationen für das Interface
+3. Tools
+1.\ac{HTML}2ELM sehr hilfreich
+1. Kleinere Fehler
+1. ' verursacht Fehler (Weiterfolgende Divs wurden vernachlässigt)
+2. required --> required '' (wants Bool, got String); novalidate same
+2. Elm-Compiler
+1. Fehler von\ac{HTML}2ELM (2. Punkt) wurden sofort erkannt
+2. Fehlende Funktionen für\ac{HTML} und\ac{CSS} Attribute wurden in den Fehlermeldungen vorgeschlagen („Did you mean Html.Attributes.required?“ für „required true“)
+4. Erklärungen der Elm-Struktur in den Guides sehr gut
