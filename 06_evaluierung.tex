@@ -60,8 +60,7 @@ Die Performance der Programmiersprache wird nicht anhand des hier entwickelten P
 \label{sec:Wiederverwendbarkeit}
 Vorhandene Codeteile neu zu verfassen oder händisch kopieren zu müssen ist sehr ineffizient. Besser ist es, wenn Funktionen mehrfach genutzt werden können. Auf diese Weise müssen Änderungen nicht mehrmals vorgenommen werden und die Fehleranfälligkeit sinkt. Ferner sollten Funktionen nicht nur wiederverwendbar, sondern isoliert in einem eigenen Modul definiert werden können. Besteht die Möglichkeit Module zu erstellen und diese an unterschiedlichen Stellen beliebig anzuwenden, gilt das Kriterium als erfüllt. Erweitert wird das Kriterium durch einen zusätzlichen Zugriffsschutz von außen, das bedeutet, dass innerhalb eines Moduls definiert werden kann, welche Funktionen nach außen hin sichtbar sind.
 
-%\section{Ansprüche an eine Webapplikation}
-%\label{sec:ansprueche-webapp}
+
 \section{Web-spezifische Bewertungskriterien}
 \label{sec:web-kriterien}
 Die bisherigen Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
@@ -75,7 +74,7 @@ Das Gegenstück zum Frontend stellt das sogenannte Backend dar. Dabei handelt es
 \subsection{Browser Kompatibilität}
 \label{sec:Browser Kompatibilität}
 Ein weiterer wichtiger Aspekt ist die Kompatibilität der Browser mit den genutzten Programmiersprachen. Da der Browser die Darstellung des \ac{HTML} und \ac{CSS} Quellcodes übernimmt, sowie die Manipulationen des DOM durch \ac{JS}, ist es wichtig, dass der Browser den vorhandenen Quellcode lesen und ausführen kann. Sämtliche Sprachen wie \ac{HTML}, \ac{CSS} und \ac{JS} befinden sich im konstanten Wandel und werden stets weiter entwickelt.
-Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Dementsprechend ist es wichtig, dass die Applikation auf den gängigen Browsern fehlerfrei funktioniert, insbesondere die fünf meistgenutzten Browser Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}).
+Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Dementsprechend ist es wichtig, dass die Applikation auf den gängigen Browsern fehlerfrei funktioniert, insbesondere den fünf meistgenutzten Browsern Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}). Sollte die Applikation fehlerfrei in allen Browsern starten und die Funktionalität vollends gegeben sein, kann dieses Kriterium als erfüllt angesehen werden.
 \iffalse
 www.w3counter.com/trends\\+
 https://www.w3counter.com/globalstats.php?year=2016&month=5
@@ -89,12 +88,12 @@ https://www.w3counter.com/globalstats.php?year=2016&month=5
 
 \subsection{Interoperabilität}
 \label{sec:Interoperabilität_Analyse}
-Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Folglich müssen externe \ac{JS} und \ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können, ohne den Quellcode zu verändern.
+Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Folglich müssen externe \ac{JS} und \ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können, ohne den Quellcode zu verändern. Sollte es die Möglichkeit geben bestehende, externe Bibliotheken einzubinden oder anderweitig nutzbar zu machen, gilt das Kriterium als erfüllt.
 
 
 \subsection{Asynchrone Verarbeitung}
 \label{sec:Asynchrone Verarbeitung}
-Große Datenmengen deren Übertragung einige Sekunden in Anspruch nimmt, oder Aufgaben die langwierig sind, sollten nicht synchron ausgeführt werden. Stattdessen bietet es sich an, asynchrone Aufgabenblöcke zu definieren, wie beispielsweise das nachladen von Daten, sollten sie tatsächlich angefordert werden. Am Beispiel der hier geplanten \ac{SPA} bedeutet dies, dass Informationen von einem Webserver erst angefordert und sichtbar gemacht werden, sobald der Nutzer diese durch einen Klick auf ein Element anfordert. Da initial gewisse Daten noch nicht vorhanden sind, verringert sich die Datenmenge der zu übertragenen Informationen. Dadurch kann der Webserver entlastet und die initiale Ladezeit der Webseite verringert werden. Um das Kriterium der asynchronen Verarbeitung zu erfüllen, sollte Elm die Möglichkeit liefern, asynchrone Requests an einen Server zu schicken, Daten anzufordern und die Antwort darzustellen. Die Applikation darf dabei nicht in einen undefinierten Zustand kommen, sprich durch beispielsweise eine langsame Übertragungsrate Fehler bei der Darstellung erzeugen oder die Ausführung von nachfolgenden Operationen verzögern.
+Große Datenmengen, deren Übertragung einige Sekunden in Anspruch nimmt, oder Aufgaben die langwierig sind, sollten nicht synchron ausgeführt werden. Stattdessen bietet es sich an, asynchrone Aufgabenblöcke zu definieren, wie beispielsweise das nachladen von Daten, sollten sie tatsächlich angefordert werden. Am Beispiel der hier geplanten \ac{SPA} bedeutet dies, dass Informationen von einem Webserver erst angefordert und sichtbar gemacht werden, sobald der Nutzer diese durch einen Klick auf ein Element anfordert. Da initial gewisse Daten noch nicht vorhanden sind, verringert sich die Datenmenge der zu übertragenen Informationen. Dadurch kann der Webserver entlastet und die initiale Ladezeit der Webseite verringert werden. Um das Kriterium der asynchronen Verarbeitung zu erfüllen, sollte Elm die Möglichkeit liefern, asynchrone Requests an einen Server zu schicken, Daten anzufordern und die Antwort darzustellen. Die Applikation darf dabei nicht in einen undefinierten Zustand kommen, sprich durch beispielsweise eine langsame Übertragungsrate Fehler bei der Darstellung erzeugen oder die Ausführung von nachfolgenden Operationen verzögern.
 
 
 \subsection{Dateigröße}
@@ -142,7 +141,6 @@ Zunächst wird sämtlicher Code Code der für die Darstellung des Templates inne
 \end{figure}
 Damit in das Grundgerüst die Elm-Applikation geladen werden kann, ist ein weiterer $script$-Tag notwendig, der die kompilierte Elm-Applikationsdatei $elm.js$ einbindet. Des Weiteren muss die Elm-Applikation explizit aufgerufen und gestartet werden. Die Abbildung~\ref{fig:index-grundaufbau} zeigt die $index.html$ mit den notwendigen Änderungen in Zeile $22$, in welcher die kompilierte Elm-Applikation eingebunden wird, sowie den Zeilen $43$ bis $46$, in denen die Applikation gestartet wird und ein Ziel-\ac{HTML}-Element übergeben bekommt. Damit die Datei $elm.js$ eingebunden werden kann, muss sie zunächst erstellt werden. Dafür wird der Elm-Compiler $elm-make$ mit dem Zusatz $Main.elm\,--output\,elm.js$ genutzt. Hierbei wird die Datei $Main.elm$ kompiliert und das Ergebnis in die Datei $elm.js$ gespeichert.
 Es bestehen insgesamt drei Möglichkeiten die Elm-Applikation innerhalb der $index.html$ aufzurufen:
-this is a test \cite{stein1980alternative}.
 \begin{enumerate}
 \item{$fullscreen$}: Der erzeugte Code der Applikation wird in den $body$-Tag einer \ac{HTML}-Datei geladen und überschreibt den sonstigen \ac{HTML}-Code
 
@@ -165,7 +163,7 @@ Die Abbildung~\ref{fig:programWithFlags} zeigt beispielhaft die Implementierung 
 Für die Umsetzung dieses praktischen Beispiels ist der Grundaufbau wie in Abbildung~\ref{fig:elm-grundaufbau-start} notwendig. Dies sind die minimal notwendigen Funktionen, um in den weiteren Schritten die einzelnen Sektionen des Views von \ac{HTML} nach Elm zu portieren, in einzelne Funktionen auszulagern und letzten Endes der Versuch, die gesamte Applikation zu modularisieren.
 Aus der Abbildung~\ref{fig:elm-grundaufbau-start} wird ersichtlich, dass zunächst das gesamte Paket $elm-lang/html$ importiert wird. Die vorherige Installation des Pakets ist analog zu der in der Abbildung~\ref{fig:elm-install-package} beschriebene Vorgehensweise. Des Weiteren wird der Grundaufbau der Elm-Applikation ersichtlich.
 Innerhalb der $main$-Funktion werden dabei alle notwendigen Funktionen an die $HTML$-Bibliothek weitergereicht. Dazu gehören die $init$, $view$, $update$ und $subscriptions$-Funktionen. Wie der Name bereits suggeriert initiiert die $init$-Funktion ein $Model$. Dabei wird dieses entweder anhand der dynamisch übergebenen Werte, oder durch ein Ausweich-Model ($initialModel$) erstellt, falls keine Daten übergeben wurden.
-Die Funktion $view$ erzeugt in der Abbildung~\ref{fig:elm-grundaufbau-start} zunächst ein $div$-Element, während die $update$-Funktion auf jede eingehende Interaktion ein Tupel mit einem unveränderten $model$, sowie keinem $Effekt$ zurück gibt.
+Die Funktion $view$ erzeugt in der Abbildung~\ref{fig:elm-grundaufbau-start} zunächst ein $div$-Element, während die $update$-Funktion auf jede eingehende Interaktion ein Tupel mit einem unveränderten $model$, sowie keinem $Effekt$ zurück gibt. Um die Applikation aufzurufen muss die Datei $index.html$ im Browser geöffnet werden.
 
 
 \subsection{Überführung des Views}
@@ -177,6 +175,7 @@ Nachdem der Grundaufbau der Elm-Applikation beidseitig ausgeführt wurde, könne
 \caption{Elm-Compilerfehler bei fehlenden Funktionen im Namensraum}\label{fig:elm-naming-error}
 \end{figure}
 Das Tool $html-to-elm$ sollte den Code bereits nach den Regeln des Style-Guides formatiert haben, so dass hiermit der erste Schritt der Portierung abgeschlossen ist. Um Namenskonflikte im aktuellen Namensraum zwischen Funktionen zu verhindern, werden innerhalb der importierten $HTML$-Bibliothek die genutzten Funktionen zur Erstellung von \ac{HTML}-Code explizit genannt. Der Compiler sollte nach dem Entfernen des Kommandos $exposing (..)$ eine Warnung ausgeben und auf die fehlenden Funktionen hinweisen, wie es in Abbildung~\ref{fig:elm-naming-error} gezeigt wird. Schlägt der Compiler dabei vor, die Funktion aus dem Namensraum $Html.Attributes$ aufzurufen, muss sie entsprechend in die Liste der zu ladenden Funktionen der $Attribute$ hinzugefügt werden, wie in Abbildung~\ref{fig:elm-grundaufbau-start} in Zeile 3. Die Funktionen zur Generierung von \ac{HTML}-Tags hingegen sollten in die Liste der $import\,Html$s stehen. Nachdem alle Funktionen korrekt in den aktuellen Namensraum aufgenommen wurden, sollten keinerlei Compilerfehler auftreten.
+
 
 \subsection{Beheben von JavaScript-Fehlern}
 \label{sec:javascript-errors}
@@ -194,6 +193,8 @@ header = document.querySelector( '.navbar-fixed-top' );
 \caption{Notwendiger Code, um JavaScript-Fehler zu beheben.}\label{fig:code-to-add}
 \end{figure}
 Der Code hat zur Folge, dass das Navigations-Element ausgewählt und an die $classie$-Funktion weitergegeben wird. Fehlt diese Zeile, erfolgt ein Aufruf der $classie$-Funktion mit einem undefinierten Wert, wodurch der Fehler in Abbildung~\ref{fig:js-classie-error} zustande kommt. Nachdem diese beiden Fehler behoben wurden, kann nun die $Scroll-Spy$-Funktionalität auf der Webseite betrachtet werden. Scrollt der Nutzer nun auf oder ab und befindet sich dabei in einer innerhalb der Navigation definierten Sektion, so wird das entsprechende Gegenstück in der Navigationsleiste farblich hinterlegt. Des Weiteren verkleinert sich die Navigationsleiste, wenn der Nutzer eine bestimmte Entfernung nach unten gescrollt hat.
+
+
 \subsection{Auslagern des Views}
 \label{sec:auslagern-des-views}
 Um die einzelnen Sektionen der Webseite im Quellcode klar voneinander zu trennen, werden die einzelnen Sektionen in eine jeweils eigene Funktion ausgelagert.
@@ -315,7 +316,7 @@ Abhängig vom Status des Requests, wird der jeweilige Fall in der $update$-Funkt
 \end{figure}
 Die fertige $update$-Funktion mit allen abgehandelten Fällen ist in Abbildung~\ref{fig:update-async} dargestellt. Der asynchrone Request wird dabei durch $GetRandomString$ initiiert. Die Manipulation des $model$ findet lediglich in der $FetchSucceed$-Funktion statt.
 Nachdem die Elm-Applikation an dieser Stelle fehlerfrei kompiliert wurde, kann der asynchrone Request auf der Webseite getestet werden. Mit Hilfe der Developer-Tools kann die ausgehende Anfrage an den \ac{ICNDb}-Server beobachtet und ausgewertet werden. Auch die Antwort des Servers kann unbehandelt in Abbildung~\ref{fig:request-async} begutachtet werden.
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.4]{img/request-async.png}
 \caption{Ausgehender HTTP-Request und eingehende Antwort}\label{fig:request-async}
@@ -324,8 +325,79 @@ Die Abbildung zeigt ferner wie der zurückgelieferte Text des Requests fehlerfre
 
 
 
+\subsection{Beobachtungen}
+\label{sec:Beobachtungen}
+In diesem Abschnitt sollen Auffälligkeiten, die während der Überführung des $agency$-Templates in eine native Elm-Applikation auftraten, aufgezeigt und erläutert werden. Es handelt sich hierbei nicht nur um Probleme, sondern auch um interessante Erkenntnisse im Hinblick auf die Unterschiede zwischen herkömmlicher Webentwicklung mit \ac{HTML}, \ac{CSS} und \ac{JS} gegenüber Elm, die es zu erwähnen gilt.
 
-\iffalse
+\subsubsection{Natives Einbinden von CSS in Elm nur beschränkt möglich}
+Herkömmlicherweise können Elemente einer \ac{HTML}-Datei auf drei Arten gestylt werden.
+\begin{enumerate}
+\item{Inline \ac{CSS}:}
+	\subitem Das Inline \ac{CSS} erlaubt Design-Anpassungen für genau ein bestimmtes Element. Der verfasste \ac{CSS}-Code kann nicht von anderen Elementen genutzt werden und wird über das \ac{HTML}-Attribut $style$ eingeführt.
+\item{Internes \ac{CSS}:}
+	\subitem \ac{HTML} enthält den $style$-Tag. In diesem kann natives \ac{CSS} verfasst, bestimmte Klassen oder Id's erstellt und sämtliche gängigen Design-Anpassungen durchgeführt werden.
+\item{Externes \ac{CSS}:}
+	\subitem Die Erweiterung des internen \ac{CSS} ist das externe \ac{CSS}, bei dem der gesamte \ac{CSS}-Code ausgelagert wird in eine eigene $.css$-Datei. Diese wird wiederum mit Hilfe des $link$-Tag der \ac{HTML}-Datei eingebunden.
+\end{enumerate}
+In Elm ist es nicht möglich nativen \ac{CSS}-Code zu verfassen. Jedoch kann mittels der Bibliothek $elm-lang/html$ inline \ac{CSS} erzeugt werden. Das Design wird dabei nativ in Elm über die $Html.style$-Funktion programmiert. Ferner ist das erstellen von $style$-Tags in Elm nicht möglich, wodurch auch die Möglichkeit für internes \ac{CSS} entfällt. Es ist zwar praktisch möglich externe \ac{CSS}-Dateien in die Elm-Applikation nativ in Elm einzubinden, jedoch stört das immens die Nutzbarkeit der Applikation. Die Elm-Applikation wird zunächst ohne das \ac{CSS} geladen, während die externe Datei nachgeladen wird. Das bedeutet für den Nutzer der Webseite, dass zunächst nur Texte und Bilder ohne Styling angezeigt werden. Nachdem die externe Datei vollständig übertragen wurde, wird das darin enthaltene Design auf die \ac{HTML}-Elemente angewandt. Der zeitliche Abstand zwischen initialem Laden und der Anwendung des Stylesheets hat ein sichtbares $flackern$ zur Folge, wodurch eine Nutzung in einem fertigen System entfällt. Dies ist der Grund, weswegen bereits bestehende \ac{CSS}-Dateien des Templates nicht nativ in Elm überführt, sondern über das \ac{HTML}-Grundgerüst eingebunden wurden. Zusätzlich zu diesem Umstand wird inline- und internes \ac{CSS} nicht vom Browser zwischengespeichert. Das hat eine längere Ladezeit zur Folge und sollte vermieden werden. Des Weiteren ist es nur bedingt möglich \ac{CSS}-Code in Elm an mehreren Stellen zu verwenden, wie es üblicherweise mit in \ac{CSS} definierten Klassen der Fall ist.
+
+
+\subsubsection{HTML-Code ist in Elm wesentlich kürzer}
+\ac{HTML}-Tags mit den gleichnamigen Funktionen nativ in Elm zu erstellen ist einerseits signifikant kürzer, andererseits viel übersichtlicher als das Verfassen von herkömmlichen \ac{HTML}-Code.
+\begin{figure}[h]
+\centering
+HTML:
+<div>
+</div>\\
+Elm:
+div[$\,$][$\,$]
+\caption{Ein $div$-Element in \ac{HTML} und Elm}\label{fig:div-element}
+\end{figure}
+Die Abbildung~\ref{fig:div-element} zeigt ein $div$-Element, wie es einerseits in klassischem \ac{HTML}, andererseits in Elm realisiert wird. In Elm handelt es sich dabei um einen Funktionsaufruf mit zwei Parametern, in diesem Fall zwei leeren Listen. Ein \ac{HTML}-Element hat dabei eine Anzahl von $5+2*n_0$ Zeichen, wobei $n_0$ gleich der Zeichenanzahl des Tag-Namens und $5$ die Zeichen für das öffnende, sowie schließende Tag sind. Am Beispiel des $div$-Elementes wäre $n_0:=3$, wodurch die Implementierung in \ac{HTML} $5+2*3$, sprich $11$ Zeichen benötigt.
+In Elm hingegen benötigt die Erstellung eines \ac{HTML}-Elementes $4+n_1$ Zeichen, wobei $n_1$ gleich der Zeichenanzahl des Tags, sprich hier der Funktion $div$, und $4$ die Zeichenanzahl für die Parameterliste ist. Am selben Beispiel wären das $4+3$, sprich $7$ Zeichen. Die Konstanten $5$ (\ac{HTML}) und $4$ (Elm) können vernachlässigt werden, wodurch sich die dynamischen Werte $2*n_0$ und $n_1$ gegenüberstehen. Da alle \ac{HTML}-Tags in Elm mit einer gleichnamigen Funktion erstellt werden, kann $n_0$ gleich $n_1$ gestellt werden. Daraus folgt, dass Elm im Vergleich zu \ac{HTML} 50\% weniger Zeichen für die Erstellung eines \ac{HTML}-Elementes benötigt.
+Die Differenz der Zeichen lässt sich auf das schließen der Tags in \ac{HTML} zurückführen. Nativer Elm-Code arbeitet mit Einrückungen, wohingegen klassischer \ac{HTML}-Code über die öffnenden und schließenden Tags geschachtelt wird. Dadurch entsteht bei \ac{HTML}-Code der Vorteil, dass ein gesamtes Dokument theoretisch in nur einer Zeile ohne Absätze definiert werden kann, während in Elm die Einrückungen und die damit verbundenen Zeilenumbrüche notwendig sind. Daraus folgt, dass Elm-Code zwangsweise übersichtlicher bleibt, da die Einrückungen nicht umgangen werden können und dem Entwickler eine visuelle Rückmeldung liefern. Der Elm-Compiler wird den Elm-Code nicht in \ac{JS}-Code umwandeln, sollten die Abstände inkorrekt sein. \ac{HTML}-Code bietet die Möglichkeit gleichermaßen übersichtlich zu programmieren, jedoch gibt es hier keinen Compiler oder sonstige Warnhinweise für den Fall, dass geschriebener Code unübersichtlich wird.
+Durch die Einrückung in das damit verbundene Fehlen von schließenden Tags kam es zu weniger Flüchtigkeitsfehlern in Form von falschen Verschachtelungen oder dem simplen Fehlen der schließenden Tags bei einer tiefen oder über mehrere Absätze stattfindende Schachtelung.
+
+\subsubsection{Elm hat eine stark wachsende Open-Source Gemeinschaft}
+Trotzdem Elm erst im März 2012 entwickelt wurde, gibt es bereits eine Vielzahl an Gemeinschaften, um über die Sprache zu diskutieren, Hilfe zu erbitten oder gemeinsam an Projekten zu arbeiten. Neben einem eigenen Slack-Chatroom mit 2.701 angemeldeten Nutzern \cite[vgl.]{slack-user}, gibt es noch die offizielle Google-Gruppe. Offiziell gibt es derzeit $205$ Elm-Bibiliotheken \cite[vgl.]{elm-package}, von denen jede einzelne ein Open-Source-Projekt darstellt und für alle Entwickler freigegeben ist. Auf der Webseite \url{https://github.com/} gibt es zur Zeit 2.845 öffentliche Projekte \cite[vgl.]{elm-repositories} die in, oder mit Elm realisiert wurden. Ferner wurden 6.365 Probleme in diesen Projekten gemeldet, von denen 4.834 bereits gelöst und 1.531 noch geöffnet sind.  Alles in Allem wird deutlich, dass Elm eine wachsende Anhängerschaft besitzt und die Probleme der Webentwicklung auf eine andere Weise angeht. Wann immer Fragen auftraten konnten die Nutzer in einem der genannten Medium meist in wenigen Minuten aushelfen. War dies nicht der Fall, wurden stets weitere Nutzer kontaktiert, bis das Problem endgültig gelöst wurde.
+
+
+
+%\begin{enumerate}[label*=\arabic*.]
+%
+%\item Externes \ac{CSS} kann nicht nativ über Elm geladen werden
+%	\begin{enumerate}[label*=\arabic*.]
+%		\item Inline-\ac{CSS} muss manuell mehrfach abgeändert werden
+%		\item Keine Schachtelung möglich
+%		\item Browser kann inline-\ac{CSS} nicht zwischenspeichern
+%	\end{enumerate}
+%\item Ein \ac{HTML}-Element benötigt in Elm weniger Zeichen
+%	\begin{enumerate}[label*=\arabic*.]
+%		\item \ac{HTML}-Code benötigt in Elm keine schließenden Klammern. Anders als \ac{HTML} arbeitet Elm mit Einrückungen. Die gleichnamigen Funktionen um ein \ac{HTML}-Element zu erzeugen benötigen dementsprechend lediglich den Funktionsaufruf, gefolgt von den zwei Argumenten. Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.
+%	\end{enumerate}
+%\item Vertikale und horizontale Zentrierung eines Elementes ist umfangreicher als vorerst erwartet
+%	\begin{enumerate}[label*=\arabic*.]
+%		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem \ac{JS}. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
+%		
+%		\item Das Paket `elm-lang/window` stellt eine Funktion `resize` zur Verfügung, die bei jeder Veränderung der Fensterdimensionen über eine sogenannte `subscription` in Elm einen Aufruf der `update` Funktion auslöst, an jene die neuen Fensterdimensionen (X, Y) weitergereicht werden.
+%	\end{enumerate}
+%
+%\item Elm-Compiler
+%	\begin{enumerate}[label*=\arabic*.]
+%		\item Kompiliert abhängig von der Tiefe der Elemente
+%		\begin{enumerate}[label*=\arabic*.]
+%			\item Entwickler muss lesbaren Code erzeugen, da Elm sensitiv auf Tabs reagiert (vs\ac{HTML}: $<div><span></span></div>$ wo unendliches verschachteln auch in einer Zeile möglich ist)
+%		\end{enumerate}
+%	\end{enumerate}
+%
+%\item TODO:
+%	\begin{enumerate}[label*=\arabic*.]
+%		\item Fehlende Beispiele importieren
+%		\item Umschreiben der Beispiele
+%	\end{enumerate}
+%\end{enumerate}
+
+
 %
 %\subsection{Hypothesen und Vermutungen}
 %\label{sec:Hypothesen und Vermutungen}
@@ -405,7 +477,7 @@ Die Abbildung zeigt ferner wie der zurückgelieferte Text des Requests fehlerfre
 %\caption{Eine beispielhafte Initialisierung der Elm-Applikation mit übergebenen Werten}\label{fig:programWithFlags2}
 %\end{figure}
 %Abbildung~\ref{fig:programWithFlags2} zeigt das Grundgerüst einer Elm-Applikation mit der Implementierung der Funktion $Html.App.programWithFlags$. Die $main$ Funktion erstellt dabei die eigentliche Applikation, während die Funktionen $model$, $view$ und $update$ jeweils den Zustand und die gewünschte Darstellung der Applikation beschreiben, sowie vorgeben, wie mit der Interaktion durch den Benutzer umgegangen wird. Die Funktion $subscription$ gibt in diesem Stand noch keinerlei Daten weiter und stellt eine Dummy-Funktion dar. $initialModel$ erzeugt beim Aufruf ein Model mit initialen Werten, die dem Modeltypen ($type\,alias\,Model$) entsprechen müssen. Durch das Grundgerüst der $elm.html$ und $Main.elm$-Datei kann die Applikation nun schrittweise erweitert und Funktionen hinzugefügt werden. Zuletzt wird der erzeugte Code modularisiert.
-\fi
+
 
 %\subsubsection{Konstruktion und Überführung des Views}
 %\label{sec:Konstruktion des Views}
@@ -462,49 +534,14 @@ Die Abbildung zeigt ferner wie der zurückgelieferte Text des Requests fehlerfre
 %Bei einem Klick auf eines der Portfoliobeiträge soll entsprechend das Modal geöffnet und ein Titel präsentiert werden. In diesem Beispiel wird über eine externe API ein zufälliger String angefordert, vom Server generiert und dann an die Elm-Applikation zurückgegeben. Ebenso wäre es möglich einen Server für das Backend zu erstellen, auf dem eine Datenbank läuft, so dass Daten asynchron angefordert werden können. In diesem Fall ist es jedoch nicht notwendig ein zusätzliches Backend zu konfigurieren.
 %Ein solcher asynchroner Request stellt im Grunde eine Verletzung des Konzeptes von Elm dar, dass es keinerlei Seiteneffekte gibt. Da nicht bekannt ist, wann der Request endet und welchen Status die Antwort besitzt (Failed, Success, ..?), ist zunächst nicht vorhersehbar, wie der Status der Applikation nach dem Request aussehen wird. Um dieses Problem zu vermeiden, ist es notwendig alle möglichen Fälle , also den Fall einer erfolgreichen, sowie fehlerhaften Übertragung, zu behandeln. Auf diese Weise ist gewährleistet, dass die Applikation sich nicht plötzlich in einem nicht definierten Zustand befindet.
 %Einen asynchronen Request in Elm auszuführen bedarf mindestens zweier zusätzlicher Funktionen und der Importierung der Bibliotheken $Http$, $Json.Decode$ und $Task$. Des Weiteren muss der Klick auf das Portfolio-Element abgefangen werden. Dafür gibt es die $onClick$ Funktion aus der $Html.Events$-Bibliothek. Sie bekommt die auszuführende Funktion als Parameter, sieht also wie folgt aus: `onClick Update.GetRandomString`. Die möglichen `Types` von eingehenden Nachrichten (`Msg`/Klicks) wird erweitert um `GetRandomString`, sowie auch die `update`-Funktion um diesen Typ erweitert werden muss. Der entsprechende `update`-Fall `GetRandomString` gibt dann das `model`, sowie einen Effekt `fetchAsync` zurück. Die Definition dieses Effektes ist der Grund, weshalb hier von einem `managed Effect` die Rede ist und der Seiteneffekt kontrolliert verläuft. `fetchAsync` ist hierbei erneut eine Funktion, die eine Nachricht (`Msg`) an die `update`-Funktion mit dem Ergebnis des Requests zurückgibt . Elm führt den Request in Form eines `Task` aus und erwartet eine Funktion für den Fall einer erfolgreichen Übertragung, sowie eine Funktion für jeglichen Fehlerfall. In beiden Fällen wird die entsprechende Funktion ausgeführt und an die `update`-Funktion zurückgegeben. Hier wird, insofern notwendig, ein neues `model` mit veränderten Werten erzeugt und letztlich das Ergebnis auf dem Bildschirm des Nutzers sichtbar gemacht.\\
-%TODO: Allgemeiner beschreiben. Bei Bezug auf den Anwendungsfall, Abbildung einfügen.
-
-\subsection{Beobachtungen}
-\label{sec:Beobachtungen}
-Während der Entwicklung der Elm-Applikation kam es zu unvorhergesehenen Problemen, sowie teilweisen Erkenntnissen. Diese Beobachtungen werden im folgenden stichpunktartig zusammengefasst und anschließend erläutert.
-\begin{enumerate}[label*=\arabic*.]
-
-\item Externes \ac{CSS} kann nicht nativ über Elm geladen werden
-	\begin{enumerate}[label*=\arabic*.]
-		\item Inline-\ac{CSS} muss manuell mehrfach abgeändert werden
-		\item Keine Schachtelung möglich
-		\item Browser kann inline-\ac{CSS} nicht zwischenspeichern
-	\end{enumerate}
-\item Ein \ac{HTML}-Element benötigt in Elm weniger Zeichen
-	\begin{enumerate}[label*=\arabic*.]
-		\item \ac{HTML}-Code benötigt in Elm keine schließenden Klammern. Anders als \ac{HTML} arbeitet Elm mit Einrückungen. Die gleichnamigen Funktionen um ein \ac{HTML}-Element zu erzeugen benötigen dementsprechend lediglich den Funktionsaufruf, gefolgt von den zwei Argumenten. Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.
-	\end{enumerate}
-\item Vertikale und horizontale Zentrie2rung eines Elementes ist umfangreicher als vorerst erwartet
-	\begin{enumerate}[label*=\arabic*.]
-		\item Obwohl Elm ein Paket für genau dieses Anwendungsgebiet besitzt, ist die Anwendung dennoch weder simpel, noch voll funktionsfähig. Es bedarf einiger Transformationen der Elemente, um sie in nutzbare, validen \ac{HTML}-Code zu formatieren. Zuletzt trifft der Entwickler auf die Problematik, zusätzlich noch die explizite Größe des Fensters mit einbeziehen zu wollen, so dass das Element den gesamten Bildschirm ausfüllt und einen zentrierten Text beinhaltet. Die Fenstergröße zu ermitteln stellt ein größeres Hindernis dar, als zunächst erwartet. Die Möglichkeiten sind hier, halbwegs dynamisch die Fenstergröße bei der Initiierung der Elm-Applikation an diese weiter zureichen, oder über Ports abzufangen, wenn sich die Fenstergröße geändert hat. Die erste Lösung hilft nur, wenn die Größe des Fensters nicht weiter verändert wird. Dies kann jedoch nicht gewährleistet werden, wodurch die Lösung entfällt. Die zweite Lösung hingegen erzeugt eine zusätzliche Abhängigkeit zwischen Elm und externem \ac{JS}. Zuletzt bleibt noch die altbekannte Möglichkeit mittels \ac{CSS} den Text in einem Element beidseitig zu zentrieren. Hierfür kann das externe \ac{CSS}-Framework Flexbox zuhilfe gezogen werden. Flexbox kümmert sich um die horizontale und vertikale Platzierung von Elementen, ohne auf die \ac{CSS}-Eigenschaft „float“ zurückgreifen zu müssen, die gerade bei tief verschachtelten Elementen Probleme verursacht.
-		
-		\item Das Paket `elm-lang/window` stellt eine Funktion `resize` zur Verfügung, die bei jeder Veränderung der Fensterdimensionen über eine sogenannte `subscription` in Elm einen Aufruf der `update` Funktion auslöst, an jene die neuen Fensterdimensionen (X, Y) weitergereicht werden.
-	\end{enumerate}
-
-\item Elm-Compiler
-	\begin{enumerate}[label*=\arabic*.]
-		\item Kompiliert abhängig von der Tiefe der Elemente
-		\begin{enumerate}[label*=\arabic*.]
-			\item Entwickler muss lesbaren Code erzeugen, da Elm sensitiv auf Tabs reagiert (vs\ac{HTML}: $<div><span></span></div>$ wo unendliches verschachteln auch in einer Zeile möglich ist)
-		\end{enumerate}
-	\end{enumerate}
-
-\item TODO:
-	\begin{enumerate}[label*=\arabic*.]
-		\item Fehlende Beispiele importieren
-		\item Umschreiben der Beispiele
-	\end{enumerate}
-\end{enumerate}
 
 
 
 \subsection{Auswertung}
 \label{sec:Auswertung}
+- Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.\\
+
+
 \begin{table}[h]
 \centering
 \begin{tabular}{ | l | c | }
