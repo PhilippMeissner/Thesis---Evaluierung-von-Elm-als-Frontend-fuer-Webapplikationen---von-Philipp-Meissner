@@ -32,9 +32,9 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Grundaufbau der $index.html$, um die Elm-Applikation zu injizieren\relax }}{38}{figure.caption.71}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Grundger\IeC {\"u}st der Elm-Applikation\relax }}{39}{figure.caption.72}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit initialen, dynamischen Werten\relax }}{40}{figure.caption.73}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Elm-Compilerfehler bei fehlenden Funktionen im Namensraum\relax }}{41}{figure.caption.74}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Elm-Compilerfehler bei fehlenden Funktionen im Namensraum\relax }}{42}{figure.caption.74}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces JavaScript-Fehler innerhalb der Developer-Tools\relax }}{42}{figure.caption.75}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Notwendiger Code, um JavaScript-Fehler zu beheben.\relax }}{42}{figure.caption.76}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Notwendiger Code, um JavaScript-Fehler zu beheben.\relax }}{43}{figure.caption.76}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Deklaration einer Sektion des Views in Elm\relax }}{43}{figure.caption.77}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Ausgelagerter View in eine eigene Funktion\relax }}{44}{figure.caption.78}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Aufruf der einzelnen Sektionen im View\relax }}{44}{figure.caption.79}
@@ -44,12 +44,15 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Entgegennahme der Daten aus der Elm-Applikation und anschlie\IeC {\ss }endes scrollen\relax }}{47}{figure.caption.83}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{48}{figure.caption.85}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{48}{figure.caption.86}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces OnClick-Ereignisbehandler in Elm\relax }}{50}{figure.caption.91}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces $Msg$-Deklaration mit asynchronem Request\relax }}{50}{figure.caption.92}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Asynchroner \ac {HTTP}-Request in Elm\relax }}{50}{figure.caption.93}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Dekodierung eines Json-Objektes in Elm\relax }}{51}{figure.caption.95}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces $Update$-F\IeC {\"a}lle f\IeC {\"u}r den asynchronen Request\relax }}{51}{figure.caption.96}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ausgehender HTTP-Request und eingehende Antwort\relax }}{52}{figure.caption.97}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Ein $div$-Element in \ac {HTML} und Elm\relax }}{53}{figure.caption.100}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces OnClick-Ereignisbehandler in Elm\relax }}{50}{figure.caption.90}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces $Msg$-Deklaration mit asynchronem Request\relax }}{50}{figure.caption.91}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Asynchroner \ac {HTTP}-Request in Elm\relax }}{50}{figure.caption.92}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Dekodierung eines Json-Objektes in Elm\relax }}{51}{figure.caption.94}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces $Update$-F\IeC {\"a}lle f\IeC {\"u}r den asynchronen Request\relax }}{51}{figure.caption.95}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ausgehender HTTP-Request und eingehende Antwort\relax }}{52}{figure.caption.96}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Ein $div$-Element in \ac {HTML} und Elm\relax }}{53}{figure.caption.99}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Automatisierter Signaturvorschlag durch den $elm-compiler$\relax }}{55}{figure.caption.103}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Fehlerfreier Kompiliervorgang durch den Elm-Compiler\relax }}{56}{figure.caption.106}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Benchmark der TodoMVC in unterschiedlichen Programmiersprachen\relax }}{57}{figure.caption.108}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

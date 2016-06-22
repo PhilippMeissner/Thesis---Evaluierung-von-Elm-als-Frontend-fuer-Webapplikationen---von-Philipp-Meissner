@@ -36,33 +36,33 @@ Während der Überführung des Templates soll der erzeugte Code, sowie der Weg d
 
 
 \subsection{Wartbarkeit und Lesbarkeit}
-\label{sec:Wartbarkeit}
+\label{sec:muster_wartbarkeit_und_lesbarkeit}
 Es ist unabdingbar, dass verfasster Quellcode wartbar ist. Dazu gehört einerseits, dass der Code lesbar ist, unabhängig von der Zeit die sich ein Entwickler bereits mit der Codebasis auseinandergesetzt hat. Damit Quellcode lesbarer wird, reicht es schon aus Kommentare im Code zuzulassen, die beispielsweise eine Funktion und ihr Ziel beschreiben, oder wichtige Informationen über einen Algorithmus enthalten. Des Weiteren sollten Funktionen und Variablen kurze und prägnante Namen haben, wodurch die Verständlichkeit des Quellcodes unterstützt wird. Die Programmiersprache Elm kann als wartbar bezeichnet werden, insofern es Möglichkeiten zum Kommentieren des Codes gibt, oder bestenfalls automatisch Informationen in Form von Kommentaren über Funktionen und Verhaltensweisen von Algorithmen generiert werden.
 
 
 \subsection{Zuverlässigkeit}
-\label{sec:Zuverlässigkeit}
+\label{sec:muster_zuverlaessigkeit}
 Für einen Entwickler von Software ist es wichtig, dass das ausgelieferte Programm letzten Endes fehlerfrei funktioniert. Dazu gehört, dass das Programm nicht unvorhergesehen abstürzt, andere Systeme beeinträchtigt, oder dem späteren Nutzer der Software anderweitig Probleme beschert. In den meisten Fällen helfen die Editoren mit denen der Quellcode geschrieben wird bereits, indem syntaktische Fehler durch Markierungen sichtbar, oder Vorschläge zur Vervollständigung des angefangenen Codes gemacht werden. Wichtig ist entsprechend, dass die Programmiersprache auf offensichtliche Fehler, entweder durch Plugins für den Editor oder durch den Compiler selbst, aufmerksam macht und sie somit verhindert und nicht erst im Produktionssystem den Fehler zulässt. Als Testfall wird Quellcode bewusst mit Fehlern versehen, die zu einem Absturz des Programmes während der Laufzeit führen würden. Erkennt der $elm-compiler$ diese Fehler oder umgeht den Absturz, gilt das Kriterium als erfüllt.
 
 
 \subsection{Portabilität}
-\label{sec:Portabilität}
-Nicht alle Programmiersprachen und die damit erzeugten Programme funktionieren auf allen Endgeräten. Es kommt dabei sehr stark auf die Hardwarekomponenten und das Betriebssystem des Zielsystems an. Es ist wünschenswert, dass Quellcode nur einmal geschrieben und auf das Zielsystem übertragen werden kann, ohne großartige Änderungen am Quellcode vornehmen zu müssen. Letzten Endes wird versucht den Quellcode auf mehreren Zielsystemen zu kompilieren. Elm liefert Installationsanweisungen für die Betriebssysteme $Mac$, $Windows$ und allen Betriebssystemen, die $nodejs$ unterstützen. Gibt es keinerlei Differenz in Form von Fehlern oder Warnungen während des Kompilierens, gilt die Portabilität als erfüllt.
+\label{sec:muster_portabilitaet}
+Häufig sind Programmiersprachen nicht auf allen Systemen lauffähig, um so Applikationen zu erstellen. Es kommt dabei sehr stark auf die Hardwarekomponenten und das Betriebssystem des Zielsystems an. Es ist wünschenswert, dass Quellcode nur einmal geschrieben und auf das Zielsystem übertragen werden kann, ohne großartige Änderungen am Quellcode vornehmen zu müssen. Letzten Endes wird versucht den Quellcode auf mehreren Zielsystemen zu kompilieren. Elm liefert Installationsanweisungen für die Betriebssysteme $Mac$, $Windows$ und allen Betriebssystemen, die $nodejs$ unterstützen. Gibt es keinerlei Differenz in Form von Fehlern oder Warnungen während des Kompilierens, gilt die Portabilität als erfüllt.
 
 
 \subsection{Effizienz}
-\label{sec:Effizienz}
-„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist. Damit eine Aussage über die notwendige Zeit für das kompilieren des Quellcodes getroffen werden kann, wird der Code zehn mal kompiliert und die benötigte Zeit gemessen. Anschließend wird der höchste und niedrigste Wert verworfen. Um ein Caching durch den Compiler zu verhindern, wird vor jedem Kompiliervorgang die zuvor erzeugten Programmdateien gelöscht. Im Anschluss wird das arithmetische Mittel der verbleibenden acht Werte ermittelt. TODO.
-Die Performance der Programmiersprache wird nicht anhand des hier entwickelten Projektes, sondern der externen Applikation \cite{https://github.com/evancz/todomvc-perf-comparison/} TodoMVC Performance Comparison ermittelt. Dieses Tool ermöglicht es, anhand der Beispiel-Applikation "TodoMVC", die in mehreren Programmiersprachen realisiert wurde, die Performance des Programmes in den einzelnen Programmiersprachen zu testen. Dabei werden automatisch gewisse Aktionen in der jeweiligen Sprache durchgeführt, die benötigte Zeit gemessen und die Ergebnisse am Ende gegenübergestellt. Mit Hilfe des Tools werden 20 Messungen durchgeführt und das Endergebnis betrachtet. Ist Elm signifikant schneller als der Großteil der anderen getesteten Programmiersprachen, gilt das Kriterium als erfüllt. Die anderen Umgebungen der Applikation sind ebenso in nativem \ac{JS} oder einer zu \ac{JS} kompilierenden Programmiersprache geschrieben. Dadurch kann eine Aussage über die tatsächliche Effizienz der Applikation im Vergleich gemacht werden.
+\label{sec:muster_effizienz}
+„Zeit ist Geld.“ ist auch heute noch immer eine wahre Aussage. Entsprechend ist es von Vorteil, wenn Quellcode schnell erzeugt, getestet und als fertiges Produkt (Software) an den Kunden ausgeliefert werden kann. Dabei ist es wichtig, dass der Compiler den Quellcode schnell in ein lauffähiges Programm verwandelt und auch das daraus resultierende Programm effizient arbeitet, sprich schnell ist. Damit eine Aussage über die notwendige Zeit für das kompilieren des Quellcodes getroffen werden kann, wird der Code zehn mal kompiliert und die benötigte Zeit gemessen. Anschließend wird der höchste und niedrigste Wert verworfen. Um ein Caching durch den Compiler zu verhindern, werden vor jedem Kompiliervorgang die zuvor erzeugten Programmdateien im Ordner $elm-stuff$ gelöscht. Im Anschluss wird das arithmetische Mittel der verbleibenden acht Werte ermittelt.
+Die Performance der Programmiersprache wird nicht anhand des hier entwickelten Projektes, sondern der externen Applikation \cite{https://github.com/evancz/todomvc-perf-comparison/} TodoMVC Performance Comparison ermittelt. Dieses Tool ermöglicht es, anhand der Beispiel-Applikation $TodoMVC$, die in mehreren Programmiersprachen realisiert wurde, die Performance der Applikation in den einzelnen Programmiersprachen zu testen. Dabei werden automatisch gewisse Aktionen in der jeweiligen Sprache durchgeführt, die benötigte Zeit gemessen und die Ergebnisse am Ende gegenübergestellt. Mit Hilfe des Tools werden 20 Messungen durchgeführt und das Endergebnis betrachtet. Ist Elm signifikant schneller als der Großteil der anderen getesteten Programmiersprachen, gilt das Kriterium als erfüllt. Die anderen Applikationsumgebungen sind ebenso in nativem \ac{JS} oder einer zu \ac{JS} kompilierenden Programmiersprache geschrieben. Dadurch kann eine Aussage über die tatsächliche Effizienz der Applikation im Vergleich gemacht werden.
 
 
 \subsection{Wiederverwendbarkeit}
-\label{sec:Wiederverwendbarkeit}
+\label{sec:muster_wiederverwendbarkeit}
 Vorhandene Codeteile neu zu verfassen oder händisch kopieren zu müssen ist sehr ineffizient. Besser ist es, wenn Funktionen mehrfach genutzt werden können. Auf diese Weise müssen Änderungen nicht mehrmals vorgenommen werden und die Fehleranfälligkeit sinkt. Ferner sollten Funktionen nicht nur wiederverwendbar, sondern isoliert in einem eigenen Modul definiert werden können. Besteht die Möglichkeit Module zu erstellen und diese an unterschiedlichen Stellen beliebig anzuwenden, gilt das Kriterium als erfüllt. Erweitert wird das Kriterium durch einen zusätzlichen Zugriffsschutz von außen, das bedeutet, dass innerhalb eines Moduls definiert werden kann, welche Funktionen nach außen hin sichtbar sind.
 
 
 \section{Web-spezifische Bewertungskriterien}
-\label{sec:web-kriterien}
+\label{sec:muster_web}
 Die bisherigen Kriterien ermöglichen es, die Programmiersprache als solches anhand der eingebauten Möglichkeiten die diese bietet objektiv beurteilen zu können. Da sich diese wissenschaftliche Arbeit allerdings ausdrücklich mit der Evaluierung von Elm für Webapplikationen auseinandersetzt, müssen auch diese Kriterien untersucht werden und einen höheren Stellenwert bei der Bewertung einnehmen.
 Webapplikationen können grundsätzlich in zwei Typen unterteilt werden. Zunächst gibt es die \ac{SPA}, bestehend aus nur einer einzigen Seite, bei der typischerweise nur wenig  Programmlogik vorhanden ist und der Client lediglich die Informationen anzeigt. Des Weiteren gibt es die Rich-Internet-Applikationen\\
 (RIA: http://www.itwissen.info/definition/lexikon/rich-Internet-application-RIA.html). Diese Art der Webapplikation besitzt im wesentlichen mehr Programmlogik, die der Client ausführen kann. Ein weiteres Merkmal sind oftmals auch die Anzahl der vorhandenen Unterseiten, wodurch wiederum mehr Logik erforderlich wird.
@@ -72,7 +72,7 @@ Das Gegenstück zum Frontend stellt das sogenannte Backend dar. Dabei handelt es
 
 
 \subsection{Browser Kompatibilität}
-\label{sec:Browser Kompatibilität}
+\label{sec:muster_browser_kompatibilitaet}
 Ein weiterer wichtiger Aspekt ist die Kompatibilität der Browser mit den genutzten Programmiersprachen. Da der Browser die Darstellung des \ac{HTML} und \ac{CSS} Quellcodes übernimmt, sowie die Manipulationen des DOM durch \ac{JS}, ist es wichtig, dass der Browser den vorhandenen Quellcode lesen und ausführen kann. Sämtliche Sprachen wie \ac{HTML}, \ac{CSS} und \ac{JS} befinden sich im konstanten Wandel und werden stets weiter entwickelt.
 Dabei werden nicht nur vorhandene Fehler behoben, sondern auch neue Eigenschaften hinzugefügt, sowie teilweise ersetzt oder verworfen. Diese Änderungen können darin münden, dass Nutzer unterschiedlicher Browser, auch unterschiedliche Ergebnisse angezeigt bekommen, manche Features gar nicht erst funktionieren oder die Applikation im schlimmsten Fall abstürzt. Dementsprechend ist es wichtig, dass die Applikation auf den gängigen Browsern fehlerfrei funktioniert, insbesondere den fünf meistgenutzten Browsern Google Chrome, Safari, Internet Explorer, Firefox und Opera (vgl. Abbildung~\ref{fig:browser-may-2016}). Sollte die Applikation fehlerfrei in allen Browsern starten und die Funktionalität vollends gegeben sein, kann dieses Kriterium als erfüllt angesehen werden.
 \iffalse
@@ -87,17 +87,17 @@ https://www.w3counter.com/globalstats.php?year=2016&month=5
 \end{figure}
 
 \subsection{Interoperabilität}
-\label{sec:Interoperabilität_Analyse}
+\label{sec:muster_interoperabilitaet}
 Auch bei den Webapplikationen ist es wichtig, bereits existente Frameworks und Problemlösungen nutzen zu können. Folglich müssen externe \ac{JS} und \ac{CSS} Bibliotheken ohne große Probleme eingebettet werden können, ohne den Quellcode zu verändern. Sollte es die Möglichkeit geben bestehende, externe Bibliotheken einzubinden oder anderweitig nutzbar zu machen, gilt das Kriterium als erfüllt.
 
 
 \subsection{Asynchrone Verarbeitung}
-\label{sec:Asynchrone Verarbeitung}
+\label{sec:muster_asynchrone_verarbeitung}
 Große Datenmengen, deren Übertragung einige Sekunden in Anspruch nimmt, oder Aufgaben die langwierig sind, sollten nicht synchron ausgeführt werden. Stattdessen bietet es sich an, asynchrone Aufgabenblöcke zu definieren, wie beispielsweise das nachladen von Daten, sollten sie tatsächlich angefordert werden. Am Beispiel der hier geplanten \ac{SPA} bedeutet dies, dass Informationen von einem Webserver erst angefordert und sichtbar gemacht werden, sobald der Nutzer diese durch einen Klick auf ein Element anfordert. Da initial gewisse Daten noch nicht vorhanden sind, verringert sich die Datenmenge der zu übertragenen Informationen. Dadurch kann der Webserver entlastet und die initiale Ladezeit der Webseite verringert werden. Um das Kriterium der asynchronen Verarbeitung zu erfüllen, sollte Elm die Möglichkeit liefern, asynchrone Requests an einen Server zu schicken, Daten anzufordern und die Antwort darzustellen. Die Applikation darf dabei nicht in einen undefinierten Zustand kommen, sprich durch beispielsweise eine langsame Übertragungsrate Fehler bei der Darstellung erzeugen oder die Ausführung von nachfolgenden Operationen verzögern.
 
 
 \subsection{Dateigröße}
-\label{sec:Dateigroesse}
+\label{sec:muster_dateigroesse}
 Die Größe einer Datei wirkt sich auf die Dauer der Übertragungszeit aus. Ist die Datenmenge groß, steigt entsprechend auch die Dateigröße an. Eine schlechte Übertragungsrate kann somit zu erheblichen Verzögerungen der fertigen Darstellung führen. Um die Dateigröße von üblichen \ac{JS}-Dateien zu verringern, werden oftmals externe Tools zur Entfernung von Leerzeichen oder der Verkürzung von Funktions- und Variablennamen genutzt. Für die anschließende Bewertung dieses Kriteriums, sollte der Compiler die Möglichkeit zur automatischen Verkleinerung der Dateigröße mit einer Effizienz von mindestens 50\% bieten. Zusätzlich sollte die Dateigröße eines Elm-Programmes mit den eingebundenen Standard-Bibliotheken $elm-lang/core$ und $elm-lang/html$ 150 Kilobyte nicht übersteigen.
 
 \newpage
@@ -109,7 +109,8 @@ Die folgende Sektion unterstützt und erläutert die praktische Ausarbeitung der
 \label{sec:Programmablauf}
 Abbildung XY: Zeigt die Kommunikation zwischen Client und Webserver
 Die Abbildung XY zeigt die geplante Kommunikation zwischen dem Client und dem Webserver.
-In Schritt 1 fordert der Nutzer die Webseite an und erzeugt dadurch einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen \ac{HTML}, \ac{CSS} und \ac{JS} Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion wird durch \ac{JS} erkannt und erzeugt eine Reaktion. Unter Umständen ist dies ein Request an den Server, womit bei Schritt 1 begonnen wird.
+In Schritt 1 fordert der Nutzer die Webseite an und erzeugt dadurch einen Request. Dieser geht in Schritt 2 bei dem Webserver ein und wird verarbeitet. Abhängig von der angeforderten URL erzeugt der Webserver eine Antwort, mit allen zu sendenden Informationen und dem dazugehörigen \ac{HTML}, \ac{CSS} und \ac{JS} Code. Im nächsten Schritt 3 werden diese Daten zurück an den Client gesendet. Der Client nimmt die Daten entgegen, wie in Schritt 4 beschrieben. Des Weiteren macht der Client die Daten entsprechend sichtbar, so dass der Nutzer eine vollständige Präsentation der Webseite sieht. Schritt 5 beschreibt die mögliche Interaktion des Nutzers mit dem ihm präsentierten Dokument. Jede Interaktion wird durch \ac{JS} erkannt und erzeugt eine Reaktion. Unter Umständen ist dies ein Request an den Server, womit bei Schritt 1 begonnen wird. Externe Daten wie Stylesheets oder bestehende \ac{JS}-Skripte  werden asynchron nachgeladen, wie es Schritt 6 andeutet. Dabei kann dieser Schritt zeitlich gesehen zu jedem Zeitpunkt nach Schritt 3 geschehen.
+%TODO: Abbildung einfügen: Seite 68
 
 
 \subsection{Entwicklungsumgebung}
@@ -279,7 +280,7 @@ Letztlich wird noch das $model$, das sämtliche Daten die den Status der Applika
 Mit Hilfe dieser Modularisierung wird das angestrebte \ac{MVU}-Konzept von Elm besonders deutlich.
 
 
-\subsubsection{Asynchrones Laden von Daten}
+\subsection{Asynchrones Laden von Daten}
 \label{sec:async-laden}
 Klickt man innerhalb der Portfolio-Sektion der Webseite auf ein Element, öffnet sich ein Modal in dem weitere Informationen dargestellt werden. Die bestehende Elm-Applikation wird nun um das Feature des asynchronen Ladens von Informationen erweitert, die anschließend in dem geöffneten Modal angezeigt werden. Beispielhaft wird hier die \ac{API} von \ac{ICNDb} (\url{https://api.icndb.com}) genutzt. Sie liefert bei jeder Anfrage einen zufälligen Witz zurück.
 Für dieses Funktionalität muss zunächst das $model$ erweitert und angepasst werden, da dies die einzige Möglichkeit in einer Elm-Applikation ist, Daten beziehungsweise den Status der Applikation zu speichern. Das $model$ bekommt entsprechend ein weiteres Feld $async\_content$ vom Typ $String$.
@@ -359,7 +360,179 @@ Die Differenz der Zeichen lässt sich auf das schließen der Tags in \ac{HTML} z
 Durch die Einrückung in das damit verbundene Fehlen von schließenden Tags kam es zu weniger Flüchtigkeitsfehlern in Form von falschen Verschachtelungen oder dem simplen Fehlen der schließenden Tags bei einer tiefen oder über mehrere Absätze stattfindende Schachtelung.
 
 \subsubsection{Elm hat eine stark wachsende Open-Source Gemeinschaft}
-Trotzdem Elm erst im März 2012 entwickelt wurde, gibt es bereits eine Vielzahl an Gemeinschaften, um über die Sprache zu diskutieren, Hilfe zu erbitten oder gemeinsam an Projekten zu arbeiten. Neben einem eigenen Slack-Chatroom mit 2.701 angemeldeten Nutzern \cite[vgl.]{slack-user}, gibt es noch die offizielle Google-Gruppe. Offiziell gibt es derzeit $205$ Elm-Bibiliotheken \cite[vgl.]{elm-package}, von denen jede einzelne ein Open-Source-Projekt darstellt und für alle Entwickler freigegeben ist. Auf der Webseite \url{https://github.com/} gibt es zur Zeit 2.845 öffentliche Projekte \cite[vgl.]{elm-repositories} die in, oder mit Elm realisiert wurden. Ferner wurden 6.365 Probleme in diesen Projekten gemeldet, von denen 4.834 bereits gelöst und 1.531 noch geöffnet sind.  Alles in Allem wird deutlich, dass Elm eine wachsende Anhängerschaft besitzt und die Probleme der Webentwicklung auf eine andere Weise angeht. Wann immer Fragen auftraten konnten die Nutzer in einem der genannten Medium meist in wenigen Minuten aushelfen. War dies nicht der Fall, wurden stets weitere Nutzer kontaktiert, bis das Problem endgültig gelöst wurde.
+Trotzdem Elm erst im März 2012 entwickelt wurde, gibt es bereits eine Vielzahl an Gemeinschaften, um über die Sprache zu diskutieren, Hilfe zu erbitten oder gemeinsam an Projekten zu arbeiten. Neben einem eigenen Slack-Chatroom mit 2.701 angemeldeten Nutzern \cite[vgl.]{slack-user}, gibt es noch die offizielle Google-Gruppe. Offiziell gibt es derzeit $205$ Elm-Bibiliotheken \cite[vgl.]{elm-package}, von denen jede einzelne ein Open-Source-Projekt darstellt und für alle Entwickler freigegeben ist. Auf der Webseite \url{https://github.com/} gibt es zur Zeit 2.845 öffentliche Projekte \cite[vgl.]{elm-repositories} die komplett oder zumindest teilweise in Elm realisiert wurden. Ferner wurden 6.365 Probleme in diesen Projekten gemeldet, von denen 4.834 bereits gelöst und 1.531 noch geöffnet sind.  Alles in Allem wird deutlich, dass Elm eine wachsende Anhängerschaft besitzt und die Probleme der Webentwicklung auf eine andere Weise angeht. Wann immer Fragen auftraten konnten die Nutzer in einer der genannten Medien meist in wenigen Minuten aushelfen. Des Weiteren ist Elm anwendbar auf allen Betriebssystemen, die den \ac{NPM} unterstützen. Zusätzlich gibt es die öffentlichen Tools $elm-repl$, $elm-make$ und $elm-package$, mit denen eine Elm-Applikation umgesetzt werden kann. Darüber hinaus gibt es Quellen wie \url{http://guide.elm-lang.org/}, \url{http://elm-lang.org/get-started} und \url{http://www.elm-tutorial.org/en}, die mit Hilfe von Schritt-für-Schritt Anleitungen und praktischen Beispielen an die Programmiersprache heranführen.
+
+
+\subsection{Auswertung}
+\label{sec:Auswertung}
+Nachdem die \ac{SPA} vollständig überführt und einige Beobachtungen erläutert wurden, steht die Auswertung der einzelnen Bewertungskriterien aus. Dieser Abschnitt erläutert dabei in welchem Maße die Kriterien erfüllt wurden und inwiefern die Erkenntnisse verallgemeinerbar sind und auf andere Webapplikationen zutreffen.
+\begin{table}[htb]
+\centering
+\begin{tabular}{ | p{8cm} | c | }
+	\hline
+	\textbf{Kriterium} & \textbf{Erfüllt}\\
+	\hline
+	\ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit} & \checkmark\\
+	\hline
+	\ref{sec:muster_zuverlaessigkeit} \nameref{sec:muster_zuverlaessigkeit} & \checkmark\\
+	\hline
+	\ref{sec:muster_portabilitaet} \nameref{sec:muster_portabilitaet} & \checkmark\\
+	\hline
+	\ref{sec:muster_effizienz} \nameref{sec:muster_effizienz} & \checkmark\\
+	\hline
+	\ref{sec:muster_wiederverwendbarkeit} \nameref{sec:muster_wiederverwendbarkeit} & \checkmark\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Webspezifische Kriterien:}} \\
+	\hline
+	\ref{sec:muster_browser_kompatibilitaet} \nameref{sec:muster_browser_kompatibilitaet} & \checkmark\\
+	\hline
+	\ref{sec:muster_interoperabilitaet} \nameref{sec:muster_interoperabilitaet} & \checkmark\\
+	\hline
+	\ref{sec:muster_asynchrone_verarbeitung} \nameref{sec:muster_asynchrone_verarbeitung} & \checkmark\\
+	\hline
+	\ref{sec:muster_dateigroesse} \nameref{sec:muster_dateigroesse} & \checkmark\\
+	\hline
+\end{tabular}
+\caption{Auswertung der Versuchskriterien}
+\label{tab:Auswertungstabelle}
+\end{table}
+
+\subsubsection{Auswertung: \ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit}}
+Die Programmiersprache Elm lässt die Erstellung von manuellen Kommentaren zu. Die Kommentare können sich dabei über mehrere Zeilen erstrecken, oder lediglich eine einzige Zeile einnehmen. Für die jeweilige Distanz eines Kommentar gibt es gesonderte Kommandos. Das Atom-Plugin $elm-format$ fügt außerdem Zeilenabstände vor, sowie hinter dem Kommentar ein, so dass es übersichtlich platziert wird. Die Grundlagen dieses Kriteriums wurden somit an dieser Stelle erfüllt. Das fortgeschrittene Kriterium der automatischen Erstellung von Kommentaren mit Informationen über beispielsweise die erwarteten Typen der Übergabeparameter einer Funktion sind nur bedingt erfüllt. Die Möglichkeit $Signaturen$ innerhalb der Elm-Applikation hinzuzufügen besteht und wird durch den $elm-compiler$ unterstützt, allerdings nicht komplett automatisiert. Der Compiler gibt einen Signaturvorschlag in Form einer Warnung ab, sobald die Applikation kompiliert wird, wie es in Abbildung~\ref{fig:compiler-signature-suggestion} demonstriert wird.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.52]{img/compiler_sig_suggestion.png}
+\caption{Automatisierter Signaturvorschlag durch den $elm-compiler$}\label{fig:compiler-signature-suggestion}
+\end{figure}
+Dem Signaturvorschlag kann unter der Prämisse übernommen werden, dass sämtliche zuvor definierten Typen korrekt sind, da der $elm-compiler$ die Vorschläge auf der vorherigen Analyse des gesamten Dokumentes stützt.
+
+\subsubsection{Auswertung: \ref{sec:muster_zuverlaessigkeit} \nameref{sec:muster_zuverlaessigkeit}}
+%TODO: Fehler einbauen, kompilieren, Fehlermeldungen auswerten
+
+\subsubsection{Auswertung: \ref{sec:muster_portabilitaet} \nameref{sec:muster_portabilitaet}}
+Die offizielle Webseite von Elm bietet Installationsdateien und -anleitungen für die gängigen Betriebssysteme $Mac$ und $Windows$, sowie für alle Plattformen die den \ac{NPM} unterstützen. Testweise wurde die Elm-Version der \ac{SPA} unter Ubuntu 14.04 64bit, Windows 7 64bit und Windows 10 64bit kompiliert und auf Warnungen oder Fehler seitens des $elm-compiler$ überprüft. In keinem der Fälle kam es zu Fehlern, geschweige denn Warnungen. Das Verhalten des Compilers war unter allen Betriebssystemen gleich und erzeugte keinerlei Anomalien. Das Betriebssystem $Mac$ konnte nicht getestet werden, da zum Zeitpunkt der Auswertung kein passendes Endgerät zur Verfügung stand. Da sowohl $Mac$, als auch $Linux$ auf dem Betriebssystem $Unix$ basieren \cite{http://www.itwissen.info/definition/lexikon/UNIX.html}, wird an dieser Stelle davon ausgegangen, dass der Kompiliervorgang auch unter $Mac$ ohne signifikante Probleme ausführbar ist. Die Abbildung~\ref{fig:elm-compile} zeigt den fehlerfreien Kompiliervorgang der \ac{SPA} unter Ubuntu 14.04 64bit mit Elm 0.17.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{img/elm-compile.png}
+\caption{Fehlerfreier Kompiliervorgang durch den Elm-Compiler}\label{fig:elm-compile}
+\end{figure}
+Das Kriterium der Zuverlässigkeit gilt somit als vollständig erfüllt.
+
+
+\subsubsection{Auswertung: \ref{sec:muster_effizienz} \nameref{sec:muster_effizienz}}
+%TODO: 10x Kompilieren, Zeiten berechnen, Auswerten
+Die Performanz der Programmiersprache Elm wird mittels der Applikation $TodoMVC\,Performance\,Comparison$ ausgewertet. DIe Applikation liefert Benchmark-Ergebnisse für die Programmiersprachen Backbone 1.1.2, Ember 1.4.0 mit Handlebars 1.30, Angular 1.2.14, React 0.10.0, Om 0.5.0 mit React 0.9.0, Mercury 3.1.7 mit virtual-dom 0.8, sowie Elm 0.12.3 mit virtual-dom 0.8. Dabei nutzen die Programmiersprachen Elm, Om und Mercury das Konzept der $virtual-dom$.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{img/elm-benchmark-final.png}
+\caption{Benchmark der TodoMVC in unterschiedlichen Programmiersprachen}\label{fig:elm-todo-benchmarks}
+\end{figure}
+Die zu testenden Programmiersprachen sind weit verbreitet in der Webentwicklung. Die Abbildung~\ref{fig:elm-todo-benchmarks} zeigt eine graphische Auswertung nach 20 ausgeführten Tests. Bei jedem Testdurchlauf wird dabei die Zeit gemessen, die für die Erstellung von 100 Elementen, dem Anklicken all dieser erstellten Elemente sowie dem Löschen aller Elemente benötigt wird. Der Test wurde auf dem in der Sektion~\ref{sec:Entwicklungsumgebung} beschriebenem System ausgeführt. Abbildung~\ref{fig:elm-todo-benchmarks} zeigt, dass Elm durchschnittlich 259ms für einen Test benötigt hat. Den niedrigsten Wert mit 191ms/Durchlauf erzielte Mercury und ist damit 26.26\% schneller als Elm. Den schlechtesten Wert erzielte das Framework AngularJs mit 1832ms/Durchlauf. Dieser Wert schneidet 607.33\% schlechter ab, als es bei Elm der Fall war.
+Obwohl die gegenübergestellten Programmiersprachen in der Testumgebung nicht den neuesten Versionen entsprechen, ist davon auszugehen, dass die grobe Platzierung selbst mit den neuesten Versionen ähnlich ausfällt. Die einzelnen Frameworks haben an der grundlegenden Umsetzung zur Darstellung von Daten im Browser nichts geändert, das bedeutet, dass Elm, Mercury und Om weiterhin mit neueren Versionen der $virtual-dom$ arbeiten. Die Frameworks Angular, Backbone und Ember nutzen noch immer nicht standardmäßig das Konzept der $virtual-dom$. Lediglich das Framework React könnte bei einem Test der neuesten Version signifikante Veränderung aufweisen, da hier ein $virtual-dom$ Konzept implementiert wurde.
+Das Kriterium der Performanz einer Elm-Applikation gilt als erfüllt. Im Vergleich zu anderen beliebten Frameworks schlägt sich Elm mit Bravour und wird nur von $Mercury$, einem extrem leichtgewichtigem Framework übertrumpft.
+
+%\begin{figure}
+%\centering
+%\begin{tabular}{  c | c | c | c | c | c | c }
+%	Elm & Mercury & Angular & Ember & React & Backbone & Om\\
+%	\hline
+%	 259ms & 191ms & 1832ms & 1354ms & 658ms & 599ms & 366ms\\
+%	\hline
+%	$\pm 0ms$ & -68ms & +1573ms & +1095ms & +399ms & +340ms & +107ms\\
+%	\hline
+%	------ & -26,26\% & +607,33\% & +422,78\% & +154,05\% & +131,27\% & +41,31\%\\
+%\end{tabular}
+%\end{figure}
+
+%259ms 	= 100\%
+%2,59 	= 1\%
+%diff to Merc 	= -68ms 	-> -68/2,59 	-> -26,26\%
+%diff to Ang 	= +1573ms 	-> 1573/2,59 	-> +607,33\%
+%dif  to Ember	= +1095ms	-> 1095/2,59	-> +422,78\%
+%dif  to React	= +399ms	-> 399/2,59		-> +154,05\%
+%dif  to Back	= +340ms	-> 340/2,59		-> +131,27\%
+%dif  to Om		= +107ms	-> 107/2,59		-> +41,31\%
+
+
+\subsubsection{Auswertung: \ref{sec:muster_wiederverwendbarkeit} \nameref{sec:muster_wiederverwendbarkeit}}
+
+
+
+\subsubsection{Auswertung: \ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit}}
+
+
+\subsubsection{Auswertung: \ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit}}
+
+
+\subsubsection{Auswertung: \ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit}}
+
+
+\subsubsection{Auswertung: \ref{sec:muster_wartbarkeit_und_lesbarkeit} \nameref{sec:muster_wartbarkeit_und_lesbarkeit}}
+
+
+
+ 1.1. Elm hat leicht erlernbare Grundkonzepte, die adaptiert und erweiterbar sind, um Produktivität für die Entwickler zu gewährleisten.
+ 
+ 2.1. Elm Code kann mindestens kommentiert werden, wenn nicht sogar eine Funktion zur automatischen Generierung von Signaturen einer Funktion existiert
+ --> Kommentare können mit `--` (single-line) oder `{- a comment - }` erstellt werden. Eine vollautomatische, explizite Erstellung der Signaturen besteht derzeit nicht. Der Compiler wird jedoch nach dem Kompiliervorgang einen Signaturvorschlag geben. Dieser Vorschlag ist auf einer niedrigeren Ebene, als es eine Deklaration wäre, ist jedoch ausreichend und wesentlich sinnvoller als eine Signatur komplett unberücksichtigt zu lassen. Beispiel: Abbildung XY ($compiler_sig_suggestion$ + $compiler_own_sig$)
+ ```
+ type alias Model = { counter: Int }
+ increaseModel: Model -> Model
+ increaseModel model =
+     {model | counter = model.counter + 1}
+ 
+ vs. Kompiliervorschlag
+ type alias Model = { counter: Int }
+ increaseModel: { a | counter : number } -> { a | counter : number }
+ increaseModel model =
+     {model | counter = model.counter + 1}
+ ```
+ 
+ 3.1. Die Erweiterungen des Editors oder der Compiler warnt spätestens bei der Kompilierung, wenn nicht bereits während der Entwicklung vor syntaktischen Fehlern
+ --> Syntaktische Fehler werden vom Compiler erkannt und ein Fehler angezeigt. Der Fehler wird unterstützt durch einen Hinweis auf die mögliche Fehlerquelle (Abbildung XY – $Compiler_syntax_error$). Die Fehlermeldung wird erst nach der Kompilierung eingeblendet.
+ ```
+ div [ id "elm-view" ]
+         [ Navigation.view model
+             Header.view
+         , Services.view]
+ ```
+ 
+ 3.2. Gibt es keine Fehlermeldungen, wird die Applikation ohne Laufzeitfehler funktionieren
+ --> Aufgrund der Garantien, dass es keine Seiteneffekte gibt und alle Variablen unveränderlich sind, ist die Korrektheit syntaktische und semantische Korrektheit des Codes gewährleistet. Lediglich die logische Implementierung eines Algorithmus kann noch Fehler aufweisen, dies kann jedoch nicht von einem Compiler überprüft werden.
+ 3.3. Fehlermeldungen werden sehr spezifisch auf das eigentliche Problem hinweisen
+ --> Wie in Abbildung iii.i zu sehen ist, gibt der Compiler nicht nur an, in welcher Zeile ein Fehler gefunden wurde, sondern liefert zusätzlich noch einen Hinweis, worin eine wahrscheinliche Fehlerquelle liegt. In diesem Beispiel weißt der Compiler auf das fehlende Komma als Fehlerquelle hin.
+ 
+ 4.1  1. Die SPA wird auf allen gängigen Browsern fehlerfrei dargestellt
+ --> AUSSTEHEND
+ 
+ 5.1. Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem\ac{HTML},\ac{CSS} und\ac{JS}
+ --> Bei der herkömmlichen Entwicklung ist kein expliziter Kompiliervorgang notwendig, stattdessen übernimmt der Browser die Darstellung des übergebenen\ac{HTML},\ac{CSS} und\ac{JS} Quellcodes. Der Kompiliervorgang der Elm-Applikation dauert wie in Abbildung XY  zu sehen ist im Durchschnitt XY Sekunden. Es wurde 10x gemessen, der höchste und niedrigste Wert gestrichen und dann das arithmetische Mittel der verbleibenden 8 Messungen ermittelt.
+ 
+ 5.2  2. Die erzeugte Elm-Applikation ist deutlich schneller während der Laufzeit
+ --> AUSSTEHEND (Abbildung - Performance - Evtl. neu?)
+ 
+ 6. 1. Codeteilen lassen sich problemlos auslagern und wiederverwenden
+ --> Der komplette View wurde von einer großen Darstellung in mehrere Funktionen unterteilt und letztlich in ein eigenes Modul überführt. Analog dazu wurden auch das Model, sowie die Update-Funktion ausgelagert. Das einmalig definierte `Model` kann in sämtlichen Modulen wiederverwendet werden, auch die einzelnen Funktionen eines jeden Moduls finden erneut Verwendung, insofern gewünscht.
+ 
+ 7.1. Ausgelagerte Codeteile sind isoliert voneinander und als einzelnes Modul nutzbar
+ --> Diese Eigenschaft ist gegeben.
+ 7.2. Module können Funktionen nach außen verbergen
+ --> Jedes Modul kann mit dem Stichwort `expose` einzelne Funktionen nach außen hin zugänglich machen. Das importierende Modul wiederum kann einzelne Funktionen in den derzeitigen globalen `Scope` laden.
+ 
+ 8.1. Die automatische Formatierung des Elm-Codes macht diesen lesbarer und spart Zeit
+ --> Fehler werden Dank der Formatierung schnell sichtbar.
+ 
+ 9.1. Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen
+ --> Die kompilierte Elm-Applikation hat eine Größe von etwa 300kb. Allerdings kann diese Größe um etwa 60Prozent verringert werden, wenn der Code `minified` wird.
+
+10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
+--> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
+
+10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
+--> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
+
+11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
+--> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
 
 
 
@@ -537,123 +710,123 @@ Trotzdem Elm erst im März 2012 entwickelt wurde, gibt es bereits eine Vielzahl 
 
 
 
-\subsection{Auswertung}
-\label{sec:Auswertung}
-- Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.\\
-
-
-\begin{table}[h]
-\centering
-\begin{tabular}{ | l | c | }
-	\hline
-	\textbf{Kriterium} & \textbf{Erfüllt}\\
-	\hline
-	1. Entwicklungsgeschwindigkeit & \\
-	1.1 & \checkmark\\
-	\hline
-	2. Wartbarkeit & \\
-	2.1  & \checkmark\\
-	\hline
-	3. Zuverlässigkeit & \\
-	3.1  & \checkmark\\
-	3.2  & \checkmark\\
-	3.3  & \checkmark\\
-	\hline
-	4. Portabilität & \\
-	4.1  & ausstehend\\
-	\hline
-	5. Effizienz & \\
-	5.1  & \checkmark\\
-	5.2  & ausstehend\\
-	\hline
-	6. Wiederverwendbarkeit & \\
-	6.1  & \checkmark\\
-	\hline
-	7. Modularität & \\
-	7.1  & \checkmark\\
-	7.2  & \checkmark\\
-	\hline
-	8. Lesbarkeit & \\
-	8.1  & \checkmark\\	
-	\hline
-	9. Dateigröße & \\
-	9.1  & ausstehend\\
-	\hline
-	10. Interoperabilität & \\
-	10.1  & \checkmark\\
-	10.2  & Nein/Nur bedingt\\
-	\hline
-	11. Asynchrones Laden & \\
-	11.1  & \checkmark\\
-	\hline
-\end{tabular}
-\caption{Auswertung der Versuchskriterien}
-\label{tab:Auswertungstabelle}
-\end{table}
-%TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungstabelle}
-
- 1.1. Elm hat leicht erlernbare Grundkonzepte, die adaptiert und erweiterbar sind, um Produktivität für die Entwickler zu gewährleisten.
- 
- 2.1. Elm Code kann mindestens kommentiert werden, wenn nicht sogar eine Funktion zur automatischen Generierung von Signaturen einer Funktion existiert
- --> Kommentare können mit `--` (single-line) oder `{- a comment - }` erstellt werden. Eine vollautomatische, explizite Erstellung der Signaturen besteht derzeit nicht. Der Compiler wird jedoch nach dem Kompiliervorgang einen Signaturvorschlag geben. Dieser Vorschlag ist auf einer niedrigeren Ebene, als es eine Deklaration wäre, ist jedoch ausreichend und wesentlich sinnvoller als eine Signatur komplett unberücksichtigt zu lassen. Beispiel: Abbildung XY ($compiler_sig_suggestion$ + $compiler_own_sig$)
- ```
- type alias Model = { counter: Int }
- increaseModel: Model -> Model
- increaseModel model =
-     {model | counter = model.counter + 1}
- 
- vs. Kompiliervorschlag
- type alias Model = { counter: Int }
- increaseModel: { a | counter : number } -> { a | counter : number }
- increaseModel model =
-     {model | counter = model.counter + 1}
- ```
- 
- 3.1. Die Erweiterungen des Editors oder der Compiler warnt spätestens bei der Kompilierung, wenn nicht bereits während der Entwicklung vor syntaktischen Fehlern
- --> Syntaktische Fehler werden vom Compiler erkannt und ein Fehler angezeigt. Der Fehler wird unterstützt durch einen Hinweis auf die mögliche Fehlerquelle (Abbildung XY – $Compiler_syntax_error$). Die Fehlermeldung wird erst nach der Kompilierung eingeblendet.
- ```
- div [ id "elm-view" ]
-         [ Navigation.view model
-             Header.view
-         , Services.view]
- ```
- 
- 3.2. Gibt es keine Fehlermeldungen, wird die Applikation ohne Laufzeitfehler funktionieren
- --> Aufgrund der Garantien, dass es keine Seiteneffekte gibt und alle Variablen unveränderlich sind, ist die Korrektheit syntaktische und semantische Korrektheit des Codes gewährleistet. Lediglich die logische Implementierung eines Algorithmus kann noch Fehler aufweisen, dies kann jedoch nicht von einem Compiler überprüft werden.
- 3.3. Fehlermeldungen werden sehr spezifisch auf das eigentliche Problem hinweisen
- --> Wie in Abbildung iii.i zu sehen ist, gibt der Compiler nicht nur an, in welcher Zeile ein Fehler gefunden wurde, sondern liefert zusätzlich noch einen Hinweis, worin eine wahrscheinliche Fehlerquelle liegt. In diesem Beispiel weißt der Compiler auf das fehlende Komma als Fehlerquelle hin.
- 
- 4.1  1. Die SPA wird auf allen gängigen Browsern fehlerfrei dargestellt
- --> AUSSTEHEND
- 
- 5.1. Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem\ac{HTML},\ac{CSS} und\ac{JS}
- --> Bei der herkömmlichen Entwicklung ist kein expliziter Kompiliervorgang notwendig, stattdessen übernimmt der Browser die Darstellung des übergebenen\ac{HTML},\ac{CSS} und\ac{JS} Quellcodes. Der Kompiliervorgang der Elm-Applikation dauert wie in Abbildung XY  zu sehen ist im Durchschnitt XY Sekunden. Es wurde 10x gemessen, der höchste und niedrigste Wert gestrichen und dann das arithmetische Mittel der verbleibenden 8 Messungen ermittelt.
- 
- 5.2  2. Die erzeugte Elm-Applikation ist deutlich schneller während der Laufzeit
- --> AUSSTEHEND (Abbildung - Performance - Evtl. neu?)
- 
- 6. 1. Codeteilen lassen sich problemlos auslagern und wiederverwenden
- --> Der komplette View wurde von einer großen Darstellung in mehrere Funktionen unterteilt und letztlich in ein eigenes Modul überführt. Analog dazu wurden auch das Model, sowie die Update-Funktion ausgelagert. Das einmalig definierte `Model` kann in sämtlichen Modulen wiederverwendet werden, auch die einzelnen Funktionen eines jeden Moduls finden erneut Verwendung, insofern gewünscht.
- 
- 7.1. Ausgelagerte Codeteile sind isoliert voneinander und als einzelnes Modul nutzbar
- --> Diese Eigenschaft ist gegeben.
- 7.2. Module können Funktionen nach außen verbergen
- --> Jedes Modul kann mit dem Stichwort `expose` einzelne Funktionen nach außen hin zugänglich machen. Das importierende Modul wiederum kann einzelne Funktionen in den derzeitigen globalen `Scope` laden.
- 
- 8.1. Die automatische Formatierung des Elm-Codes macht diesen lesbarer und spart Zeit
- --> Fehler werden Dank der Formatierung schnell sichtbar.
- 
- 9.1. Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen
- --> Die kompilierte Elm-Applikation hat eine Größe von etwa 300kb. Allerdings kann diese Größe um etwa 60Prozent verringert werden, wenn der Code `minified` wird.
-
-10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
---> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
-
-10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
---> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
-
-11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
---> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
+%\subsection{Auswertung}
+%\label{sec:Auswertung}
+%- Das bedeutet, dass nativer Code in Elm kürzer und weniger anfällig für Flüchtigkeitsfehler wie beispielsweise das Schließen eines Tags ist. Der Entwickler wird weniger syntaktische Fehler machen.\\
+%
+%
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{ | l | c | }
+%	\hline
+%	\textbf{Kriterium} & \textbf{Erfüllt}\\
+%	\hline
+%	1. Entwicklungsgeschwindigkeit & \\
+%	1.1 & \checkmark\\
+%	\hline
+%	2. Wartbarkeit & \\
+%	2.1  & \checkmark\\
+%	\hline
+%	3. Zuverlässigkeit & \\
+%	3.1  & \checkmark\\
+%	3.2  & \checkmark\\
+%	3.3  & \checkmark\\
+%	\hline
+%	4. Portabilität & \\
+%	4.1  & ausstehend\\
+%	\hline
+%	5. Effizienz & \\
+%	5.1  & \checkmark\\
+%	5.2  & ausstehend\\
+%	\hline
+%	6. Wiederverwendbarkeit & \\
+%	6.1  & \checkmark\\
+%	\hline
+%	7. Modularität & \\
+%	7.1  & \checkmark\\
+%	7.2  & \checkmark\\
+%	\hline
+%	8. Lesbarkeit & \\
+%	8.1  & \checkmark\\	
+%	\hline
+%	9. Dateigröße & \\
+%	9.1  & ausstehend\\
+%	\hline
+%	10. Interoperabilität & \\
+%	10.1  & \checkmark\\
+%	10.2  & Nein/Nur bedingt\\
+%	\hline
+%	11. Asynchrones Laden & \\
+%	11.1  & \checkmark\\
+%	\hline
+%\end{tabular}
+%\caption{Auswertung der Versuchskriterien}
+%\label{tab:Auswertungstabelle}
+%\end{table}
+%%TODO: Importieren der schriftlichen Auswertung der Tabelle~\ref{tab:Auswertungstabelle}
+%
+% 1.1. Elm hat leicht erlernbare Grundkonzepte, die adaptiert und erweiterbar sind, um Produktivität für die Entwickler zu gewährleisten.
+% 
+% 2.1. Elm Code kann mindestens kommentiert werden, wenn nicht sogar eine Funktion zur automatischen Generierung von Signaturen einer Funktion existiert
+% --> Kommentare können mit `--` (single-line) oder `{- a comment - }` erstellt werden. Eine vollautomatische, explizite Erstellung der Signaturen besteht derzeit nicht. Der Compiler wird jedoch nach dem Kompiliervorgang einen Signaturvorschlag geben. Dieser Vorschlag ist auf einer niedrigeren Ebene, als es eine Deklaration wäre, ist jedoch ausreichend und wesentlich sinnvoller als eine Signatur komplett unberücksichtigt zu lassen. Beispiel: Abbildung XY ($compiler_sig_suggestion$ + $compiler_own_sig$)
+% ```
+% type alias Model = { counter: Int }
+% increaseModel: Model -> Model
+% increaseModel model =
+%     {model | counter = model.counter + 1}
+% 
+% vs. Kompiliervorschlag
+% type alias Model = { counter: Int }
+% increaseModel: { a | counter : number } -> { a | counter : number }
+% increaseModel model =
+%     {model | counter = model.counter + 1}
+% ```
+% 
+% 3.1. Die Erweiterungen des Editors oder der Compiler warnt spätestens bei der Kompilierung, wenn nicht bereits während der Entwicklung vor syntaktischen Fehlern
+% --> Syntaktische Fehler werden vom Compiler erkannt und ein Fehler angezeigt. Der Fehler wird unterstützt durch einen Hinweis auf die mögliche Fehlerquelle (Abbildung XY – $Compiler_syntax_error$). Die Fehlermeldung wird erst nach der Kompilierung eingeblendet.
+% ```
+% div [ id "elm-view" ]
+%         [ Navigation.view model
+%             Header.view
+%         , Services.view]
+% ```
+% 
+% 3.2. Gibt es keine Fehlermeldungen, wird die Applikation ohne Laufzeitfehler funktionieren
+% --> Aufgrund der Garantien, dass es keine Seiteneffekte gibt und alle Variablen unveränderlich sind, ist die Korrektheit syntaktische und semantische Korrektheit des Codes gewährleistet. Lediglich die logische Implementierung eines Algorithmus kann noch Fehler aufweisen, dies kann jedoch nicht von einem Compiler überprüft werden.
+% 3.3. Fehlermeldungen werden sehr spezifisch auf das eigentliche Problem hinweisen
+% --> Wie in Abbildung iii.i zu sehen ist, gibt der Compiler nicht nur an, in welcher Zeile ein Fehler gefunden wurde, sondern liefert zusätzlich noch einen Hinweis, worin eine wahrscheinliche Fehlerquelle liegt. In diesem Beispiel weißt der Compiler auf das fehlende Komma als Fehlerquelle hin.
+% 
+% 4.1  1. Die SPA wird auf allen gängigen Browsern fehlerfrei dargestellt
+% --> AUSSTEHEND
+% 
+% 5.1. Der Kompiliervorgang wird nur wenige Sekunden dauern, jedoch mehr Zeit in Anspruch nehmen, als die herkömmliche Entwicklung mit reinem\ac{HTML},\ac{CSS} und\ac{JS}
+% --> Bei der herkömmlichen Entwicklung ist kein expliziter Kompiliervorgang notwendig, stattdessen übernimmt der Browser die Darstellung des übergebenen\ac{HTML},\ac{CSS} und\ac{JS} Quellcodes. Der Kompiliervorgang der Elm-Applikation dauert wie in Abbildung XY  zu sehen ist im Durchschnitt XY Sekunden. Es wurde 10x gemessen, der höchste und niedrigste Wert gestrichen und dann das arithmetische Mittel der verbleibenden 8 Messungen ermittelt.
+% 
+% 5.2  2. Die erzeugte Elm-Applikation ist deutlich schneller während der Laufzeit
+% --> AUSSTEHEND (Abbildung - Performance - Evtl. neu?)
+% 
+% 6. 1. Codeteilen lassen sich problemlos auslagern und wiederverwenden
+% --> Der komplette View wurde von einer großen Darstellung in mehrere Funktionen unterteilt und letztlich in ein eigenes Modul überführt. Analog dazu wurden auch das Model, sowie die Update-Funktion ausgelagert. Das einmalig definierte `Model` kann in sämtlichen Modulen wiederverwendet werden, auch die einzelnen Funktionen eines jeden Moduls finden erneut Verwendung, insofern gewünscht.
+% 
+% 7.1. Ausgelagerte Codeteile sind isoliert voneinander und als einzelnes Modul nutzbar
+% --> Diese Eigenschaft ist gegeben.
+% 7.2. Module können Funktionen nach außen verbergen
+% --> Jedes Modul kann mit dem Stichwort `expose` einzelne Funktionen nach außen hin zugänglich machen. Das importierende Modul wiederum kann einzelne Funktionen in den derzeitigen globalen `Scope` laden.
+% 
+% 8.1. Die automatische Formatierung des Elm-Codes macht diesen lesbarer und spart Zeit
+% --> Fehler werden Dank der Formatierung schnell sichtbar.
+% 
+% 9.1. Die Dateigröße der Elm-Applikation wird kleiner als bei vergleichbaren Frameworks ausfallen
+% --> Die kompilierte Elm-Applikation hat eine Größe von etwa 300kb. Allerdings kann diese Größe um etwa 60Prozent verringert werden, wenn der Code `minified` wird.
+%
+%10.1. Bestehende\ac{JS}-Skripte können mit der Elm-Applikation interagieren oder funktionieren bereits einwandfrei
+%--> Die Integration vorhandener\ac{JS}-Skripte verlief problemlos. Benötigt ein externes Skript Daten von der Elm-Applikation, so kann mit Hilfe von `Ports` eine gesicherte Kommunikation in beide Richtungen stattfinden.
+%
+%10.2. Bestehender\ac{CSS}-Code kann nativ in Elm eingebunden werden
+%--> Das Einbinden von\ac{CSS} Quellen ist derzeit nicht ohne Probleme nativ in Elm möglich. Es verursacht ein „flackern“ und ist nicht für den Gebrauch in einem fertigen System geeignet.\ac{CSS}-Klassen und `inline-styling` sind jedoch nativ in Elm implementiert und erlauben ein Styling der Elemente. Externes\ac{CSS} muss jedoch über das Grundgerüst der\ac{HTML}-Datei eingebunden werden.
+%
+%11.1. Elm erlaubt asynchrone Requests ohne Seiteneffekte zu erzeugen
+%--> Ein asynchroner Request stellt implizit einen Seiteneffekt dar, wird in Elm allerdings als gemanagter Seiteneffekt bezeichnet. In jedem Fall ist der Nutzer gezwungen eine Funktion bei einer fehlerhaften Übertragung zu übergeben, die dann die erwartenden Typen/Werte liefert.
 
 \subsection{Fazit}
 \label{sec:Fazit}

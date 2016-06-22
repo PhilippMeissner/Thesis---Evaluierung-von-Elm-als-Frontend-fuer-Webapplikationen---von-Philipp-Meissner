@@ -46,26 +46,35 @@
 \contentsline {section}{\numberline {3.3}Web-spezifische Bewertungskriterien}{33}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t}{34}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{34}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{34}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{35}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{35}{subsection.3.3.4}
 \contentsline {section}{\numberline {3.4}Empirische Analyse}{36}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Programmablauf}{36}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Entwicklungsumgebung}{36}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Grundaufbau}{37}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}\IeC {\"U}berf\IeC {\"u}hrung des Views}{41}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Beheben von JavaScript-Fehlern}{42}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.5}Beheben von JavaScript-Fehlern}{41}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}Auslagern des Views}{43}{subsection.3.4.6}
 \contentsline {subsection}{\numberline {3.4.7}Hinzuf\IeC {\"u}gen von Klick-Events}{43}{subsection.3.4.7}
 \contentsline {subsection}{\numberline {3.4.8}Modularisierung der Applikation}{47}{subsection.3.4.8}
 \contentsline {subsubsection}{\nonumberline View}{47}{section*.84}
 \contentsline {subsubsection}{\nonumberline Update}{48}{section*.87}
-\contentsline {subsubsection}{\nonumberline Model}{48}{section*.88}
-\contentsline {subsubsection}{\nonumberline Asynchrones Laden von Daten}{49}{section*.89}
-\contentsline {subsection}{\numberline {3.4.9}Beobachtungen}{51}{subsection.3.4.9}
-\contentsline {subsubsection}{\nonumberline Natives Einbinden von CSS in Elm nur beschr\IeC {\"a}nkt m\IeC {\"o}glich}{52}{section*.98}
-\contentsline {subsubsection}{\nonumberline HTML-Code ist in Elm wesentlich k\IeC {\"u}rzer}{53}{section*.99}
-\contentsline {subsubsection}{\nonumberline Elm hat eine stark wachsende Open-Source Gemeinschaft}{54}{section*.101}
-\contentsline {subsection}{\numberline {3.4.10}Auswertung}{54}{subsection.3.4.10}
-\contentsline {subsection}{\numberline {3.4.11}Fazit}{57}{subsection.3.4.11}
-\contentsline {chapter}{\numberline {4}Fazit}{58}{chapter.4}
-\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{59}{chapter.5}
+\contentsline {subsubsection}{\nonumberline Model}{49}{section*.88}
+\contentsline {subsection}{\numberline {3.4.9}Asynchrones Laden von Daten}{49}{subsection.3.4.9}
+\contentsline {subsection}{\numberline {3.4.10}Beobachtungen}{52}{subsection.3.4.10}
+\contentsline {subsubsection}{\nonumberline Natives Einbinden von CSS in Elm nur beschr\IeC {\"a}nkt m\IeC {\"o}glich}{52}{section*.97}
+\contentsline {subsubsection}{\nonumberline HTML-Code ist in Elm wesentlich k\IeC {\"u}rzer}{53}{section*.98}
+\contentsline {subsubsection}{\nonumberline Elm hat eine stark wachsende Open-Source Gemeinschaft}{54}{section*.100}
+\contentsline {subsection}{\numberline {3.4.11}Auswertung}{54}{subsection.3.4.11}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{55}{section*.102}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_zuverlaessigkeit} \nameref {sec:muster_zuverlaessigkeit}}{56}{section*.104}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_portabilitaet} \nameref {sec:muster_portabilitaet}}{56}{section*.105}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_effizienz} \nameref {sec:muster_effizienz}}{56}{section*.107}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{57}{section*.109}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{57}{section*.110}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{57}{section*.111}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{57}{section*.112}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{57}{section*.113}
+\contentsline {subsection}{\numberline {3.4.12}Fazit}{59}{subsection.3.4.12}
+\contentsline {chapter}{\numberline {4}Fazit}{60}{chapter.4}
+\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{61}{chapter.5}
