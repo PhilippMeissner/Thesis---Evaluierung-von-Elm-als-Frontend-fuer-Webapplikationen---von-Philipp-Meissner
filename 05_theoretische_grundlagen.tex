@@ -35,7 +35,7 @@ console.log(recursive_function(10)); // => 55
 \end{figure}
 In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $resursive\_function$
 mit einem neuen Wert aufgerufen, ohne jemals die ursprüngliche Variable verändert zu haben.
-Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda-Funktion$ oder $anonyme Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur durch einen Verweis aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
+Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda-Funktion$ oder $anonyme\,Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur einmalig aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
 \begin{equation} \label{eq:solve}
 (\backslash x \rightarrow x * 2)\ [ 2, 3, 4 ] \Longrightarrow [4, 6, 8]
 \end{equation}
@@ -49,7 +49,7 @@ Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildu
 Elm ist eine funktionale Programmiersprache. Sie wurde im Rahmen der Bachelorarbeit „Elm: Concurrent FRP for Functional GUIs“\\
  (http://Elm-lang.org/papers/concurrent-frp.pdf)
 von Evan Czaplicki entwickelt und im April 2012 offiziell veröffentlicht.
-Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren. Es gab keine für ihn annehmbare, leichte Lösung für dieses Problem, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage „What would web programming look like if we could restart?“ („Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?“) machte er sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
+Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren. Es gab keine für ihn annehmbare, leichte Lösung für dieses Unterfangen, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage „What would web programming look like if we could restart?“, also „Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?“, machte er sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
 
 \subsection{Konzept}
 \label{sec:Konzept}
@@ -62,8 +62,10 @@ Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigm
 Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird zwischen den Knöpfen angezeigt und kann sowohl negative, als auch positive Werte annehmen.
 Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Interagiert ein Nutzer nun mit einem der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte $Update$-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$, sprich den momentanen Zählerwert übergeben.
 Die $Update$-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Das bedeutet in diesem konkreten Fall, dass das $Model$ erhöht oder reduziert wird. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten wird zurückgegeben, da sonst ein Seiteneffekt die Folge wäre. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden übernommen.
-Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Website, soll heißen wie das $Model$ dargestellt wird. Elm nutzt ein virtuelles \ac{DOM}, wodurch nur tatsächliche Änderungen im Browser angezeigt werden, anstatt dauerhaft das komplette \ac{DOM} stetig zu aktualisieren. Das \ac{DOM} beschreibt die Schnittstelle zum Datenzugriff auf das Objektmodell eines \ac{HTML}-Dokumentes.
-Der Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-update-concept} visualisiert.
+Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Webseite und kümmert sich um die Darstellung des $Model$s. Elm nutzt ein virtuelles \ac{DOM}, wodurch nur tatsächliche Änderungen im Browser angezeigt werden, anstatt dauerhaft das komplette \ac{DOM} stetig zu aktualisieren.
+%Document Object Model (DOM) ist eine plattform- sowie sprachenunabhängige Schnittstellenbeschreibung für den Zugriff auf die Elemente eines HTML- oder XML-Dokuments. (http://www.itwissen.info/definition/lexikon/document-object-model-DOM.html)
+Das \ac{DOM} beschreibt die Schnittstelle zum Datenzugriff auf das Objektmodell eines \ac{HTML}-Dokumentes.
+Der zuvor beschriebene Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-update-concept} visualisiert.
 \begin{figure}[h]
   \centering  
   \includegraphics[scale=1]{img/elm-model-view-update-concept.png}
@@ -73,17 +75,17 @@ Der Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-upda
 \subsection{Umsetzung}
 \label{sec:Umsetzung}
 Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu \ac{JS}, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives \ac{JS}, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von \ac{JS} zu umgehen und auszumerzen.
-Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler (http://elm-lang.org/) erzeugt. Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm mehrere Konzepte des deklarativen Programmierparadigmas.
+Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler (http://elm-lang.org/) erzeugt. Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm unter anderem Konzepte des deklarativen Programmierparadigmas. Diese und die weiteren Grundkonzepte werden im folgenden erläutert.
 
 \subsubsection{Keine Seiteneffekte}
 \label{sec:Keine Seiteneffekte}
-Ein Seiteneffekt beschreibt die mehrmalige Zuweisung einer Variable mit einem Wert. In Elm ist das allerdings nicht möglich. Sämtliche Variablen sind unveränderlich und können nur einmalig mit einem Wert initiiert werden. Danach bleibt diese Variable bis zum Ende der Laufzeit unverändert. Wie bereits beschrieben gibt es in Elm das Model, welches die Informationen über den Status der Applikation darstellt. Beschreibt das $Model$ beispielsweise den aktuellen Stand eines Zählers und wird dieser erhöht, muss auch das Model, um aktuell zu bleiben, verändert werden. Hier käme es zu einem Seiteneffekt. Realisiert wird diese Veränderung dadurch, dass ein neues Model mit den gleichbleibenden Daten, sowie dem zu ändernden, aktualisierten Wert erstellt wird. Da ein neues Model erstellt wurde, gibt es nun keinen Seiteneffekt mehr. Das vorherige $Model$ wird schlichtweg verworfen und mit einem neuen Model ersetzt.
+Ein Seiteneffekt beschreibt die mehrmalige Zuweisung einer Variable mit einem Wert. In Elm ist das allerdings nicht möglich. Sämtliche Variablen sind unveränderlich und können nur einmalig mit einem Wert initiiert werden. Danach bleibt diese Variable bis zum Ende der Laufzeit unverändert. Wie bereits beschrieben gibt es in Elm das $Model$, welches die Informationen über den Status der Applikation enthält. Beschreibt das $Model$ beispielsweise den aktuellen Stand eines Zählers und wird dieser erhöht, muss auch das $Model$, um aktuell zu bleiben, verändert werden. Hier käme es zu einem Seiteneffekt. Realisiert wird diese Veränderung dadurch, dass ein neues $Model$ mit den gleichbleibenden Daten, sowie dem zu ändernden, aktualisierten Wert erstellt wird. Da ein neues $Model$ erstellt wurde, gibt es nun keinen Seiteneffekt mehr. Das vorherige $Model$ wird schlichtweg verworfen und mit einem neuen $Model$ ersetzt.
 Das Konzept der unveränderbaren Werte wurde aus der Mathematik übernommen.  Um Funktionen und ihre Korrektheit garantieren zu können, wird dort dasselbe Prinzip der unveränderlichen Variablen angewandt. Betrachtet man beispielsweise den Ausdruck~\ref{eq:imperative_equation}, so fällt auf, dass die Schreibweise lediglich in den meisten imperativen Programmiersprachen sinnvoll ist, allerdings einen Seiteneffekt darstellt.
 \begin{equation} \label{eq:imperative_equation}
 x = x + 1
 \end{equation}
-In einer imperativen Programmiersprache wird der Ausdruck~\ref{eq:imperative_equation} den aktuellen Wert in $x$ auslesen, um $1$ inkrementieren und das Ergebnis der Operation in die Variable $x$ schreiben.
-Mathematisch betrachtet ist diese Aussage jedoch schlichtweg falsch, denn es existiert kein $x$, welches diese Aussage wahr werden lässt:
+In einer imperativen Programmiersprache wird durch den Ausdruck~\ref{eq:imperative_equation} der aktuellen Wert in $x$ ausgelesen, um $1$ inkrementiert und das Ergebnis in die Variable $x$ geschrieben.
+Mathematisch betrachtet ist diese Aussage jedoch schlichtweg falsch, denn es existiert kein $x$, welches diese Aussage wahr werden lässt, wie durch Abbildung~\ref{eq:mathematical_equation} deutlich wird.
 \begin{equation} \label{eq:mathematical_equation}
 x=x+1 \leftrightarrow 0=1
 \end{equation}
@@ -93,12 +95,12 @@ Die eigentliche Bedeutung des Ausdrucks~\ref{eq:imperative_equation} ist mathema
 x_1:= x_0 + 1
 \end{equation}
 Es ist klar erkennbar, dass $x_1$ und $x_0$ nicht dieselbe Variable sind wodurch die Aussage nun als wahr eingestuft werden kann. Das beschriebene Konzept wird referentielle Transparenz genannt und beschreibt die Kontinuität des Wertes einer Variable.
-Des Weiteren basieren Funktionen in Elm auf dem Konzept von reinen Funktionen($pure\,functions$). Das bedeutet, dass eine Funktion stets das gleiche Ergebnisse liefert, insofern auch die Eingabeparameter gleich bleiben, unabhängig vom Zeitpunkt der Ausführung. Beispiele für eine reine Funktion sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen (semi-)zufälligen Wert zurückliefert und somit als eine unreine Funktion gilt. Doch auch diese Funktion kann zu einer reinen Funktion gemacht werden, wenn man sie einen Wert abhängig von einem Übergabeparameter berechnen lässt wie beispielsweise $random(seed)$.
+Des Weiteren basieren Funktionen in Elm auf dem Konzept von reinen Funktionen($pure\,functions$). Das bedeutet, dass eine Funktion stets das gleiche Ergebnisse liefert, insofern auch die Eingabeparameter gleich bleiben, unabhängig vom Zeitpunkt der Ausführung. Beispiele für eine reine Funktion sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen (semi-)zufälligen Wert zurückliefert und somit als eine unreine Funktion gilt. Doch auch diese Funktion kann als reine Funktion implementiert werden, wenn sie einen Wert abhängig von einem Übergabeparameter berechnet wie beispielsweise $random(seed)$.
 
 \subsubsection{Elm-Compiler}
 \label{sec:Elm-Compiler}
 Laufzeitfehler sollen mit Elm in Vergessenheit geraten. Dafür soll der integrierte Compiler sorgen. Die Fehlermeldungen des Compilers sind sehr strikt und deuten exakt auf die Programmzeile die für den jeweiligen Fehler verantwortlich ist. Bei der herkömmlichen Entwicklung eines Frontends mit \ac{JS} trifft man häufig auf den Wert $undefined$. Dieser Wert beschreibt, dass die dazugehörige Variable noch nicht initialisiert wurde und somit keine nutzbaren Daten enthält. Trifft man nun auf diesen Wert und versucht eine andere Funktion darauf auszuführen, so kann das geschriebene Programm entsprechend abstürzen. Der Elm Compiler überprüft den Programmcode nach exakt diesen Situation beziehungsweise analysiert, ob Variablen und Funktionen vorab initialisiert wurden, welche Parameter die einzelnen Funktionen erwarten und ob die Rückgabeparameter dem Typen entsprechen, den die anderen Funktionen erwarten. Befolgt man die Anweisungen des Compilers, soll das in einem stark strukturierten, lesbaren und funktionieren Code münden.
-Dem Programmierer werden weniger Möglichkeiten gegeben, bestimmte Ziele zu erreichen, doch dadurch soll auf lange Sicht einheitlicher, lesbarer und besser zu wartender Code erzeugt werden. Passend dazu gibt es bereits viele Erweiterungen für gängige Editoren wie Sublime Text und Atom, welche beim Speichern des Projektes den Code entsprechend des Style Guides strukturieren und formatieren. So kann einerseits die Lesbarkeit des Codes vereinheitlicht, andererseits die Fehlerquellen in Form von Einrückungsfehlern oder vergessenen Kommas o.ä. verringert werden.
+Dem Programmierer werden weniger Möglichkeiten gegeben, bestimmte Ziele zu erreichen, doch dadurch soll auf lange Sicht einheitlicher, lesbarer und besser zu wartender Code erzeugt werden. Passend dazu gibt es bereits viele Erweiterungen für gängige Editoren wie Sublime Text und Atom, welche beim Speichern des Projektes den Code entsprechend des Style Guides strukturieren und formatieren. So kann einerseits die Lesbarkeit des Codes vereinheitlicht, andererseits die Fehlerquellen in Form von Einrückungsfehlern oder vergessenen Kommas verringert werden.
 
 \subsubsection{Statische Typisierung}
 \label{sec:Statische Typisierung}
@@ -112,54 +114,52 @@ i = "Test";
 \end{figure}
 Der Typ der Variable $i$ wurde in der Abbildung~\ref{fig:dynamische-typisierung} während der Laufzeit von $number$ zu $string$ geändert. Da Elm stark typisiert ist, gibt es keine Möglichkeit, dass eine Funktion verschiedene Datentypen zurück gibt oder eine Variable mehrere Typen während der Laufzeit annimmt.
 
-\subsubsection{Modularität}
-\label{sec:Modularität}
-Um geschriebenen Code auch in Zukunft wartbarer zu machen, ist Elm modular aufgebaut und leicht erweiterbar. Es ist denkbar einfach vorhandenen Code zu importieren. Die importierten Module verstehen sich als gekapselt, wodurch sie in keiner Weise mit dem bereits verfügbaren Code kollidieren können.
-
 
 \subsubsection{Performanz}
 \label{sec:Performanz}
-\begin{figure}[hb]
-  \centering  
-  \includegraphics[scale=0.6]{img/virtual-dom.png}
-  \caption{Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite{elm-performance}}\label{fig:performance}
-\end{figure}
-Obwohl Daten nicht verändert, sondern lediglich als neuer aktualisierter Datensatz betrachtet werden und einzelne Funktionen stark ausgelagert werden können, leidet die Performanz nicht darunter. Laut Abbildung~\ref{fig:performance} überzeugt Elm mit einer sehr guten Geschwindigkeit. Möglich wird das durch die Verwendung eines virtuellen \ac{DOM}.
-Dabei wird das echte \ac{DOM} bei jedem „Frame“ in eine abstrakte Version kopiert. Auf diese abstrakte Version werden die Änderungen angewandt. Zunächst klingt diese Vorgehensweise sehr langsam und aufwändig, doch um die Geschwindigkeit zu gewährleisten wird das aktuelle abstrakte \ac{DOM} mit dem neuen, veränderten \ac{DOM} verglichen und nach Unterschieden gesucht. Jede Unterschiedlichkeit wird daraufhin zu einer Liste hinzugefügt, in der sämtliche Änderungen festgehalten werden. Anschließend wird diese Liste an den Browser zurückgegeben, so dass alle Änderungen für den Nutzer sichtbar gemacht werden können. Daraus resultiert, dass nur noch die tatsächlich neuen Elemente im \ac{DOM} des Nutzers aktualisiert werden müssen. Dieser zu verändernde Teil stellt nur einen Bruchteil des kompletten \ac{DOM} dar. Man kann dadurch von einer immensen Effizienzsteigerung ausgehen.
-
+%\begin{figure}[hb]
+%  \centering  
+%  \includegraphics[scale=0.6]{img/virtual-dom.png}
+%  \caption{Performanz von Elm im Vergleich zu anderen Web-Frameworks. \cite{elm-performance}}\label{fig:performance}
+%\end{figure}
+Obwohl Daten nicht verändert, sondern durchgehend ein neuer, aktualisierter Datensatz erstellt wird, soll die Performanz nicht darunter leiden. Möglich soll das durch die Verwendung einer virtuellen \ac{DOM} werden.
+Dabei wird das echte \ac{DOM} bei jedem „Frame“ in eine abstrakte Version kopiert. Auf diese abstrakte Version werden die Änderungen angewandt. Zunächst klingt diese Vorgehensweise sehr langsam und aufwändig, um jedoch die Geschwindigkeit zu gewährleisten wird das aktuelle abstrakte \ac{DOM} mit dem neuen, veränderten \ac{DOM} verglichen und nach Unterschieden gesucht. Jede Unterschiedlichkeit wird daraufhin zu einer Liste hinzugefügt, in der sämtliche Änderungen festgehalten werden. Anschließend wird diese Liste an den Browser zurückgegeben, so dass alle Änderungen für den Nutzer sichtbar gemacht werden können. Daraus resultiert, dass nur noch die tatsächlich neuen oder veränderten Elemente im \ac{DOM} des Nutzers aktualisiert werden müssen. Dieser zu verändernde Teil stellt nur einen Bruchteil des kompletten \ac{DOM} dar. Man kann dadurch von einer immensen Effizienzsteigerung ausgehen.
 
 \subsubsection{Interoperabilität}
 \label{sec:Interoperabilität}
 Es wäre sehr aufwendig die gängigsten JavaScript-Bibliotheken und -Frameworks wie jQuery oder AngularJS komplett zu verwerfen und mit Elm zu realisieren respektive neu zu programmieren. Glücklicherweise bietet Elm eine ausgereifte Interoperabilität, wodurch alle Garantien der deklarativen Programmierung übernommen werden können, selbst wenn die externen Bibliotheken diese nicht gewährleisten.
-Die genannten externen Bibliotheken sind zum Großteil nicht deklarativ programmiert, weswegen normalerweise keinerlei Garantien seitens Elm gemacht werden können. Jedoch ist Elm von den externen Bibliotheken isoliert und kommuniziert nur über sogenannte Ports mit JavaScript. Die Kommunikation durch die Ports funktioniert in beide Richtungen, womit sämtliche Daten bei Bedarf ausgetauscht werden können. Da in Elm wie bekannt vorab die Typen der Eingabeparameter und Rückgabewerte spezifiziert werden müssen, werden die Garantien weiterhin gewahrt.
+Oftmals sind externe Bibliotheken nicht deklarativ programmiert, weswegen keinerlei Garantien seitens Elm gemacht werden können. Jedoch gibt Elm an, dass der Datenaustausch über isolierte Ports in beide Richtungen funktioniert.
 
-\subsubsection{Debugger}
-\label{sec:Debugger}
-Nicht nur die detaillierten Fehlermeldungen des Compilers sind ein großer Pluspunkt von Elm, sondern auch der mitgelieferte und einfach zu bedienende Debugger. Anders als bei anderen Programmiersprachen zeigt der Debugger nicht nur einen einfachen Stacktrace mit den letzten Rücksprungadressen an. Vielmehr ermöglicht es der Debugger in Elm die Zeit zurückzudrehen. In gängigen Debuggern ist es nicht einfach, ein bestimmtes Verhalten, das möglicherweise zum Absturz des Programms geführt hat, zu reproduzieren. Um den Fehler erneut zu erhalten und dadurch ein Verständnis des Fehlers aufzubauen ist es oft notwendig den genauen Hergang und Ablauf manuell nachzuahmen. Der Elm Debugger hingegen speichert den Status einer jeden Variable zu jedem Zeitpunkt und zeichnet außerdem die Wechsel auf. Aufgrund dessen ist es sehr einfach möglich mit Hilfe eines Sliders auf der Website die Zeit buchstäblich zurückzudrehen und den vorherigen Status wieder aufzurufen. Weiterhin besteht die Möglichkeit sämtliche Daten zu diesem Zeitpunkt zu betrachten und live zu verändern. Dadurch wird nicht nur der aktuell begutachtete Status verändert und der Effekt zeitgleich auf dem Bildschirm angezeigt, sondern auch alle folgenden Status mitsamt den Daten werden entsprechend aktualisiert. Evan Czaplicki hat dahingehend ein Video angefertigt, dass den Vorgang sehr detailliert beschreibt (LINK). Alternativ kann die Abbildung XY betrachtet werden, die einen Zeitstrahl mit Werten, sowie die Möglichkeiten die sich durch den Debugger ergeben, aufzeigt.
+%\subsubsection{Debugger}
+%\label{sec:Debugger}
+%TODO: Wurde in der letzten Version entfernt.
+%Nicht nur die detaillierten Fehlermeldungen des Compilers sind ein großer Pluspunkt von Elm, sondern auch der mitgelieferte und einfach zu bedienende Debugger. Anders als bei anderen Programmiersprachen zeigt der Debugger nicht nur einen einfachen Stacktrace mit den letzten Rücksprungadressen an. Vielmehr ermöglicht es der Debugger in Elm die Zeit zurückzudrehen. In gängigen Debuggern ist es nicht einfach, ein bestimmtes Verhalten, das möglicherweise zum Absturz des Programms geführt hat, zu reproduzieren. Um den Fehler erneut zu erhalten und dadurch ein Verständnis des Fehlers aufzubauen ist es oft notwendig den genauen Hergang und Ablauf manuell nachzuahmen. Der Elm Debugger hingegen speichert den Status einer jeden Variable zu jedem Zeitpunkt und zeichnet außerdem die Wechsel auf. Aufgrund dessen ist es sehr einfach möglich mit Hilfe eines Sliders auf der Website die Zeit buchstäblich zurückzudrehen und den vorherigen Status wieder aufzurufen. Weiterhin besteht die Möglichkeit sämtliche Daten zu diesem Zeitpunkt zu betrachten und live zu verändern. Dadurch wird nicht nur der aktuell begutachtete Status verändert und der Effekt zeitgleich auf dem Bildschirm angezeigt, sondern auch alle folgenden Status mitsamt den Daten werden entsprechend aktualisiert. Evan Czaplicki hat dahingehend ein Video angefertigt, dass den Vorgang sehr detailliert beschreibt (LINK). Alternativ kann die Abbildung XY betrachtet werden, die einen Zeitstrahl mit Werten, sowie die Möglichkeiten die sich durch den Debugger ergeben, aufzeigt.
 
 
 \subsubsection{Praktische Anwendungsgebiete}
 \label{sec:Praktische Anwendungsgebiete}
-Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die wohl derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. NoRedInk gibt an, dass der überführte Elm-Code in den letzten acht Monaten keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung\\ (https://www.youtube.com/watch?v=zBHB9i8e3Kc). Dennoch wird es wohl noch eine Weile dauern, bis sich mehr Firmen der Vorstellung hingeben ihr lauffähiges System in die vielversprechende Programmiersprache Elm zu portieren, nicht zuletzt, weil sie sich noch in einem sehr frühen Stadium befindet und somit noch nicht völlig ausgereift ist.
-Es existiert jedoch bereits eine Vielzahl an Projekten die mit Elm verwirklicht wurden. Dabei sind viele dieser Projekte kleinere Retro-Spiele, die über den Browser gespielt werden können \footnote{\cite[vgl.]{builtwithelm}}. Dazu gehört unter anderem Tetris, Pong und Space Invaders. Weiterhin bietet Elm sehr einfache Möglichkeiten Formen wie Kreise, Vierecke, Hexagone und vieles mehr zu erzeugen, ohne großartig in die Mathematik einzusteigen.\\
+Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. NoRedInk gibt an, dass der überführte Elm-Code in den letzten acht Monaten keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung
+%TODO: (https://www.youtube.com/watch?v=zBHB9i8e3Kc).
+Dennoch wird es wohl noch eine Weile dauern, bis sich mehr Firmen der Vorstellung hingeben ihr lauffähiges System in die vielversprechende Programmiersprache Elm zu portieren, nicht zuletzt, weil sie sich noch in einem sehr frühen Stadium befindet und somit noch nicht völlig ausgereift ist.
+Es existiert jedoch bereits eine Vielzahl an Projekten die mit Elm verwirklicht wurden. Dabei sind viele dieser Projekte kleinere Retro-Spiele, die über den Browser gespielt werden können \footnote{\cite[vgl.]{builtwithelm}}.
 Dieser Einblick zeigt bereits, dass Elm in vielerlei Hinsicht Besserung für die Entwicklung von Webapplikationen verspricht. Doch wie praktikabel sind diese Versprechungen? Ist die Programmiersprache effizient und intuitiv, oder durch ihr noch frühes Entwicklungsstadium unausgereift?
-„The best functional programming in your browser“ - Diese Aussage wird anhand verschiedener Bewertungskriterien überprüft.
-Im Zuge dessen wird eine Webseite mit kleineren Modulen in Elm erzeugt. Die fertige Webseite respektive der erzeugte Quellcode wird anhand der zuvor erstellten Bewertungskriterien ausgewertet. Auch die Beobachtungen während der Entwicklung, wie etwa unvorhergesehene Probleme, gehen mit in die Wertung ein.
+Auf der offiziellen Webseite von Elm wird angegeben, dass Elm die beste funktionale Programmiersprache des Browsers sei.
+%TODO: "the best of functional programming in your browser"
+Diese Aussage wird anhand der Entwicklung, respektive der Überführung einer Webseite in nativen Elm überprüft. Die Evaluierung erfolgt schließlich anhand einiger Bewertungskriterien.
 
 \subsection{Einführung in die Elm-Architektur}
 \label{sec:elm-architektur}
-TODO: Evtl. Absatz \nameref{sec:Praktische Anwendungsgebiete} hier rein mergen und abändern?
-... Um eine Programmiersprache jedoch anzuwenden, ist es notwendig zuvor die Architektur kennenzulernen. Dieses Kapitel soll eine Einführung in die Programmiersprache Elm darstellen und die grundlegenden Funktionen näher bringen.
+Vor der Evaluierung der Programmiersprache Elm ist es jedoch notwendig, die Elm-Architektur zu erläutern und einige Grundaspekte zu erklären. Dieses Kapitel soll einen Einstieg in die neue Programmiersprache Elm ermöglichen und stellt nicht nur die Grundkonzepte der Programmiersprache, sondern auch einige mitgelieferte Werkzeuge vor.
 
 \subsubsection{Elm-REPL}
 \label{sec:elm-repl}
-Ein nützliches Tool um mit Werten in Elm zu interagieren und kleinere Algorithmen zu testen, ist die $elm-repl$. \ac{REPL} bezeichnet dabei die Iteration, welche ein Algorithmus durchlebt. Zunächst wird der Quellcode gelesen (read), danach ausgewertet (evaluate) und das Ergebnis ausgegeben (print). Dieser Vorgang wiederholt sich (loop), bis die Entwicklung fertig ist. $Elm-repl$ wird über die Kommandozeile aufgerufen und gestartet. In Abbildung~\ref{fig:elm-repl} ist das Tool abgebildet und zeigt beispielhafte Eingaben und Evaluierungen.
+Ein nützliches Tool um mit Werten in Elm zu interagieren und kleinere Algorithmen zu testen, ist die $elm-repl$. \ac{REPL} bezeichnet dabei die Iteration, welche ein Programmcode durchlebt. Zunächst wird der Quellcode gelesen (read), danach ausgewertet (evaluate) und das Ergebnis ausgegeben (print). Dieser Vorgang wiederholt sich (loop), bis die Entwicklung fertig ist. $Elm-repl$ wird über die Kommandozeile aufgerufen und gestartet. In Abbildung~\ref{fig:elm-repl} ist das Tool abgebildet und zeigt beispielhafte Eingaben und Evaluierungen.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{img/elm-repl.png}
 \caption{Das Tool elm-repl in der Kommandozeile}\label{fig:elm-repl}
 \end{figure}
-Wie aus der Abbildung~\ref{fig:elm-repl} ersichtlich wird, werden auch Fehler ausgegeben. In diesem Beispiel wurde versucht auf die Bibliothek $String$, genauer die Funktion $length$ zuzugreifen. Diese Bibliothek wurde allerdings noch nicht eingebunden, wodurch es zu dem Fehler kam. Nachdem die Bibliothek über das Kommando $import String$ importiert wurde, war der Fehler behoben. Die $elm-repl$ erlaubt es, alle Bibliotheken die das Paket $core$ mitliefert, zu importieren.
+Wie aus der Abbildung~\ref{fig:elm-repl} ersichtlich wird, werden auch Fehler ausgegeben. In diesem Beispiel wurde versucht auf die Bibliothek $String$, genauer die Funktion $length$ zuzugreifen. Diese Bibliothek wurde allerdings noch nicht eingebunden, wodurch es zu dem Fehler kam. Nachdem die Bibliothek über das Kommando $import\,String$ importiert wurde, war der Fehler behoben. Die $elm-repl$ erlaubt es, alle Bibliotheken die das Paket $core$ mitliefert, zu importieren und Algorithmen zu evaluieren.
 
 \subsubsection{Basisdatentypen}
 \label{sec:Basisdatentypen}
@@ -178,7 +178,7 @@ Elm kommt mit einer Vielzahl an grundlegenden Funktionen, um notwendige arithmet
 
 \subsubsection{Union Types}
 \label{sec:Union-Types}
-In vielen Applikationen können Datentypen unterschiedliche Zustände annehmen. So kann beispielsweise ein $Tag$ die Zustände $Montag$ bis $Sonntag$ annehmen. Die in anderen Programmiersprachen als $algebraische Datentyp$ bekannte Aufzählung von Zuständen wird in Elm $Union\,Type$ genannt und beschreibt auch hier eine Aufzählung von endlich vielen Zuständen eines Datentypen. Die Einführung eines solchen $Union\,Type$s erlaubt es dem Compiler den Quellcode auf fehlende Zustände zu überprüfen. Ist es zum Beispiel das Ziel, eine Meldung abhängig vom aktuellen Wochentag auszugeben, müssen alle Zustände und ihre Folge dafür deklariert werden. Fehlt eine Deklaration, kann der $Elm-Compiler$ dies anhand des $Union\,Type$s erkennen.
+In vielen Applikationen können Datentypen unterschiedliche Zustände annehmen. So kann beispielsweise ein Tag die Zustände $Montag$ bis $Sonntag$ annehmen. Die in anderen Programmiersprachen als $algebraische\,Datentypen$ bekannte Aufzählung von Zuständen wird in Elm $Union\,Type$ genannt und beschreibt auch hier eine Aufzählung von endlich vielen Zuständen eines Datentypen. Die Einführung eines solchen $Union\,Type$s erlaubt es dem Compiler den Quellcode auf fehlende Zustände zu überprüfen. Ist es zum Beispiel das Ziel, eine Meldung abhängig vom aktuellen Wochentag auszugeben, müssen alle Zustände und ihre Folge dafür deklariert werden. Fehlt eine Deklaration, kann der $Elm-Compiler$ dies anhand des $Union\,Type$s erkennen.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 type Day = Monday | Tuesday | .. | Sunday
@@ -192,7 +192,7 @@ storeStatus day =
 \end{lstlisting}
 \caption{Ein Union-Type in Elm}\label{fig:elm-union-type}
 \end{figure}
-Betrachtet man die Abbildung~\ref{fig:elm-union-type} ist klar erkennbar, dass die Funktion $storeStatus$ nicht alle Fälle, die der Typ $Day$ annehmen kann, behandelt werden. Aufgrund der vorherigen Deklaration eines $Union\,Type$ kann der $Elm-Compiler$ einsehen, welche möglichen Zustände der Typ $Day$ annehmen kann. Dadurch wird ein Fehler geworfen, insofern die fehlenden Typen nicht ergänzt werden. Dieses Konzept der algebraischen Datentypen erscheint zunächst sehr ähnlich den $Enumerationen$ in beispielsweise $C++$ oder anderen Programmiersprachen. Tatsächlich gibt es diese Form der Datenabstraktion in einer Vielzahl von funktionalen Programmiersprachen, mit dem wohl bekanntesten Vertreter der funktionalen Programmiersprache $Haskell$. Der Vorteil eines $Union\,Type$s in Elm gegenüber $Enumerationen$ in C++ oder Java ist, dass jeder Zustand der Aufzählung optionale Parameter übergeben bekommen kann. Damit bietet sich die Möglichkeit viel detailliertere Konstrukte zu erzeugen, ohne die Typensicherheit die sich durch die $Union\,Type$s ergibt zu verlieren. Das Beispiel der Abbildung~\ref{fig:elm-union-type} könnte entsprechend erweitert werden, so dass die Tage $Montag$ bis $Freitag$ zusätzlich noch eine Öffnungszeit besitzen.
+Betrachtet man die Abbildung~\ref{fig:elm-union-type} ist klar erkennbar, dass die Funktion $storeStatus$ nicht alle Fälle, die der Typ $Day$ annehmen kann, behandelt. Aufgrund der vorherigen Deklaration eines $Union\,Type$ kann der $Elm-Compiler$ einsehen, welche möglichen Zustände der Typ $Day$ annehmen kann. Dadurch wird ein Fehler geworfen, insofern die fehlenden Typen nicht ergänzt werden. Dieses Konzept der algebraischen Datentypen erscheint zunächst sehr ähnlich den $Enumerationen$ in beispielsweise $C++$ oder anderen Programmiersprachen. Tatsächlich gibt es diese Form der Datenabstraktion in einer Vielzahl von funktionalen Programmiersprachen, mit dem wohl bekanntesten Vertreter der funktionalen Programmiersprache $Haskell$. Der Vorteil eines $Union\,Type$s in Elm gegenüber $Enumerationen$ in C++ oder Java ist, dass jeder Zustand der Aufzählung optionale Parameter übergeben bekommen kann. Damit bietet sich die Möglichkeit viel detailliertere Konstrukte zu erzeugen, ohne die Typensicherheit die sich durch die $Union\,Type$s ergibt zu verlieren. Das Beispiel der Abbildung~\ref{fig:elm-union-type} könnte entsprechend erweitert werden, so dass die Tage $Montag$ bis $Freitag$ zusätzlich noch eine Öffnungszeit besitzen.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 type Day = Monday Int Int | .. | Sunday
@@ -208,7 +208,7 @@ storeStatus day =
 \end{lstlisting}
 \caption{Ein erweiterter Union-Type in Elm}\label{fig:elm-union-type-advanced}
 \end{figure}
-Wie in Abbildung~\ref{fig:elm-union-type-advanced} zu sehen ist, wurden die einzelnen Tage in der Deklaration um die Parameter $Int$ erweitert. In diesem Fall sollen die $Integer$ vereinfacht die Start- und Endzeit der Öffnungszeit widerspiegeln. Auffällig ist, dass die Signatur der Funktion $storeStatus$ im Vergleich zur vorherigen Abbildung~\ref{fig:elm-union-type} nicht verändert wurde. Der übergebene Datentyp ist noch immer ein $Day$, mit dem Zusatz, dass die Wochentage zwei weitere Parameter $start$ und $end$ besitzen. Auf diese Weise können komplexe Konstrukte definiert werden, während die Typensicherheit gewährt bleibt.
+Wie in Abbildung~\ref{fig:elm-union-type-advanced} zu sehen ist, wurden die einzelnen Tage in der Deklaration um die Parameter $Int$ erweitert. In diesem Fall sollen die $Integer$ vereinfacht die Start- und Endzeit der Öffnungszeit widerspiegeln. Auffällig ist, dass die Signatur der Funktion $storeStatus$ im Vergleich zur vorherigen Abbildung~\ref{fig:elm-union-type} nicht verändert wurde. Der übergebene Datentyp ist noch immer ein $Day$, mit dem Zusatz, dass die Wochentage zwei weitere Parameter $start$ und $end$ besitzen. Auf diese Weise können komplexe Konstrukte definiert werden, während die Typensicherheit gewahrt bleibt.
 
 \subsubsection{Records}
 \label{sec:Records}
@@ -264,7 +264,7 @@ meaningOfLife --> 42
 \end{lstlisting}
 \caption{Eine Variablendeklaration in Elm}\label{fig:elm-variables}
 \end{figure}
-Abbildung~\ref{fig:elm-variables} zeigt beispielhaft die Deklaration einer Funktion $meaningOfLife$, die innerhalb des $let..in$-Blockes die Variablen $fourtyTwo$ und $oneHundred$ deklariert und ihnen einen Wert zuweist. Die Inhalte eines $let..in$-Blockes müssen eingerückt werden, während hingegen eine übliche Funktion auch in einer Zeile verfasst werden kann. Des Weiteren ist erkennbar, dass die Variable $oneHundred$ erst nach der Deklaration von $fourtyTwo$ deklariert wird, jedoch bereits vorher nutzbar ist. Der $elm-compiler$ optimiert diese Programmstelle während des Kompiliervorganges entsprechend. Die beiden deklarierten Variablen sind lediglich in dem definierten $let..in$-Block verfügbar. Eine Verwendung außerhalb des Blockes hätte einen Compilerfehler zur Folge. Es besteht ferne die Möglichkeit ganze Funktionen innerhalb des Blockes zu definieren und zu nutzen.
+Abbildung~\ref{fig:elm-variables} zeigt beispielhaft die Deklaration einer Funktion $meaningOfLife$, die innerhalb des $let..in$-Blockes die Variablen $fourtyTwo$ und $oneHundred$ deklariert und ihnen einen Wert zuweist. Die Inhalte eines $let..in$-Blockes müssen eingerückt werden, während hingegen eine übliche Funktion auch in einer Zeile verfasst werden kann. Des Weiteren ist erkennbar, dass die Variable $oneHundred$ erst nach der Deklaration von $fourtyTwo$ deklariert wird, jedoch bereits vorher nutzbar ist. Der $elm-compiler$ optimiert diese Programmstelle während des Kompiliervorganges entsprechend. Die beiden deklarierten Variablen sind lediglich in dem definierten $let..in$-Block verfügbar. Eine Verwendung außerhalb des Blockes hätte einen Compilerfehler zur Folge. Es besteht ferner die Möglichkeit ganze Funktionen innerhalb des Blockes zu definieren und zu nutzen.
 
 \subsubsection{Kontrollstrukturen}
 \label{sec:Kontrollstrukturen}
@@ -273,7 +273,7 @@ Elm bietet die Möglichkeit verschiedene Kontrollstrukturen anzuwenden. Dabei wi
 \begin{lstlisting}[language=Elm]
 isItACookie food =
   if food == "cookie" then
-  	True
+    True
   else if food == "grapefruit" then
     False
   else
@@ -282,7 +282,7 @@ isItACookie food =
 \caption{Eine Konstrollstruktur in Elm}\label{fig:elm-conditional}
 \end{figure}
 In Abbildung~\ref{fig:elm-conditional} ist eine herkömmliche $if$-Abfrage zu sehen. In Elm sind die Schlüsselwörter $if$, $then$ und $else$ notwendig und unterteilen die Bedingung von der angewandten Folge, die nach dem Schlüsselwort $then$ folgt. Insofern keine $if$-Bedingung zutrifft, wird der $else$-Fall angewandt.
-Elm verfolgt auch hier die statische Typisierung und fordert, dass jede mögliche Verzweigung denselben Typen zurückliefert. Eine Bedingung muss in Elm immer $True$ oder $False$ liefern und somit einen $Bool$ liefern. In anderen Programmiersprachen wie beispielsweise $C++$ evaluiert eine Bedingung zu $True$, wenn sie nicht $0$ oder $false$ ist. Am Beispiel in Abbildung~\ref{fig:cpp-conditional} sieht man, dass $0$ zu $false$ auswertet. In Elm hingegen meldet der $elm-compiler$ einen Fehler, sobald eine Bedingung zu einem anderen Typen als $Bool$ auswertet.
+Elm verfolgt auch hier die statische Typisierung und fordert, dass jede mögliche Verzweigung denselben Typen zurückliefert. Eine Bedingung muss in Elm immer $True$ oder $False$, sprich einen $Bool$ liefern. In anderen Programmiersprachen wie beispielsweise $C++$ evaluiert eine Bedingung zu $True$, wenn sie nicht $0$ oder $false$ ist. Das Beispiel der Abbildung~\ref{fig:cpp-conditional} zeigt, dass $0$ zu $false$ auswertet. In Elm hingegen meldet der $elm-compiler$ einen Fehler, sobald eine Bedingung zu einem anderen Typen als $Bool$ auswertet.
 Abbildung~\ref{fig:elm-union-type} zeigt, wie $Union\,Type$s überprüft werden können. Die Kontrollstruktur ähnelt dabei dem $switch$-$case$-Konstrukt von anderen Programmiersprachen wie \ac{JS} oder C++.
 \begin{figure}[h]
 \begin{lstlisting}[language=cpp]
@@ -299,7 +299,7 @@ cout << whatIsZero() << endl;
 
 \subsubsection{Funktionen}
 \label{sec:Funktionen}
-Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, benötigt der Entwickler auch in Elm eine Funktionen. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und dem Gleichheitszeichen realisiert.
+Um in irgendeiner Art und Weise eine Interaktion mit den erstellten $Records$ zu vollziehen, wird eine Funktion benötigt. Solch ein Programmkonstrukt wird mittels eines Funktionsnamen und einem Gleichheitszeichen realisiert.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 add : Int -> Int -> Int
@@ -310,13 +310,8 @@ add 3 4  --> 7
 \end{lstlisting}
 \caption{Eine Funktion in Elm}\label{fig:elm-function}
 \end{figure}
-Abbildung~\ref{fig:elm-function} zeigt, wie eine simple Addition zweier Integer-Werte umgesetzt wird. Die Buchstaben $a$ und $b$ deuten an, dass die Funktion $add$ zwei Parameter erwartet. Der gesamte Inhalt nach dem Gleichheitszeichen ist der sogenannte Rumpf einer Funktion und beschreibt den anzuwendenden Algorithmus. Der Funktionsaufruf ist in Zeile 5 sichtbar. Auffällig ist, dass eine Funktion nie explizit einen Wert zurück gibt, wie es in anderen Programmiersprachen wie \ac{JS} oder C++ meist durch den Befehl $return$ geschieht. Elm gibt implizit die letzte ausführbare Zeile als Rückgabewert zurück. Der beispielhafte Aufruf der Funktion $add$ in Zeile 5 hätte dementsprechend $7$ als Ergebnis. Des Weiteren ist erkennbar, dass Elm ohne die Nutzung von Kommata oder Klammern auskommt. Klammern werden erst notwendig, wenn mehrere Funktionen geschachtelt ablaufen sollen und eine Auswertung der Befehle von links nach rechts nicht ausreicht.
+Die Abbildung~\ref{fig:elm-function} macht deutlich, wie eine simple Addition zweier Integer-Werte umgesetzt wird. Die Buchstaben $a$ und $b$ deuten an, dass die Funktion $add$ zwei Parameter erwartet. Der gesamte Inhalt nach dem Gleichheitszeichen ist der sogenannte Rumpf einer Funktion und beschreibt den anzuwendenden Algorithmus. Der Funktionsaufruf ist in Zeile 5 sichtbar. Auffällig ist, dass eine Funktion nie explizit einen Wert zurück gibt, wie es in anderen Programmiersprachen wie \ac{JS} oder C++ durch den Befehl $return$ geschieht. Elm gibt implizit die letzte ausführbare Zeile als Rückgabewert zurück. Der beispielhafte Aufruf der Funktion $add$ in Zeile 5 hätte dementsprechend $7$ als Ergebnis. Des Weiteren ist erkennbar, dass Elm ohne die Nutzung von Kommata oder Klammern auskommt. Klammern werden erst notwendig, wenn mehrere Funktionen geschachtelt werden und eine Auswertung der Befehle von links nach rechts nicht ausreicht.
 Zusätzlich zu einer explizit benannten Funktion, gibt es die $anonyme$ Funktion. Sie kommt ohne einen Funktionstitel aus und wird an Funktionen höherer Ordnung weitergereicht.
-$List.filter$ ist eine solche Funktion und erwartet eine anonyme Funktion als Parameter, auf Basis derer eine Liste gefiltert wird. Aus der Abbildung~\ref{fig:elm-anonym-function} wird ersichtlich, dass die übergebene Liste, bestehend aus $4$ Einträgen, auf die Präsenz des Buchstabens $a$ hin überprüft wird. Dabei wird jeweils ein Wert an die anonyme Funktion weitergereicht, die in Form der Variable $str$ repräsentiert und mit dem String $a$ auf Gleichheit überprüft wird. Einträge die diesem Vergleich entsprechen, werden einer neuen Liste hinzugefügt. Wird das Ende der zu überprüfenden Liste erreicht, wird die Ergebnisliste als Rückgabewert ausgegeben.
-
-\subsubsection{Signaturen}
-\label{sec:Signaturen}
-Die jeweils erste Zeile der Abbildung~\ref{fig:elm-function} und \ref{fig:elm-anonym-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Der letzte Typ einer Signatur ist dabei immer der Rückgabewert, die vorherigen Typen stellen die Typen der Übergabeparameter in der übergebenen Reihenfolge dar. Die einzelnen Parameter sind durch einen Pfeil ($->$) voneinander getrennt. Wird eine Funktion anstelle eines einfachen Datentypen als Parameter übergeben, wird dies wie in Abbildung~\ref{fig:elm-anonym-function} durch das Einklammern der Typen angedeutet. Die Typen innerhalb der Klammer stellen wiederum die Typen der Übergabeparameter und Rückgabewerte der Funktion dar.
 \begin{figure}[h]
 \begin{lstlisting}[language=Elm]
 List.filter : (a -> Bool) -> List a -> List a
@@ -325,6 +320,12 @@ List.filter (\str -> str == "a") ["a", "b", "c", "a"]
 \end{lstlisting}
 \caption{Anwendung einer anonymen Funktion in Elm}\label{fig:elm-anonym-function}
 \end{figure}
+$List.filter$ ist eine solche Funktion und erwartet eine anonyme Funktion als Parameter, auf Basis derer eine Liste gefiltert wird. Aus der Abbildung~\ref{fig:elm-anonym-function} wird ersichtlich, dass die übergebene Liste, bestehend aus $4$ Einträgen, auf die Präsenz des Buchstabens $a$ hin überprüft wird. Dabei wird jeweils ein Wert an die anonyme Funktion weitergereicht, die in Form der Variable $str$ repräsentiert und mit dem String $a$ auf Gleichheit überprüft wird. Einträge die diesem Vergleich entsprechen, werden einer neuen Liste hinzugefügt. Wird das Ende der zu überprüfenden Liste erreicht, wird die Ergebnisliste als Rückgabewert ausgegeben.
+
+\subsubsection{Signaturen}
+\label{sec:Signaturen}
+Die jeweils erste Zeile der Abbildung~\ref{fig:elm-function} und \ref{fig:elm-anonym-function} zeigt den Aufbau einer Signatur. Solch eine Signatur beschreibt die Funktion. Dabei sind Informationen über die Anzahl und der jeweilige Typ der Übergabeparameter, sowie der Typ des Rückgabewertes enthalten. Der letzte Typ einer Signatur ist dabei immer der Rückgabewert, die vorherigen Typen stellen die Typen der Übergabeparameter in der übergebenen Reihenfolge dar. Die einzelnen Parameter sind durch einen Pfeil ($->$) voneinander getrennt. Wird eine Funktion anstelle eines einfachen Datentypen als Parameter übergeben, wird dies wie in Abbildung~\ref{fig:elm-anonym-function} durch das Einklammern der Typen angedeutet. Die Typen innerhalb der Klammer stellen wiederum die Typen der Übergabeparameter und Rückgabewerte der Funktion dar.
+
 Anhand der Abbildung~\ref{fig:elm-function} lässt sich erkennen, dass die $add$-Funktion zwei Parameter vom Typ $Int$ erwartet und letzten Endes ein Ergebnis des Typ $Int$ liefert. Fehlt einer Funktion die Signatur, wird der $elm-compiler$ eine Warnung ausgeben und zusätzlich eine passende, jedoch teilweise allgemeinere Signatur ausgeben. Würde die Funktion in Abbildung~\ref{fig:elm-function} keine Signatur enthalten, würde der $elm-compiler$ die Signatur $add : number -> number -> number$ vorschlagen. Da ein $Int$ nur eine Spezifizierung des Basisdatentypen $number$ darstellt, ist das nicht verwunderlich. Der $elm-compiler$ nutzt implizit die eigens erarbeiteten Signaturen bei der Überprüfung des Quellcodes, sollte der Entwickler keine Signatur angegebenen haben.
 
 \subsubsection{Typen Alias}

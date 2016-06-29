@@ -9,7 +9,7 @@
 \BOOKMARK [2][-]{subsection.2.2.4}{Einf\374hrung in die Elm-Architektur}{section.2.2}% 9
 \BOOKMARK [0][-]{chapter.3}{Evaluierung der Programmiersprache Elm}{}% 10
 \BOOKMARK [1][-]{section.3.1}{Bewertungsmuster}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.2}{Bewertungskriterien}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Allgemeine Bewertungskriterien}{chapter.3}% 12
 \BOOKMARK [2][-]{subsection.3.2.1}{Wartbarkeit und Lesbarkeit}{section.3.2}% 13
 \BOOKMARK [2][-]{subsection.3.2.2}{Zuverl\344ssigkeit}{section.3.2}% 14
 \BOOKMARK [2][-]{subsection.3.2.3}{Portabilit\344t}{section.3.2}% 15
@@ -32,6 +32,5 @@
 \BOOKMARK [2][-]{subsection.3.4.9}{Asynchrones Laden von Daten}{section.3.4}% 32
 \BOOKMARK [2][-]{subsection.3.4.10}{Beobachtungen}{section.3.4}% 33
 \BOOKMARK [2][-]{subsection.3.4.11}{Auswertung}{section.3.4}% 34
-\BOOKMARK [2][-]{subsection.3.4.12}{Fazit}{section.3.4}% 35
-\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 36
-\BOOKMARK [0][-]{chapter.5}{Eidesstattliche Erkl\344rung}{}% 37
+\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 35
+\BOOKMARK [0][-]{chapter.5}{Eidesstattliche Erkl\344rung}{}% 36
