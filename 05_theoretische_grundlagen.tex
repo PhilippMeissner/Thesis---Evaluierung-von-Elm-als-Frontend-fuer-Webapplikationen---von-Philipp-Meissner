@@ -1,12 +1,12 @@
 \chapter{Theoretische Grundlagen}
 \label{sec:grundlagen}
-%\pagestyle{plain}
+%TODO: Einleitung finden
 
 \section{Funktionale Programmiersprachen}
 \label{sec:funktionaleProgrammiersprache}
-In der Programmierung gibt es zwei Programmierparadigmen, die zur Kategorisierung von Programmiersprachen dienen und sich im Laufe der Zeit entwickelt haben. %„https://de.wikipedia.org/wiki/Programmiersprache#Programmierparadigmen“)
-Dabei beschreiben die Paradigmen verschiedene Prinzipien der Programmierung.
-Die zugrunde liegenden Kategorien werden häufig als imperative und deklarative Programmierung bezeichnet, in welchen sich jede Programmiersprache einordnen lässt. Jede Kategorie birgt weitere Unterkategorien und dient der Verfeinerung der Prinzipien.
+Jede Programmiersprache lässt sich in eine Kategorie, einem Programmierparadigma, einteilen.
+Prof. Dr. Uwe Kastens beschreibt Programmierparadigmen als \glqq unterschiedliche Prinzipien, mit denen die Ausführung von Programmen beschrieben wird\grqq\cite{definition-programmierparadigmen}.
+Ferner bezeichnet er die imperative, objektorientierte, funktionale und logische Programmierung als am Wichtigsten\footnote{\cite[Vgl.]{definition-programmierparadigmen}}. Jedes Programmierparadigma birgt unterschiedliche Merkmale der Programmierung, wie beispielsweise rekursive Funktionen, Funktionen höherer Ordnung oder Polymorphie. Es ist nicht ausgeschlossen, dass eine Programmierprache mehreren Prinzipien folgt und unterschiedliche Merkmale vereint. Funktionale Programmiersprachen sind stark an die Mathematik angelehnt, da sie sich syntaktisch sehr ähnlich sind. Programme werden hier eher als mathematische Funktion formuliert, die eingehende Argumente immer gleichermaßen zu einem Ergebnis auswerten.
 \begin{figure}[h]
 \begin{lstlisting}[language=JavaScript]
 iterative_function(n) {
@@ -19,11 +19,10 @@ console.log(iterative_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine iterative Funktion}\label{fig:iterative-function}
 \end{figure}
-Häufig gehören funktionale Programmiersprachen dem deklarativen Programmierparadigma an. Es ist jedoch nicht ausgeschlossen, dass eine Programmiersprache mehreren Kategorien zugehörig ist und dadurch die Merkmale von mehr als einem Paradigma unterstützt. Zur Gruppe der deklarativen Programmiersprachen zählt man unter anderem Abfragesprachen wie SQL, sowie funktionale Programmiersprachen wie Lisp oder Scheme.
-Programmiersprachen der deklarativen Programmierung haben ihren Ursprung in der Mathematik. Programme werden hier als mathematische Funktionen formuliert, die nicht länger beschreiben, was getan werden soll, sondern lediglich vorgeben, welches Ergebnis am Ende erwartet wird.
-Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält und unveränderlich bleibt. Es ist dementsprechend stets nachzuvollziehen, welchen Wert ein Ausdruck besitzt, wodurch insbesondere akademische Anforderungen an ein Programm, wie etwa die Beweisführung, erfüllt werden können. Zusätzlich können auch unendliche Datenstrukturen behandelt werden.
-Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist. Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen. Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
-\begin{figure}[hb]
+Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält. Man spricht hier von der Unveränderlichkeit einer Variable. Dadurch kann eine Variable als fester Ausdruck angesehen werden, der immer denselben Wert liefert.
+Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist.
+Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen. Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
+\begin{figure}[h!]
 \begin{lstlisting}[language=JavaScript]
 recursive_function(n) {
   if (n < 1) return 0
@@ -33,23 +32,24 @@ console.log(recursive_function(10)); // => 55
 \end{lstlisting}
 \caption{Eine rekursive Funktion}\label{fig:recursive-function}
 \end{figure}
-In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $resursive\_function$
+\begin{quote}
+\glqq Eine Funktion heißt rekursiv, wenn sie sich selbst direkt aufruft oder wenn ein Aufruf einer anderen von ihr aufgerufenen Funktion dazu führt, dass sie ihrerseits wieder aufgerufen wird.\grqq\cite{rekursive-funktion}
+\end{quote}
+In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte\footnote{Ein Seiteneffekt beschreibt die mehrmalige Zuweisung einer Variable mit einem Wert.}. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $recursive\_function$
 mit einem neuen Wert aufgerufen, ohne jemals die ursprüngliche Variable verändert zu haben.
-Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda-Funktion$ oder $anonyme\,Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur einmalig aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
+Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda\,Funktion$ oder $anonyme\,Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur einmalig aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
 \begin{equation} \label{eq:solve}
 (\backslash x \rightarrow x * 2)\ [ 2, 3, 4 ] \Longrightarrow [4, 6, 8]
 \end{equation}
-Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildungsgesetz formuliert. Das mathematische Gegenstück zu Funktion~\ref{eq:solve} ist $x \rightarrow x * 2$ und beschreibt eine Funktion, die einen Eingabeparameter $x$ auf $x*2$ abbildet. Auch Elm gehört dem deklarativen Programmierparadigma an und vereinheitlicht dessen Konzepte.
+Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildungsgesetz formuliert. Das mathematische Gegenstück zu Funktion~\ref{eq:solve} ist $x \rightarrow x * 2$ und beschreibt eine Funktion, die einen Eingabeparameter $x$ auf $x*2$ abbildet. Hier wird klar erkenntlich, wie nahe die funktionale Schreibweise dem mathematischen Abbildungsgesetz ist. Auch Elm gehört dem funktionalen Programmierparadigma an und vereinheitlicht dessen Konzepte.
 
 \section{Grundlagen der Programmiersprache Elm}
-\label{sec:Was ist Elm?}
+\label{sec:grundlagen-programmiersprache-elm}
 
 \subsection{Geschichte}
 \label{sec:Geschichte}
-Elm ist eine funktionale Programmiersprache. Sie wurde im Rahmen der Bachelorarbeit „Elm: Concurrent FRP for Functional GUIs“\\
- (http://Elm-lang.org/papers/concurrent-frp.pdf)
-von Evan Czaplicki entwickelt und im April 2012 offiziell veröffentlicht.
-Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren. Es gab keine für ihn annehmbare, leichte Lösung für dieses Unterfangen, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage „What would web programming look like if we could restart?“, also „Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?“, machte er sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
+Elm wurde im Rahmen der Bachelorarbeit \glqq Elm: Concurrent FRP for Functional GUIs\grqq von Evan Czaplicki entwickelt. \cite[Vgl.]{evan-thesis}
+Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren.\footnote{\cite[Vgl.]{evan-center}} Es gab keine für ihn annehmbare, leichte Lösung für dieses Unterfangen, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage „What would web programming look like if we could restart?“, also „Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?“, machte er sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
 
 \subsection{Konzept}
 \label{sec:Konzept}
@@ -60,11 +60,9 @@ Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigm
 	\caption{Ein simpler Zähler auf einer Webseite}\label{fig:counter}
 \end{figure}
 Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird zwischen den Knöpfen angezeigt und kann sowohl negative, als auch positive Werte annehmen.
-Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Interagiert ein Nutzer nun mit einem der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte $Update$-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$, sprich den momentanen Zählerwert übergeben.
-Die $Update$-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Das bedeutet in diesem konkreten Fall, dass das $Model$ erhöht oder reduziert wird. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten wird zurückgegeben, da sonst ein Seiteneffekt die Folge wäre. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden übernommen.
-Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Webseite und kümmert sich um die Darstellung des $Model$s. Elm nutzt ein virtuelles \ac{DOM}, wodurch nur tatsächliche Änderungen im Browser angezeigt werden, anstatt dauerhaft das komplette \ac{DOM} stetig zu aktualisieren.
-%Document Object Model (DOM) ist eine plattform- sowie sprachenunabhängige Schnittstellenbeschreibung für den Zugriff auf die Elemente eines HTML- oder XML-Dokuments. (http://www.itwissen.info/definition/lexikon/document-object-model-DOM.html)
-Das \ac{DOM} beschreibt die Schnittstelle zum Datenzugriff auf das Objektmodell eines \ac{HTML}-Dokumentes.
+Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Interagiert ein Nutzer nun mit einem der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte $Update$-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$ übergeben.
+Die $Update$-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten zurückgegeben, da sonst ein Seiteneffekt die Folge wäre. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden übernommen.
+Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Webseite und kümmert sich um die Darstellung des $Model$s.
 Der zuvor beschriebene Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:elm-model-view-update-concept} visualisiert.
 \begin{figure}[h]
   \centering  
@@ -75,11 +73,11 @@ Der zuvor beschriebene Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:
 \subsection{Umsetzung}
 \label{sec:Umsetzung}
 Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu \ac{JS}, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives \ac{JS}, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von \ac{JS} zu umgehen und auszumerzen.
-Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler (http://elm-lang.org/) erzeugt. Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm unter anderem Konzepte des deklarativen Programmierparadigmas. Diese und die weiteren Grundkonzepte werden im folgenden erläutert.
+Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler erzeugt.\footnote{\cite[Vgl.]{elm-no-runtime-errors}} Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm unter anderem Konzepte des funktionalen Programmierparadigmas. Diese und die weiteren Grundkonzepte werden im folgenden erläutert.
 
 \subsubsection{Keine Seiteneffekte}
 \label{sec:Keine Seiteneffekte}
-Ein Seiteneffekt beschreibt die mehrmalige Zuweisung einer Variable mit einem Wert. In Elm ist das allerdings nicht möglich. Sämtliche Variablen sind unveränderlich und können nur einmalig mit einem Wert initiiert werden. Danach bleibt diese Variable bis zum Ende der Laufzeit unverändert. Wie bereits beschrieben gibt es in Elm das $Model$, welches die Informationen über den Status der Applikation enthält. Beschreibt das $Model$ beispielsweise den aktuellen Stand eines Zählers und wird dieser erhöht, muss auch das $Model$, um aktuell zu bleiben, verändert werden. Hier käme es zu einem Seiteneffekt. Realisiert wird diese Veränderung dadurch, dass ein neues $Model$ mit den gleichbleibenden Daten, sowie dem zu ändernden, aktualisierten Wert erstellt wird. Da ein neues $Model$ erstellt wurde, gibt es nun keinen Seiteneffekt mehr. Das vorherige $Model$ wird schlichtweg verworfen und mit einem neuen $Model$ ersetzt.
+In Elm sind Seiteneffekte ausgeschlossen. Sämtliche Variablen sind unveränderlich und können nur einmalig mit einem Wert initiiert werden. Danach bleibt diese Variable bis zum Ende der Laufzeit unverändert. Wie bereits beschrieben gibt es in Elm das $Model$, welches die Informationen über den Status der Applikation enthält. Beschreibt das $Model$ beispielsweise den aktuellen Stand eines Zählers und wird dieser erhöht, muss auch das $Model$, um aktuell zu bleiben, verändert werden. Hier käme es zu einem Seiteneffekt. Realisiert wird diese Veränderung dadurch, dass ein neues $Model$ mit den gleichbleibenden Daten, sowie dem zu ändernden, aktualisierten Wert erstellt wird. Da ein neues $Model$ erstellt wurde, gibt es nun keinen Seiteneffekt mehr. Das vorherige $Model$ wird schlichtweg verworfen und mit einem neuen $Model$ ersetzt.
 Das Konzept der unveränderbaren Werte wurde aus der Mathematik übernommen.  Um Funktionen und ihre Korrektheit garantieren zu können, wird dort dasselbe Prinzip der unveränderlichen Variablen angewandt. Betrachtet man beispielsweise den Ausdruck~\ref{eq:imperative_equation}, so fällt auf, dass die Schreibweise lediglich in den meisten imperativen Programmiersprachen sinnvoll ist, allerdings einen Seiteneffekt darstellt.
 \begin{equation} \label{eq:imperative_equation}
 x = x + 1
@@ -127,8 +125,8 @@ Dabei wird das echte \ac{DOM} bei jedem „Frame“ in eine abstrakte Version ko
 
 \subsubsection{Interoperabilität}
 \label{sec:Interoperabilität}
-Es wäre sehr aufwendig die gängigsten JavaScript-Bibliotheken und -Frameworks wie jQuery oder AngularJS komplett zu verwerfen und mit Elm zu realisieren respektive neu zu programmieren. Glücklicherweise bietet Elm eine ausgereifte Interoperabilität, wodurch alle Garantien der deklarativen Programmierung übernommen werden können, selbst wenn die externen Bibliotheken diese nicht gewährleisten.
-Oftmals sind externe Bibliotheken nicht deklarativ programmiert, weswegen keinerlei Garantien seitens Elm gemacht werden können. Jedoch gibt Elm an, dass der Datenaustausch über isolierte Ports in beide Richtungen funktioniert.
+Es wäre sehr aufwendig die gängigsten JavaScript-Bibliotheken und -Frameworks wie jQuery oder AngularJS komplett zu verwerfen und mit Elm zu realisieren respektive neu zu programmieren. Glücklicherweise bietet Elm eine ausgereifte Interoperabilität, wodurch alle Garantien der funktionalen Programmierung übernommen werden können, selbst wenn die externen Bibliotheken diese nicht gewährleisten.
+Oftmals sind externe Bibliotheken nicht funktional programmiert, weswegen keinerlei Garantien seitens Elm gemacht werden können. Jedoch gibt Elm an, dass der Datenaustausch über isolierte Ports in beide Richtungen funktioniert.
 
 %\subsubsection{Debugger}
 %\label{sec:Debugger}
@@ -138,14 +136,12 @@ Oftmals sind externe Bibliotheken nicht deklarativ programmiert, weswegen keiner
 
 \subsubsection{Praktische Anwendungsgebiete}
 \label{sec:Praktische Anwendungsgebiete}
-Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. NoRedInk gibt an, dass der überführte Elm-Code in den letzten acht Monaten keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung
-%TODO: (https://www.youtube.com/watch?v=zBHB9i8e3Kc).
+Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. NoRedInk gibt an, dass der überführte Elm-Code in den letzten acht Monaten keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung \footnote{\cite[Vgl.]{feldman-no-errors}}.
 Dennoch wird es wohl noch eine Weile dauern, bis sich mehr Firmen der Vorstellung hingeben ihr lauffähiges System in die vielversprechende Programmiersprache Elm zu portieren, nicht zuletzt, weil sie sich noch in einem sehr frühen Stadium befindet und somit noch nicht völlig ausgereift ist.
 Es existiert jedoch bereits eine Vielzahl an Projekten die mit Elm verwirklicht wurden. Dabei sind viele dieser Projekte kleinere Retro-Spiele, die über den Browser gespielt werden können \footnote{\cite[vgl.]{builtwithelm}}.
 Dieser Einblick zeigt bereits, dass Elm in vielerlei Hinsicht Besserung für die Entwicklung von Webapplikationen verspricht. Doch wie praktikabel sind diese Versprechungen? Ist die Programmiersprache effizient und intuitiv, oder durch ihr noch frühes Entwicklungsstadium unausgereift?
-Auf der offiziellen Webseite von Elm wird angegeben, dass Elm die beste funktionale Programmiersprache des Browsers sei.
-%TODO: "the best of functional programming in your browser"
-Diese Aussage wird anhand der Entwicklung, respektive der Überführung einer Webseite in nativen Elm überprüft. Die Evaluierung erfolgt schließlich anhand einiger Bewertungskriterien.
+Auf der offiziellen Webseite von Elm wird angegeben, dass Elm die beste funktionale Programmiersprache des Browsers sei.\footnote{\glqq the best of functional programming in your browser\grqq\cite[Vgl.]{elm-no-runtime-errors}}
+Diese Aussage wird im Rahmen dieser Arbeit anhand der Entwicklung, respektive der Überführung einer Webseite in natives Elm überprüft. Die Evaluierung erfolgt schließlich anhand einiger Bewertungskriterien.
 
 \subsection{Einführung in die Elm-Architektur}
 \label{sec:elm-architektur}
@@ -426,7 +422,7 @@ Das Kommando in Zeile $1$ der Abbildung~\ref{fig:npm-install-check} liefert ein 
 Nachdem die Installation von Elm erfolgreich war, kann nun ein neues Projekt lokal erstellt werden. Dazu gehört zunächst einmal die Initialisierung des Projektordners, wodurch notwendige Ordner erstellt und Pakete installiert werden. Die Entwickler von Elm stellen dafür den Paketmanager $elm-package$ bereit. Dieses Tool wird zur Installation von externen Modulen, sogenannte Bibliotheken oder Pakete, benutzt. Zusätzlich hilft der Paketmanager dabei, das eigene Projekt lauffähig zu halten und nicht durch auftretende Aktualisierungen einzelner Pakete die Lauffähigkeit des eigenen Projektes zu verletzen. Dabei verfolgen die Entwickler des Paketmanagers bestimmte Versionsregeln, die auf jedwede Änderung an einem Paket angewendet wird. Alle Versionsnummern haben dabei genau drei Felder $MAJOR.MINOR.PATCH$, wobei der Beginn der Versionsnummern stets $1.0.0$ ist. Die Felder der Versionsnummern ändern sich abhängig der Änderungen an der API eines Paketes. Die harmloseste Änderung ist dabei der $PATCH$. Das bedeutet, dass die \ac{API} unverändert ist und keinerlei Gefahr für die Lauffähigkeit besteht. Es kann sich hierbei um beispielsweise Verbesserungen eines Algorithmus oder andere interne Änderungen handeln, die jedoch für den außenstehenden Entwickler keine Bedeutung haben.
 Der nächstgrößere Schritt stellt die Aktualisierung der $MINOR$ Versionsnummer dar. Wie bei der Aktualisierung auf die nächste $PATCH$-Version, ist auch hier eine Aktualisierung unbedenklich. Das $MINOR$-Feld sagt aus, dass neue Methoden hinzugefügt wurden, alte Methoden jedoch unberührt blieben.
 Wichtige Änderungen an einem Paket bei der alte Methoden maßgeblich verändert, oder sogar gelöscht wurden, werden mit dem Feld $MAJOR$ ausgedrückt. Hat sich dieses Feld verändert, wird eine Aktualisierung aller Wahrscheinlichkeit nach dazu führen, dass ein Programm nicht mehr lauffähig ist und Änderungen am eigenen Quellcode vorgenommen werden müssen.
-Nutzt ein Entwickler beispielsweise das Paket $elm-lang/html\,1.2.3$, wird es voraussichtlich kompatibel mit allen zukünftigen Versionen bis Version $2.0.0$ sein. Ab diesem Zeitpunkt sind die vorgenommenen Änderungen so massiv, dass eine Aktualisierung nicht ohne weiteres möglich ist. Der Paketmanager $elm-package$ erzwingt die beschriebene Versionierung bei jedem Paket, bevor es veröffentlicht werden kann.TODO: \cite{https://github.com/elm-lang/elm-package}.
+Nutzt ein Entwickler beispielsweise das Paket $elm-lang/html$ mit der Version $1.2.3$, wird der importierende Programmcode voraussichtlich kompatibel mit allen zukünftigen Versionen des Pakets bis Version $2.0.0$ sein. Ab diesem Zeitpunkt sind die vorgenommenen Änderungen so massiv, dass eine Aktualisierung nicht ohne weiteres möglich ist. Der Paketmanager $elm-package$ erzwingt die beschriebene Versionierung bei jedem Paket, bevor es veröffentlicht werden kann.\cite[Vgl.]{semantic-versioning}.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{img/elm-setup.png}
@@ -446,8 +442,4 @@ Zum Kompilieren eines Elm-Programmes wird das Tool $elm-make$ genutzt. Es kompil
 \includegraphics[scale=0.5]{img/elm-reactor.png}
 \caption{Der gestartete Elm-Webserver}\label{fig:elm-reactor}
 \end{figure}
-Erklärung des Elm-Reactors. Siehe Evaluierung, der auskommentierte Teil.
-
-\subsubsection{NULL/Undefined/Maybe in Elm?}
-\label{sec:elm-undefined-null-maybe}
-Konzept des Maybe erklären, da es auch in der Applikation mit den initialen Übergabeparametern genutzt wird.
+Wahlweise kann während der Entwicklung das mitgelieferte Tool $elm-reactor$ zum Testen der Elm-Applikation genutzt werden. Der $elm-reactor$ stellt eine Art Webserver dar, durch den die Applikation automatisch bei jedem Aufruf kompiliert und gestartet wird, um sie dem Nutzer zugänglich zu machen. Der Nutzer kann die Applikation im Browser über das lokale Netzwerk öffnen und mit ihr interagieren. Die Abbildung~~\ref{fig:elm-reactor} zeigt den gestarteten Webserver in der Kommandozeile. Er wird standardmäßig auf dem Port $8000$ gestartet.

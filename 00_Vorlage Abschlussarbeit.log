@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  29 JUN 2016 12:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  29 JUN 2016 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,21 +761,21 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 (./10_statement.aux))
 \openout1 = `"00_Vorlage Abschlussarbeit.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -814,10 +814,10 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 101.
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+Package hyperref Info: Link coloring OFF on input line 105.
+LaTeX Info: Redefining \ref on input line 105.
+LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \nameref on input line 105.
 (./00_Vorlage Abschlussarbeit.out) (./00_Vorlage Abschlussarbeit.out)
 \@outlinefile=\write4
 \openout4 = `"00_Vorlage Abschlussarbeit.out"'.
@@ -928,7 +928,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.116 \include{00_abkuerzungsverzeichnis}
+l.120 \include{00_abkuerzungsverzeichnis}
                                           [1
 
 
@@ -991,6 +991,15 @@ Class scrreprt Warning: \float@addtolists detected!
 
  (./05_theoretische_grundlagen.tex
 Kapitel 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 9.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [7
 
 
@@ -998,54 +1007,49 @@ Kapitel 2.
 ] [8]
 Package acronym Info: Label `acro:MVU' newly defined as it shall be overridden
 although it is yet undefined on input line 56.
- <img/counter.png, id=410, 289.08pt x 345.29pt>
+ <img/counter.png, id=424, 289.08pt x 345.29pt>
 File: img/counter.png Graphic file (type png)
  <use img/counter.png>
 Package pdftex.def Info: img/counter.png used on input line 59.
 (pdftex.def)             Requested size: 144.53964pt x 172.64456pt.
-Package acronym Info: Label `acro:DOM' newly defined as it shall be overridden
-although it is yet undefined on input line 65.
 
-<img/elm-model-view-update-concept.png, id=417, 361.35pt x 271.0125pt>
+<img/elm-model-view-update-concept.png, id=427, 361.35pt x 271.0125pt>
 File: img/elm-model-view-update-concept.png Graphic file (type png)
 
 <use img/elm-model-view-update-concept.png>
 Package pdftex.def Info: img/elm-model-view-update-concept.png used on input li
-ne 71.
+ne 69.
 (pdftex.def)             Requested size: 361.34912pt x 271.01183pt.
  [9 <./img/counter.png>]
 Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
-although it is yet undefined on input line 77.
- [10 <./img/elm-model-view-update-concept.png>] [11] [12]
-Overfull \hbox (7.94229pt too wide) in paragraph at lines 130--132
+although it is yet undefined on input line 75.
+ [10 <./img/elm-model-view-update-concept.png>] [11]
+Package acronym Info: Label `acro:DOM' newly defined as it shall be overridden
+although it is yet undefined on input line 123.
+ [12]
+Overfull \hbox (7.94229pt too wide) in paragraph at lines 128--130
 \T1/lmr/m/n/12 Es wä-re sehr auf-wen-dig die gän-gigs-ten JavaScript-Bibliothek
 en und -Frameworks
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 144.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 144.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 144.
 [13]
 Package acronym Info: Label `acro:REPL' newly defined as it shall be overridden
 
-although it is yet undefined on input line 156.
- <img/elm-repl.png, id=487, 730.73pt x 449.68pt>
+although it is yet undefined on input line 152.
+ <img/elm-repl.png, id=507, 730.73pt x 449.68pt>
 File: img/elm-repl.png Graphic file (type png)
  <use img/elm-repl.png>
-Package pdftex.def Info: img/elm-repl.png used on input line 159.
+Package pdftex.def Info: img/elm-repl.png used on input line 155.
 (pdftex.def)             Requested size: 365.3641pt x 224.83945pt.
 
 [14 <./img/elm-repl.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 168.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 164.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 168.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 164.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1065,10 +1069,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] <img/elm-try.png, id=663, 871.255pt x 305.14pt>
+[22] <img/elm-try.png, id=684, 871.255pt x 305.14pt>
 File: img/elm-try.png Graphic file (type png)
  <use img/elm-try.png>
-Package pdftex.def Info: img/elm-try.png used on input line 388.
+Package pdftex.def Info: img/elm-try.png used on input line 384.
 (pdftex.def)             Requested size: 348.49583pt x 122.05382pt.
 
 [23 <./img/elm-try.png>]
@@ -1078,28 +1082,24 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-<img/npm-nodejs-installation.png, id=695, 605.26125pt x 220.825pt>
+<img/npm-nodejs-installation.png, id=716, 605.26125pt x 220.825pt>
 File: img/npm-nodejs-installation.png Graphic file (type png)
 
 <use img/npm-nodejs-installation.png>
-Package pdftex.def Info: img/npm-nodejs-installation.png used on input line 419
+Package pdftex.def Info: img/npm-nodejs-installation.png used on input line 415
 .
 (pdftex.def)             Requested size: 181.57976pt x 66.248pt.
 Package acronym Info: Label `acro:API' newly defined as it shall be overridden
-although it is yet undefined on input line 426.
+although it is yet undefined on input line 422.
 
-
-LaTeX Warning: Citation `https://github.com/elm-lang/elm-package' on page 24 un
-defined on input line 429.
-
-<img/elm-setup.png, id=699, 1004.75375pt x 553.06625pt>
+<img/elm-setup.png, id=721, 1004.75375pt x 553.06625pt>
 File: img/elm-setup.png Graphic file (type png)
 
 <use img/elm-setup.png>
-Package pdftex.def Info: img/elm-setup.png used on input line 432.
+Package pdftex.def Info: img/elm-setup.png used on input line 428.
 (pdftex.def)             Requested size: 301.42845pt x 165.92114pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--433
+Underfull \hbox (badness 10000) in paragraph at lines 429--429
 [][][]|\T1/lmr/m/n/12 In-stal-la-ti-on ei-nes ex-ter-nen Pa-ke-tes über den Elm
 -
  []
@@ -1109,10 +1109,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--433
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25 <./img/npm-nodejs-installation.png>]
-<img/elm-reactor.png, id=719, 548.0475pt x 128.48pt>
+<img/elm-reactor.png, id=742, 548.0475pt x 128.48pt>
 File: img/elm-reactor.png Graphic file (type png)
  <use img/elm-reactor.png>
-Package pdftex.def Info: img/elm-reactor.png used on input line 446.
+Package pdftex.def Info: img/elm-reactor.png used on input line 442.
 (pdftex.def)             Requested size: 274.02307pt x 64.23984pt.
 ) [26 <./img/elm-setup.png> <./img/elm-reactor.png>] [27]
 \openout2 = `06_evaluierung.aux'.
@@ -1136,7 +1136,7 @@ Overfull \hbox (49.89993pt too wide) in paragraph at lines 66--72
 application-RIA.html).
  []
 
-[31] <img/browser_2016.png, id=775, 1173.38374pt x 369.38pt>
+[31] <img/browser_2016.png, id=798, 1173.38374pt x 369.38pt>
 File: img/browser_2016.png Graphic file (type png)
 
 <use img/browser_2016.png>
@@ -1153,14 +1153,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
-<img/index-grundaufbau-1.png, id=808, 1248.665pt x 934.49126pt>
+<img/index-grundaufbau-1.png, id=831, 1248.665pt x 934.49126pt>
 File: img/index-grundaufbau-1.png Graphic file (type png)
 
 <use img/index-grundaufbau-1.png>
 Package pdftex.def Info: img/index-grundaufbau-1.png used on input line 133.
 (pdftex.def)             Requested size: 399.58096pt x 299.0433pt.
 
-<img/index-grundaufbau-2.png, id=809, 1250.6725pt x 792.9625pt>
+<img/index-grundaufbau-2.png, id=832, 1250.6725pt x 792.9625pt>
 File: img/index-grundaufbau-2.png Graphic file (type png)
 
 <use img/index-grundaufbau-2.png>
@@ -1176,13 +1176,7 @@ Overfull \hbox (1.8848pt too wide) in paragraph at lines 133--135
  [] 
  []
 
-
-Overfull \hbox (19.91682pt too wide) in paragraph at lines 129--137
-\T1/lmr/m/n/12 ein aus-lie-fer-ba-res Do-ku-ment er-zeugt wer-den. Hier-für wir
-d zu-nächst die $\OML/lmm/m/it/12 index:html$\T1/lmr/m/n/12 -
- []
-
-<img/elm-grundaufbau-start.png, id=810, 808.01875pt x 962.59625pt>
+<img/elm-grundaufbau-start.png, id=833, 808.01875pt x 962.59625pt>
 File: img/elm-grundaufbau-start.png Graphic file (type png)
 
 <use img/elm-grundaufbau-start.png>
@@ -1202,14 +1196,14 @@ lm  \OMS/lmsy/m/n/12 ^^@ ^^@\OML/lmm/m/it/12 output elm:js$
 
 [35] [36 <./img/index-grundaufbau-1.png> <./img/index-grundaufbau-2.png>]
 [37 <./img/elm-grundaufbau-start.png>]
-<img/programWithFlags_pass_data.png, id=839, 661.47125pt x 195.73125pt>
+<img/programWithFlags_pass_data.png, id=862, 661.47125pt x 195.73125pt>
 File: img/programWithFlags_pass_data.png Graphic file (type png)
 
 <use img/programWithFlags_pass_data.png>
 Package pdftex.def Info: img/programWithFlags_pass_data.png used on input line 
 160.
 (pdftex.def)             Requested size: 396.8858pt x 117.43964pt.
- [38 <./img/programWithFlags_pass_data.png>] <img/elm-naming-error.png, id=852,
+ [38 <./img/programWithFlags_pass_data.png>] <img/elm-naming-error.png, id=876,
  452.69125pt x 571.13374pt>
 File: img/elm-naming-error.png Graphic file (type png)
 
@@ -1220,7 +1214,7 @@ Package pdftex.def Info: img/elm-naming-error.png used on input line 175.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/error-javascript-classie.png, id=862, 1004.75375pt x 77.28876pt>
+<img/error-javascript-classie.png, id=886, 1004.75375pt x 77.28876pt>
 File: img/error-javascript-classie.png Graphic file (type png)
 
 <use img/error-javascript-classie.png>
@@ -1244,14 +1238,14 @@ Overfull \hbox (36.67401pt too wide) in paragraph at lines 183--197
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [40 <./img/elm-naming-error.png> <./img/error-javascript-classie.png>]
-<img/elm-html-sections.png, id=879, 748.7975pt x 175.65625pt>
+<img/elm-html-sections.png, id=902, 748.7975pt x 175.65625pt>
 File: img/elm-html-sections.png Graphic file (type png)
 
 <use img/elm-html-sections.png>
 Package pdftex.def Info: img/elm-html-sections.png used on input line 205.
 (pdftex.def)             Requested size: 396.86078pt x 93.09735pt.
 
-<img/elm-view-portfolio-section-function.png, id=882, 968.61874pt x 310.15875pt
+<img/elm-view-portfolio-section-function.png, id=905, 968.61874pt x 310.15875pt
 >
 File: img/elm-view-portfolio-section-function.png Graphic file (type png)
  <use img/elm-view-portfolio-section-function.png>
@@ -1262,7 +1256,7 @@ put line 211.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/elm-view-section-functions-calling.png, id=883, 588.1975pt x 590.205pt>
+<img/elm-view-section-functions-calling.png, id=906, 588.1975pt x 590.205pt>
 File: img/elm-view-section-functions-calling.png Graphic file (type png)
 
 <use img/elm-view-section-functions-calling.png>
@@ -1273,7 +1267,7 @@ ut line 217.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/non-functional-scrolling.png, id=885, 1080.035pt x 293.095pt>
+<img/non-functional-scrolling.png, id=908, 1080.035pt x 293.095pt>
 File: img/non-functional-scrolling.png Graphic file (type png)
 
 <use img/non-functional-scrolling.png>
@@ -1285,20 +1279,20 @@ Overfull \hbox (1.26811pt too wide) in paragraph at lines 227--228
  [][] 
  []
 
-<img/elm-port.png, id=889, 1254.6875pt x 522.95375pt>
+<img/elm-port.png, id=912, 1254.6875pt x 522.95375pt>
 File: img/elm-port.png Graphic file (type png)
  <use img/elm-port.png>
 Package pdftex.def Info: img/elm-port.png used on input line 235.
 (pdftex.def)             Requested size: 376.40915pt x 156.88733pt.
 
-<img/elm-view-onclick.png, id=896, 741.77126pt x 380.42125pt>
+<img/elm-view-onclick.png, id=919, 741.77126pt x 380.42125pt>
 File: img/elm-view-onclick.png Graphic file (type png)
 
 <use img/elm-view-onclick.png>
 Package pdftex.def Info: img/elm-view-onclick.png used on input line 242.
 (pdftex.def)             Requested size: 296.70325pt x 152.16579pt.
 
-<img/scrollTop.png, id=898, 949.5475pt x 210.7875pt>
+<img/scrollTop.png, id=921, 949.5475pt x 210.7875pt>
 File: img/scrollTop.png Graphic file (type png)
  <use img/scrollTop.png>
 Package pdftex.def Info: img/scrollTop.png used on input line 248.
@@ -1311,13 +1305,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [42 <./img/elm-view-portfolio-section-function.png> <./img/elm-view-section-fun
 ctions-calling.png>] [43 <./img/non-functional-scrolling.png> <./img/elm-port.p
 ng>] [44 <./img/elm-view-onclick.png>]
-<img/imports-main.png, id=918, 445.665pt x 300.12125pt>
+<img/imports-main.png, id=941, 445.665pt x 300.12125pt>
 File: img/imports-main.png Graphic file (type png)
 
 <use img/imports-main.png>
 Package pdftex.def Info: img/imports-main.png used on input line 262.
 (pdftex.def)             Requested size: 222.83195pt x 150.06026pt.
- <img/view-main.png, id=921, 456.70625pt x 353.32pt>
+ <img/view-main.png, id=944, 456.70625pt x 353.32pt>
 File: img/view-main.png Graphic file (type png)
 
 <use img/view-main.png>
@@ -1328,20 +1322,20 @@ Package acronym Info: Label `acro:ICNDb' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 285.
 
-<img/portfolio-async.png, id=938, 691.58376pt x 273.02pt>
+<img/portfolio-async.png, id=961, 691.58376pt x 273.02pt>
 File: img/portfolio-async.png Graphic file (type png)
 
 <use img/portfolio-async.png>
 Package pdftex.def Info: img/portfolio-async.png used on input line 291.
 (pdftex.def)             Requested size: 276.6286pt x 109.20605pt.
 
-<img/msg-async.png, id=940, 469.755pt x 218.8175pt>
+<img/msg-async.png, id=963, 469.755pt x 218.8175pt>
 File: img/msg-async.png Graphic file (type png)
  <use img/msg-async.png>
 Package pdftex.def Info: img/msg-async.png used on input line 297.
 (pdftex.def)             Requested size: 234.87692pt x 109.40848pt.
 
-<img/fetchasync-async.png, id=943, 693.59125pt x 513.92pt>
+<img/fetchasync-async.png, id=966, 693.59125pt x 513.92pt>
 File: img/fetchasync-async.png Graphic file (type png)
 
 <use img/fetchasync-async.png>
@@ -1351,21 +1345,21 @@ Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
 although it is yet undefined on input line 306.
 
-<img/decodeanswer-async.png, id=949, 307.1475pt x 210.7875pt>
+<img/decodeanswer-async.png, id=972, 307.1475pt x 210.7875pt>
 File: img/decodeanswer-async.png Graphic file (type png)
 
 <use img/decodeanswer-async.png>
 Package pdftex.def Info: img/decodeanswer-async.png used on input line 309.
 (pdftex.def)             Requested size: 122.85681pt x 84.3135pt.
 
-<img/update-async.png, id=950, 919.435pt x 261.97874pt>
+<img/update-async.png, id=973, 919.435pt x 261.97874pt>
 File: img/update-async.png Graphic file (type png)
 
 <use img/update-async.png>
 Package pdftex.def Info: img/update-async.png used on input line 315.
 (pdftex.def)             Requested size: 367.76749pt x 104.78964pt.
 
-<img/request-async.png, id=954, 713.66624pt x 403.5075pt>
+<img/request-async.png, id=977, 713.66624pt x 403.5075pt>
 File: img/request-async.png Graphic file (type png)
 
 <use img/request-async.png>
@@ -1378,14 +1372,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [47] [48 <./img/portfolio-async.png> <./img/msg-async.png> <./img/fetchasync-as
 ync.png>] [49 <./img/decodeanswer-async.png> <./img/update-async.png>] [50 <./i
 mg/request-async.png>] [51]
-<img/compiler_sig_suggestion.png, id=1060, 760.8425pt x 236.885pt>
+<img/compiler_sig_suggestion.png, id=1083, 760.8425pt x 236.885pt>
 File: img/compiler_sig_suggestion.png Graphic file (type png)
 
 <use img/compiler_sig_suggestion.png>
 Package pdftex.def Info: img/compiler_sig_suggestion.png used on input line 404
 .
 (pdftex.def)             Requested size: 395.64038pt x 123.1809pt.
- [52] [53 <./img/compiler_sig_suggestion.png>] <img/import-error.png, id=1078, 
+ [52] [53 <./img/compiler_sig_suggestion.png>] <img/import-error.png, id=1102, 
 517.935pt x 128.48pt>
 File: img/import-error.png Graphic file (type png)
 
@@ -1398,14 +1392,14 @@ Overfull \hbox (6.67767pt too wide) in paragraph at lines 412--418
 ia-ble $\OML/lmm/m/it/12 Navigation:view$
  []
 
-<img/definition-error.png, id=1079, 835.12pt x 391.4625pt>
+<img/definition-error.png, id=1103, 835.12pt x 391.4625pt>
 File: img/definition-error.png Graphic file (type png)
 
 <use img/definition-error.png>
 Package pdftex.def Info: img/definition-error.png used on input line 423.
 (pdftex.def)             Requested size: 334.04207pt x 156.58221pt.
 
-<img/types-error.png, id=1081, 723.70375pt x 315.1775pt>
+<img/types-error.png, id=1105, 723.70375pt x 315.1775pt>
 File: img/types-error.png Graphic file (type png)
 
 <use img/types-error.png>
@@ -1416,7 +1410,7 @@ Package pdftex.def Info: img/types-error.png used on input line 430.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [54 <./img/import-error.png> <./img/definition-error.png>]
-<img/redundant-pattern-code.png, id=1091, 407.5225pt x 170.6375pt>
+<img/redundant-pattern-code.png, id=1114, 407.5225pt x 170.6375pt>
 File: img/redundant-pattern-code.png Graphic file (type png)
 
 <use img/redundant-pattern-code.png>
@@ -1424,7 +1418,7 @@ Package pdftex.def Info: img/redundant-pattern-code.png used on input line 437.
 
 (pdftex.def)             Requested size: 203.76074pt x 85.31853pt.
 
-<img/redundant-pattern-error.png, id=1092, 722.7pt x 157.58875pt>
+<img/redundant-pattern-error.png, id=1115, 722.7pt x 157.58875pt>
 File: img/redundant-pattern-error.png Graphic file (type png)
 
 <use img/redundant-pattern-error.png>
@@ -1436,7 +1430,7 @@ Package pdftex.def Info: img/redundant-pattern-error.png used on input line 438
 LaTeX Warning: Reference `fig:redundant-pattern' on page 55 undefined on input 
 line 440.
 
-<img/missing-brackets-error.png, id=1093, 591.20876pt x 264.99pt>
+<img/missing-brackets-error.png, id=1116, 591.20876pt x 264.99pt>
 File: img/missing-brackets-error.png Graphic file (type png)
 
 <use img/missing-brackets-error.png>
@@ -1449,7 +1443,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [55 <./img/types-error.png> <./img/redundant-pattern-code.png> <./img/redundant
 -pattern-error.png>]
-<img/multiple-function-definitions.png, id=1100, 590.205pt x 235.88126pt>
+<img/multiple-function-definitions.png, id=1123, 590.205pt x 235.88126pt>
 File: img/multiple-function-definitions.png Graphic file (type png)
 
 <use img/multiple-function-definitions.png>
@@ -1461,7 +1455,7 @@ ne 452.
 LaTeX Warning: Citation `http://www.itwissen.info/definition/lexikon/UNIX.html'
  on page 56 undefined on input line 461.
 
-<img/elm-compile.png, id=1107, 801.99625pt x 109.40875pt>
+<img/elm-compile.png, id=1130, 801.99625pt x 109.40875pt>
 File: img/elm-compile.png Graphic file (type png)
 
 <use img/elm-compile.png>
@@ -1473,7 +1467,7 @@ Overfull \hbox (2.65854pt too wide) in paragraph at lines 464--465
  []
 
 [56 <./img/missing-brackets-error.png> <./img/multiple-function-definitions.png
->] <img/elm-benchmark-final.png, id=1117, 478.78876pt x 353.32pt>
+>] <img/elm-benchmark-final.png, id=1140, 478.78876pt x 353.32pt>
 File: img/elm-benchmark-final.png Graphic file (type png)
 
 <use img/elm-benchmark-final.png>
@@ -1499,7 +1493,42 @@ Kapitel 4.
 
 
 
-] [64]) [65] (./00_Vorlage Abschlussarbeit.bbl) [66
+] [64]) [65] (./00_Vorlage Abschlussarbeit.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 19--25
+[]\T1/lmr/m/sc/12 Kastens\T1/lmr/m/n/12 , Prof. Dr. U.:  Pro-gram-mier-pa-ra-di
+g-ma.  (2013),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--25
+\T1/lmr/m/n/12 Sep-tem-ber. --  On-li-ne ein-seh-bar un-ter []$\T1/lmtt/m/n/12 
+http : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--25
+\T1/lmtt/m/n/12 enzyklopaedie-[]der-[]wirtschaftsinformatik . de / lexikon /
+ []
+
+
+Underfull \hbox (badness 6078) in paragraph at lines 19--25
+\T1/lmtt/m/n/12 technologien-[]methoden / Sprache / Programmiersprache / Paradi
+gma$[] \T1/lmr/m/n/12 -
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 34--39
+[]\T1/lmr/m/sc/12 Czaplicki\T1/lmr/m/n/12 , Evan:  \T1/lmr/m/it/12 Elm: Con-cur
+-rent FRP for Func-tio-nal GUIs\T1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--39
+[]$\T1/lmtt/m/n/12 https : / / www . seas . harvard . edu / sites / default / f
+iles / files /
+ []
+
+) [66
 
 
 ]
@@ -1511,14 +1540,14 @@ Kapitel 5.
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
  (./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./03_abstract.aux)
 (./00_abkuerzungsverzeichnis.aux) (./04_einleitung.aux)
 (./05_theoretische_grundlagen.aux) (./06_evaluierung.aux) (./07_fazit.aux)
 (./10_statement.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
 Package rerunfilecheck Info: File `"00_Vorlage Abschlussarbeit".out' has not ch
 anged.
 (rerunfilecheck)             Checksum: EA5DEBF52806A67694FDAD042258C170;2533.
@@ -1526,13 +1555,13 @@ anged.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 14219 strings out of 494976
- 213523 string characters out of 6179137
- 383138 words of memory out of 5000000
- 16743 multiletter control sequences out of 15000+600000
+ 14237 strings out of 494976
+ 213905 string characters out of 6179137
+ 383307 words of memory out of 5000000
+ 16751 multiletter control sequences out of 15000+600000
  89321 words of font info for 69 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  50i,14n,54p,1970b,1304s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1548,10 +1577,10 @@ ublic/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (69 pages, 1623570 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (69 pages, 1645648 bytes).
 PDF statistics:
- 1371 PDF objects out of 1440 (max. 8388607)
- 1224 compressed objects within 13 object streams
- 375 named destinations out of 1000 (max. 500000)
+ 1407 PDF objects out of 1440 (max. 8388607)
+ 1260 compressed objects within 13 object streams
+ 385 named destinations out of 1000 (max. 500000)
  489 words of extra memory for PDF output out of 10000 (max. 10000000)
 
