@@ -8,28 +8,28 @@
 \contentsline {subsection}{\numberline {2.2.2}Konzept}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Umsetzung}{10}{subsection.2.2.3}
 \contentsline {subsubsection}{\nonumberline Keine Seiteneffekte}{10}{section*.16}
-\contentsline {subsubsection}{\nonumberline Elm-Compiler}{12}{section*.17}
+\contentsline {subsubsection}{\nonumberline Elm-Compiler}{11}{section*.17}
 \contentsline {subsubsection}{\nonumberline Statische Typisierung}{12}{section*.18}
 \contentsline {subsubsection}{\nonumberline Performanz}{12}{section*.20}
 \contentsline {subsubsection}{\nonumberline Interoperabilit\IeC {\"a}t}{13}{section*.22}
 \contentsline {subsubsection}{\nonumberline Praktische Anwendungsgebiete}{13}{section*.23}
 \contentsline {subsection}{\numberline {2.2.4}Einf\IeC {\"u}hrung in die Elm-Architektur}{14}{subsection.2.2.4}
 \contentsline {subsubsection}{\nonumberline Elm-REPL}{14}{section*.24}
-\contentsline {subsubsection}{\nonumberline Basisdatentypen}{15}{section*.27}
+\contentsline {subsubsection}{\nonumberline Basisdatentypen}{14}{section*.27}
 \contentsline {subsubsection}{\nonumberline Basisfunktionen}{15}{section*.28}
 \contentsline {subsubsection}{\nonumberline Union Types}{15}{section*.29}
-\contentsline {subsubsection}{\nonumberline Records}{17}{section*.32}
+\contentsline {subsubsection}{\nonumberline Records}{16}{section*.32}
 \contentsline {subsubsection}{\nonumberline Tupel}{17}{section*.34}
-\contentsline {subsubsection}{\nonumberline Variablen}{18}{section*.36}
+\contentsline {subsubsection}{\nonumberline Variablen}{17}{section*.36}
 \contentsline {subsubsection}{\nonumberline Kontrollstrukturen}{19}{section*.38}
 \contentsline {subsubsection}{\nonumberline Funktionen}{19}{section*.41}
-\contentsline {subsubsection}{\nonumberline Signaturen}{21}{section*.44}
+\contentsline {subsubsection}{\nonumberline Signaturen}{20}{section*.44}
 \contentsline {subsubsection}{\nonumberline Typen Alias}{21}{section*.45}
 \contentsline {subsubsection}{\nonumberline Module}{22}{section*.48}
 \contentsline {subsubsection}{\nonumberline Importierung}{22}{section*.50}
 \contentsline {subsubsection}{\nonumberline Online-IDE}{23}{section*.52}
 \contentsline {subsubsection}{\nonumberline Installation}{24}{section*.54}
-\contentsline {subsubsection}{\nonumberline Start eines Projektes}{25}{section*.58}
+\contentsline {subsubsection}{\nonumberline Start eines Projektes}{24}{section*.58}
 \contentsline {subsubsection}{\nonumberline Fertigstellung}{26}{section*.61}
 \contentsline {subsubsection}{\nonumberline Elm Reactor}{26}{section*.62}
 \contentsline {chapter}{\numberline {3}Evaluierung der Programmiersprache Elm}{28}{chapter.3}
@@ -41,36 +41,36 @@
 \contentsline {subsection}{\numberline {3.2.4}Effizienz}{30}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Wiederverwendbarkeit}{31}{subsection.3.2.5}
 \contentsline {section}{\numberline {3.3}Web-spezifische Bewertungskriterien}{31}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t}{32}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Browser Kompatibilit\IeC {\"a}t}{31}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Interoperabilit\IeC {\"a}t}{32}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{33}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{33}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.3}Asynchrone Verarbeitung}{32}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Dateigr\IeC {\"o}\IeC {\ss }e}{32}{subsection.3.3.4}
 \contentsline {section}{\numberline {3.4}Empirische Analyse}{34}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Programmablauf}{34}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Entwicklungsumgebung}{34}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Grundaufbau}{35}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}\IeC {\"U}berf\IeC {\"u}hrung des Views}{39}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Beheben von JavaScript-Fehlern}{39}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.5}Beheben von JavaScript-Fehlern}{40}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}Auslagern des Views}{41}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Hinzuf\IeC {\"u}gen von Klick-Events}{41}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.7}Hinzuf\IeC {\"u}gen von Klick-Events}{42}{subsection.3.4.7}
 \contentsline {subsection}{\numberline {3.4.8}Modularisierung der Applikation}{45}{subsection.3.4.8}
-\contentsline {subsubsection}{\nonumberline View}{45}{section*.79}
-\contentsline {subsubsection}{\nonumberline Update}{46}{section*.82}
-\contentsline {subsubsection}{\nonumberline Model}{47}{section*.83}
+\contentsline {subsubsection}{\nonumberline View}{45}{section*.80}
+\contentsline {subsubsection}{\nonumberline Update}{46}{section*.83}
+\contentsline {subsubsection}{\nonumberline Model}{46}{section*.84}
 \contentsline {subsection}{\numberline {3.4.9}Asynchrones Laden von Daten}{47}{subsection.3.4.9}
-\contentsline {subsection}{\numberline {3.4.10}Beobachtungen}{50}{subsection.3.4.10}
-\contentsline {subsubsection}{\nonumberline Natives Einbinden von CSS in Elm nur beschr\IeC {\"a}nkt m\IeC {\"o}glich}{50}{section*.92}
-\contentsline {subsubsection}{\nonumberline HTML-Code ist in Elm wesentlich k\IeC {\"u}rzer}{51}{section*.93}
-\contentsline {subsubsection}{\nonumberline Elm hat eine stark wachsende Open-Source Gemeinschaft}{52}{section*.95}
+\contentsline {subsection}{\numberline {3.4.10}Beobachtungen}{49}{subsection.3.4.10}
+\contentsline {subsubsection}{\nonumberline Natives Einbinden von CSS in Elm nur beschr\IeC {\"a}nkt m\IeC {\"o}glich}{50}{section*.93}
+\contentsline {subsubsection}{\nonumberline HTML-Code ist in Elm wesentlich k\IeC {\"u}rzer}{51}{section*.94}
+\contentsline {subsubsection}{\nonumberline Elm hat eine stark wachsende Open-Source Gemeinschaft}{52}{section*.96}
 \contentsline {subsection}{\numberline {3.4.11}Auswertung}{52}{subsection.3.4.11}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{53}{section*.97}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_zuverlaessigkeit} \nameref {sec:muster_zuverlaessigkeit}}{54}{section*.99}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_portabilitaet} \nameref {sec:muster_portabilitaet}}{57}{section*.106}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_effizienz} \nameref {sec:muster_effizienz}}{57}{section*.108}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wiederverwendbarkeit} \nameref {sec:muster_wiederverwendbarkeit}}{59}{section*.111}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_browser_kompatibilitaet} \nameref {sec:muster_browser_kompatibilitaet}}{59}{section*.112}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_interoperabilitaet} \nameref {sec:muster_interoperabilitaet}}{60}{section*.113}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_asynchrone_verarbeitung} \nameref {sec:muster_asynchrone_verarbeitung}}{61}{section*.114}
-\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_dateigroesse} \nameref {sec:muster_dateigroesse}}{62}{section*.115}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wartbarkeit_und_lesbarkeit} \nameref {sec:muster_wartbarkeit_und_lesbarkeit}}{52}{section*.98}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_zuverlaessigkeit} \nameref {sec:muster_zuverlaessigkeit}}{53}{section*.100}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_portabilitaet} \nameref {sec:muster_portabilitaet}}{56}{section*.107}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_effizienz} \nameref {sec:muster_effizienz}}{57}{section*.109}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_wiederverwendbarkeit} \nameref {sec:muster_wiederverwendbarkeit}}{58}{section*.112}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_browser_kompatibilitaet} \nameref {sec:muster_browser_kompatibilitaet}}{59}{section*.113}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_interoperabilitaet} \nameref {sec:muster_interoperabilitaet}}{60}{section*.114}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_asynchrone_verarbeitung} \nameref {sec:muster_asynchrone_verarbeitung}}{61}{section*.115}
+\contentsline {subsubsection}{\nonumberline Auswertung: \ref {sec:muster_dateigroesse} \nameref {sec:muster_dateigroesse}}{61}{section*.116}
 \contentsline {chapter}{\numberline {4}Fazit}{63}{chapter.4}
-\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{67}{chapter.5}
+\contentsline {chapter}{\numberline {5}Eidesstattliche Erkl\IeC {\"a}rung}{68}{chapter.5}
