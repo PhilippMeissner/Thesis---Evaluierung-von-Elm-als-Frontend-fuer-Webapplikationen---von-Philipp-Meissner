@@ -80,10 +80,11 @@
   numberfirstline=true,
   showstringspaces=false
 }
-
+% Break the line a little earlier so that cites and whatnot don't overlap.
+\emergencystretch=1em
 
 % ============= Kopf- und Fußzeile =============
-\pagestyle{fancy}
+\pagestyle{plain}
 %
 \lhead{}
 \chead{}
@@ -105,28 +106,37 @@
 \begin{document}
 %Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
 \pagestyle{empty}
-
 \include{01_titel}
+\pagestyle{plain}
 \pagenumbering{roman}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
 \include{03_abstract}
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
 % Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
-\cleardoubleoddpage
-\pagestyle{fancy}
+\cleardoublepage
+\pagestyle{plain}
 
 %Inhaltsverzeichnis
 \tableofcontents
 
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abkuerzungsverzeichnis}
 \include{00_abkuerzungsverzeichnis}
 %Verzeichnis aller Bilder
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
 \listoffigures
-
 %Verzeichnis aller Tabellen
 %\listoftables
 
 % pagestyle für gesamtes Dokument aktivieren
+\cleardoublepage
 \pagestyle{plain}
-
+\pagenumbering{arabic}
 \include{04_einleitung}
 
 \include{05_theoretische_grundlagen}
@@ -137,8 +147,14 @@
 
 
 %Literaturverzeichnis
+\clearpage % or \cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
 \bibliographystyle{plain}
 \bibliography{Literatur}
 
+\clearpage % or \cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Eidesstattliche Erklärung}
 \include{10_statement}
 \end{document}

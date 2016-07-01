@@ -4,9 +4,9 @@
 
 \section{Funktionale Programmiersprachen}
 \label{sec:funktionaleProgrammiersprache}
-Jede Programmiersprache lässt sich in eine Kategorie, einem Programmierparadigma, einteilen.
-Prof. Dr. Uwe Kastens beschreibt Programmierparadigmen als \glqq unterschiedliche Prinzipien, mit denen die Ausführung von Programmen beschrieben wird\grqq\cite{definition-programmierparadigmen}.
-Ferner bezeichnet er die imperative, objektorientierte, funktionale und logische Programmierung als am Wichtigsten\footnote{\cite[Vgl.]{definition-programmierparadigmen}}. Jedes Programmierparadigma birgt unterschiedliche Merkmale der Programmierung, wie beispielsweise rekursive Funktionen, Funktionen höherer Ordnung oder Polymorphie. Es ist nicht ausgeschlossen, dass eine Programmierprache mehreren Prinzipien folgt und unterschiedliche Merkmale vereint. Funktionale Programmiersprachen sind stark an die Mathematik angelehnt, da sie sich syntaktisch sehr ähnlich sind. Programme werden hier eher als mathematische Funktion formuliert, die eingehende Argumente immer gleichermaßen zu einem Ergebnis auswerten.
+Jede Programmiersprache lässt sich in ein Programmierparadigma, einteilen.
+Prof. Dr. Uwe Kastens beschreibt Programmierparadigmen als \glqq [...] unterschiedliche Prinzipien, mit denen die Ausführung von Programmen beschrieben wird\grqq\cite{definition-programmierparadigmen}.
+Ferner bezeichnet er die imperative, objektorientierte, funktionale und logische Programmierung als am Wichtigsten~\cite[Vgl.]{definition-programmierparadigmen}. Jedes Programmierparadigma birgt unterschiedliche Merkmale der Programmierung wie beispielsweise rekursive Funktionen, Funktionen höherer Ordnung oder Polymorphie. Es ist nicht ausgeschlossen, dass eine Programmiersprache mehreren Prinzipien folgt und unterschiedliche Merkmale vereint. Funktionale Programmiersprachen sind stark an die Mathematik angelehnt. Programme werden hier eher als mathematische Funktionen formuliert, die eingehende Argumente immer gleichermaßen zu einem Ergebnis auswerten.
 \begin{figure}[h]
 \begin{lstlisting}[language=JavaScript]
 iterative_function(n) {
@@ -21,7 +21,7 @@ console.log(iterative_function(10)); // => 55
 \end{figure}
 Bei funktionalen Programmiersprachen ist es üblich, dass eine Variable nach ihrer Initialisierung ihren zugewiesenen Wert für die gesamte Laufzeit des Programmes beibehält. Man spricht hier von der Unveränderlichkeit einer Variable. Dadurch kann eine Variable als fester Ausdruck angesehen werden, der immer denselben Wert liefert.
 Typischerweise gibt es in funktionalen Programmiersprachen keine Schleifen, da dies bereits eine Verletzung der Unveränderlichkeit von Variablen bedeuten würde, wie klar erkennbar bei der Iteration in Abbildung~\ref{fig:iterative-function} ist.
-Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen. Es ist allerdings auch möglich eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
+Hier wird bei jedem Durchlauf der Schleife die Variable $i$ inkrementiert und mit dem neuen Wert versehen. Es ist allerdings auch möglich, eine Schleife in einer funktionalen Programmiersprache zu verwirklichen. In Abbildung~\ref{fig:recursive-function} ist die zuvor gezeigte iterative Funktion als rekursive Funktion implementiert worden.
 \begin{figure}[h!]
 \begin{lstlisting}[language=JavaScript]
 recursive_function(n) {
@@ -37,7 +37,7 @@ console.log(recursive_function(10)); // => 55
 \end{quote}
 In beiden Fällen ist das Ergebnis gleich, jedoch besitzt die rekursive Implementierung keinerlei Seiteneffekte\footnote{Ein Seiteneffekt beschreibt die mehrmalige Zuweisung einer Variable mit einem Wert.}. Es wird an keiner Stelle der Wert einer Variable verändert, es werden lediglich Aufrufe mit neuen Werten durchgeführt. Die iterative Implementierung verursacht hingegen zwei Seiteneffekte. Es wird sowohl die Variable $sum$, sowie $i$ bei jedem Schleifendurchlauf überschrieben. Bei der Rekursion hingegen wird  die Funktion $recursive\_function$
 mit einem neuen Wert aufgerufen, ohne jemals die ursprüngliche Variable verändert zu haben.
-Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegen nehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda\,Funktion$ oder $anonyme\,Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur einmalig aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
+Üblicherweise werden Funktionen in funktionalen Programmiersprachen als Funktionen höherer Ordnung angesehen. Das heißt, dass eine Funktion eine andere Funktion als Argument entgegennehmen kann, oder eine Funktion als Rückgabewert hat. Diese Art von Funktionen ist bekannt unter dem Begriff $Lambda\,Funktion$ oder $anonyme\,Funktion$. Eine solche Funktion hat entsprechend keinen Namen, sondern kann nur einmalig aufgerufen werden. Im folgenden Beispiel sehen wir den Aufruf einer anonymen Funktion in Elm:
 \begin{equation} \label{eq:solve}
 (\backslash x \rightarrow x * 2)\ [ 2, 3, 4 ] \Longrightarrow [4, 6, 8]
 \end{equation}
@@ -53,13 +53,13 @@ Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein
 
 \subsection{Konzept}
 \label{sec:Konzept}
-Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigmas. Hier wird es \ac{MVU} genannt. Anhand des Beispiels in Abbildung~\ref{fig:counter} lässt sich das Muster in drei grundlegende Stationen unterteilen und erklären.
+Elm verfolgt eine ganz eigene Implementierung des Model-View-Controller Paradigmas. Hier wird es \acf{MVU} genannt. Anhand des Beispiels in Abbildung~\ref{fig:counter} lässt sich das Muster in drei grundlegende Stationen unterteilen und erklären.
 \begin{figure}[h]
 	\centering  
 	\includegraphics[scale=0.5]{img/counter.png}
 	\caption{Ein simpler Zähler auf einer Webseite}\label{fig:counter}
 \end{figure}
-Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird zwischen den Knöpfen angezeigt und kann sowohl negative, als auch positive Werte annehmen.
+Die Abbildung~\ref{fig:counter} zeigt einen simplen Zähler, der über zwei Knöpfe inkrementiert und dekrementiert werden kann. Der aktuelle Stand des Zählers wird zwischen den Knöpfen angezeigt und kann sowohl negative, als auch positive Werte annehmen.
 Der angezeigte Zählerwert ist das sogenannte $Model$ und zeigt den aktuellen Status der Applikation an. Interagiert ein Nutzer nun mit einem der beiden Knöpfe um den Zähler zu erhöhen oder zu reduzieren, wird diese Aktion an die sogenannte $Update$-Funktion weitergegeben. Zusätzlich zur auszuführenden $Aktion$, bekommt diese Funktion auch noch das aktuelle $Model$ übergeben.
 Die $Update$-Funktion nimmt sämtliche Einwirkungen durch den Nutzer von außen entgegen und wendet diese Aktionen auf das aktuelle $Model$ an. Dabei wird jedoch nicht das $Model$ direkt verändert, sondern ein neues $Model$ mit den geänderten Werten zurückgegeben, da sonst ein Seiteneffekt die Folge wäre. Damit dieser Vorgang zügig vonstatten geht, nutzt Elm persistente Datenstrukturen, womit nur die tatsächlich geänderten Attribute eines Models im neuen $Model$ gesetzt werden, die unveränderten Attribute hingegen werden übernommen.
 Das Ergebnis der Update-Funktion wird weitergereicht an die $View$-Funktion. Sie beschreibt das Aussehen der Webseite und kümmert sich um die Darstellung des $Model$s.
@@ -67,12 +67,12 @@ Der zuvor beschriebene Datenfluss in Elm wird noch einmal in Abbildung~\ref{fig:
 \begin{figure}[h]
   \centering  
   \includegraphics[scale=1]{img/elm-model-view-update-concept.png}
-  \caption{Das Model-View-Update Konzept von Elm}\label{fig:elm-model-view-update-concept}
+  \caption{Das \ac{MVU}-Konzept von Elm \cite{elm-model-update-view}}\label{fig:elm-model-view-update-concept}
 \end{figure}
 
 \subsection{Umsetzung}
 \label{sec:Umsetzung}
-Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu \ac{JS}, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives \ac{JS}, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von \ac{JS} zu umgehen und auszumerzen.
+Der vom Programmierer verfasste Programmcode wird vor der endgültigen Nutzung zu \ac{JS}, \ac{HTML} und \ac{CSS} kompiliert und in die Webseiten integriert. Entsprechend fungiert in Elm verfasster Code im Endeffekt wie natives \acf{JS}, nutzt allerdings noch einige weitere vertiefende Konzepte, um viele Problematiken von \ac{JS} zu umgehen und auszumerzen.
 Unter anderem verspricht Elm, dass generierter Code keinerlei Laufzeitfehler erzeugt.\footnote{\cite[Vgl.]{elm-no-runtime-errors}} Sämtliche Fehlerquellen werden vom Compiler zuvor erkannt, abgefangen und an den Programmierer weitergeleitet, um sie zu beheben. Damit dies funktioniert, implementiert Elm unter anderem Konzepte des funktionalen Programmierparadigmas. Diese und die weiteren Grundkonzepte werden im folgenden erläutert.
 
 \subsubsection{Keine Seiteneffekte}
@@ -82,7 +82,7 @@ Das Konzept der unveränderbaren Werte wurde aus der Mathematik übernommen.  Um
 \begin{equation} \label{eq:imperative_equation}
 x = x + 1
 \end{equation}
-In einer imperativen Programmiersprache wird durch den Ausdruck~\ref{eq:imperative_equation} der aktuellen Wert in $x$ ausgelesen, um $1$ inkrementiert und das Ergebnis in die Variable $x$ geschrieben.
+In einer imperativen Programmiersprache wird durch den Ausdruck~\ref{eq:imperative_equation} der aktuelle Wert in $x$ ausgelesen, um $1$ inkrementiert und das Ergebnis in die Variable $x$ geschrieben.
 Mathematisch betrachtet ist diese Aussage jedoch schlichtweg falsch, denn es existiert kein $x$, welches diese Aussage wahr werden lässt, wie durch Abbildung~\ref{eq:mathematical_equation} deutlich wird.
 \begin{equation} \label{eq:mathematical_equation}
 x=x+1 \leftrightarrow 0=1
@@ -92,7 +92,7 @@ Die eigentliche Bedeutung des Ausdrucks~\ref{eq:imperative_equation} ist mathema
 \begin{equation} \label{eq:true_equation}
 x_1:= x_0 + 1
 \end{equation}
-Es ist klar erkennbar, dass $x_1$ und $x_0$ nicht dieselbe Variable sind wodurch die Aussage nun als wahr eingestuft werden kann. Das beschriebene Konzept wird laut Dr. Steffen Jost \glqq referentielle Transparenz\grqq genannt und beschreibt die Kontinuität des Wertes einer Variable. Ferner gibt er an, dass Funktionen die stets gleiche Ergebnisse bei gleichbleibenden Eingabeparametern liefern, ebenfalls eine Eigenschaft der referentiellen Transparenz sind\cite[Vgl.]{referentielle-transparenz}. Beispiele für solche Funktionen sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen zufälligen Wert zurückliefert und somit die Eigenschaft der referentiellen Transparenz verletzen würde. Doch auch diese Funktion kann als reine Funktion implementiert werden, wenn sie einen Wert abhängig von einem Übergabeparameter berechnet wie beispielsweise $random(seed)$.
+Es ist klar erkennbar, dass $x_1$ und $x_0$ unterschiedliche Variablen sind, wodurch die Aussage nun als wahr eingestuft werden kann. Das beschriebene Konzept wird laut Dr. Steffen Jost \glqq referentielle Transparenz\grqq genannt und beschreibt die Kontinuität des Wertes einer Variable. Ferner gibt er an, dass Funktionen die stets gleiche Ergebnisse bei gleichbleibenden Eingabeparametern liefern, ebenfalls eine Eigenschaft der referentiellen Transparenz sind\cite[Vgl.]{referentielle-transparenz}. Beispiele für solche Funktionen sind $sin(x)$ oder $add(x, y)$. Sie berechnen immer dieselben Werte, völlig unabhängig davon, wie oft oder zu welchem Zeitpunkt sie ausgeführt werden. Ein beliebtes Gegenspiel ist die $random()$ Funktion, die einen zufälligen Wert zurückliefert und somit die Eigenschaft der referentiellen Transparenz verletzen würde. Doch auch diese Funktion kann als reine Funktion\footnote{Eine reine Funktion besitzt alle Eigenschaften der referentiellen Transparenz.} implementiert werden, wenn sie einen Wert abhängig von einem Übergabeparameter berechnet wie beispielsweise $random(seed)$.
 
 \subsubsection{Elm-Compiler}
 \label{sec:Elm-Compiler}
@@ -100,7 +100,7 @@ Laufzeitfehler sollen mit Elm in Vergessenheit geraten. Dafür soll der integrie
 
 \subsubsection{Statische Typisierung}
 \label{sec:Statische Typisierung}
-Anders als bei nativem \ac{JS}, gibt es in Elm keine dynamische Typisierung. Das bedeutet, dass sowohl die Typen einer Variable, als auch die Rückgabewerte von Funktionen bereits bei der Kompilierung bekannt sein müssen. Natives \ac{JS} erlaubt es, dass die Typen von Variablen erst zur Laufzeit überprüft werden und sich zusätzlich in dieser Zeit ändern können. So ist der Quellcode in Abbildung~\ref{fig:dynamische-typisierung} konform mit \ac{JS}.
+Anders als bei nativem \ac{JS} gibt es in Elm keine dynamische Typisierung. Das bedeutet, dass sowohl die Typen einer Variable, als auch die Rückgabewerte von Funktionen bereits bei der Kompilierung bekannt sein müssen. Natives \ac{JS} erlaubt es, dass die Typen von Variablen erst zur Laufzeit überprüft werden und sich zusätzlich in dieser Zeit ändern können. So ist der Quellcode in Abbildung~\ref{fig:dynamische-typisierung} konform mit \ac{JS}.
 \begin{figure}[ht]
 \begin{lstlisting}[language=JavaScript]
 var i = 1;

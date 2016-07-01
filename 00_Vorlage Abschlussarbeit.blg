@@ -12,83 +12,94 @@ The style file: plain.bst
 A level-1 auxiliary file: 10_statement.aux
 Database file #1: Literatur.bib
 Warning--entry type for "washington-evaluation" isn't style-file defined
---line 33 of file Literatur.bib
+--line 39 of file Literatur.bib
 Warning--entry type for "elm-docs" isn't style-file defined
---line 49 of file Literatur.bib
+--line 57 of file Literatur.bib
 Warning--entry type for "web-programming-restarted" isn't style-file defined
---line 65 of file Literatur.bib
+--line 77 of file Literatur.bib
 Warning--entry type for "elm-no-runtime-errors" isn't style-file defined
---line 81 of file Literatur.bib
+--line 97 of file Literatur.bib
 Warning--entry type for "evan-center" isn't style-file defined
---line 95 of file Literatur.bib
+--line 113 of file Literatur.bib
 Warning--entry type for "evan-thesis" isn't style-file defined
---line 119 of file Literatur.bib
-I was expecting a `,' or a `}'---line 165 of file Literatur.bib
+--line 137 of file Literatur.bib
+I was expecting a `,' or a `}'---line 169 of file Literatur.bib
  :   
  :   year = {2014},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "feldman-no-errors" isn't style-file defined
---line 173 of file Literatur.bib
+--line 177 of file Literatur.bib
+Warning--entry type for "google-gzip" isn't style-file defined
+--line 197 of file Literatur.bib
 Warning--entry type for "algebraische-datentypen" isn't style-file defined
---line 211 of file Literatur.bib
+--line 237 of file Literatur.bib
 Warning--entry type for "referentielle-transparenz" isn't style-file defined
---line 227 of file Literatur.bib
+--line 253 of file Literatur.bib
+Warning--entry type for "elm-tutorial" isn't style-file defined
+--line 305 of file Literatur.bib
+Warning--entry type for "builtwithelm" isn't style-file defined
+--line 361 of file Literatur.bib
 Warning--entry type for "semantic-versioning" isn't style-file defined
---line 303 of file Literatur.bib
+--line 379 of file Literatur.bib
+I was expecting a `,' or a `}'---line 387 of file Literatur.bib
+ : 
+ : author={k.A.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "elm-github-issues" isn't style-file defined
+--line 399 of file Literatur.bib
 Warning--entry type for "slack-user" isn't style-file defined
---line 329 of file Literatur.bib
+--line 419 of file Literatur.bib
 Warning--entry type for "elm-repositories" isn't style-file defined
---line 343 of file Literatur.bib
+--line 439 of file Literatur.bib
 Warning--entry type for "elm-package" isn't style-file defined
---line 355 of file Literatur.bib
-Warning--I didn't find a database entry for "https://github.com/evancz/todomvc-perf-comparison/"
+--line 459 of file Literatur.bib
 Warning--I didn't find a database entry for "http://www.itwissen.info/definition/lexikon/UNIX.html"
 Warning--to sort, need author or key in semantic-versioning
-Warning--to sort, need author or key in slack-user
-Warning--to sort, need author or key in elm-package
-Warning--to sort, need author or key in elm-repositories
 Warning--empty journal in definition-programmierparadigmen
+Warning--empty journal in most-used-frameworks
+Warning--empty journal in elm-model-update-view
 Warning--empty journal in framework-sizes
-You've used 18 entries,
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            582 strings with 6385 characters,
-and the built_in function-call counts, 3528 in all, are:
-= -- 318
-> -- 102
+            609 strings with 7984 characters,
+and the built_in function-call counts, 4913 in all, are:
+= -- 451
+> -- 177
 < -- 0
-+ -- 46
-- -- 28
-* -- 114
-:= -- 559
-add.period$ -- 51
-call.type$ -- 18
-change.case$ -- 67
++ -- 75
+- -- 52
+* -- 197
+:= -- 828
+add.period$ -- 73
+call.type$ -- 23
+change.case$ -- 94
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 137
-empty$ -- 391
-format.name$ -- 28
-if$ -- 774
+cite$ -- 28
+duplicate$ -- 178
+empty$ -- 488
+format.name$ -- 52
+if$ -- 1044
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 4
-newline$ -- 90
-num.names$ -- 28
-pop$ -- 169
+int.to.str$ -- 23
+missing$ -- 6
+newline$ -- 122
+num.names$ -- 44
+pop$ -- 199
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 72
 quote$ -- 0
-skip$ -- 119
+skip$ -- 155
 stack$ -- 0
-substring$ -- 90
-swap$ -- 16
+substring$ -- 115
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
-warning$ -- 6
-while$ -- 28
-width$ -- 20
-write$ -- 162
-(There was 1 error message)
+type$ -- 90
+warning$ -- 5
+while$ -- 44
+width$ -- 25
+write$ -- 233
+(There were 2 error messages)

@@ -1,60 +1,59 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{7}{figure.caption.10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{8}{figure.caption.11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{9}{figure.caption.13}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Das Model-View-Update Konzept von Elm\relax }}{10}{figure.caption.14}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel der dynamischen Typisierung\relax }}{12}{figure.caption.19}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Das Tool elm-repl in der Kommandozeile\relax }}{14}{figure.caption.26}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ein Union-Type in Elm\relax }}{15}{figure.caption.30}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Ein erweiterter Union-Type in Elm\relax }}{16}{figure.caption.31}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Ein Record in Elm\relax }}{17}{figure.caption.33}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Ein Tupel in Elm\relax }}{18}{figure.caption.35}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Eine Variablendeklaration in Elm\relax }}{18}{figure.caption.37}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Eine Konstrollstruktur in Elm\relax }}{19}{figure.caption.39}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Konstrollstruktur in C++\relax }}{19}{figure.caption.40}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Eine Funktion in Elm\relax }}{20}{figure.caption.42}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Anwendung einer anonymen Funktion in Elm\relax }}{20}{figure.caption.43}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Definition einer Funktion ohne Typen Alias\relax }}{21}{figure.caption.46}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Definition einer Funktion mit Typen Alias\relax }}{22}{figure.caption.47}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces M\IeC {\"o}gliche Deklarationen eines Elm-Moduls\relax }}{22}{figure.caption.49}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces M\IeC {\"o}gliche Formen der Importierung eines Elm-Moduls\relax }}{22}{figure.caption.51}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Die Online-\ac {IDE} von Elm\relax }}{23}{figure.caption.53}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Installation des \ac {NPM}\relax }}{24}{figure.caption.55}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Installation von Elm\relax }}{24}{figure.caption.56}
-\contentsline {figure}{\numberline {2.23}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung der erfolgreichen Installation von NodeJs und dem \ac {NPM}\relax }}{25}{figure.caption.57}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Installation eines externen Paketes \IeC {\"u}ber den Elm-Paketmanager\relax }}{26}{figure.caption.60}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Der gestartete Elm-Webserver\relax }}{26}{figure.caption.63}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine iterative Funktion\relax }}{2}{figure.caption.14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Eine rekursive Funktion\relax }}{3}{figure.caption.15}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ein simpler Z\IeC {\"a}hler auf einer Webseite\relax }}{4}{figure.caption.16}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Das \ac {MVU}-Konzept von Elm \cite {elm-model-update-view}\relax }}{5}{figure.caption.17}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel der dynamischen Typisierung\relax }}{7}{figure.caption.22}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Das Tool elm-repl in der Kommandozeile\relax }}{9}{figure.caption.29}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ein Union-Type in Elm\relax }}{10}{figure.caption.33}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ein erweiterter Union-Type in Elm\relax }}{11}{figure.caption.34}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ein Record in Elm\relax }}{12}{figure.caption.36}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Ein Tupel in Elm\relax }}{12}{figure.caption.38}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Eine Variablendeklaration in Elm\relax }}{13}{figure.caption.40}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Eine Konstrollstruktur in Elm\relax }}{14}{figure.caption.42}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Konstrollstruktur in C++\relax }}{14}{figure.caption.43}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Eine Funktion in Elm\relax }}{15}{figure.caption.45}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Anwendung einer anonymen Funktion in Elm\relax }}{15}{figure.caption.46}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Definition einer Funktion ohne Typen Alias\relax }}{16}{figure.caption.49}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Definition einer Funktion mit Typen Alias\relax }}{17}{figure.caption.50}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces M\IeC {\"o}gliche Deklarationen eines Elm-Moduls\relax }}{17}{figure.caption.52}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces M\IeC {\"o}gliche Formen der Importierung eines Elm-Moduls\relax }}{17}{figure.caption.54}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Die Online-\ac {IDE} von Elm\relax }}{18}{figure.caption.56}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Installation des \ac {NPM}\relax }}{19}{figure.caption.58}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Installation von Elm\relax }}{19}{figure.caption.59}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung der erfolgreichen Installation von NodeJs und dem \ac {NPM}\relax }}{19}{figure.caption.60}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Installation eines externen Paketes \IeC {\"u}ber den Elm-Paketmanager\relax }}{21}{figure.caption.63}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Der gestartete Elm-Webserver\relax }}{21}{figure.caption.66}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016 \cite {top-five-browser-statistics}\relax }}{32}{figure.caption.65}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundaufbau der $index.html$, um die Elm-Applikation zu injizieren\relax }}{36}{figure.caption.66}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Grundger\IeC {\"u}st der Elm-Applikation\relax }}{37}{figure.caption.67}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit initialen, dynamischen Werten\relax }}{38}{figure.caption.68}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Elm-Compilerfehler bei fehlenden Funktionen im Namensraum\relax }}{39}{figure.caption.69}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces JavaScript-Fehler innerhalb der Developer-Tools\relax }}{40}{figure.caption.70}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Notwendiger Code, um JavaScript-Fehler zu beheben.\relax }}{40}{figure.caption.71}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Deklaration einer Sektion des Views in Elm\relax }}{41}{figure.caption.72}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Ausgelagerter View in eine eigene Funktion\relax }}{41}{figure.caption.74}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Aufruf der einzelnen Sektionen im View\relax }}{42}{figure.caption.75}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Funktion zum scrollen bei einem Klick\relax }}{42}{figure.caption.76}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Definition eines neuen Union Types, sowie eines Ports f\IeC {\"u}r die Kommunikation zwischen Elm und \ac {JS}\relax }}{43}{figure.caption.77}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Erweiterung des Views um einen $onWithOptions$ Ereignisbehandler in Elm\relax }}{44}{figure.caption.78}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Entgegennahme der Daten aus der Elm-Applikation und anschlie\IeC {\ss }endes scrollen\relax }}{45}{figure.caption.79}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{46}{figure.caption.81}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{46}{figure.caption.82}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces OnClick-Ereignisbehandler in Elm\relax }}{48}{figure.caption.86}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces $Msg$-Deklaration mit asynchronem Request\relax }}{48}{figure.caption.87}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Asynchroner \ac {HTTP}-Request in Elm\relax }}{48}{figure.caption.88}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Dekodierung eines Json-Objektes in Elm\relax }}{49}{figure.caption.90}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces $Update$-F\IeC {\"a}lle f\IeC {\"u}r den asynchronen Request\relax }}{49}{figure.caption.91}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ausgehender HTTP-Request und eingehende Antwort\relax }}{50}{figure.caption.92}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Ein $div$-Element in \ac {HTML} und Elm\relax }}{51}{figure.caption.95}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Auswertung der Versuchskriterien\relax }}{53}{figure.caption.97}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Automatisierter Signaturvorschlag durch den $elm-compiler$\relax }}{53}{figure.caption.99}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Fehlerfreier Kompiliervorgang durch den Elm-Compiler\relax }}{57}{figure.caption.108}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Zeitliche Auswertung des Kompiliervorganges in Elm\relax }}{58}{figure.caption.110}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Benchmark der TodoMVC in unterschiedlichen Programmiersprachen\relax }}{59}{figure.caption.111}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Dateigr\IeC {\"o}\IeC {\ss }en der Frameworks Angular2, Elm, Ember und React in Kilobyte\relax }}{62}{figure.caption.117}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die f\IeC {\"u}nf meistgenutzten Browser im Mai 2016 \cite {top-five-browser-statistics}\relax }}{26}{figure.caption.68}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Grundaufbau der $index.html$, um die Elm-Applikation zu injizieren\relax }}{30}{figure.caption.69}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Grundger\IeC {\"u}st der Elm-Applikation\relax }}{31}{figure.caption.70}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Eine beispielhafte Initialisierung der Elm-Applikation mit initialen, dynamischen Werten\relax }}{32}{figure.caption.71}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Elm-Compilerfehler bei fehlenden Funktionen im Namensraum\relax }}{33}{figure.caption.72}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces JavaScript-Fehler innerhalb der Developer-Tools\relax }}{34}{figure.caption.73}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Notwendiger Code, um JavaScript-Fehler zu beheben.\relax }}{34}{figure.caption.74}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Deklaration einer Sektion des Views in Elm\relax }}{35}{figure.caption.75}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Ausgelagerter View in eine eigene Funktion\relax }}{35}{figure.caption.77}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Aufruf der einzelnen Sektionen im View\relax }}{36}{figure.caption.78}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Funktion zum scrollen bei einem Klick\relax }}{36}{figure.caption.79}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Definition eines neuen Union Types, sowie eines Ports f\IeC {\"u}r die Kommunikation zwischen Elm und \ac {JS}\relax }}{37}{figure.caption.80}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Erweiterung des Views um einen $onWithOptions$ Ereignisbehandler in Elm\relax }}{38}{figure.caption.81}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Entgegennahme der Daten aus der Elm-Applikation und anschlie\IeC {\ss }endes scrollen\relax }}{39}{figure.caption.82}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{40}{figure.caption.84}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Einbindung und Aufruf der ausgelagerten View-Funktionen\relax }}{40}{figure.caption.85}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces OnClick-Ereignisbehandler in Elm\relax }}{42}{figure.caption.89}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces $Msg$-Deklaration mit asynchronem Request\relax }}{42}{figure.caption.90}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Asynchroner \ac {HTTP}-Request in Elm\relax }}{42}{figure.caption.91}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Dekodierung eines Json-Objektes in Elm\relax }}{43}{figure.caption.93}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces $Update$-F\IeC {\"a}lle f\IeC {\"u}r den asynchronen Request\relax }}{43}{figure.caption.94}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ausgehender HTTP-Request und eingehende Antwort\relax }}{44}{figure.caption.95}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Ein $div$-Element in \ac {HTML} und Elm\relax }}{45}{figure.caption.98}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Auswertung der Versuchskriterien\relax }}{47}{figure.caption.100}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Automatisierter Signaturvorschlag durch den $elm-compiler$\relax }}{47}{figure.caption.102}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Fehlerfreier Kompiliervorgang durch den Elm-Compiler\relax }}{51}{figure.caption.111}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Zeitliche Auswertung des Kompiliervorganges in Elm\relax }}{52}{figure.caption.113}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Benchmark der TodoMVC in unterschiedlichen Programmiersprachen\relax }}{53}{figure.caption.114}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Dateigr\IeC {\"o}\IeC {\ss }en der Frameworks Angular2, Elm, Ember und React in Kilobyte\relax }}{56}{figure.caption.120}
 \addvspace {10\p@ }

@@ -1,0 +1,99 @@
+\begin{thebibliography}{10}
+
+\bibitem{semantic-versioning}
+elm-package - {Command} line tool to share {Elm} libraries.
+\newblock abgerufen am 20. Juni 2016 unter.
+
+\bibitem{elm-package}
+Elm {Packages}.
+\newblock abgerufen am 21. Juni 2016.
+
+\bibitem{slack-user}
+Elm-{Slack} {Nutzer}.
+
+\bibitem{elm-repositories}
+Github {Elm}-{Repositories}.
+
+\bibitem{washington-evaluation}
+Alan Borning, Harr Chen, and Ken Yasuhara.
+\newblock Evaluating {Programming} {Languages}.
+\newblock abgerufen am 4. Juni 2016.
+
+\bibitem{web-programming-restarted}
+Evan Czaplicki.
+\newblock Blazing {Fast} {HTML}.
+\newblock abgerufen am 3. Mai 2016.
+
+\bibitem{elm-no-runtime-errors}
+Evan Czaplicki.
+\newblock Elm packages.
+\newblock abgerufen am 1. Mai 2016.
+
+\bibitem{elm-docs}
+Evan Czaplicki.
+\newblock From {JavaScript}?
+\newblock abgerufen am 5. Mai 2016.
+
+\bibitem{evan-thesis}
+Evan Czaplicki.
+\newblock Elm: {Concurrent} {FRP} for {Functional} {GUIs}, April 2012.
+
+\bibitem{evan-center}
+Evan Czaplicki.
+\newblock Erlang {Factory} {SF} 2016 {Keynote} {Phoenix} and {Elm} – {Making}
+  the {Web} {Functional}, März 2016.
+\newblock abgerufen am 20. Juni 2016.
+
+\bibitem{feldman-no-errors}
+Richard Feldman.
+\newblock Richard {Feldman} - {Introduction} to {Elm}.
+\newblock abgerufen am 2. Mai 2016.
+
+\bibitem{rekursive-funktion}
+Jürgen~Wohlrab Helmut~Herold, Bruno~Lurz.
+\newblock {\em Grundlagen der {Informatik}}.
+\newblock Pearson Studium, 2007.
+
+\bibitem{algebraische-datentypen}
+Berthold Hoffmann.
+\newblock Algebraische {Datentypen}.
+\newblock abgerufen am 4. Mai 2016.
+
+\bibitem{referentielle-transparenz}
+Dr.~Steffen Jost.
+\newblock Einführung in die {Funktionale} {Programmierung} mit {Haskell} für
+  {Studierende} mit {Nebenfach} {Informatik}, April 2013.
+\newblock abgerufen am 30. Juni 2016.
+
+\bibitem{definition-programmierparadigmen}
+Prof. Dr.~Uwe Kastens.
+\newblock Programmierparadigma.
+\newblock September 2013.
+\newblock Online einsehbar unter
+  \url{http://www.enzyklopaedie-der-wirtschaftsinformatik.de/lexikon/technologien-methoden/Sprache/Programmiersprache/Paradigma}
+  - abgerufen am 29. Mai 2016.
+
+\bibitem{top-five-browser-statistics}
+AWIO WEB~SERVICES LLC.
+\newblock Web {Browser} {Market} {Share}.
+\newblock Webseite.
+\newblock Online einsehbar unter
+  \url{https://www.w3counter.com/globalstats.php?year=2016&month=5} - abgerufen
+  am 06. Juni 2016.
+
+\bibitem{framework-sizes}
+Anton Vynogradenko.
+\newblock Sizes of {J}{S} frameworks, just minified + minified and gzipped.
+\newblock Januar 2016.
+\newblock Online einsehbar unter
+  \url{https://gist.github.com/Restuta/cda69e50a853aa64912d} - abgerufen am 23.
+  Juni 2016.
+
+\bibitem{builtwithelm}
+Luke Westby.
+\newblock builtwithelm.
+\newblock Webseite, Dezember 2015.
+\newblock Online einsehbar unter \url{http://builtwithelm.co/} - abgerufen am
+  07. Juni 2016.
+
+\end{thebibliography}
