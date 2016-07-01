@@ -8,98 +8,90 @@ A level-1 auxiliary file: 04_einleitung.aux
 A level-1 auxiliary file: 05_theoretische_grundlagen.aux
 A level-1 auxiliary file: 06_evaluierung.aux
 A level-1 auxiliary file: 07_fazit.aux
-The style file: plain.bst
+The style file: plaindin.bst
 A level-1 auxiliary file: 10_statement.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Literatur.bib
+Warning--entry type for "top-five-browser-statistics" isn't style-file defined
+--line 15 of file Literatur.bib
 Warning--entry type for "washington-evaluation" isn't style-file defined
---line 39 of file Literatur.bib
-Warning--entry type for "elm-docs" isn't style-file defined
---line 57 of file Literatur.bib
+--line 35 of file Literatur.bib
 Warning--entry type for "web-programming-restarted" isn't style-file defined
---line 77 of file Literatur.bib
+--line 53 of file Literatur.bib
 Warning--entry type for "elm-no-runtime-errors" isn't style-file defined
---line 97 of file Literatur.bib
-Warning--entry type for "evan-center" isn't style-file defined
---line 113 of file Literatur.bib
-Warning--entry type for "evan-thesis" isn't style-file defined
---line 137 of file Literatur.bib
-I was expecting a `,' or a `}'---line 169 of file Literatur.bib
- :   
- :   year = {2014},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--entry type for "feldman-no-errors" isn't style-file defined
---line 177 of file Literatur.bib
-Warning--entry type for "google-gzip" isn't style-file defined
---line 197 of file Literatur.bib
-Warning--entry type for "algebraische-datentypen" isn't style-file defined
---line 237 of file Literatur.bib
-Warning--entry type for "referentielle-transparenz" isn't style-file defined
---line 253 of file Literatur.bib
-Warning--entry type for "elm-tutorial" isn't style-file defined
---line 305 of file Literatur.bib
-Warning--entry type for "builtwithelm" isn't style-file defined
---line 361 of file Literatur.bib
-Warning--entry type for "semantic-versioning" isn't style-file defined
---line 379 of file Literatur.bib
-I was expecting a `,' or a `}'---line 387 of file Literatur.bib
- : 
- : author={k.A.},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--entry type for "elm-github-issues" isn't style-file defined
---line 399 of file Literatur.bib
-Warning--entry type for "slack-user" isn't style-file defined
---line 419 of file Literatur.bib
-Warning--entry type for "elm-repositories" isn't style-file defined
---line 439 of file Literatur.bib
+--line 73 of file Literatur.bib
 Warning--entry type for "elm-package" isn't style-file defined
---line 459 of file Literatur.bib
+--line 91 of file Literatur.bib
+Warning--entry type for "semantic-versioning" isn't style-file defined
+--line 111 of file Literatur.bib
+Warning--entry type for "evan-center" isn't style-file defined
+--line 131 of file Literatur.bib
+Warning--entry type for "evan-thesis" isn't style-file defined
+--line 153 of file Literatur.bib
+Warning--entry type for "elm-docs" isn't style-file defined
+--line 173 of file Literatur.bib
+Warning--entry type for "feldman-no-errors" isn't style-file defined
+--line 213 of file Literatur.bib
+Warning--entry type for "elm-github-issues" isn't style-file defined
+--line 233 of file Literatur.bib
+Warning--entry type for "elm-repositories" isn't style-file defined
+--line 253 of file Literatur.bib
+Warning--entry type for "google-gzip" isn't style-file defined
+--line 271 of file Literatur.bib
+Warning--entry type for "algebraische-datentypen" isn't style-file defined
+--line 309 of file Literatur.bib
+Warning--entry type for "referentielle-transparenz" isn't style-file defined
+--line 331 of file Literatur.bib
+Warning--entry type for "elm-tutorial" isn't style-file defined
+--line 387 of file Literatur.bib
+Warning--entry type for "builtwithelm" isn't style-file defined
+--line 441 of file Literatur.bib
+Warning--entry type for "slack-user" isn't style-file defined
+--line 461 of file Literatur.bib
 Warning--I didn't find a database entry for "http://www.itwissen.info/definition/lexikon/UNIX.html"
-Warning--to sort, need author or key in semantic-versioning
-Warning--empty journal in definition-programmierparadigmen
-Warning--empty journal in most-used-frameworks
-Warning--empty journal in elm-model-update-view
-Warning--empty journal in framework-sizes
 You've used 23 entries,
-            2118 wiz_defined-function locations,
-            609 strings with 7984 characters,
-and the built_in function-call counts, 4913 in all, are:
-= -- 451
-> -- 177
-< -- 0
-+ -- 75
-- -- 52
-* -- 197
-:= -- 828
-add.period$ -- 73
+            4335 wiz_defined-function locations,
+            956 strings with 9613 characters,
+and the built_in function-call counts, 9161 in all, are:
+= -- 944
+> -- 187
+< -- 203
++ -- 254
+- -- 59
+* -- 474
+:= -- 1589
+add.period$ -- 44
 call.type$ -- 23
-change.case$ -- 94
+change.case$ -- 73
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 178
-empty$ -- 488
-format.name$ -- 52
-if$ -- 1044
+cite$ -- 23
+duplicate$ -- 269
+empty$ -- 775
+format.name$ -- 108
+if$ -- 1989
 int.to.chr$ -- 0
 int.to.str$ -- 23
-missing$ -- 6
-newline$ -- 122
-num.names$ -- 44
-pop$ -- 199
+missing$ -- 124
+newline$ -- 170
+num.names$ -- 46
+pop$ -- 126
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 73
 quote$ -- 0
-skip$ -- 155
+skip$ -- 448
 stack$ -- 0
-substring$ -- 115
-swap$ -- 19
-text.length$ -- 0
+substring$ -- 471
+swap$ -- 62
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
-warning$ -- 5
-while$ -- 44
+type$ -- 118
+warning$ -- 0
+while$ -- 76
 width$ -- 25
-write$ -- 233
-(There were 2 error messages)
+write$ -- 354
+(There were 19 warnings)
