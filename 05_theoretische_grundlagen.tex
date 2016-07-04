@@ -48,7 +48,7 @@ Grundsätzlich wird mit einer solchen Lambda-Funktion ein mathematisches Abbildu
 
 \subsection{Geschichte}
 \label{sec:Geschichte}
-Elm wurde im Rahmen der Bachelorarbeit \glqq Elm: Concurrent FRP for Functional GUIs\grqq von Evan Czaplicki entwickelt \cite[Vgl.]{evan-thesis}.
+Elm wurde im Rahmen der Bachelorarbeit \glqq Elm: Concurrent FRP for Functional GUIs\grqq~von Evan Czaplicki entwickelt \cite[Vgl.]{evan-thesis}.
 Auslöser für die Entwicklung von Elm war für Czaplicki die Schwierigkeit, ein Bild auf einer Webseite sowohl horizontal, als auch vertikal zu zentrieren.\cite[Vgl.]{evan-center} Es gab keine für ihn annehmbare, leichte Lösung für dieses Unterfangen, ohne damit weitere Probleme zu schaffen. Unter der Leitfrage \glqq Wie würde Web-Programmierung aussehen, wenn wir neu starten könnten?\grqq\footnote{\cite[Vgl. Eigene Übersetzung]{web-programming-restarted}}, machte Czaplicki sich Gedanken, welche Veränderungen an den aktuellen, etablierten Programmiersprachen für die Webentwicklung wünschenswert wären und entwickelte den ersten Prototypen von Elm.
 
 \subsection{Konzept}
@@ -118,17 +118,12 @@ Laut Evan Czaplicki wird dabei das echte \ac{DOM} bei jedem \glqq Frame\grqq\foo
 
 \subsubsection{Interoperabilität}
 \label{sec:Interoperabilität}
-Es wäre sehr aufwendig die gängigsten JavaScript-Bibliotheken und -Frameworks wie jQuery oder AngularJS komplett zu verwerfen und mit Elm zu realisieren respektive neu zu programmieren. Glücklicherweise bietet Elm eine ausgereifte Interoperabilität, wodurch alle Garantien der funktionalen Programmierung übernommen werden können, selbst wenn die externen Bibliotheken diese nicht gewährleisten. Die Elm-Applikation kommuniziert über sogenannte $Ports$ mit den \ac{JS}-Bibliotheken.
-
-%\subsubsection{Debugger}
-%\label{sec:Debugger}
-%TODO: Wurde in der letzten Version entfernt.
-%Nicht nur die detaillierten Fehlermeldungen des Compilers sind ein großer Pluspunkt von Elm, sondern auch der mitgelieferte und einfach zu bedienende Debugger. Anders als bei anderen Programmiersprachen zeigt der Debugger nicht nur einen einfachen Stacktrace mit den letzten Rücksprungadressen an. Vielmehr ermöglicht es der Debugger in Elm die Zeit zurückzudrehen. In gängigen Debuggern ist es nicht einfach, ein bestimmtes Verhalten, das möglicherweise zum Absturz des Programms geführt hat, zu reproduzieren. Um den Fehler erneut zu erhalten und dadurch ein Verständnis des Fehlers aufzubauen ist es oft notwendig den genauen Hergang und Ablauf manuell nachzuahmen. Der Elm Debugger hingegen speichert den Status einer jeden Variable zu jedem Zeitpunkt und zeichnet außerdem die Wechsel auf. Aufgrund dessen ist es sehr einfach möglich mit Hilfe eines Sliders auf der Website die Zeit buchstäblich zurückzudrehen und den vorherigen Status wieder aufzurufen. Weiterhin besteht die Möglichkeit sämtliche Daten zu diesem Zeitpunkt zu betrachten und live zu verändern. Dadurch wird nicht nur der aktuell begutachtete Status verändert und der Effekt zeitgleich auf dem Bildschirm angezeigt, sondern auch alle folgenden Status mitsamt den Daten werden entsprechend aktualisiert. Evan Czaplicki hat dahingehend ein Video angefertigt, dass den Vorgang sehr detailliert beschreibt (LINK). Alternativ kann die Abbildung XY betrachtet werden, die einen Zeitstrahl mit Werten, sowie die Möglichkeiten die sich durch den Debugger ergeben, aufzeigt.
+Es wäre sehr aufwendig die gängigsten JavaScript-Bibliotheken und -Frameworks wie jQuery oder AngularJS komplett zu verwerfen und mit Elm zu realisieren. Glücklicherweise bietet Elm eine ausgereifte Interoperabilität, wodurch alle Garantien der funktionalen Programmierung übernommen werden können, selbst wenn die externen Bibliotheken diese nicht gewährleisten. Die Elm-Applikation kommuniziert über sogenannte $Ports$ mit den \ac{JS}-Bibliotheken.
 
 
 \subsubsection{Praktische Anwendungsgebiete}
 \label{sec:Praktische Anwendungsgebiete}
-Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub \cite[Vgl.]{elm-no-runtime-errors}. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. Der NoRedInk-Mitarbeiter Richard Feldman gibt an, dass der überführte Elm-Code in den letzten etwa acht Monaten keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung \cite[Vgl.]{feldman-no-errors}.
+Elm ist noch recht neu und befindet sich im ständigen Wandel. Für viele Entwickler ist Elm entsprechend noch keine wirkliche Alternative zu ihren gegenwärtig genutzten Frameworks, obgleich die Entwicklung mit den gängigen Werkzeugen oftmals steinig ist. Nur wenige Unternehmen nutzen derzeit Elm in ihrem Produktionsumfeld. Die derzeit größten Nutzer sind NoRedInk, Prezi und CircuitHub \cite[Vgl.]{elm-no-runtime-errors}. Alle Betriebe überführen Stück für Stück bereits bestehende Teile ihres Frontends zu Elm. Der NoRedInk-Mitarbeiter Richard Feldman gibt an, dass der überführte Elm-Code über etwa acht Monaten hinweg keinerlei Laufzeitfehler erzeugt hat, anders als die vorherige Implementierung \cite[Vgl.]{feldman-no-errors}.
 Dennoch wird es wohl noch eine Weile dauern, bis sich mehr Firmen der Vorstellung hingeben ihr lauffähiges System in die vielversprechende Programmiersprache Elm zu portieren, nicht zuletzt, weil sie sich noch in einem sehr frühen Stadium befindet und somit noch nicht völlig ausgereift ist.
 Es existiert jedoch bereits eine Vielzahl an Projekten die mit Elm verwirklicht wurden. Dabei sind viele dieser Projekte kleinere Retro-Spiele, die über den Browser gespielt werden können \cite[vgl.]{builtwithelm}.
 Dieser Einblick zeigt bereits, dass Elm in vielerlei Hinsicht Besserung für die Entwicklung von Webapplikationen verspricht. Doch wie praktikabel sind diese Versprechungen? Ist die Programmiersprache effizient und intuitiv, oder durch ihr noch frühes Entwicklungsstadium unausgereift?
@@ -137,7 +132,7 @@ Diese Aussage wird im Rahmen dieser Arbeit anhand der Entwicklung, respektive de
 
 \subsection{Einführung in die Elm-Architektur}
 \label{sec:elm-architektur}
-Vor der Evaluierung der Programmiersprache Elm ist es jedoch notwendig, die Elm-Architektur zu erläutern und einige Grundaspekte zu erklären. Dieses Kapitel soll einen Einstieg in die neue Programmiersprache Elm ermöglichen und stellt nicht nur die Grundkonzepte der Programmiersprache, sondern auch einige mitgelieferte Werkzeuge vor.
+Vor der Evaluierung der Programmiersprache Elm ist es jedoch notwendig, die Elm-Architektur zu erläutern und einige Grundaspekte zu erklären. Dieses Kapitel soll einen Einstieg in die neue Programmiersprache Elm ermöglichen und stellt nicht nur die Grundkonzepte der Programmiersprache, sondern auch einige mitgelieferte Werkzeuge vor. Im Rahmen dieses Kapitels wurden teilweise Aspekte der offiziellen Elm-Dokumentation\footnote{\cite[Vgl.]{elm-no-runtime-errors}} entnommen, in Hinblick auf den praktischen Teil dieser Arbeit angeordnet und mit passenden Beispielen versehen.
 
 \subsubsection{Elm-REPL}
 \label{sec:elm-repl}

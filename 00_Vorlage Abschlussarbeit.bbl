@@ -153,28 +153,35 @@
 \newblock \,Version:\,Juni 2016. --
 \newblock abgerufen am 06. Juni 2016
 
-\bibitem[20]{elm-tutorial}
+\bibitem[20]{agency-template}
+\textsc{Miller}, David:
+\newblock \emph{Start {Bootstrap} - {Agency}}.
+\newblock \url{https://github.com/BlackrockDigital/startbootstrap-agency}.
+\newblock \,Version:\,April 2016. --
+\newblock abgerufen am 18. April 2016
+
+\bibitem[21]{elm-tutorial}
 \textsc{Porto}, Sebastian:
 \newblock \emph{Elm {Tutorial} - {Building} web applications with {Elm}}.
 \newblock \url{http://www.elm-tutorial.org/en/}.
 \newblock \,Version:\,Dezember 2015. --
 \newblock abgerufen am 15. Mai 2016
 
-\bibitem[21]{elm-model-update-view}
+\bibitem[22]{elm-model-update-view}
 \textsc{Smith}, Scott:
 \newblock What {About} {Elm}?
 \newblock   (2016), April.
 \newblock \url{http://www.slideshare.net/scottnelsonsmith/what-about-elm}. --
 \newblock abgerufen am 05. Mai 2016
 
-\bibitem[22]{framework-sizes}
+\bibitem[23]{framework-sizes}
 \textsc{Vynogradenko}, Anton:
 \newblock Sizes of {J}{S} frameworks, just minified + minified and gzipped.
 \newblock   (2016), Januar.
 \newblock \url{https://gist.github.com/Restuta/cda69e50a853aa64912d}. --
 \newblock abgerufen am 23. Juni 2016
 
-\bibitem[23]{builtwithelm}
+\bibitem[24]{builtwithelm}
 \textsc{Westby}, Luke:
 \newblock \emph{builtwithelm}.
 \newblock \url{http://builtwithelm.co/}.

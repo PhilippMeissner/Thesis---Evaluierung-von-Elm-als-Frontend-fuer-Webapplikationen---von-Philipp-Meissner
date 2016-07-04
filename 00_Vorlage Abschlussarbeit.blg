@@ -46,52 +46,54 @@ Warning--entry type for "algebraische-datentypen" isn't style-file defined
 --line 309 of file Literatur.bib
 Warning--entry type for "referentielle-transparenz" isn't style-file defined
 --line 331 of file Literatur.bib
-Warning--entry type for "elm-tutorial" isn't style-file defined
+Warning--entry type for "agency-template" isn't style-file defined
 --line 387 of file Literatur.bib
+Warning--entry type for "elm-tutorial" isn't style-file defined
+--line 413 of file Literatur.bib
 Warning--entry type for "builtwithelm" isn't style-file defined
---line 441 of file Literatur.bib
+--line 467 of file Literatur.bib
 Warning--entry type for "slack-user" isn't style-file defined
---line 461 of file Literatur.bib
+--line 487 of file Literatur.bib
 Warning--I didn't find a database entry for "http://www.itwissen.info/definition/lexikon/UNIX.html"
-You've used 23 entries,
+You've used 24 entries,
             4335 wiz_defined-function locations,
-            956 strings with 9613 characters,
-and the built_in function-call counts, 9161 in all, are:
-= -- 944
-> -- 187
-< -- 203
-+ -- 254
-- -- 59
-* -- 474
-:= -- 1589
-add.period$ -- 44
-call.type$ -- 23
-change.case$ -- 73
+            962 strings with 9770 characters,
+and the built_in function-call counts, 9525 in all, are:
+= -- 981
+> -- 194
+< -- 210
++ -- 263
+- -- 61
+* -- 492
+:= -- 1651
+add.period$ -- 46
+call.type$ -- 24
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 269
-empty$ -- 775
-format.name$ -- 108
-if$ -- 1989
+cite$ -- 24
+duplicate$ -- 280
+empty$ -- 807
+format.name$ -- 112
+if$ -- 2070
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 124
-newline$ -- 170
-num.names$ -- 46
-pop$ -- 126
+int.to.str$ -- 24
+missing$ -- 130
+newline$ -- 177
+num.names$ -- 48
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 76
 quote$ -- 0
-skip$ -- 448
+skip$ -- 466
 stack$ -- 0
-substring$ -- 471
-swap$ -- 62
-text.length$ -- 30
+substring$ -- 487
+swap$ -- 65
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 124
 warning$ -- 0
-while$ -- 76
-width$ -- 25
-write$ -- 354
-(There were 19 warnings)
+while$ -- 79
+width$ -- 26
+write$ -- 369
+(There were 20 warnings)
