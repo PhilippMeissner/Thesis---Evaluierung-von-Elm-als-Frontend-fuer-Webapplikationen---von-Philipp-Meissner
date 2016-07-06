@@ -66,14 +66,7 @@
 \newblock \,Version:\,März 2016. --
 \newblock abgerufen am 20. Juni 2016
 
-\bibitem[9]{itwissen}
-\textsc{Dipl.-Ing.~Lipinski}, Klaus:
-\newblock \emph{Unix}.
-\newblock \url{http://www.itwissen.info/definition/lexikon/UNIX.html}.
-\newblock \,Version:\,k.A. --
-\newblock abgerufen am 25. Juni 2016
-
-\bibitem[10]{referentielle-transparenz}
+\bibitem[9]{referentielle-transparenz}
 \textsc{Dr.~Jost}, Steffen:
 \newblock \emph{Einführung in die {Funktionale} {Programmierung} mit {Haskell}
   für {Studierende} mit {Nebenfach} {Informatik}}.
@@ -82,13 +75,13 @@
 \newblock \,Version:\,April 2013. --
 \newblock abgerufen am 30. Juni 2016
 
-\bibitem[11]{feldman-no-errors}
+\bibitem[10]{feldman-no-errors}
 \textsc{Feldman}, Richard:
 \newblock \emph{Richard {Feldman} - {Introduction} to {Elm}}.
 \newblock \url{https://www.youtube.com/watch?v=zBHB9i8e3Kc&t=2478}. --
 \newblock abgerufen am 2. Mai 2016
 
-\bibitem[12]{elm-github-issues}
+\bibitem[11]{elm-github-issues}
 \textsc{Github}, Inc.:
 \newblock \emph{Github {Elm}-{Issues}}.
 \newblock
@@ -96,7 +89,7 @@
 \newblock \,Version:\,Juni 2016. --
 \newblock abgerufen am 10. Juni 2016
 
-\bibitem[13]{elm-repositories}
+\bibitem[12]{elm-repositories}
 \textsc{Github}, Inc.:
 \newblock \emph{Github {Elm}-{Repositories}}.
 \newblock
@@ -104,7 +97,7 @@
 \newblock \,Version:\,Juni 2016. --
 \newblock abgerufen am 21. Juni, 2016
 
-\bibitem[14]{google-gzip}
+\bibitem[13]{google-gzip}
 \textsc{Grigorik}, Ilya:
 \newblock \emph{Optimizing content efficiency}.
 \newblock
@@ -112,14 +105,14 @@
 \newblock \,Version:\,k.A.. --
 \newblock abgerufen am 1. Juli 2016
 
-\bibitem[15]{rekursive-funktion}
+\bibitem[14]{rekursive-funktion}
 \textsc{Herold}, Helmut ; \textsc{Lurz}, Bruno  ; \textsc{Wohlrab}, Jürgen:
 \newblock \emph{Grundlagen der {Informatik}}.
 \newblock Pearson Studium, 2007. --
 \newblock  195 S. --
 \newblock ISBN 978--3--8273--7305--2
 
-\bibitem[16]{algebraische-datentypen}
+\bibitem[15]{algebraische-datentypen}
 \textsc{Hoffmann}, Berthold:
 \newblock \emph{Algebraische {Datentypen}}.
 \newblock
@@ -127,14 +120,14 @@
 \newblock \,Version:\,November 2009. --
 \newblock abgerufen am 4. Mai 2016
 
-\bibitem[17]{slack-user}
+\bibitem[16]{slack-user}
 \textsc{k.A.}:
 \newblock \emph{Elm-{Slack} {Nutzer}}.
 \newblock \url{http://elmlang.herokuapp.com/}.
 \newblock \,Version:\,k.A.. --
 \newblock abgerufen am 1. Juli 2016
 
-\bibitem[18]{definition-programmierparadigmen}
+\bibitem[17]{definition-programmierparadigmen}
 \textsc{Kastens}, Prof. Dr.~U.:
 \newblock Programmierparadigma.
 \newblock   (2013), September.
@@ -143,7 +136,7 @@
   --
 \newblock abgerufen am 29. Mai 2016
 
-\bibitem[19]{most-used-frameworks}
+\bibitem[18]{most-used-frameworks}
 \textsc{Kuhn}, Zach:
 \newblock Choosing a {Front} {End} {Framework}: {Angular} vs. {Ember} vs.
   {React}.
@@ -153,42 +146,42 @@
   --
 \newblock abgerufen am 1. Juli 2016
 
-\bibitem[20]{top-five-browser-statistics}
+\bibitem[19]{top-five-browser-statistics}
 \textsc{LLC.}, AWIO WEB~S.:
 \newblock \emph{Web {Browser} {Market} {Share}}.
 \newblock \url{https://www.w3counter.com/globalstats.php?year=2016&month=5}.
 \newblock \,Version:\,Juni 2016. --
 \newblock abgerufen am 06. Juni 2016
 
-\bibitem[21]{agency-template}
+\bibitem[20]{agency-template}
 \textsc{Miller}, David:
 \newblock \emph{Start {Bootstrap} - {Agency}}.
 \newblock \url{https://github.com/BlackrockDigital/startbootstrap-agency}.
 \newblock \,Version:\,April 2016. --
 \newblock abgerufen am 18. April 2016
 
-\bibitem[22]{elm-tutorial}
+\bibitem[21]{elm-tutorial}
 \textsc{Porto}, Sebastian:
 \newblock \emph{Elm {Tutorial} - {Building} web applications with {Elm}}.
 \newblock \url{http://www.elm-tutorial.org/en/}.
 \newblock \,Version:\,Dezember 2015. --
 \newblock abgerufen am 15. Mai 2016
 
-\bibitem[23]{elm-model-update-view}
+\bibitem[22]{elm-model-update-view}
 \textsc{Smith}, Scott:
 \newblock What {About} {Elm}?
 \newblock   (2016), April.
 \newblock \url{http://www.slideshare.net/scottnelsonsmith/what-about-elm}. --
 \newblock abgerufen am 05. Mai 2016
 
-\bibitem[24]{framework-sizes}
+\bibitem[23]{framework-sizes}
 \textsc{Vynogradenko}, Anton:
 \newblock Sizes of {J}{S} frameworks, just minified + minified and gzipped.
 \newblock   (2016), Januar.
 \newblock \url{https://gist.github.com/Restuta/cda69e50a853aa64912d}. --
 \newblock abgerufen am 23. Juni 2016
 
-\bibitem[25]{builtwithelm}
+\bibitem[24]{builtwithelm}
 \textsc{Westby}, Luke:
 \newblock \emph{builtwithelm}.
 \newblock \url{http://builtwithelm.co/}.

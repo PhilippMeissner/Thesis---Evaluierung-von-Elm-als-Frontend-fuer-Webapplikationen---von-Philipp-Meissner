@@ -46,54 +46,55 @@ Warning--entry type for "algebraische-datentypen" isn't style-file defined
 --line 309 of file Literatur.bib
 Warning--entry type for "referentielle-transparenz" isn't style-file defined
 --line 331 of file Literatur.bib
-Warning--entry type for "agency-template" isn't style-file defined
+Warning--entry type for "itwissen" isn't style-file defined
 --line 387 of file Literatur.bib
+Warning--entry type for "agency-template" isn't style-file defined
+--line 405 of file Literatur.bib
 Warning--entry type for "elm-tutorial" isn't style-file defined
---line 413 of file Literatur.bib
+--line 431 of file Literatur.bib
 Warning--entry type for "builtwithelm" isn't style-file defined
---line 467 of file Literatur.bib
+--line 485 of file Literatur.bib
 Warning--entry type for "slack-user" isn't style-file defined
---line 487 of file Literatur.bib
-Warning--I didn't find a database entry for "http://www.itwissen.info/definition/lexikon/UNIX.html"
-You've used 24 entries,
+--line 505 of file Literatur.bib
+You've used 25 entries,
             4335 wiz_defined-function locations,
-            962 strings with 9770 characters,
-and the built_in function-call counts, 9525 in all, are:
-= -- 981
-> -- 194
-< -- 210
-+ -- 263
-- -- 61
-* -- 492
-:= -- 1651
-add.period$ -- 46
-call.type$ -- 24
-change.case$ -- 76
+            967 strings with 9807 characters,
+and the built_in function-call counts, 9880 in all, are:
+= -- 1016
+> -- 201
+< -- 217
++ -- 272
+- -- 63
+* -- 508
+:= -- 1713
+add.period$ -- 48
+call.type$ -- 25
+change.case$ -- 79
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 280
-empty$ -- 807
-format.name$ -- 112
-if$ -- 2070
+cite$ -- 25
+duplicate$ -- 291
+empty$ -- 839
+format.name$ -- 116
+if$ -- 2149
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 130
-newline$ -- 177
-num.names$ -- 48
-pop$ -- 131
+int.to.str$ -- 25
+missing$ -- 136
+newline$ -- 184
+num.names$ -- 50
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 79
 quote$ -- 0
-skip$ -- 466
+skip$ -- 484
 stack$ -- 0
-substring$ -- 487
-swap$ -- 65
-text.length$ -- 31
+substring$ -- 503
+swap$ -- 67
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
+type$ -- 128
 warning$ -- 0
-while$ -- 79
-width$ -- 26
-write$ -- 369
+while$ -- 82
+width$ -- 27
+write$ -- 384
 (There were 20 warnings)
