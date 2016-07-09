@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  5 JUL 2016 12:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.24)  9 JUL 2016 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,7 +1500,12 @@ File: img/elm-benchmark-final.png Graphic file (type png)
 Package pdftex.def Info: img/elm-benchmark-final.png used on input line 498.
 (pdftex.def)             Requested size: 287.27547pt x 211.99364pt.
  [51 <./img/elm-compile.png>] [52] [53 <./img/elm-benchmark-final.png>] [54] [5
-5]) [56] [57]
+5]
+Overfull \hbox (0.65508pt too wide) in paragraph at lines 532--545
+ [][] 
+ []
+
+) [56] [57]
 \openout2 = `07_fazit.aux'.
 
  (./07_fazit.tex
@@ -1640,7 +1645,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
 Here is how much of TeX's memory you used:
  14667 strings out of 494976
  220567 string characters out of 6179137
- 391747 words of memory out of 5000000
+ 391762 words of memory out of 5000000
  17120 multiletter control sequences out of 15000+600000
  86610 words of font info for 69 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
@@ -1658,7 +1663,7 @@ share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (71 pages, 1682549 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (71 pages, 1682545 bytes).
 PDF statistics:
  1585 PDF objects out of 1728 (max. 8388607)
  1429 compressed objects within 15 object streams

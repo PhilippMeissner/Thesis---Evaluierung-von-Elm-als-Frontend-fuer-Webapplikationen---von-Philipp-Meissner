@@ -525,13 +525,13 @@ Versuchsweise wurde die Übertragungszeit künstlich erhöht, so dass mehrere Se
 Das Kriterium kann somit als vollständig erfüllt angesehen werden.
 
 \subsubsection{Auswertung: \ref{sec:muster_dateigroesse} \nameref{sec:muster_dateigroesse}}
-Ermittelt wurden die Dateigrößen der Elm-Applikation, die in Abbildung~\ref{fig:dateigroesse-stats} zusammengefasst wurden, indem eine neue Elm-Applikation initialisiert wurde. Dafür wurden die Packete $elm-lang/html$ (Version 1.0.0), $elm-lang/core$ (Version 4.0.1) und $elm-lang/virtual-dom$ (Version 1.0.2) installiert und in einem Testmodul $Main.elm$ importiert.
+Ermittelt wurden die Dateigrößen der Elm-Applikation, die in Abbildung~\ref{fig:dateigroesse-stats} zusammengefasst wurden, indem eine neue Elm-Applikation initialisiert wurde. Dafür wurden die Pakete $elm-lang/html$ (Version 1.0.0), $elm-lang/core$ (Version 4.0.1) und $elm-lang/virtual-dom$ (Version 1.0.2) installiert und in einem Testmodul $Main.elm$ importiert.
 Das Testmodul beinhaltete zusätzlich die Funktionen $model$, $view$, $update$ und $main$, um dem \ac{MVU}-Konzept von Elm gerecht zu werden und einen minimal notwendigen Grundaufbau für eine funktionierende Applikation zu simulieren. Dabei liefert $model$ einen Integer $0$ zurück. Die Funktion $view$ gibt den Wert von $model$ in einem \ac{HTML}-Element aus und die $update$-Funktion nimmt sämtliche Interaktionen des Nutzers entgegen und gibt das unveränderte $model$ zurück. Die $main$-Funktion macht dabei die Elm-Applikation lauffähig über den Webserver $elm-reactor$ oder einer expliziten Einbindung der Applikation in eine $.html$-Datei. 
 \begin{figure}[h!]
 \centering
 	\begin{tabular}{ | p{5cm} | c | c |}
 	\hline
-	 \textbf{Name} 				& \textbf{Minimiert} 	& \textbf{Minimiert u. Komprimiert}\\
+	 \textbf{Name} 				& \textbf{Kompiliert} 	& \textbf{Minimiert u. Komprimiert}\\
 	 \hline
 	 Angular2 					& 566KB	& 111KB\\
 	 \hline
